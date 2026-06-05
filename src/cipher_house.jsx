@@ -531,13 +531,13 @@ const TASKS = {
 // ─── PRODUCTION TRACKER: the 12 airtight steps applied to every case ─────────
 // Each case gets this full checklist. Persisted under localStorage key "ch_tracker".
 const TRACKER_STEPS = [
-  { key:"script",    icon:"✍️", label:"Research + script",        note:"Claude researches + writes 5-section script · SEO titles · 200-word description · chapters · pinned comment" },
+  { key:"script",    icon:"✍️", label:"Research + script",        note:"Claude researches + writes 5-section script · RULE: answer the core question in the first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
   { key:"voiceover", icon:"🎙️", label:"Voiceover",                note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",             note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
   { key:"higgsfield",icon:"🎭", label:"Higgsfield expression",    note:"Generate the thumbnail expression for this case BEFORE edit day · save to Brand Assets" },
   { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"Audio check → Pictory → cold open → text overlays → captions → export FINAL.mp4 → Canva thumbnail A" },
-  { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts" },
-  { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · ⚠️ AI disclosure · playlist · schedule 2pm PST" },
+  { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: \"The full story is on the channel — this is just 60 seconds of it\" + link" },
+  { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE TOGGLE → Details → \"Altered content\" (may show as \"AI use\") → YES · schedule 2pm PST" },
   { key:"launch",    icon:"🚀", label:"Launch day",                note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each" },
   { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",    note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
   { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",  note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
@@ -1029,6 +1029,19 @@ function GrowthPanel() {
           </div>
         ))}
       </div>
+      <div className="section-title">Shorts funnel — CTA template</div>
+      <div className="info-box">
+        <div className="info-title">Shorts are loss leaders — the funnel is the point</div>
+        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.7,marginBottom:10}}>
+          Shorts RPM is only $0.03–$0.10 per 1,000 views. Their real value is funneling viewers into your long-form library where you earn $5–$10 RPM. Every Short's description and pinned comment must point back to the full video with a curiosity-gap CTA, not a generic "watch here."
+        </div>
+        <div style={{display:"flex",flexDirection:"column",gap:8,fontSize:12,color:"var(--text3)",lineHeight:1.5}}>
+          <div><span style={{color:"var(--gold)"}}>Shorts #1 & #2:</span> "The full story is on the channel — this is just 60 seconds of it 👇" + link</div>
+          <div><span style={{color:"var(--gold)"}}>Short #3 (ending):</span> "If that ending bothered you, the full breakdown is on the channel" + link — highest long-form conversion</div>
+          <div><span style={{color:"var(--gold)"}}>Pinned comment (every Short):</span> "Full 12-minute breakdown on the channel → [link]"</div>
+          <div><span style={{color:"var(--gold)"}}>Every Short:</span> #Shorts + ⚠️ AI-assisted content disclosure</div>
+        </div>
+      </div>
       <div className="section-title">Monthly — first Monday</div>
       <div className="sop-box">
         <div style={{padding:"10px 0",fontSize:12}}>
@@ -1210,6 +1223,28 @@ function EmpirePanel() {
           <div className="phase-desc">{p.desc}</div>
         </div>
       ))}
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
+        <div className="info-title">The Niche Format doctrine — define this BEFORE launching any channel</div>
+        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.7,marginBottom:12}}>
+          A niche is a topic (historical mysteries). A <span style={{color:"var(--gold2)"}}>niche format</span> is the repeatable system that turns that topic into a content machine: structure + visual identity + voice + delivery, locked in and identical every video. The format is what separates you from every other channel covering the same topic. The money is in the format, not the niche. Every Cipher House channel must have its format fully defined before video 1 — never figured out on the fly.
+        </div>
+        <div style={{fontSize:11.5,color:"var(--gold2)",fontWeight:500,marginBottom:6}}>Vanished History — locked format (use as the template):</div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:7,fontSize:11.5,color:"var(--text3)",lineHeight:1.5}}>
+          {[
+            ["Structure","5 sections: Hook → Background → Mystery → Theories → Unresolved Ending"],
+            ["Hook rule","Core question answered in first 30–60s with a specific name/date/place"],
+            ["Visual identity","Higgsfield character (one expression per case) + archive/Wikimedia/Pexels footage"],
+            ["Voice","ElevenLabs Brad — deep, measured, authoritative · same settings every video"],
+            ["Length","13–14 min long-form + 3 vertical Shorts as funnels"],
+            ["Close","Open-ended question → comments · \"I read every single one\" · subscribe"],
+          ].map(([k,v],i) => (
+            <div key={i}><span style={{color:"var(--gold)"}}>{k}:</span> {v}</div>
+          ))}
+        </div>
+        <div style={{fontSize:11.5,color:"var(--text3)",lineHeight:1.6,marginTop:12,paddingTop:10,borderTop:"1px solid var(--border)"}}>
+          When you launch Channel 2, fill in this same six-row template for its niche before producing anything. If you can't define all six rows, the channel isn't ready to launch.
+        </div>
+      </div>
       <div className="info-box">
         <div className="info-title">The 7 non-negotiable rules of scaling</div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
