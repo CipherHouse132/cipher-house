@@ -1,5 +1,49 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+// ─── SUPABASE SYNC CONFIG ────────────────────────────────────────────────────
+// ⚠️ PASTE YOUR TWO VALUES BELOW (from Supabase → Project Settings → API).
+//    These are safe to keep in frontend code (anon key is public by design).
+//    Until you fill these in, the app automatically falls back to localStorage
+//    (works fine on one device; cross-device sync activates once keys are set).
+const SUPABASE_URL = "https://dmktuxnxzjdajxfnlttp.supabase.co";        // e.g. https://xxxxxxxx.supabase.co  (NO trailing /rest/v1/)
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRta3R1eG54empkYWp4Zm5sdHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2Mjg4NTEsImV4cCI6MjA5NjIwNDg1MX0.Ti2Am69_VBeEJouOjZkiriTWUXF49D6BgcyEIC_FklA"; // the long "anon public" key
+
+const SYNC_ON =
+  SUPABASE_URL.startsWith("http") &&
+  !SUPABASE_URL.includes("YOUR_") &&
+  SUPABASE_ANON_KEY.length > 20 &&
+  !SUPABASE_ANON_KEY.includes("YOUR_");
+
+const REST = `${SUPABASE_URL.replace(/\/+$/, "")}/rest/v1/progress`;
+const sbHeaders = {
+  "apikey": SUPABASE_ANON_KEY,
+  "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+  "Content-Type": "application/json",
+};
+
+// Pull every checked id from the cloud. Returns a Set of ids, or null on failure.
+async function sbFetchAll() {
+  if (!SYNC_ON) return null;
+  try {
+    const res = await fetch(`${REST}?select=id,checked`, { headers: sbHeaders });
+    if (!res.ok) return null;
+    const rows = await res.json();
+    return new Set(rows.filter(r => r.checked).map(r => r.id));
+  } catch { return null; }
+}
+
+// Upsert one id's checked state. Fire-and-forget; localStorage already updated.
+async function sbSet(id, checked) {
+  if (!SYNC_ON) return;
+  try {
+    await fetch(`${REST}?on_conflict=id`, {
+      method: "POST",
+      headers: { ...sbHeaders, "Prefer": "resolution=merge-duplicates" },
+      body: JSON.stringify({ id, checked, updated_at: new Date().toISOString() }),
+    });
+  } catch { /* offline — localStorage keeps the change, re-syncs next load */ }
+}
+
 // ─── DESIGN TOKENS ──────────────────────────────────────────────────────────
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
@@ -324,9 +368,121 @@ const css = `
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* ─── MOBILE TOP BAR + BOTTOM NAV (hidden on desktop) ─────────────────── */
+  .mobile-bar { display: none; }
+  .mobile-nav { display: none; }
+  .mobile-scrim { display: none; }
+
+  @media (max-width: 820px) {
+    html, body, #root { font-size: 15px; overflow: auto; }
+    .app { flex-direction: column; height: auto; min-height: 100vh; }
+
+    /* Desktop sidebar becomes a slide-in drawer */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 60;
+      width: 80vw; max-width: 300px;
+      transform: translateX(-100%); transition: transform 0.25s ease;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    .sidebar.open { transform: translateX(0); }
+    .mobile-scrim.show { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 55; }
+
+    /* Mobile top bar with hamburger */
+    .mobile-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 50;
+      background: var(--bg2); border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+    }
+    .mobile-bar .mb-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 900; color: var(--gold); letter-spacing: 0.05em; }
+    .mobile-bar .mb-burger { font-size: 22px; color: var(--text); background: none; border: none; cursor: pointer; line-height: 1; padding: 4px 8px; }
+
+    .main { overflow: visible; }
+    .panel { padding: 20px 16px 120px; }
+    .panel-title { font-size: 21px; }
+
+    /* Stack all multi-column grids */
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .ov-grid { grid-template-columns: 1fr; }
+    .case-detail-grid { grid-template-columns: 1fr; }
+
+    /* AI dock spans full width, sits above bottom nav */
+    .ai-dock, .ai-panel { left: 0 !important; }
+    .ai-dock { bottom: 56px; }
+
+    /* Persistent bottom nav for the most-used panels */
+    .mobile-nav {
+      display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+      background: var(--bg2); border-top: 1px solid var(--border);
+      height: 56px;
+    }
+    .mobile-nav .mn-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2px; color: var(--text2); font-size: 9px; cursor: pointer; border: none; background: none;
+      letter-spacing: 0.04em;
+    }
+    .mobile-nav .mn-item.active { color: var(--gold); }
+    .mobile-nav .mn-icon { font-size: 16px; line-height: 1; }
+
+    /* Bigger touch targets */
+    .task-card { padding: 14px; }
+    .nav-item { padding: 12px 18px; font-size: 14px; }
+  }
+
+  @media (max-width: 420px) {
+    .stat-grid { grid-template-columns: 1fr; }
+  }
 `;
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
+
+// Date-keyed action schedule (mirrors the Google Calendar). Used by the Today widget.
+// Each entry: what to actually DO that day, in priority order.
+const SCHEDULE = {
+  "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
+  "2026-06-06": ["🎬 Case #001 — Pre-edit check + Pictory assembly", "🎭 Create channel character in Higgsfield", "📱 Create 3 Shorts (Case #001)", "🖼️ Design thumbnail + series branding", "🎥 Create channel trailer"],
+  "2026-06-07": ["⚙️ Channel optimization (keywords + description + playlist)", "💰 Set up affiliate links (Audible + Great Courses)", "👁️ QC watch-through + fixes", "⬆️ Upload Case #001 + schedule Thu Jun 11 2pm PST"],
+  "2026-06-10": ["✍️ Case #002 — Research + script (Roanoke)"],
+  "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover", "💬 Comment replies (launch day)"],
+  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 Higgsfield expression — Case #002 (concerned)", "📊 Weekly analytics check"],
+  "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
+  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 Higgsfield expression — Case #003 (shocked/awe)", "🖼️ Case #001 — Version B thumbnail"],
+  "2026-06-15": ["📹 CASE #002 GOES LIVE 2pm — pinned comment + 3 Shorts", "🌐 Reddit + Quora seeding (Case #002)", "🎙️ Case #004 — Voiceover", "🎬 Case #003 — Edit", "📱 Case #003 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 Higgsfield expression — Case #004 (serious/intense)"],
+  "2026-06-17": ["✍️ Case #005 — Research + script (Hidden Empire)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-18": ["⬆️ Case #004 — Upload + schedule", "🎙️ Case #005 — Voiceover", "🖼️ Case #002 — Version B thumbnail"],
+  "2026-06-19": ["✍️ Case #006 — Research + script (Black Death)", "📹 CASE #004 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #004)", "🎞️ Case #005 — Footage", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 Higgsfield batch — Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
+  "2026-06-21": ["✍️ Case #007 — Research + script (Crown Jewels)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
+  "2026-06-22": ["📹 CASE #005 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #005)", "🎙️ Case #007 — Voiceover", "🎬 Case #006 — Edit", "📱 Case #006 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
+  "2026-06-24": ["✍️ Case #008 — Research + script (Franz Ferdinand)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
+  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 Higgsfield — Case #008 (MUST DO TONIGHT)", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 Higgsfield batch — Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
+  "2026-06-28": ["✍️ Case #010 — Research + script (Baghdad Battery)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
+  "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
+  "2026-06-30": ["⬆️ Case #009 — Upload + schedule", "🎞️ Case #010 — Footage"],
+  "2026-07-01": ["✍️ Case #011 — Research + script (Egyptian Stones)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
+  "2026-07-02": ["⬆️ Case #010 — Upload + schedule", "🎙️ Case #011 — Voiceover"],
+  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 Higgsfield batch — Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-07-04": ["🎙️ Case #012 — Voiceover", "🎬 Case #011 — Edit", "📱 Case #011 — 3 Shorts", "🖼️ Version B thumbnails — Cases #007/#008/#009"],
+  "2026-07-05": ["⬆️ Case #011 — Upload + schedule", "🎞️ Case #012 — Footage"],
+  "2026-07-06": ["📹 CASE #011 GOES LIVE 2pm", "🎬 Case #012 — Edit", "📱 Case #012 — 3 Shorts", "📊 Monthly Business Review #1", "🔍 vidIQ outlier analysis", "📅 Month 2 content planning", "💬 Comment replies"],
+  "2026-07-07": ["⬆️ Case #012 — Upload + schedule", "🌐 Reddit + Quora seeding (Case #011)"],
+  "2026-07-08": ["📹 CASE #012 GOES LIVE 2pm — final video of Month 1 🎉", "🌐 Reddit + Quora seeding (Case #012)", "🖼️ A/B check — Cases #004/#005/#006", "💬 Comment replies"],
+};
+
+// Recurring weekday reminders that apply even on days not in SCHEDULE.
+function recurringFor(dateStr) {
+  const d = new Date(dateStr + "T12:00:00");
+  const day = d.getDay(); // 0 Sun … 6 Sat
+  const out = [];
+  if ([1,3,5].includes(day)) out.push("💬 Comment reply session (8:30pm, ~15 min)");
+  if (day === 5) out.push("📊 Weekly analytics check");
+  return out;
+}
 
 const TASKS = {
   wed: [
@@ -371,6 +527,33 @@ const TASKS = {
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST. Save pinned comment + Short + Reddit post ready to paste on launch day.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
+
+// ─── PRODUCTION TRACKER: the 12 airtight steps applied to every case ─────────
+// Each case gets this full checklist. Persisted under localStorage key "ch_tracker".
+const TRACKER_STEPS = [
+  { key:"script",    icon:"✍️", label:"Research + script",        note:"Claude researches + writes 5-section script · SEO titles · 200-word description · chapters · pinned comment" },
+  { key:"voiceover", icon:"🎙️", label:"Voiceover",                note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
+  { key:"footage",   icon:"🎞️", label:"Footage hunt",             note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
+  { key:"higgsfield",icon:"🎭", label:"Higgsfield expression",    note:"Generate the thumbnail expression for this case BEFORE edit day · save to Brand Assets" },
+  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"Audio check → Pictory → cold open → text overlays → captions → export FINAL.mp4 → Canva thumbnail A" },
+  { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts" },
+  { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · ⚠️ AI disclosure · playlist · schedule 2pm PST" },
+  { key:"launch",    icon:"🚀", label:"Launch day",                note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each" },
+  { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",    note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
+  { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",  note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
+  { key:"thumbB",    icon:"🖼️", label:"Version B thumbnail",       note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text) · start Test & Compare" },
+  { key:"abcheck",   icon:"📊", label:"A/B check (14 days)",       note:"14 days after launch · check Test & Compare results · keep the winning thumbnail permanently" },
+];
+
+// Recurring growth systems — not per-video, but ongoing. Persisted under "ch_systems".
+const GROWTH_SYSTEMS = [
+  { key:"analytics",  icon:"📊", label:"Weekly analytics check",          cadence:"Every Friday",       note:"Views, CTR, watch time, traffic sources · note overperformers + low-CTR videos to fix" },
+  { key:"comments_w", icon:"💬", label:"Comment reply session",           cadence:"Mon / Wed / Fri",    note:"Zero unanswered comments in Month 1 · strongest early algorithmic signal there is" },
+  { key:"monetize",   icon:"💰", label:"Monetization milestone check",    cadence:"1st of month",       note:"500 subs → Channel Membership · 1,000 subs + 4,000 hrs → apply YPP immediately" },
+  { key:"vidiq",      icon:"🔍", label:"vidIQ outlier analysis",          cadence:"First Monday",       note:"Run outlier tool on Knowledgia, Voices of the Past, Dark Docs · find breakout topics before making them" },
+  { key:"review",     icon:"📈", label:"Monthly Business Review",         cadence:"First Monday",       note:"Analytics + revenue + tool stack + phase-trigger check · Claude builds next month's calendar" },
+  { key:"planning",   icon:"📅", label:"Next-month content planning",     cadence:"Monthly",            note:"Lock next 12 cases · data-driven topic selection from real Month 1 analytics" },
+];
 
 const CASES = [
   { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Shocked/awe", reddit:"r/AncientCivilizations · r/history", schedule:"PRODUCTION COMPLETE" },
@@ -447,6 +630,55 @@ function DayBlock({ badge, badgeClass, title, sub, tasks, doneSet, onToggle }) {
 
 // ─── PANELS ─────────────────────────────────────────────────────────────────
 
+function TodayWidget({ setPanel }) {
+  // Local date in YYYY-MM-DD
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+  const pretty = now.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric" });
+
+  const scheduled = SCHEDULE[dateStr] || [];
+  const recurring = recurringFor(dateStr).filter(r => !scheduled.some(s => s.includes(r.split(" ")[1] || "")));
+  const items = [...scheduled, ...recurring];
+
+  // Find the next upcoming day with actions, if today is empty
+  let nextLabel = null, nextItems = [];
+  if (items.length === 0) {
+    const future = Object.keys(SCHEDULE).filter(d => d > dateStr).sort();
+    if (future.length) {
+      nextLabel = new Date(future[0]+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"});
+      nextItems = SCHEDULE[future[0]];
+    }
+  }
+
+  return (
+    <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)", marginBottom:20}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:10}}>
+        <div className="info-title" style={{fontSize:13,marginBottom:0}}>◷ Today — {pretty}</div>
+        <span style={{fontFamily:"'DM Mono', monospace",fontSize:10,color:"var(--text3)"}} >{items.length ? `${items.length} action${items.length>1?"s":""}` : "clear"}</span>
+      </div>
+      {items.length > 0 ? (
+        <div style={{display:"flex",flexDirection:"column",gap:7}}>
+          {items.map((it,i) => (
+            <div key={i} style={{display:"flex",gap:9,alignItems:"flex-start",fontSize:13,color:"var(--text)",lineHeight:1.5}}>
+              <span style={{color:"var(--gold)",marginTop:1}}>›</span>
+              <span>{it}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.6}}>
+          No production tasks scheduled today.
+          {nextLabel && <> Next up — <span style={{color:"var(--text2)"}}>{nextLabel}</span>: {nextItems[0]}{nextItems.length>1?` (+${nextItems.length-1} more)`:""}.</>}
+        </div>
+      )}
+      <div style={{marginTop:12,display:"flex",gap:8,flexWrap:"wrap"}}>
+        <button onClick={()=>setPanel("tracker")} style={{background:"var(--gold-dim)",border:"1px solid var(--gold-dim2)",color:"var(--gold2)",borderRadius:7,padding:"6px 12px",fontSize:11.5,cursor:"pointer",fontFamily:"inherit"}}>Open Production Tracker →</button>
+        <button onClick={()=>setPanel("calendar")} style={{background:"transparent",border:"1px solid var(--border2)",color:"var(--text2)",borderRadius:7,padding:"6px 12px",fontSize:11.5,cursor:"pointer",fontFamily:"inherit"}}>View Calendar →</button>
+      </div>
+    </div>
+  );
+}
+
 function OverviewPanel({ setPanel, doneCount, totalTasks }) {
   return (
     <div>
@@ -462,6 +694,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
         </div>
         <div className="launch-date">Jun 11 · 2:00 PM PST</div>
       </div>
+      <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
         <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$168</div><div className="stat-note">Full AI stack</div></div>
@@ -579,6 +812,117 @@ function CalendarPanel() {
         <div className="info-title">Month 2 planning — Jul 6 after Business Review #1</div>
         <div className="info-body">Cases #013–#024 planned using Month 1 analytics + vidIQ outlier data. Rule: Month 2 calendar locked before Case #009 launches Jul 1. Never be less than 2 weeks ahead on content. Ask Claude to build the full Month 2 calendar during the Jul 6 review.</div>
       </div>
+    </div>
+  );
+}
+
+function ProductionTrackerPanel({ trackerSet, onToggleStep }) {
+  const [expanded, setExpanded] = useState("002");
+
+  const totalSteps = CASES.length * TRACKER_STEPS.length;
+  const doneSteps = CASES.reduce((acc, c) =>
+    acc + TRACKER_STEPS.filter(s => trackerSet.has(`${c.num}:${s.key}`)).length, 0);
+  const pct = Math.round((doneSteps / totalSteps) * 100);
+
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Production Tracker</div>
+        <div className="panel-sub">Every case · all 12 airtight steps · click any step to mark it done. Progress saves automatically.</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="stat-grid">
+        <div className="stat-card"><div className="stat-label">Steps complete</div><div className="stat-val">{doneSteps}/{totalSteps}</div><div className="stat-note">across 12 cases</div></div>
+        <div className="stat-card"><div className="stat-label">Overall progress</div><div className="stat-val">{pct}%</div><div className="stat-note">full pipeline</div></div>
+        <div className="stat-card"><div className="stat-label">Steps per case</div><div className="stat-val">12</div><div className="stat-note">script → A/B check</div></div>
+        <div className="stat-card"><div className="stat-label">Shorts total</div><div className="stat-val">36</div><div className="stat-note">3 per video</div></div>
+      </div>
+
+      <div className="info-box" style={{marginBottom:20}}>
+        <div className="info-title">The 12-step pipeline — applied to every single video</div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,fontSize:11,color:"var(--text3)",lineHeight:1.5,marginTop:4}}>
+          {TRACKER_STEPS.map((s,i) => (
+            <div key={s.key}><span style={{color:"var(--gold2)"}}>{i+1}. {s.icon} {s.label}</span></div>
+          ))}
+        </div>
+      </div>
+
+      {CASES.map((c) => {
+        const caseDone = TRACKER_STEPS.filter(s => trackerSet.has(`${c.num}:${s.key}`)).length;
+        const caseComplete = caseDone === TRACKER_STEPS.length;
+        return (
+          <div key={c.num} className={`case-card ${caseComplete ? "complete" : ""}`} style={{marginBottom:12}}>
+            <div className="case-header" style={{cursor:"pointer"}} onClick={() => setExpanded(expanded === c.num ? null : c.num)}>
+              <div>
+                <div className="case-num">CASE #{c.num}</div>
+                <div className="case-title">{c.title}</div>
+                <div className="case-launch">{c.launch} · 2pm PST</div>
+              </div>
+              <div style={{display:"flex",gap:10,alignItems:"center"}}>
+                <div style={{textAlign:"right"}}>
+                  <div style={{fontFamily:"'DM Mono', monospace",fontSize:13,color:caseComplete?"var(--green)":"var(--gold)"}}>{caseDone}/{TRACKER_STEPS.length}</div>
+                  <div style={{width:70,height:3,background:"rgba(255,255,255,0.08)",borderRadius:2,marginTop:4,overflow:"hidden"}}>
+                    <div style={{height:"100%",width:`${(caseDone/TRACKER_STEPS.length)*100}%`,background:caseComplete?"var(--green)":"var(--gold)",borderRadius:2,transition:"width 0.3s"}} />
+                  </div>
+                </div>
+                <span style={{color:"var(--text3)",fontSize:16,transition:"transform 0.2s",transform:expanded===c.num?"rotate(180deg)":"rotate(0deg)"}}>⌄</span>
+              </div>
+            </div>
+            {expanded === c.num && (
+              <div style={{borderTop:"1px solid var(--border)",paddingTop:10,marginTop:10}}>
+                {TRACKER_STEPS.map((s) => {
+                  const id = `${c.num}:${s.key}`;
+                  const done = trackerSet.has(id);
+                  return (
+                    <div key={s.key} className={`task-card ${done ? "done" : ""}`} onClick={() => onToggleStep(id)} style={{marginBottom:6}}>
+                      <div className="check-box"><span className="check-icon">✓</span></div>
+                      <div className="task-body">
+                        <div className="task-name">{s.icon} {s.label}</div>
+                        <div className="task-desc">{s.note}</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function GrowthSystemsPanel({ trackerSet, onToggleStep }) {
+  // Recurring systems are tracked as simple "active / acknowledged" toggles per system.
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Growth Systems</div>
+        <div className="panel-sub">The recurring engines that run alongside production. These never stop — they compound.</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="info-box" style={{marginBottom:20}}>
+        <div className="info-title">Why these matter</div>
+        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
+          Per-video work gets the video live. These systems are what turn 12 videos into a growing channel: engagement signals, data-driven topic selection, and never missing a monetization window. Check one off when it's set up as a recurring habit.
+        </div>
+      </div>
+
+      {GROWTH_SYSTEMS.map((s) => {
+        const id = `sys:${s.key}`;
+        const done = trackerSet.has(id);
+        return (
+          <div key={s.key} className={`task-card ${done ? "done" : ""}`} onClick={() => onToggleStep(id)} style={{marginBottom:8}}>
+            <div className="check-box"><span className="check-icon">✓</span></div>
+            <div className="task-body">
+              <div className="task-name">{s.icon} {s.label} <span style={{color:"var(--gold2)",fontFamily:"'DM Mono', monospace",fontSize:11,marginLeft:6}}>{s.cadence}</span></div>
+              <div className="task-desc">{s.note}</div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -1152,12 +1496,14 @@ const NAV = [
   { section: "Overview", items: [{ id:"overview", icon:"◈", label:"Dashboard" }] },
   { section: "Launch Plan", items: [
     { id:"tasks", icon:"✦", label:"Production Plan" },
+    { id:"tracker", icon:"☑", label:"Production Tracker" },
     { id:"calendar", icon:"◷", label:"Content Calendar" },
     { id:"cases", icon:"◎", label:"Cases #001–#012" },
   ]},
   { section: "Channel 1", items: [
     { id:"niches", icon:"◎", label:"Niche Research" },
     { id:"growth", icon:"↑", label:"Growth Tactics" },
+    { id:"systems", icon:"⟲", label:"Growth Systems" },
     { id:"tools", icon:"⊞", label:"Tool Stack" },
     { id:"automation", icon:"⟳", label:"Automation Map" },
     { id:"monetization", icon:"◈", label:"Monetization" },
@@ -1182,8 +1528,10 @@ export default function App() {
   const toggleTask = useCallback((id) => {
     setDoneSet(prev => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      const nowChecked = !next.has(id);
+      nowChecked ? next.add(id) : next.delete(id);
       try { localStorage.setItem("ch_tasks", JSON.stringify([...next])); } catch {}
+      sbSet(`task:${id}`, nowChecked);
       return next;
     });
   }, []);
@@ -1191,9 +1539,48 @@ export default function App() {
   const doneCount = allTaskIds.filter(id => doneSet.has(id)).length;
   const pct = allTaskIds.length > 0 ? Math.round((doneCount / allTaskIds.length) * 100) : 0;
 
+  // Production Tracker + Growth Systems persistence (separate key so it never collides with ch_tasks)
+  const [trackerSet, setTrackerSet] = useState(() => {
+    try { return new Set(JSON.parse(localStorage.getItem("ch_tracker") || "[]")); } catch { return new Set(); }
+  });
+  const toggleStep = useCallback((id) => {
+    setTrackerSet(prev => {
+      const next = new Set(prev);
+      const nowChecked = !next.has(id);
+      nowChecked ? next.add(id) : next.delete(id);
+      try { localStorage.setItem("ch_tracker", JSON.stringify([...next])); } catch {}
+      sbSet(`trk:${id}`, nowChecked);
+      return next;
+    });
+  }, []);
+
+  // On load: pull cloud state (if Supabase keys are set) and reconcile both sets.
+  const [syncStatus, setSyncStatus] = useState(SYNC_ON ? "syncing" : "local");
+  useEffect(() => {
+    if (!SYNC_ON) return;
+    let cancelled = false;
+    (async () => {
+      const cloud = await sbFetchAll();
+      if (cancelled) return;
+      if (!cloud) { setSyncStatus("offline"); return; }
+      const taskIds = new Set([...cloud].filter(k => k.startsWith("task:")).map(k => k.slice(5)));
+      const trkIds  = new Set([...cloud].filter(k => k.startsWith("trk:")).map(k => k.slice(4)));
+      setDoneSet(taskIds);
+      setTrackerSet(trkIds);
+      try {
+        localStorage.setItem("ch_tasks", JSON.stringify([...taskIds]));
+        localStorage.setItem("ch_tracker", JSON.stringify([...trkIds]));
+      } catch {}
+      setSyncStatus("synced");
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
   const PANELS = {
     overview: <OverviewPanel setPanel={setPanel} doneCount={doneCount} totalTasks={allTaskIds.length} />,
     tasks: <TasksPanel doneSet={doneSet} onToggle={toggleTask} />,
+    tracker: <ProductionTrackerPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
+    systems: <GrowthSystemsPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
     calendar: <CalendarPanel />,
     cases: <CasesPanel />,
     niches: <NichesPanel />,
@@ -1208,11 +1595,26 @@ export default function App() {
     os: <OSPanel />,
   };
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const go = (id) => { setPanel(id); setDrawerOpen(false); };
+  const BOTTOM_NAV = [
+    { id:"overview", icon:"◈", label:"Home" },
+    { id:"tracker",  icon:"☑", label:"Tracker" },
+    { id:"calendar", icon:"◷", label:"Calendar" },
+    { id:"cases",    icon:"◎", label:"Cases" },
+  ];
+
   return (
     <>
       <style>{css}</style>
+
+      <div className="mobile-bar">
+        <div className="mb-name">CIPHER HOUSE</div>
+        <button className="mb-burger" onClick={() => setDrawerOpen(o => !o)} aria-label="Menu">☰</button>
+      </div>
+      <div className={`mobile-scrim ${drawerOpen ? "show" : ""}`} onClick={() => setDrawerOpen(false)} />
       <div className="app">
-        <div className="sidebar">
+        <div className={`sidebar ${drawerOpen ? "open" : ""}`}>
           <div className="logo">
             <div className="logo-name">CIPHER HOUSE</div>
             <div className="logo-sub">YouTube Automation Empire</div>
@@ -1225,7 +1627,7 @@ export default function App() {
                   <div
                     key={item.id}
                     className={`nav-item ${panel === item.id ? "active" : ""}`}
-                    onClick={() => setPanel(item.id)}
+                    onClick={() => go(item.id)}
                   >
                     <span className="nav-icon">{item.icon}</span>
                     {item.label}
@@ -1246,6 +1648,16 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <nav className="mobile-nav">
+        {BOTTOM_NAV.map(item => (
+          <button key={item.id} className={`mn-item ${panel === item.id ? "active" : ""}`} onClick={() => go(item.id)}>
+            <span className="mn-icon">{item.icon}</span>
+            {item.label}
+          </button>
+        ))}
+      </nav>
+
       <AIAssistant currentPanel={panel} />
     </>
   );
