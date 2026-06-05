@@ -35,7 +35,6 @@ const css = `
 
   html, body, #root { height: 100%; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; overflow: hidden; }
 
-  /* Noise texture */
   body::before {
     content: '';
     position: fixed; inset: 0; pointer-events: none; z-index: 0;
@@ -45,7 +44,6 @@ const css = `
 
   .app { display: flex; height: 100vh; position: relative; z-index: 1; overflow: hidden; }
 
-  /* ── SIDEBAR ── */
   .sidebar {
     width: var(--sidebar); flex-shrink: 0;
     background: var(--bg2); border-right: 1px solid var(--border);
@@ -76,7 +74,6 @@ const css = `
   .prog-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width 0.4s ease; }
   .prog-stats { font-size: 11px; color: var(--text2); display: flex; justify-content: space-between; }
 
-  /* ── MAIN ── */
   .main { flex: 1; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; }
   .main::-webkit-scrollbar { width: 4px; }
   .main::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
@@ -89,17 +86,14 @@ const css = `
   .panel-sub { font-size: 13px; color: var(--text2); margin-top: 5px; }
   .gold-line { width: 36px; height: 2px; background: var(--gold); margin-top: 12px; border-radius: 1px; }
 
-  /* ── STAT GRID ── */
   .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
   .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
   .stat-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
   .stat-val { font-size: 19px; font-weight: 500; color: var(--text); }
   .stat-note { font-size: 11px; color: var(--text3); margin-top: 3px; }
 
-  /* ── SECTION TITLE ── */
   .section-title { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
-  /* ── TASK CARDS ── */
   .day-block { margin-bottom: 24px; }
   .day-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
   .day-badge { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; padding: 4px 11px; border-radius: 20px; letter-spacing: 0.04em; white-space: nowrap; }
@@ -140,11 +134,9 @@ const css = `
   .tag-time { background: rgba(255,255,255,0.05); color: var(--text3); }
   .tag-urgent { background: var(--red-bg); color: #d06050; }
 
-  /* ── LINKS ── */
   .task-links { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px; }
   .task-link { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.2); padding: 2px 8px; border-radius: 4px; text-decoration: none; }
 
-  /* ── CALENDAR CARDS ── */
   .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
   .cal-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
   .cal-card.featured { border-color: rgba(201,168,76,0.3); background: linear-gradient(135deg, var(--bg2), rgba(201,168,76,0.03)); }
@@ -154,7 +146,6 @@ const css = `
   .cal-video:last-child { border-bottom: none; }
   .cal-day { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); white-space: nowrap; margin-top: 1px; flex-shrink: 0; }
 
-  /* ── NICHE CARDS ── */
   .niche-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
   .niche-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
   .niche-card.top { border-color: rgba(201,168,76,0.4); }
@@ -166,7 +157,6 @@ const css = `
   .niche-row-label { color: var(--text3); }
   .niche-row-val { color: var(--text2); font-weight: 500; }
 
-  /* ── TOOL CARDS ── */
   .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; margin-bottom: 24px; }
   .tool-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 13px 15px; display: flex; justify-content: space-between; align-items: flex-start; }
   .tool-name { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
@@ -175,7 +165,6 @@ const css = `
   .cost-free { background: var(--green-bg); color: #60b080; }
   .cost-paid { background: var(--amber-bg); color: #c8904a; }
 
-  /* ── AUTOMATION ROWS ── */
   .auto-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
   .auto-row:last-child { border-bottom: none; }
   .auto-task { flex: 1; font-size: 13px; color: var(--text); }
@@ -194,7 +183,6 @@ const css = `
   .time-before { color: var(--text3); text-decoration: line-through; }
   .time-after { color: var(--gold); font-weight: 500; }
 
-  /* ── MONETIZATION TIMELINE ── */
   .mono-timeline { position: relative; padding-left: 22px; }
   .mono-timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 1px; background: var(--border); }
   .mono-item { position: relative; margin-bottom: 18px; }
@@ -206,7 +194,6 @@ const css = `
   .mono-desc { font-size: 12px; color: var(--text3); line-height: 1.55; }
   .mono-earn { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); margin-top: 4px; }
 
-  /* ── OVERVIEW CARDS ── */
   .ov-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
   .ov-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; cursor: pointer; transition: all 0.2s; }
   .ov-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.03); }
@@ -215,7 +202,6 @@ const css = `
   .ov-desc { font-size: 12px; color: var(--text3); line-height: 1.6; }
   .ov-arrow { color: var(--gold); font-size: 16px; margin-top: 10px; }
 
-  /* ── LAUNCH BANNER ── */
   .launch-banner {
     background: linear-gradient(135deg, rgba(201,168,76,0.13), rgba(201,168,76,0.04));
     border: 1px solid rgba(201,168,76,0.28); border-radius: var(--radius);
@@ -226,7 +212,6 @@ const css = `
   .launch-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
   .launch-date { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold2); font-weight: 500; }
 
-  /* ── AI ASSISTANT ── */
   .ai-dock {
     position: fixed; bottom: 0; left: var(--sidebar); right: 0;
     background: linear-gradient(to top, var(--bg) 70%, transparent);
@@ -259,7 +244,6 @@ const css = `
   .ai-send:hover { background: var(--gold2); }
   .ai-send:disabled { opacity: 0.4; cursor: not-allowed; }
 
-  /* ── AI RESPONSE PANEL ── */
   .ai-panel {
     position: fixed; bottom: 0; left: var(--sidebar); right: 0;
     background: var(--bg2); border-top: 1px solid var(--border2);
@@ -287,12 +271,10 @@ const css = `
   .ai-typing span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes blink { 0%,80%,100% { opacity: 0.2; } 40% { opacity: 1; } }
 
-  /* ── QUICK PROMPTS ── */
   .quick-prompts { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
   .qp { font-family: 'DM Mono', monospace; font-size: 10px; padding: 4px 10px; border-radius: 6px; background: var(--bg3); border: 1px solid var(--border); color: var(--text2); cursor: pointer; transition: all 0.15s; }
   .qp:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* ── CASE CARDS ── */
   .case-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 12px; }
   .case-card.complete { border-color: rgba(61,143,98,0.3); }
   .case-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -305,7 +287,6 @@ const css = `
   .badge-complete { background: var(--green-bg); color: #60b080; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-family: 'DM Mono', monospace; }
   .badge-upcoming { background: var(--blue-bg); color: #6090c8; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-family: 'DM Mono', monospace; }
 
-  /* ── EMPIRE PHASE CARDS ── */
   .phase-card { border-radius: var(--radius); padding: 16px 18px; margin-bottom: 14px; }
   .phase-card.ph1 { background: var(--bg2); border: 1px solid rgba(112,80,160,0.3); }
   .phase-card.ph2 { background: var(--bg2); border: 1px solid rgba(61,143,98,0.3); }
@@ -319,7 +300,6 @@ const css = `
   .phase-stat-val { font-size: 14px; font-weight: 500; color: var(--text); margin-top: 2px; }
   .phase-desc { font-size: 12px; color: var(--text3); line-height: 1.65; }
 
-  /* ── PORTFOLIO TABLE ── */
   .portfolio-table { width: 100%; border-collapse: collapse; font-size: 12px; }
   .portfolio-table th { text-align: left; padding: 8px 12px; color: var(--text3); font-weight: 500; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-family: 'DM Mono', monospace; border-bottom: 1px solid var(--border); }
   .portfolio-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
@@ -330,21 +310,17 @@ const css = `
   .status-ph3 { background: var(--amber-bg); color: #c8904a; }
   .status-ph4 { background: var(--red-bg); color: #d06050; }
 
-  /* ── SOP ROWS ── */
   .sop-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; }
   .sop-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
   .sop-item { font-size: 12px; color: var(--text3); line-height: 1.6; }
   .sop-item strong { color: var(--gold); font-weight: 500; display: block; margin-bottom: 2px; }
 
-  /* ── INFO BOX ── */
   .info-box { background: var(--bg2); border: 1px solid rgba(201,168,76,0.25); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; }
   .info-title { font-size: 12px; font-weight: 500; color: var(--gold); margin-bottom: 6px; }
   .info-body { font-size: 12px; color: var(--text3); line-height: 1.7; }
 
-  /* content bottom padding for AI dock */
   .panel { padding-bottom: 100px; }
 
-  /* scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
@@ -488,7 +464,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$88</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$168</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">4–5 channels</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -551,24 +527,24 @@ function TasksPanel({ doneSet, onToggle }) {
 function CalendarPanel() {
   const weeks = [
     { week:"Week 1", theme:"Lost civilizations & vanished peoples", featured:true, videos:[
-      {day:"Mon Jun 11", title:"The city that vanished overnight: what really happened to the Indus Valley civilization?"},
-      {day:"Wed Jun 15", title:"The Roanoke colony: 115 people disappeared without a trace — the truth historians ignore"},
-      {day:"Fri Jun 17", title:"Göbekli Tepe: the temple that rewrote human history (and what we're still hiding)"},
+      {day:"Thu Jun 11", title:"The city that vanished overnight: what really happened to the Indus Valley civilization?"},
+      {day:"Mon Jun 15", title:"The Roanoke colony: 115 people disappeared without a trace — the truth historians ignore"},
+      {day:"Wed Jun 17", title:"Göbekli Tepe: the temple that rewrote human history (and what we're still hiding)"},
     ]},
     { week:"Week 2", theme:"Hidden figures & suppressed history", featured:false, videos:[
-      {day:"Mon Jun 19", title:"The mathematician who cracked Nazi codes — and was erased from history"},
-      {day:"Wed Jun 22", title:"The empire that ruled half the world — and why you've never heard of it"},
-      {day:"Fri Jun 24", title:"The Black death's real origin: what scientists found in a 700-year-old graveyard"},
+      {day:"Fri Jun 19", title:"The mathematician who cracked Nazi codes — and was erased from history"},
+      {day:"Mon Jun 22", title:"The empire that ruled half the world — and why you've never heard of it"},
+      {day:"Wed Jun 24", title:"The Black death's real origin: what scientists found in a 700-year-old graveyard"},
     ]},
     { week:"Week 3", theme:"Historical crimes & conspiracies", featured:false, videos:[
-      {day:"Mon Jun 26", title:"The greatest heist in history: who really stole the Russian crown jewels?"},
-      {day:"Wed Jun 29", title:"The assassination that history got wrong: what actually happened to Archduke Franz Ferdinand"},
-      {day:"Fri Jul 1", title:"The poisoner who killed an entire royal court — and was never caught"},
+      {day:"Fri Jun 26", title:"The greatest heist in history: who really stole the Russian crown jewels?"},
+      {day:"Mon Jun 29", title:"The assassination that history got wrong: what actually happened to Archduke Franz Ferdinand"},
+      {day:"Wed Jul 1", title:"The poisoner who killed an entire royal court — and was never caught"},
     ]},
     { week:"Week 4", theme:"Ancient engineering & impossible objects", featured:false, videos:[
-      {day:"Mon Jul 3", title:"The Baghdad battery: did ancient Persians invent electricity 2,000 years ago?"},
-      {day:"Wed Jul 6", title:"How did ancient Egyptians move 2.5-million-pound stones? Engineers finally have an answer"},
-      {day:"Fri Jul 8", title:"The Antikythera mechanism: a 2,000-year-old computer that shouldn't exist"},
+      {day:"Fri Jul 3", title:"The Baghdad battery: did ancient Persians invent electricity 2,000 years ago?"},
+      {day:"Mon Jul 6", title:"How did ancient Egyptians move 2.5-million-pound stones? Engineers finally have an answer"},
+      {day:"Wed Jul 8", title:"The Antikythera mechanism: a 2,000-year-old computer that shouldn't exist"},
     ]},
   ];
 
@@ -576,7 +552,7 @@ function CalendarPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">30-Day Content Calendar</div>
-        <div className="panel-sub">12 videos · Mon/Wed/Fri · 2pm PST · 4 weekly themes</div>
+        <div className="panel-sub">12 videos · Thu launch then Mon/Wed/Fri · 2pm PST · 4 weekly themes</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
@@ -734,7 +710,7 @@ function GrowthPanel() {
 
 function ToolsPanel() {
   const tools = [
-    {name:"Claude",use:"Script writing, research, outlines, SEO metadata, strategy",cost:"~$20/mo",paid:true},
+    {name:"Claude (Max)",use:"Script writing, research, outlines, SEO metadata, strategy",cost:"$100/mo",paid:true},
     {name:"ElevenLabs (Brad voice)",use:"AI voiceover — Creator tier, 192kbps, Stability 60%/Similarity 78%/Style 18%",cost:"$11/mo",paid:true},
     {name:"Pictory AI",use:"Auto-assemble video from script + voiceover + stock footage",cost:"$19/mo",paid:true},
     {name:"Higgsfield AI",use:"Channel character for thumbnails + custom cinematic B-roll clips",cost:"From $9/mo",paid:true},
@@ -751,11 +727,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$88/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$168/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$88</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$168</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 12</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -877,7 +853,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">full daily commitment</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$88</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$168</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -907,7 +883,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $88/mo tool cost · no freelancers required</div>
+        <div className="panel-sub">5-channel empire · $168/mo tool cost · no freelancers required</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
@@ -1081,7 +1057,7 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: ElevenLabs ($11) + Pictory ($19) + Higgsfield ($9) + Canva (free) + vidIQ (free) = $88/mo total.
+CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + Pictory ($19) + Higgsfield ($9) + Canva (free) + vidIQ (free) = $168/mo total.
 
 SCALING PLAN: Phase 1 (Ch1 only, Jun–Dec 2026) → Phase 2 (launch Business Autopsies, Jan 2027, $14-35 RPM) → Phase 3 (Wealth Code + Dark Psychology, Jul–Oct 2027) → Phase 4 (AI Decoded, 2028, $20K-50K/mo target).
 
