@@ -1193,6 +1193,76 @@ function MonetizationPanel() {
   );
 }
 
+// Scaling format matrix — left column defines each row for ANY channel;
+// each subsequent column is one channel's filled-in format. Add a channel = add a column object.
+function FormatMatrix() {
+  const ROWS = [
+    ["Structure", "The fixed episode arc — same beats every video, defined per channel"],
+    ["Hook rule", "What must happen in the first 30–60s to stop the scroll"],
+    ["Visual identity", "The look that makes a thumbnail/frame instantly recognizable as yours"],
+    ["Voice", "The narration identity — locked settings, same every video"],
+    ["Length", "Long-form target + short-form funnel format"],
+    ["Close", "How every video ends to drive engagement + subscribes"],
+  ];
+  const CHANNELS = [
+    {
+      name: "Vanished History",
+      status: "Channel 1 · live",
+      live: true,
+      cells: [
+        "Hook → Background → Mystery → Theories → Unresolved Ending",
+        "Core question answered with a specific name / date / place",
+        "Higgsfield character (1 expression per case) + archive / Wikimedia / Pexels footage",
+        "ElevenLabs Brad — deep, measured, authoritative",
+        "13–14 min long-form + 3 vertical Shorts",
+        "Open-ended question → \"I read every single one\" → subscribe",
+      ],
+    },
+    {
+      name: "Channel 2",
+      status: "Not launched",
+      live: false,
+      cells: ["—", "—", "—", "—", "—", "—"],
+    },
+  ];
+
+  const labelW = 150;
+  const colW = 210;
+
+  return (
+    <div style={{ overflowX: "auto", paddingBottom: 4 }}>
+      <div style={{ minWidth: labelW + colW * CHANNELS.length, fontSize: 11.5 }}>
+        {/* Header row */}
+        <div style={{ display: "flex", borderBottom: "1px solid var(--border2)" }}>
+          <div style={{ width: labelW, flexShrink: 0, padding: "7px 10px 7px 0", fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text3)" }}>
+            Format row
+          </div>
+          {CHANNELS.map((ch, i) => (
+            <div key={i} style={{ width: colW, flexShrink: 0, padding: "7px 10px", borderLeft: "1px solid var(--border)" }}>
+              <div style={{ fontWeight: 600, color: ch.live ? "var(--gold2)" : "var(--text3)", fontSize: 12.5 }}>{ch.name}</div>
+              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8.5, letterSpacing: "0.06em", textTransform: "uppercase", color: ch.live ? "var(--green)" : "var(--text3)", marginTop: 2 }}>{ch.status}</div>
+            </div>
+          ))}
+        </div>
+        {/* Body rows */}
+        {ROWS.map(([rowName, rowDef], r) => (
+          <div key={r} style={{ display: "flex", borderBottom: r === ROWS.length - 1 ? "none" : "1px solid var(--border)" }}>
+            <div style={{ width: labelW, flexShrink: 0, padding: "9px 10px 9px 0" }}>
+              <div style={{ color: "var(--gold)", fontWeight: 500 }}>{rowName}</div>
+              <div style={{ color: "var(--text3)", fontSize: 10.5, lineHeight: 1.45, marginTop: 2 }}>{rowDef}</div>
+            </div>
+            {CHANNELS.map((ch, i) => (
+              <div key={i} style={{ width: colW, flexShrink: 0, padding: "9px 10px", borderLeft: "1px solid var(--border)", color: ch.live ? "var(--text2)" : "var(--text3)", lineHeight: 1.45, fontStyle: ch.live ? "normal" : "italic" }}>
+                {ch.cells[r]}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function EmpirePanel() {
   const phases = [
     {cls:"ph1",title:"Phase 1 — Master the system",sub:"Jun 2026 – Dec 2026 · Channel 1 only · Vanished History",stats:[["Focus","1 channel"],["Videos","72+"],["Milestone","1K subs + YPP"],["Revenue","$300–800/mo"]],desc:"Lock in the production workflow until it takes under 3 hours per video. Hit YPP at 1,000 subs + 4,000 watch hours (expected months 4–8). Build the data foundation — by video 30 you have real analytics that directly inform Channel 2. Do NOT launch Channel 2 before Month 6 or YPP approval."},
@@ -1225,25 +1295,10 @@ function EmpirePanel() {
       ))}
       <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
         <div className="info-title">The Niche Format doctrine — define this BEFORE launching any channel</div>
-        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.7,marginBottom:12}}>
-          A niche is a topic (historical mysteries). A <span style={{color:"var(--gold2)"}}>niche format</span> is the repeatable system that turns that topic into a content machine: structure + visual identity + voice + delivery, locked in and identical every video. The format is what separates you from every other channel covering the same topic. The money is in the format, not the niche. Every Cipher House channel must have its format fully defined before video 1 — never figured out on the fly.
+        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.7,marginBottom:14}}>
+          A niche is a topic. A <span style={{color:"var(--gold2)"}}>niche format</span> is the repeatable system that turns that topic into a content machine — locked in and identical every video. The format is what separates you from every other channel covering the same topic. The money is in the format, not the niche. The left column defines what each row means for ANY channel. Every new channel fills in its own column before video 1 — if you can't fill all six rows, the channel isn't ready to launch.
         </div>
-        <div style={{fontSize:11.5,color:"var(--gold2)",fontWeight:500,marginBottom:6}}>Vanished History — locked format (use as the template):</div>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:7,fontSize:11.5,color:"var(--text3)",lineHeight:1.5}}>
-          {[
-            ["Structure","5 sections: Hook → Background → Mystery → Theories → Unresolved Ending"],
-            ["Hook rule","Core question answered in first 30–60s with a specific name/date/place"],
-            ["Visual identity","Higgsfield character (one expression per case) + archive/Wikimedia/Pexels footage"],
-            ["Voice","ElevenLabs Brad — deep, measured, authoritative · same settings every video"],
-            ["Length","13–14 min long-form + 3 vertical Shorts as funnels"],
-            ["Close","Open-ended question → comments · \"I read every single one\" · subscribe"],
-          ].map(([k,v],i) => (
-            <div key={i}><span style={{color:"var(--gold)"}}>{k}:</span> {v}</div>
-          ))}
-        </div>
-        <div style={{fontSize:11.5,color:"var(--text3)",lineHeight:1.6,marginTop:12,paddingTop:10,borderTop:"1px solid var(--border)"}}>
-          When you launch Channel 2, fill in this same six-row template for its niche before producing anything. If you can't define all six rows, the channel isn't ready to launch.
-        </div>
+        <FormatMatrix />
       </div>
       <div className="info-box">
         <div className="info-title">The 7 non-negotiable rules of scaling</div>
