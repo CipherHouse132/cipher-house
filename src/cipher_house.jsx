@@ -6,8 +6,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 //    Until you fill these in, the app automatically falls back to localStorage
 //    (works fine on one device; cross-device sync activates once keys are set).
 const SUPABASE_URL = "https://dmktuxnxzjdajxfnlttp.supabase.co";        // e.g. https://xxxxxxxx.supabase.co  (NO trailing /rest/v1/)
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRta3R1eG54empkYWp4Zm5sdHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2Mjg4NTEsImV4cCI6MjA5NjIwNDg1MX0.Ti2Am69_VBeEJouOjZkiriTWUXF49D6BgcyEIC_FklA
-"; // the long "anon public" key
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRta3R1eG54empkYWp4Zm5sdHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2Mjg4NTEsImV4cCI6MjA5NjIwNDg1MX0.Ti2Am69_VBeEJouOjZkiriTWUXF49D6BgcyEIC_FklA"; // the long "anon public" key
 
 const SYNC_ON =
   SUPABASE_URL.startsWith("http") &&
