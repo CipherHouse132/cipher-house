@@ -441,34 +441,34 @@ const css = `
 // Each entry: what to actually DO that day, in priority order.
 const SCHEDULE = {
   "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
-  "2026-06-06": ["🎭 Character Build Day — The Investigator in Canva (layered asset)", "🎨 4 expression variants (Serious · Curious · Tense · Unsettled)", "✨ Animate corner + center versions", "🧪 Integration test over footage"],
+  "2026-06-06": ["✅ The Investigator designed (v5 final) + transparent PNG", "✅ HeyGen Creator set up + Brad voice imported via ElevenLabs API", "✅ All 5 sections generated — Investigator talking, lip-sync confirmed", "✅ 5 HeyGen MP4s saved to HeyGen Character folder"],
   "2026-06-07": ["🎬 Pre-edit check + Pictory assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
   "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure + schedule Thu Jun 11 2pm PST"],
   "2026-06-09": ["☕ Buffer day — catch up or rest"],
   "2026-06-10": ["☕ Buffer day — catch up or rest", "✍️ Case #002 — Research + script (Roanoke)"],
   "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover", "💬 Comment replies (launch day)"],
-  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 Higgsfield expression — Case #002 (concerned)", "📊 Weekly analytics check"],
+  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 HeyGen — The Investigator generation Case #002", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
-  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 Higgsfield expression — Case #003 (shocked/awe)", "🖼️ Case #001 — Version B thumbnail"],
+  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — The Investigator generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
   "2026-06-15": ["📹 CASE #002 GOES LIVE 2pm — pinned comment + 3 Shorts", "🌐 Reddit + Quora seeding (Case #002)", "🎙️ Case #004 — Voiceover", "🎬 Case #003 — Edit", "📱 Case #003 — 3 Shorts", "💬 Comment replies"],
-  "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 Higgsfield expression — Case #004 (serious/intense)"],
+  "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 HeyGen — The Investigator generation Case #004"],
   "2026-06-17": ["✍️ Case #005 — Research + script (Hidden Empire)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
   "2026-06-18": ["⬆️ Case #004 — Upload + schedule", "🎙️ Case #005 — Voiceover", "🖼️ Case #002 — Version B thumbnail"],
   "2026-06-19": ["✍️ Case #006 — Research + script (Black Death)", "📹 CASE #004 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #004)", "🎞️ Case #005 — Footage", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 Higgsfield batch — Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
+  "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 HeyGen — The Investigator Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
   "2026-06-21": ["✍️ Case #007 — Research + script (Crown Jewels)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
   "2026-06-22": ["📹 CASE #005 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #005)", "🎙️ Case #007 — Voiceover", "🎬 Case #006 — Edit", "📱 Case #006 — 3 Shorts", "💬 Comment replies"],
   "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
   "2026-06-24": ["✍️ Case #008 — Research + script (Franz Ferdinand)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
   "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
-  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 Higgsfield — Case #008 (MUST DO TONIGHT)", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 Higgsfield batch — Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
+  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — The Investigator Case #008 (MUST DO TONIGHT)", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — The Investigator Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
   "2026-06-28": ["✍️ Case #010 — Research + script (Baghdad Battery)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
   "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
   "2026-06-30": ["⬆️ Case #009 — Upload + schedule", "🎞️ Case #010 — Footage"],
   "2026-07-01": ["✍️ Case #011 — Research + script (Egyptian Stones)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
   "2026-07-02": ["⬆️ Case #010 — Upload + schedule", "🎙️ Case #011 — Voiceover"],
-  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 Higgsfield batch — Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — The Investigator Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-07-04": ["🎙️ Case #012 — Voiceover", "🎬 Case #011 — Edit", "📱 Case #011 — 3 Shorts", "🖼️ Version B thumbnails — Cases #007/#008/#009"],
   "2026-07-05": ["⬆️ Case #011 — Upload + schedule", "🎞️ Case #012 — Footage"],
   "2026-07-06": ["📹 CASE #011 GOES LIVE 2pm", "🎬 Case #012 — Edit", "📱 Case #012 — 3 Shorts", "📊 Monthly Business Review #1", "🔍 vidIQ outlier analysis", "📅 Month 2 content planning", "💬 Comment replies"],
@@ -493,7 +493,7 @@ const TASKS = {
     { id: "w3", name: "Design logo and channel banner in Canva", desc: "Logo 800×800px: dark bg (#1a1a2e), bold serif font, magnifying glass icon. Banner 2560×1440px: same dark bg, channel name + tagline + schedule. White + amber/gold text only.", links:[{label:"canva.com →", url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"45–60 min",c:"time"}] },
     { id: "w4", name: "Upload logo, banner + set watermark", desc: "YouTube Studio → Customization → Branding tab. Upload logo and banner. Set watermark to your logo, display entire video. Hit Publish.", tags:[{t:"Free",c:"free"},{t:"10 min",c:"time"}] },
     { id: "w5", name: "Set up Google AdSense", desc: "adsense.google.com → Get started → create account with your channel email. Takes 1–2 days to verify — start tonight to avoid delays at monetization.", links:[{label:"adsense.google.com →", url:"https://adsense.google.com"}], tags:[{t:"Free",c:"free"},{t:"20 min",c:"time"},{t:"1–2 day delay!",c:"urgent"}] },
-    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), Pictory ($19/mo), Higgsfield ($9/mo), Canva. Bookmark archive.org and commons.wikimedia.org.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"higgsfield.ai →",url:"https://higgsfield.ai"},{label:"pictory.ai →",url:"https://pictory.ai"}], tags:[{t:"~$28/mo",c:"paid"},{t:"30 min",c:"time"}] },
+    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), Pictory ($19/mo), HeyGen ($29/mo Creator — animated character host), Canva. Bookmark archive.org and commons.wikimedia.org.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"pictory.ai →",url:"https://pictory.ai"}], tags:[{t:"~$48/mo",c:"paid"},{t:"30 min",c:"time"}] },
   ],
   thu: [
     { id: "t1", name: "Delete old footage + map script to visual needs", desc: "Delete all previously downloaded footage. Map each of the 5 script sections to specific visual needs before searching Friday. S1 Hook: dramatic ruins. S2 Background: Mohenjo-daro brick streets, maps. S3 Mystery: stone seals, artifacts. S4 Theories: drought/dried riverbeds. S5 Ending: wide atmospheric landscapes.", tags:[{t:"Free",c:"free"},{t:"8:30–9:00pm",c:"time"}] },
@@ -511,7 +511,7 @@ const TASKS = {
   ],
   sun: [
     { id: "su1", name: "Pre-edit check + Pictory assembly + Ken Burns stills", desc: "Audio check: play all 5 MP3s back to back — volume consistent? Footage verify: ☐ Cold open ☐ S1 Hook 3 clips ☐ S2 Background 6 clips ☐ S3 Mystery 3 clips + 4 still images ☐ S4 Theories 6 clips ☐ S5 Ending 3 clips. Then: Pictory → Script to Video → upload 5 MP3s. Cold open: 4-second dramatic ruins shot, music only. Ken Burns stills: import Wikimedia images → slow pan/zoom 5–6 seconds each.", links:[{label:"pictory.ai →",url:"https://pictory.ai"}], tags:[{t:"$19/mo",c:"paid"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
-    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Import The Investigator assets into Pictory. Corner (gold silhouette) → bottom-left throughout. Center (full color) → Hook opening, 'And then they vanished', Ending CTA. Swap expressions: Serious → Curious → Tense → Unsettled. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: auto-generate, bottom center, white text pill. Color grade: warm + slightly desaturated (Pictory: Cinematic or Warm Documentary).", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order in Pictory: footage clips = BACKGROUND layer. The Investigator HeyGen videos (5 MP4s, already generated) = overlay ON TOP. He appears talking over the ruins footage. Match each HeyGen section to its footage section (S1 Hook → S5 Ending). Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: auto-generate, bottom center, white text pill. Color grade: warm + slightly desaturated on footage (Pictory: Cinematic or Warm Documentary).", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
     { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg (#0d0d1a) + The Investigator (serious) left + bold gold text right + CASE #001 top-left + ruins 20% opacity bg. Export VH_Case001_Thumbnail_A.png. Version B: same but Unsettled expression. Export VH_Case001_Thumbnail_B.png. Channel trailer: ElevenLabs Brad → record 60–90s script → Pictory → best ruins footage → export VH_Channel_Trailer.mp4 → YouTube Studio → Customization → Layout → Channel trailer (non-subscribers only).", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
     { id: "su4", name: "Export main video + 3 Shorts", desc: "Pictory → Export → YouTube preset 1080p → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering create 3 Shorts: Short #1 Hook (45–60s) · Short #2 Mystery reveal ('No palaces. No rulers. No evidence.') · Short #3 Ending CTA. Each Short: Pictory 9:16 → The Investigator corner overlay → captions → bold hook text → export. Save: VH_Case001_SHORT1/2/3.mp4.", tags:[{t:"$19/mo",c:"paid"},{t:"2:30–5:00pm",c:"time"}] },
   ],
@@ -529,8 +529,8 @@ const TASKS = {
   c002: [
     { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment + Reddit post for r/UnsolvedMysteries.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
     { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check. Save to 'Case #002 — Roanoke / Audio'.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
-    { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps (Wikimedia). S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips. Higgsfield for gaps.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + Short (Roanoke)", desc: "Pre-edit: ☐ volume check ☐ footage verified. Pictory: 4s cold open → 5 MPs → overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → captions → export VH_Case002_FINAL.mp4. Thumbnail: Higgsfield concerned + CASE #002. Short → VH_Case002_SHORT.mp4.", tags:[{t:"Pictory",c:"paid"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps (Wikimedia). S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + Short (Roanoke)", desc: "Pre-edit: ☐ generate The Investigator in HeyGen (paste 5 script sections, Brad voice) ☐ footage verified. Pictory: 4s cold open → footage background + Investigator HeyGen overlays → overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → captions → export VH_Case002_FINAL.mp4. Thumbnail: The Investigator (concerned) + CASE #002. Short → VH_Case002_SHORT.mp4.", tags:[{t:"Pictory",c:"paid"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST. Save pinned comment + Short + Reddit post ready to paste on launch day.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
@@ -541,7 +541,7 @@ const TRACKER_STEPS = [
   { key:"script",    icon:"✍️", label:"Research + script",        note:"Claude researches + writes 5-section script · RULE: answer the core question in the first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
   { key:"voiceover", icon:"🎙️", label:"Voiceover",                note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",             note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
-  { key:"higgsfield",icon:"🎭", label:"Higgsfield expression",    note:"Generate the thumbnail expression for this case BEFORE edit day · save to Brand Assets" },
+  { key:"heygen",    icon:"🎭", label:"HeyGen — The Investigator",    note:"Generate The Investigator talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s to HeyGen Character folder" },
   { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"Audio check → Pictory → cold open → text overlays → captions → export FINAL.mp4 → Canva thumbnail A" },
   { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: \"The full story is on the channel — this is just 60 seconds of it\" + link" },
   { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE TOGGLE → Details → \"Altered content\" (may show as \"AI use\") → YES · schedule 2pm PST" },
@@ -704,7 +704,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$168</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$188</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">4–5 channels</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -948,7 +948,7 @@ function CasesPanel() {
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">Production SOP — same workflow every video</div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:10,fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
-          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎙️ D-4","Voiceover","Brad · 60/78/18 · 192kbps · 5 MP3s · volume check"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips · Higgsfield for gaps"],["🎬 D-2","Edit","Audio check → Pictory → cold open → overlays → captions → export"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
+          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎭 D-4","Character + Voice","Paste 5 sections into HeyGen · The Investigator talking · Brad voice · 5 MP4s"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips"],["🎬 D-2","Edit","Footage background → Investigator overlays → text → captions → export"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
             <div key={i}><span style={{color:"var(--gold2)"}}>{icon} {title}</span><br/>{desc}</div>
           ))}
         </div>
@@ -1079,7 +1079,7 @@ function ToolsPanel() {
     {name:"Claude (Max)",use:"Script writing, research, outlines, SEO metadata, strategy",cost:"$100/mo",paid:true},
     {name:"ElevenLabs (Brad voice)",use:"AI voiceover — Creator tier, 192kbps, Stability 60%/Similarity 78%/Style 18%",cost:"$11/mo",paid:true},
     {name:"Pictory AI",use:"Auto-assemble video from script + voiceover + stock footage",cost:"$19/mo",paid:true},
-    {name:"Higgsfield AI",use:"Channel character for thumbnails + custom cinematic B-roll clips",cost:"From $9/mo",paid:true},
+    {name:"HeyGen (Creator)",use:"The Investigator — animated talking character host, lip-synced to Brad's voice (imported via ElevenLabs API). Generates the character speaking each script section.",cost:"$29/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, channel banner, logo",cost:"Free tier",paid:false},
     {name:"vidIQ",use:"SEO, keyword research, tags, outlier analysis, analytics insights",cost:"Free tier",paid:false},
     {name:"archive.org",use:"Free public domain historical footage — core source for history niche",cost:"Free",paid:false},
@@ -1093,11 +1093,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$168/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$188/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$168</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$188</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 12</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1126,7 +1126,7 @@ function AutomationPanel() {
     {task:"Title, description & tags",tool:"Claude + vidIQ",fill:100,label:"Full AI",cls:"full",before:"45 min",after:"5 min"},
     {task:"Upload scheduling",tool:"YouTube Studio",fill:100,label:"Full AI",cls:"full",before:"20 min",after:"2 min"},
     {task:"Video assembly & editing",tool:"Pictory AI",fill:70,label:"Partial AI",cls:"part",before:"3–4 hrs",after:"30–45 min"},
-    {task:"Thumbnail design",tool:"Higgsfield + Canva → you review",fill:60,label:"Partial AI",cls:"part",before:"45 min",after:"15 min"},
+    {task:"Thumbnail design",tool:"The Investigator (HeyGen) + Canva → you review",fill:60,label:"Partial AI",cls:"part",before:"45 min",after:"15 min"},
     {task:"Niche & topic strategy",tool:"Your judgment — Claude informs",fill:20,label:"Human only",cls:"human",after:"30 min/wk"},
     {task:"Quality control",tool:"You — watch every video before upload",fill:20,label:"Human only",cls:"human",after:"15 min/video"},
   ];
@@ -1221,7 +1221,7 @@ function FormatMatrix() {
       cells: [
         "Hook → Background → Mystery → Theories → Unresolved Ending",
         "Core question answered with a specific name / date / place",
-        "Higgsfield character (1 expression per case) + archive / Wikimedia / Pexels footage",
+        "The Investigator (HeyGen talking host, every video) + archive / Wikimedia / Pexels footage",
         "ElevenLabs Brad — deep, measured, authoritative",
         "13–14 min long-form + 3 vertical Shorts",
         "Open-ended question → \"I read every single one\" → subscribe",
@@ -1289,7 +1289,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">full daily commitment</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$168</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$188</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1326,7 +1326,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $168/mo tool cost · no freelancers required</div>
+        <div className="panel-sub">5-channel empire · $188/mo tool cost · no freelancers required</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
@@ -1393,7 +1393,7 @@ function SOPPanel() {
         {[
           ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
           ["Tuesday — Pictory edit","Script to Video → review clips → text overlays → captions → export","2–3 hrs"],
-          ["Wednesday — Thumbnail + upload","Higgsfield character → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
+          ["Wednesday — Thumbnail + upload","The Investigator (HeyGen) → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
           ["Thursday — Community + distribution","Reddit seeding → Quora answer → pinned comment → Short upload → reply to all comments","1–2 hrs"],
           ["Friday — Analytics + next week prep","YouTube Studio analytics → Claude writes next 3 scripts → content calendar updated","2–3 hrs"],
           ["Saturday — Batch production sprint","Generate 2–3 voiceovers + edit multiple videos back to back · builds 1-week buffer","4–6 hrs"],
@@ -1500,7 +1500,7 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + Pictory ($19) + Higgsfield ($9) + Canva (free) + vidIQ (free) = $168/mo total.
+CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: The Investigator — animated talking host built in HeyGen (Creator tier), lip-synced to Brad's voice via ElevenLabs API. Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + Pictory ($19) + HeyGen ($29) + Canva (free) + vidIQ (free) = $188/mo total.
 
 SCALING PLAN: Phase 1 (Ch1 only, Jun–Dec 2026) → Phase 2 (launch Business Autopsies, Jan 2027, $14-35 RPM) → Phase 3 (Wealth Code + Dark Psychology, Jul–Oct 2027) → Phase 4 (AI Decoded, 2028, $20K-50K/mo target).
 
