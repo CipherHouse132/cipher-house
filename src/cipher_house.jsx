@@ -442,7 +442,7 @@ const css = `
 const SCHEDULE = {
   "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
   "2026-06-06": ["✅ The Investigator designed (v5 final) + transparent PNG", "✅ HeyGen Creator set up + Brad voice imported via ElevenLabs API", "✅ All 5 sections generated — Investigator talking, lip-sync confirmed", "✅ 5 HeyGen MP4s saved to HeyGen Character folder"],
-  "2026-06-07": ["🎬 Pre-edit check + Pictory assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
+  "2026-06-07": ["🎬 Pre-edit check + DaVinci assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
   "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure + schedule Thu Jun 11 2pm PST"],
   "2026-06-09": ["☕ Buffer day — catch up or rest"],
   "2026-06-10": ["☕ Buffer day — catch up or rest", "✍️ Case #002 — Research + script (Roanoke)"],
@@ -493,7 +493,7 @@ const TASKS = {
     { id: "w3", name: "Design logo and channel banner in Canva", desc: "Logo 800×800px: dark bg (#1a1a2e), bold serif font, magnifying glass icon. Banner 2560×1440px: same dark bg, channel name + tagline + schedule. White + amber/gold text only.", links:[{label:"canva.com →", url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"45–60 min",c:"time"}] },
     { id: "w4", name: "Upload logo, banner + set watermark", desc: "YouTube Studio → Customization → Branding tab. Upload logo and banner. Set watermark to your logo, display entire video. Hit Publish.", tags:[{t:"Free",c:"free"},{t:"10 min",c:"time"}] },
     { id: "w5", name: "Set up Google AdSense", desc: "adsense.google.com → Get started → create account with your channel email. Takes 1–2 days to verify — start tonight to avoid delays at monetization.", links:[{label:"adsense.google.com →", url:"https://adsense.google.com"}], tags:[{t:"Free",c:"free"},{t:"20 min",c:"time"},{t:"1–2 day delay!",c:"urgent"}] },
-    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), Pictory ($19/mo), HeyGen ($29/mo Creator — animated character host), Canva. Bookmark archive.org and commons.wikimedia.org.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"pictory.ai →",url:"https://pictory.ai"}], tags:[{t:"~$48/mo",c:"paid"},{t:"30 min",c:"time"}] },
+    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), HeyGen ($29/mo Creator — animated character host), Canva. Download DaVinci Resolve 21 (free) and CapCut (free). Bookmark archive.org and commons.wikimedia.org.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"blackmagicdesign.com →",url:"https://www.blackmagicdesign.com/products/davinciresolve"}], tags:[{t:"~$29/mo",c:"paid"},{t:"30 min",c:"time"}] },
   ],
   thu: [
     { id: "t1", name: "Delete old footage + map script to visual needs", desc: "Delete all previously downloaded footage. Map each of the 5 script sections to specific visual needs before searching Friday. S1 Hook: dramatic ruins. S2 Background: Mohenjo-daro brick streets, maps. S3 Mystery: stone seals, artifacts. S4 Theories: drought/dried riverbeds. S5 Ending: wide atmospheric landscapes.", tags:[{t:"Free",c:"free"},{t:"8:30–9:00pm",c:"time"}] },
@@ -510,10 +510,10 @@ const TASKS = {
     { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending. These overlay on the footage in Sunday's edit — The Investigator talking over the ruins.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
   ],
   sun: [
-    { id: "su1", name: "Pre-edit check + Pictory assembly + Ken Burns stills", desc: "Audio check: play all 5 MP3s back to back — volume consistent? Footage verify: ☐ Cold open ☐ S1 Hook 3 clips ☐ S2 Background 6 clips ☐ S3 Mystery 3 clips + 4 still images ☐ S4 Theories 6 clips ☐ S5 Ending 3 clips. Then: Pictory → Script to Video → upload 5 MP3s. Cold open: 4-second dramatic ruins shot, music only. Ken Burns stills: import Wikimedia images → slow pan/zoom 5–6 seconds each.", links:[{label:"pictory.ai →",url:"https://pictory.ai"}], tags:[{t:"$19/mo",c:"paid"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
-    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order in Pictory: footage clips = BACKGROUND layer. The Investigator HeyGen videos (5 MP4s, already generated) = overlay ON TOP. He appears talking over the ruins footage. Match each HeyGen section to its footage section (S1 Hook → S5 Ending). Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: auto-generate, bottom center, white text pill. Color grade: warm + slightly desaturated on footage (Pictory: Cinematic or Warm Documentary).", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg (#0d0d1a) + The Investigator (serious) left + bold gold text right + CASE #001 top-left + ruins 20% opacity bg. Export VH_Case001_Thumbnail_A.png. Version B: same but Unsettled expression. Export VH_Case001_Thumbnail_B.png. Channel trailer: ElevenLabs Brad → record 60–90s script → Pictory → best ruins footage → export VH_Channel_Trailer.mp4 → YouTube Studio → Customization → Layout → Channel trailer (non-subscribers only).", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
-    { id: "su4", name: "Export main video + 3 Shorts", desc: "Pictory → Export → YouTube preset 1080p → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering create 3 Shorts: Short #1 Hook (45–60s) · Short #2 Mystery reveal ('No palaces. No rulers. No evidence.') · Short #3 Ending CTA. Each Short: Pictory 9:16 → The Investigator corner overlay → captions → bold hook text → export. Save: VH_Case001_SHORT1/2/3.mp4.", tags:[{t:"$19/mo",c:"paid"},{t:"2:30–5:00pm",c:"time"}] },
+    { id: "su1", name: "Pre-edit check + DaVinci assembly + Ken Burns stills", desc: "Audio check: play all 5 HeyGen MP4s back to back — audio levels consistent? Footage verify: ☐ Cold open ☐ S1 Hook 3 clips ☐ S2 Background 6 clips ☐ S3 Mystery 3 clips + 4 still images ☐ S4 Theories 6 clips ☐ S5 Ending 3 clips. Then: DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first (HeyGen MP4s) → footage on V1 → Investigator on V2. Cold open: 4-second dramatic ruins shot, music only. Ken Burns stills: import Wikimedia images → add Transform keyframes → slow pan/zoom 5–6 seconds each.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
+    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order in DaVinci Resolve: footage clips = BACKGROUND layer. The Investigator HeyGen videos (5 MP4s) = overlay ON TOP on a separate video track. He appears talking over the ruins footage. Match each HeyGen section to its footage section (S1 Hook → S5 Ending). Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: use CapCut auto-captions on the final export, or YouTube auto-captions post-upload. Color grade: warm + slightly desaturated on footage clips (DaVinci Color tab → Lift/Gamma/Gain).", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg (#0d0d1a) + The Investigator (serious) left + bold gold text right + CASE #001 top-left + ruins 20% opacity bg. Export VH_Case001_Thumbnail_A.png. Version B: same but Unsettled expression. Export VH_Case001_Thumbnail_B.png. Channel trailer: HeyGen → The Investigator → 60–90s trailer script → generate → DaVinci → overlay best ruins footage → export VH_Channel_Trailer.mp4 → YouTube Studio → Customization → Layout → Channel trailer (non-subscribers only).", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
+    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering create 3 Shorts: Short #1 Hook (45–60s) · Short #2 Mystery reveal ('No palaces. No rulers. No evidence.') · Short #3 Ending CTA. Each Short: DaVinci → new timeline → 9:16 vertical → The Investigator clip + footage → captions (CapCut) → bold hook text → export. Save: VH_Case001_SHORT1/2/3.mp4.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
   ],
   mon: [
     { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_Indus_Valley_FINAL.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ character overlays correct expressions ☐ Ken Burns stills smooth ☐ captions readable ☐ color grade unified ☐ music 10–15% under narration ☐ pacing cuts every 5–8s. Ask honestly: would I watch this randomly? Fix + re-export if needed. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
@@ -530,7 +530,7 @@ const TASKS = {
     { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment + Reddit post for r/UnsolvedMysteries.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
     { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check. Save to 'Case #002 — Roanoke / Audio'.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
     { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps (Wikimedia). S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + Short (Roanoke)", desc: "Pre-edit: ☐ generate The Investigator in HeyGen (paste 5 script sections, Brad voice) ☐ footage verified. Pictory: 4s cold open → footage background + Investigator HeyGen overlays → overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → captions → export VH_Case002_FINAL.mp4. Thumbnail: The Investigator (concerned) + CASE #002. Short → VH_Case002_SHORT.mp4.", tags:[{t:"Pictory",c:"paid"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + Short (Roanoke)", desc: "Pre-edit: ☐ generate The Investigator in HeyGen (paste 5 script sections, Brad voice) ☐ footage verified. DaVinci Resolve: 4s cold open → footage background + Investigator HeyGen overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → captions (CapCut) → export VH_Case002_FINAL.mp4. Thumbnail: The Investigator (concerned) + CASE #002. Short → VH_Case002_SHORT.mp4.", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST. Save pinned comment + Short + Reddit post ready to paste on launch day.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
@@ -542,7 +542,7 @@ const TRACKER_STEPS = [
   { key:"voiceover", icon:"🎙️", label:"Voiceover",                note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",             note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
   { key:"heygen",    icon:"🎭", label:"HeyGen — The Investigator",    note:"Generate The Investigator talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s to HeyGen Character folder" },
-  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"Audio check → Pictory → cold open → text overlays → captions → export FINAL.mp4 → Canva thumbnail A" },
+  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
   { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: \"The full story is on the channel — this is just 60 seconds of it\" + link" },
   { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE TOGGLE → Details → \"Altered content\" (may show as \"AI use\") → YES · schedule 2pm PST" },
   { key:"launch",    icon:"🚀", label:"Launch day",                note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each" },
@@ -704,7 +704,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$188</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$140</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">4–5 channels</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -736,7 +736,7 @@ function TasksPanel({ doneSet, onToggle }) {
     { badge:"Thu Jun 4 · 6:00–9:00pm", cls:"badge-thu", title:"Research + footage prep + script", sub:"Delete old footage · map visual needs · write script", tasks: TASKS.thu },
     { badge:"Fri Jun 5 · 7:00–10:00pm", cls:"badge-fri", title:"Voiceover + full footage search", sub:"Section-by-section · cold open first · 25–35 clips", tasks: TASKS.fri },
     { badge:"Sat Jun 6 · Complete ✅", cls:"badge-sat", title:"Character Build Day — The Investigator", sub:"Design v5 → transparent PNG → HeyGen setup → 5 sections generated", tasks: TASKS.sat },
-    { badge:"Sun Jun 7 · 7:00am–5:00pm", cls:"badge-sun", title:"Edit Day — Pictory + overlays + export", sub:"Assembly → character overlays → thumbnail → 3 Shorts → export", tasks: TASKS.sun },
+    { badge:"Sun Jun 7 · 7:00am–5:00pm", cls:"badge-sun", title:"Edit Day — DaVinci + overlays + export", sub:"Assembly → character overlays → thumbnail → 3 Shorts → export", tasks: TASKS.sun },
     { badge:"Mon Jun 8 · 7:00am–2:00pm", cls:"badge-mon", title:"QC + Upload + Schedule", sub:"Watch-through → SEO → upload → schedule Thu Jun 11 2pm PST", tasks: TASKS.mon },
     { badge:"Tue Jun 9 + Wed Jun 10 · Buffer 🛡️", cls:"badge-wed", title:"Free buffer days", sub:"Fix anything that needs fixing before Thursday launch", tasks: [] },
     { badge:"Thu Jun 11 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
@@ -1026,7 +1026,7 @@ function GrowthPanel() {
         {[
           ["Video chapters (6–8 per video)","YouTube Studio · 5 min · keyword-rich titles only · free"],
           ["200–300 word description","Prose with keywords + affiliate links + subscribe CTA · Google indexes this"],
-          ["3 Shorts per long-form video","Each chapter = a natural Short · 3x better than 1 Short · built into Pictory"],
+          ["3 Shorts per long-form video","Each chapter = a natural Short · 3x better than 1 Short · cut in DaVinci then caption in CapCut"],
           ["Reddit seeding (within 48hrs)","r/UnsolvedMysteries · r/AncientCivilizations · engage first, link second"],
           ["Quora answer (within 48hrs)","Find question with 10K+ views · write substantive answer · link at end · ranks on Google"],
           ["Reply to ALL comments (6 months)","Not just 24 hours · 20 min/day · builds loyal core audience"],
@@ -1078,26 +1078,26 @@ function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script writing, research, outlines, SEO metadata, strategy",cost:"$100/mo",paid:true},
     {name:"ElevenLabs (Brad voice)",use:"AI voiceover — Creator tier, 192kbps, Stability 60%/Similarity 78%/Style 18%",cost:"$11/mo",paid:true},
-    {name:"Pictory AI",use:"Auto-assemble video from script + voiceover + stock footage",cost:"$19/mo",paid:true},
     {name:"HeyGen (Creator)",use:"The Investigator — animated talking character host, lip-synced to Brad's voice (imported via ElevenLabs API). Generates the character speaking each script section.",cost:"$29/mo",paid:true},
+    {name:"DaVinci Resolve 21",use:"Professional video editing — layer footage + Investigator overlays + text + music + color grade + export 1080p. Free version has everything needed.",cost:"Free",paid:false},
+    {name:"CapCut",use:"Auto-generate captions from final video — style and burn in before upload. Free alternative to Pictory captions.",cost:"Free",paid:false},
     {name:"Canva",use:"Thumbnail design, channel banner, logo",cost:"Free tier",paid:false},
     {name:"vidIQ",use:"SEO, keyword research, tags, outlier analysis, analytics insights",cost:"Free tier",paid:false},
     {name:"archive.org",use:"Free public domain historical footage — core source for history niche",cost:"Free",paid:false},
     {name:"Wikimedia Commons",use:"Free historical images, maps, diagrams, artifact photos",cost:"Free",paid:false},
     {name:"Pexels",use:"Free stock footage — ancient ruins, landscapes, atmospheric",cost:"Free",paid:false},
     {name:"YouTube Audio Library",use:"Royalty-free music — cinematic, dark ambient, documentary",cost:"Free",paid:false},
-    {name:"HappyScribe",use:"Auto-generate SRT caption files from MP3 voiceover",cost:"Free tier",paid:false},
     {name:"Google AdSense",use:"Link to YouTube for ad monetization — set up before launch",cost:"Free",paid:false},
   ];
   return (
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$188/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$140/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$188</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$140</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 12</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1122,10 +1122,10 @@ function AutomationPanel() {
     {task:"Topic & keyword research",tool:"vidIQ + Claude",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"5 min"},
     {task:"Script writing",tool:"Claude",fill:100,label:"Full AI",cls:"full",before:"3–4 hrs",after:"15 min"},
     {task:"Voiceover narration",tool:"ElevenLabs Brad",fill:100,label:"Full AI",cls:"full",before:"2 hrs",after:"10 min"},
-    {task:"Captions / subtitles",tool:"Pictory auto-captions",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"2 min"},
+    {task:"Captions / subtitles",tool:"CapCut auto-captions + YouTube auto-captions",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"2 min"},
     {task:"Title, description & tags",tool:"Claude + vidIQ",fill:100,label:"Full AI",cls:"full",before:"45 min",after:"5 min"},
     {task:"Upload scheduling",tool:"YouTube Studio",fill:100,label:"Full AI",cls:"full",before:"20 min",after:"2 min"},
-    {task:"Video assembly & editing",tool:"Pictory AI",fill:70,label:"Partial AI",cls:"part",before:"3–4 hrs",after:"30–45 min"},
+    {task:"Video assembly & editing",tool:"DaVinci Resolve 21 (free)",fill:50,label:"Manual",cls:"part",before:"3–4 hrs",after:"2–3 hrs"},
     {task:"Thumbnail design",tool:"The Investigator (HeyGen) + Canva → you review",fill:60,label:"Partial AI",cls:"part",before:"45 min",after:"15 min"},
     {task:"Niche & topic strategy",tool:"Your judgment — Claude informs",fill:20,label:"Human only",cls:"human",after:"30 min/wk"},
     {task:"Quality control",tool:"You — watch every video before upload",fill:20,label:"Human only",cls:"human",after:"15 min/video"},
@@ -1289,7 +1289,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">full daily commitment</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$188</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$140</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1326,7 +1326,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $188/mo tool cost · no freelancers required</div>
+        <div className="panel-sub">5-channel empire · $140/mo tool cost · no freelancers required</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
@@ -1392,7 +1392,7 @@ function SOPPanel() {
       <div className="sop-box">
         {[
           ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
-          ["Tuesday — Pictory edit","Script to Video → review clips → text overlays → captions → export","2–3 hrs"],
+          ["Tuesday — DaVinci edit","Footage background → Investigator overlays → text overlays → color grade → export → CapCut captions","2–3 hrs"],
           ["Wednesday — Thumbnail + upload","The Investigator (HeyGen) → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
           ["Thursday — Community + distribution","Reddit seeding → Quora answer → pinned comment → Short upload → reply to all comments","1–2 hrs"],
           ["Friday — Analytics + next week prep","YouTube Studio analytics → Claude writes next 3 scripts → content calendar updated","2–3 hrs"],
@@ -1500,7 +1500,7 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: The Investigator — animated talking host built in HeyGen (Creator tier), lip-synced to Brad's voice via ElevenLabs API. Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + Pictory ($19) + HeyGen ($29) + Canva (free) + vidIQ (free) = $188/mo total.
+CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: The Investigator — animated talking host built in HeyGen (Creator tier), lip-synced to Brad's voice via ElevenLabs API. Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Canva (free) + vidIQ (free) = $140/mo total.
 
 SCALING PLAN: Phase 1 (Ch1 only, Jun–Dec 2026) → Phase 2 (launch Business Autopsies, Jan 2027, $14-35 RPM) → Phase 3 (Wealth Code + Dark Psychology, Jul–Oct 2027) → Phase 4 (AI Decoded, 2028, $20K-50K/mo target).
 
