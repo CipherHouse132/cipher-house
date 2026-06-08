@@ -1,12 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 // ─── SUPABASE SYNC CONFIG ────────────────────────────────────────────────────
-// ⚠️ PASTE YOUR TWO VALUES BELOW (from Supabase → Project Settings → API).
-//    These are safe to keep in frontend code (anon key is public by design).
-//    Until you fill these in, the app automatically falls back to localStorage
-//    (works fine on one device; cross-device sync activates once keys are set).
-const SUPABASE_URL = "https://dmktuxnxzjdajxfnlttp.supabase.co";        // e.g. https://xxxxxxxx.supabase.co  (NO trailing /rest/v1/)
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRta3R1eG54empkYWp4Zm5sdHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2Mjg4NTEsImV4cCI6MjA5NjIwNDg1MX0.Ti2Am69_VBeEJouOjZkiriTWUXF49D6BgcyEIC_FklA"; // the long "anon public" key
+const SUPABASE_URL = "https://dmktuxnxzjdajxfnlttp.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRta3R1eG54empkYWp4Zm5sdHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2Mjg4NTEsImV4cCI6MjA5NjIwNDg1MX0.Ti2Am69_VBeEJouOjZkiriTWUXF49D6BgcyEIC_FklA";
 
 const SYNC_ON =
   SUPABASE_URL.startsWith("http") &&
@@ -21,7 +17,6 @@ const sbHeaders = {
   "Content-Type": "application/json",
 };
 
-// Pull every checked id from the cloud. Returns a Set of ids, or null on failure.
 async function sbFetchAll() {
   if (!SYNC_ON) return null;
   try {
@@ -32,7 +27,6 @@ async function sbFetchAll() {
   } catch { return null; }
 }
 
-// Upsert one id's checked state. Fire-and-forget; localStorage already updated.
 async function sbSet(id, checked) {
   if (!SYNC_ON) return;
   try {
@@ -41,7 +35,7 @@ async function sbSet(id, checked) {
       headers: { ...sbHeaders, "Prefer": "resolution=merge-duplicates" },
       body: JSON.stringify({ id, checked, updated_at: new Date().toISOString() }),
     });
-  } catch { /* offline — localStorage keeps the change, re-syncs next load */ }
+  } catch {}
 }
 
 // ─── DESIGN TOKENS ──────────────────────────────────────────────────────────
@@ -262,7 +256,6 @@ const css = `
     padding: 16px 24px 20px; z-index: 100;
     transition: all 0.3s ease;
   }
-  .ai-dock.expanded { bottom: 0; }
   .ai-bar {
     display: flex; gap: 10px; align-items: flex-end;
     background: var(--bg2); border: 1px solid var(--border2);
@@ -363,13 +356,55 @@ const css = `
   .info-title { font-size: 12px; font-weight: 500; color: var(--gold); margin-bottom: 6px; }
   .info-body { font-size: 12px; color: var(--text3); line-height: 1.7; }
 
+  /* ─── TRAJECTORY PANEL STYLES ─── */
+  .traj-phase-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+  .traj-bridge { background: var(--blue-bg); color: #6090c8; border: 1px solid rgba(61,111,168,0.3); }
+  .traj-commit { background: var(--gold-dim2); color: var(--gold2); border: 1px solid rgba(201,168,76,0.35); }
+  .traj-optimize { background: var(--purple-bg); color: #a070d0; border: 1px solid rgba(112,80,160,0.3); }
+  .vid-row { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 15px; margin-bottom: 6px; display: flex; gap: 12px; align-items: flex-start; }
+  .vid-row.produced { border-color: rgba(61,143,98,0.3); background: rgba(61,143,98,0.04); }
+  .vid-row.thesis { border-color: rgba(201,168,76,0.35); }
+  .vid-row.canary { border-color: rgba(112,80,160,0.35); }
+  .vid-num { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold); min-width: 28px; flex-shrink: 0; margin-top: 1px; }
+  .vid-body { flex: 1; }
+  .vid-topic { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .vid-title { font-size: 12px; color: var(--gold2); font-style: italic; margin-bottom: 3px; }
+  .vid-note { font-size: 11.5px; color: var(--text3); line-height: 1.5; }
+  .vid-flag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 3px; background: var(--gold-dim); color: var(--gold2); margin-left: 6px; vertical-align: middle; letter-spacing: 0.04em; }
+
+  /* ─── PRODUCTION LOOP PANEL STYLES ─── */
+  .step-flow { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .step-chip { font-family: 'DM Mono', monospace; font-size: 10px; padding: 5px 10px; border-radius: 6px; background: var(--bg3); border: 1px solid var(--border); color: var(--text2); }
+  .step-n { color: var(--gold); margin-right: 4px; }
+  .short-row { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 15px; margin-bottom: 6px; }
+  .short-label { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .short-desc { font-size: 12px; color: var(--text3); line-height: 1.5; }
+  .gate-row { display: flex; align-items: flex-start; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .gate-row:last-child { border-bottom: none; }
+  .gate-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); white-space: nowrap; min-width: 80px; flex-shrink: 0; margin-top: 2px; }
+  .gate-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+
+  /* ─── CHANNEL LINEUP STYLES ─── */
+  .lineup-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px; display: flex; gap: 14px; align-items: flex-start; }
+  .lineup-item.lead { border-color: rgba(201,168,76,0.4); background: linear-gradient(135deg, var(--bg2), rgba(201,168,76,0.03)); }
+  .lineup-item.ch1 { border-color: rgba(61,143,98,0.3); }
+  .lineup-rank { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--gold); line-height: 1; min-width: 32px; flex-shrink: 0; margin-top: 2px; }
+  .lineup-body { flex: 1; }
+  .lineup-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .lineup-role { font-size: 12px; color: var(--text3); margin-bottom: 7px; line-height: 1.5; }
+  .lineup-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .ltag { font-family: 'DM Mono', monospace; font-size: 10px; padding: 2px 8px; border-radius: 4px; background: rgba(255,255,255,0.05); color: var(--text2); }
+  .ltag-rpm { background: var(--gold-dim); color: var(--gold2); }
+  .ltag-live { background: var(--green-bg); color: #60b080; }
+  .ltag-blue { background: var(--blue-bg); color: #6090c8; }
+
   .panel { padding-bottom: 100px; }
 
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
-  /* ─── MOBILE TOP BAR + BOTTOM NAV (hidden on desktop) ─────────────────── */
+  /* ─── MOBILE ─── */
   .mobile-bar { display: none; }
   .mobile-nav { display: none; }
   .mobile-scrim { display: none; }
@@ -377,8 +412,6 @@ const css = `
   @media (max-width: 820px) {
     html, body, #root { font-size: 15px; overflow: auto; }
     .app { flex-direction: column; height: auto; min-height: 100vh; }
-
-    /* Desktop sidebar becomes a slide-in drawer */
     .sidebar {
       position: fixed; top: 0; left: 0; bottom: 0; z-index: 60;
       width: 80vw; max-width: 300px;
@@ -387,8 +420,6 @@ const css = `
     }
     .sidebar.open { transform: translateX(0); }
     .mobile-scrim.show { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 55; }
-
-    /* Mobile top bar with hamburger */
     .mobile-bar {
       display: flex; align-items: center; justify-content: space-between;
       position: sticky; top: 0; z-index: 50;
@@ -397,21 +428,14 @@ const css = `
     }
     .mobile-bar .mb-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 900; color: var(--gold); letter-spacing: 0.05em; }
     .mobile-bar .mb-burger { font-size: 22px; color: var(--text); background: none; border: none; cursor: pointer; line-height: 1; padding: 4px 8px; }
-
     .main { overflow: visible; }
     .panel { padding: 20px 16px 120px; }
     .panel-title { font-size: 21px; }
-
-    /* Stack all multi-column grids */
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
     .ov-grid { grid-template-columns: 1fr; }
     .case-detail-grid { grid-template-columns: 1fr; }
-
-    /* AI dock spans full width, sits above bottom nav */
     .ai-dock, .ai-panel { left: 0 !important; }
     .ai-dock { bottom: 56px; }
-
-    /* Persistent bottom nav for the most-used panels */
     .mobile-nav {
       display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
       background: var(--bg2); border-top: 1px solid var(--border);
@@ -424,8 +448,6 @@ const css = `
     }
     .mobile-nav .mn-item.active { color: var(--gold); }
     .mobile-nav .mn-icon { font-size: 16px; line-height: 1; }
-
-    /* Bigger touch targets */
     .task-card { padding: 14px; }
     .nav-item { padding: 12px 18px; font-size: 14px; }
   }
@@ -437,8 +459,6 @@ const css = `
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
-// Date-keyed action schedule (mirrors the Google Calendar). Used by the Today widget.
-// Each entry: what to actually DO that day, in priority order.
 const SCHEDULE = {
   "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
   "2026-06-06": ["✅ The Investigator designed (v5 final) + transparent PNG", "✅ HeyGen Creator set up + Brad voice imported via ElevenLabs API", "✅ All 5 sections generated — Investigator talking, lip-sync confirmed", "✅ 5 HeyGen MP4s saved to HeyGen Character folder"],
@@ -461,7 +481,7 @@ const SCHEDULE = {
   "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
   "2026-06-24": ["✍️ Case #008 — Research + script (Franz Ferdinand)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
   "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
-  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — The Investigator Case #008 (MUST DO TONIGHT)", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — The Investigator Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — The Investigator Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
   "2026-06-28": ["✍️ Case #010 — Research + script (Baghdad Battery)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
   "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
@@ -476,10 +496,9 @@ const SCHEDULE = {
   "2026-07-08": ["📹 CASE #012 GOES LIVE 2pm — final video of Month 1 🎉", "🌐 Reddit + Quora seeding (Case #012)", "🖼️ A/B check — Cases #004/#005/#006", "💬 Comment replies"],
 };
 
-// Recurring weekday reminders that apply even on days not in SCHEDULE.
 function recurringFor(dateStr) {
   const d = new Date(dateStr + "T12:00:00");
-  const day = d.getDay(); // 0 Sun … 6 Sat
+  const day = d.getDay();
   const out = [];
   if ([1,3,5].includes(day)) out.push("💬 Comment reply session (8:30pm, ~15 min)");
   if (day === 5) out.push("📊 Weekly analytics check");
@@ -489,92 +508,151 @@ function recurringFor(dateStr) {
 const TASKS = {
   wed: [
     { id: "w1", name: "Create your YouTube channel", desc: "youtube.com → profile → Create a channel → Use custom name → 'Vanished History'. Do NOT use your personal account name.", links: [{label:"youtube.com →", url:"https://youtube.com"}], tags:[{t:"Free",c:"free"},{t:"10 min",c:"time"},{t:"Do first",c:"urgent"}] },
-    { id: "w2", name: "Write and add channel description", desc: "YouTube Studio → Customization → Basic Info. Description: 'We investigate history's greatest unsolved mysteries — lost civilizations, vanished peoples, forgotten empires. New videos Mon, Wed, Fri.'", tags:[{t:"Free",c:"free"},{t:"15 min",c:"time"}] },
+    { id: "w2", name: "Write and add channel description", desc: "YouTube Studio → Customization → Basic Info. Description: 'We investigate lost civilizations, vanished empires, and the wealth and power that disappeared from history. New videos Mon, Wed, Fri.'", tags:[{t:"Free",c:"free"},{t:"15 min",c:"time"}] },
     { id: "w3", name: "Design logo and channel banner in Canva", desc: "Logo 800×800px: dark bg (#1a1a2e), bold serif font, magnifying glass icon. Banner 2560×1440px: same dark bg, channel name + tagline + schedule. White + amber/gold text only.", links:[{label:"canva.com →", url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"45–60 min",c:"time"}] },
     { id: "w4", name: "Upload logo, banner + set watermark", desc: "YouTube Studio → Customization → Branding tab. Upload logo and banner. Set watermark to your logo, display entire video. Hit Publish.", tags:[{t:"Free",c:"free"},{t:"10 min",c:"time"}] },
     { id: "w5", name: "Set up Google AdSense", desc: "adsense.google.com → Get started → create account with your channel email. Takes 1–2 days to verify — start tonight to avoid delays at monetization.", links:[{label:"adsense.google.com →", url:"https://adsense.google.com"}], tags:[{t:"Free",c:"free"},{t:"20 min",c:"time"},{t:"1–2 day delay!",c:"urgent"}] },
-    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), HeyGen ($29/mo Creator — animated character host), Canva. Download DaVinci Resolve 21 (free) and CapCut (free). Bookmark archive.org and commons.wikimedia.org.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"blackmagicdesign.com →",url:"https://www.blackmagicdesign.com/products/davinciresolve"}], tags:[{t:"~$29/mo",c:"paid"},{t:"30 min",c:"time"}] },
+    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), HeyGen ($29/mo Creator — animated character host), Canva. Download DaVinci Resolve 21 (free) and CapCut (free).", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"blackmagicdesign.com →",url:"https://www.blackmagicdesign.com/products/davinciresolve"}], tags:[{t:"~$29/mo",c:"paid"},{t:"30 min",c:"time"}] },
   ],
   thu: [
     { id: "t1", name: "Delete old footage + map script to visual needs", desc: "Delete all previously downloaded footage. Map each of the 5 script sections to specific visual needs before searching Friday. S1 Hook: dramatic ruins. S2 Background: Mohenjo-daro brick streets, maps. S3 Mystery: stone seals, artifacts. S4 Theories: drought/dried riverbeds. S5 Ending: wide atmospheric landscapes.", tags:[{t:"Free",c:"free"},{t:"8:30–9:00pm",c:"time"}] },
     { id: "t2", name: "Research the Indus Valley + generate script", desc: "Ask Claude to research: most shocking facts, the 4 collapse theories, why no writing has been deciphered, the simultaneous collapse. Then generate full 5-section voiceover script (1,600–1,800 words) + 4 SEO title options + 200-word description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"6:00–8:30pm",c:"time"},{t:"Most critical",c:"urgent"}] },
   ],
   fri: [
-    { id: "f1", name: "Full section-by-section footage search", desc: "Using Thursday's visual map: find cold open clip FIRST (one dramatic ruins shot, 4 seconds). Then by section. Archive.org: 'Mohenjo-daro', 'Indus Valley', 'Harappa'. Wikimedia: maps, diagrams, seal photos. Pexels: 'ancient ruins', 'dried riverbed', 'desert landscape'. 25–35 clips total. Also check audio levels on all 5 MP3s back to back tonight.", links:[{label:"archive.org →",url:"https://archive.org"},{label:"Wikimedia →",url:"https://commons.wikimedia.org"},{label:"pexels.com →",url:"https://pexels.com"}], tags:[{t:"Free",c:"free"},{t:"7:00–10:00pm",c:"time"}] },
-    { id: "f2", name: "Generate voiceover in ElevenLabs", desc: "elevenlabs.io → Text to Speech → Brad (Clear Narrator). Settings: Stability 60%, Similarity 78%, Style Exaggeration 18%, 192kbps. Paste each section → generate → download. 5 MP3 files. Listen all back to back — check volume consistency. Re-generate any robotic sentences.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"}], tags:[{t:"$11/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
+    { id: "f1", name: "Full section-by-section footage search", desc: "Using Thursday's visual map: find cold open clip FIRST (one dramatic ruins shot, 4 seconds). Then by section. Archive.org: 'Mohenjo-daro', 'Indus Valley', 'Harappa'. Wikimedia: maps, diagrams, seal photos. Pexels: 'ancient ruins', 'dried riverbed', 'desert landscape'. 25–35 clips total.", links:[{label:"archive.org →",url:"https://archive.org"},{label:"Wikimedia →",url:"https://commons.wikimedia.org"},{label:"pexels.com →",url:"https://pexels.com"}], tags:[{t:"Free",c:"free"},{t:"7:00–10:00pm",c:"time"}] },
+    { id: "f2", name: "Generate voiceover in ElevenLabs", desc: "elevenlabs.io → Text to Speech → Brad (Clear Narrator). Settings: Stability 60%, Similarity 78%, Style Exaggeration 18%, 192kbps. Paste each section → generate → download. 5 MP3 files. Listen all back to back — check volume consistency.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"}], tags:[{t:"$11/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
   ],
   sat: [
-    { id: "s1", name: "Design The Investigator + export transparent PNG", desc: "Character locked at v5 final: male, serious/mysterious, dark trench coat (#4a3828), gold belt (#c9a84c), two simple oval hands, grounded head/neck, pale skin (#e8d5b0), dark hair (#2a1f14). Exported as transparent-background PNG (880×1600px): VH_Investigator_v5_transparent.png. Saved to Vanished History — Brand Assets / Character.", tags:[{t:"Done",c:"free"},{t:"Locked v5",c:"urgent"}] },
-    { id: "s2", name: "Set up HeyGen + import Brad voice", desc: "HeyGen Creator ($29/mo monthly — switch to annual $24/mo after Month 1). Avatar → Create a virtual character → upload The Investigator PNG → name 'The Investigator'. Voice: Import from 3rd party → ElevenLabs → paste API key (Text-to-Speech access) → Brad voice now linked to the avatar inside HeyGen.", tags:[{t:"$29/mo",c:"paid"},{t:"ElevenLabs API",c:"urgent"}] },
-    { id: "s3", name: "Generate all 5 sections in HeyGen", desc: "Avatar → Quick create. Avatar: The Investigator · Voice: Hey Its Brad · 720p. Paste each script section (5,000 char cap, no splitting). Generate all 5: Hook, Background, Mystery, Theories, Ending. Lip-sync confirmed on point. Download each MP4.", tags:[{t:"HeyGen",c:"paid"},{t:"5 sections",c:"time"}] },
-    { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending. These overlay on the footage in Sunday's edit — The Investigator talking over the ruins.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
+    { id: "s1", name: "Design The Investigator + export transparent PNG", desc: "Character locked at v5 final: male, serious/mysterious, dark trench coat (#4a3828), gold belt (#c9a84c), two simple oval hands, grounded head/neck, pale skin (#e8d5b0), dark hair (#2a1f14). Exported as transparent-background PNG (880×1600px).", tags:[{t:"Done",c:"free"},{t:"Locked v5",c:"urgent"}] },
+    { id: "s2", name: "Set up HeyGen + import Brad voice", desc: "HeyGen Creator ($29/mo). Avatar → Create a virtual character → upload The Investigator PNG → name 'The Investigator'. Voice: Import from 3rd party → ElevenLabs → paste API key → Brad voice linked to avatar.", tags:[{t:"$29/mo",c:"paid"},{t:"ElevenLabs API",c:"urgent"}] },
+    { id: "s3", name: "Generate all 5 sections in HeyGen", desc: "Avatar → Quick create. Avatar: The Investigator · Voice: Hey Its Brad · 720p. Paste each script section. Generate all 5: Hook, Background, Mystery, Theories, Ending. Lip-sync confirmed. Download each MP4.", tags:[{t:"HeyGen",c:"paid"},{t:"5 sections",c:"time"}] },
+    { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
   ],
   sun: [
-    { id: "su1", name: "Pre-edit check + DaVinci assembly + Ken Burns stills", desc: "Audio check: play all 5 HeyGen MP4s back to back — audio levels consistent? Footage verify: ☐ Cold open ☐ S1 Hook 3 clips ☐ S2 Background 6 clips ☐ S3 Mystery 3 clips + 4 still images ☐ S4 Theories 6 clips ☐ S5 Ending 3 clips. Then: DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first (HeyGen MP4s) → footage on V1 → Investigator on V2. Cold open: 4-second dramatic ruins shot, music only. Ken Burns stills: import Wikimedia images → add Transform keyframes → slow pan/zoom 5–6 seconds each.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
-    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order in DaVinci Resolve: footage clips = BACKGROUND layer. The Investigator HeyGen videos (5 MP4s) = overlay ON TOP on a separate video track. He appears talking over the ruins footage. Match each HeyGen section to its footage section (S1 Hook → S5 Ending). Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: use CapCut auto-captions on the final export, or YouTube auto-captions post-upload. Color grade: warm + slightly desaturated on footage clips (DaVinci Color tab → Lift/Gamma/Gain).", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg (#0d0d1a) + The Investigator (serious) left + bold gold text right + CASE #001 top-left + ruins 20% opacity bg. Export VH_Case001_Thumbnail_A.png. Version B: same but Unsettled expression. Export VH_Case001_Thumbnail_B.png. Channel trailer: HeyGen → The Investigator → 60–90s trailer script → generate → DaVinci → overlay best ruins footage → export VH_Channel_Trailer.mp4 → YouTube Studio → Customization → Layout → Channel trailer (non-subscribers only).", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
-    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering create 3 Shorts: Short #1 Hook (45–60s) · Short #2 Mystery reveal ('No palaces. No rulers. No evidence.') · Short #3 Ending CTA. Each Short: DaVinci → new timeline → 9:16 vertical → The Investigator clip + footage → captions (CapCut) → bold hook text → export. Save: VH_Case001_SHORT1/2/3.mp4.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
+    { id: "su1", name: "Pre-edit check + DaVinci assembly", desc: "Audio check: play all 5 HeyGen MP4s back to back. Footage verify: ☐ Cold open ☐ S1 Hook clips ☐ S2 Background clips ☐ S3 Mystery clips ☐ S4 Theories clips ☐ S5 Ending clips. DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first → footage on V1 → Investigator on V2. Cold open: 4-second dramatic ruins shot, music only.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
+    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order: footage clips = BACKGROUND. The Investigator HeyGen videos = overlay ON TOP on V2. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: CapCut auto-captions on final export. Color grade: warm + slightly desaturated on footage.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg + The Investigator (serious) + bold gold text + CASE #001 + ruins bg. Version B: Unsettled expression. Channel trailer: HeyGen → 60–90s trailer → DaVinci → overlay ruins footage → export.", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
+    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering: create 3 Shorts in 9:16 vertical format. Short #1 Hook · Short #2 Mystery reveal · Short #3 Ending CTA.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
   ],
   mon: [
-    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_Indus_Valley_FINAL.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ character overlays correct expressions ☐ Ken Burns stills smooth ☐ captions readable ☐ color grade unified ☐ music 10–15% under narration ☐ pacing cuts every 5–8s. Ask honestly: would I watch this randomly? Fix + re-export if needed. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
-    { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The city that vanished overnight: what really happened to the Indus Valley civilization?' Description hook: 'In 1900 BC, a civilization of 5 million people — more advanced than ancient Rome — ceased to exist. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links. Tags: indus valley civilization, ancient mysteries, lost civilizations, unsolved history, mohenjo-daro, historical mysteries. Affiliate: sign up for Audible (affiliate-program.amazon.com) + Great Courses (thegreatcourses.com/affiliates) — takes 20 min.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "m3", name: "Upload + AI disclosure + schedule Thu Jun 11 2pm PST", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Character overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen (subscribe + next video) ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Schedule: June 11, 2:00 PM PST. Tuesday + Wednesday are buffer days — use them if anything needs fixing.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_Indus_Valley_FINAL.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ character overlays ☐ captions readable ☐ music at -20dB ☐ pacing cuts every 5–8s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
+    { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The city that vanished overnight: what really happened to the Indus Valley civilization?' Description hook: 'In 1900 BC, a civilization of 5 million people — more advanced than ancient Rome — ceased to exist. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "m3", name: "Upload + AI disclosure + schedule Thu Jun 11 2pm PST", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Character overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Schedule: June 11, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ],
   launch: [
-    { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes of going live post pinned comment: 'Most historians blame the climate. But the timing doesn't fully add up — the cities were already declining before the worst droughts hit. What's your theory? Drop it below 👇 I read every single one.' Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
-    { id: "l2", name: "Upload Case #001 Short within 1 hour of launch", desc: "Upload VH_Case001_SHORT.mp4. Title: 'A civilization of 5 million people — and we can't read a word they wrote 🤯'. Add #Shorts to description. Link to main video. ⚠️ AI Disclosure on Short too.", tags:[{t:"Within 1 hr",c:"urgent"},{t:"Free",c:"free"}] },
-    { id: "l3", name: "Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", desc: "Find active threads about the Indus Valley. Engage genuinely first — answer a question or add context. Then share your video as a follow-up resource. Never just drop a link. 'I actually made a full deep-dive on this: [link]'", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
-    { id: "l4", name: "Reply to every comment for the first 24 hours", desc: "Check YouTube Studio analytics: CTR, watch time, impressions at 24hr and 48hr. Reply to every comment. Even a simple 'Great question!' reply counts. Early engagement signals quality to the algorithm.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
+    { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post pinned comment: 'Most historians blame the climate. But the timing doesn't fully add up — the cities were already declining before the worst droughts hit. What's your theory? Drop it below 👇 I read every single one.' Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
+    { id: "l2", name: "Upload all 3 Shorts within 2 hours of launch", desc: "Upload Short #1 (hook), Short #2 (mystery reveal), Short #3 (ending CTA). Each: title with #Shorts, AI disclosure, link to main video.", tags:[{t:"Within 2 hrs",c:"urgent"},{t:"Free",c:"free"}] },
+    { id: "l3", name: "Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", desc: "Find active threads about the Indus Valley. Engage genuinely first — answer a question or add context. Then share your video as a follow-up resource. Never just drop a link.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
+    { id: "l4", name: "Reply to every comment for the first 24 hours", desc: "Check YouTube Studio analytics: CTR, watch time, impressions at 24hr and 48hr. Reply to every comment. Early engagement signals quality to the algorithm.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
   ],
   c002: [
-    { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment + Reddit post for r/UnsolvedMysteries.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
-    { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check. Save to 'Case #002 — Roanoke / Audio'.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
-    { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps (Wikimedia). S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + Short (Roanoke)", desc: "Pre-edit: ☐ generate The Investigator in HeyGen (paste 5 script sections, Brad voice) ☐ footage verified. DaVinci Resolve: 4s cold open → footage background + Investigator HeyGen overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → captions (CapCut) → export VH_Case002_FINAL.mp4. Thumbnail: The Investigator (concerned) + CASE #002. Short → VH_Case002_SHORT.mp4.", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
-    { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST. Save pinned comment + Short + Reddit post ready to paste on launch day.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
+    { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
+    { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps. S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Roanoke)", desc: "Generate The Investigator in HeyGen first. DaVinci Resolve: 4s cold open → footage background + Investigator HeyGen overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → CapCut captions → export. Thumbnail: The Investigator (concerned). 3 Shorts.", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
 
-// ─── PRODUCTION TRACKER: the 12 airtight steps applied to every case ─────────
-// Each case gets this full checklist. Persisted under localStorage key "ch_tracker".
 const TRACKER_STEPS = [
-  { key:"script",    icon:"✍️", label:"Research + script",        note:"Claude researches + writes 5-section script · RULE: answer the core question in the first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
-  { key:"voiceover", icon:"🎙️", label:"Voiceover",                note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
-  { key:"footage",   icon:"🎞️", label:"Footage hunt",             note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
-  { key:"heygen",    icon:"🎭", label:"HeyGen — The Investigator",    note:"Generate The Investigator talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s to HeyGen Character folder" },
-  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
-  { key:"shorts",    icon:"📱", label:"3 Shorts created",          note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: \"The full story is on the channel — this is just 60 seconds of it\" + link" },
-  { key:"upload",    icon:"⬆️", label:"Upload + schedule",         note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE TOGGLE → Details → \"Altered content\" (may show as \"AI use\") → YES · schedule 2pm PST" },
-  { key:"launch",    icon:"🚀", label:"Launch day",                note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each" },
-  { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",    note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
-  { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",  note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
-  { key:"thumbB",    icon:"🖼️", label:"Version B thumbnail",       note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text) · start Test & Compare" },
-  { key:"abcheck",   icon:"📊", label:"A/B check (14 days)",       note:"14 days after launch · check Test & Compare results · keep the winning thumbnail permanently" },
+  { key:"script",    icon:"✍️", label:"Research + script",          note:"Claude researches + writes 5-section script · RULE: answer the core question in first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
+  { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
+  { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
+  { key:"heygen",    icon:"🎭", label:"HeyGen — The Investigator",   note:"Generate The Investigator talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s to HeyGen Character folder" },
+  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
+  { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: 'The full story is on the channel' + link" },
+  { key:"upload",    icon:"⬆️", label:"Upload + schedule",           note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
+  { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each Short" },
+  { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",      note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
+  { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",    note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
+  { key:"thumbB",    icon:"🖼️", label:"Version B thumbnail",         note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text) · start Test & Compare" },
+  { key:"abcheck",   icon:"📊", label:"A/B check (14 days)",         note:"14 days after launch · check Test & Compare results · keep the winning thumbnail permanently" },
 ];
 
-// Recurring growth systems — not per-video, but ongoing. Persisted under "ch_systems".
 const GROWTH_SYSTEMS = [
   { key:"analytics",  icon:"📊", label:"Weekly analytics check",          cadence:"Every Friday",       note:"Views, CTR, watch time, traffic sources · note overperformers + low-CTR videos to fix" },
   { key:"comments_w", icon:"💬", label:"Comment reply session",           cadence:"Mon / Wed / Fri",    note:"Zero unanswered comments in Month 1 · strongest early algorithmic signal there is" },
   { key:"monetize",   icon:"💰", label:"Monetization milestone check",    cadence:"1st of month",       note:"500 subs → Channel Membership · 1,000 subs + 4,000 hrs → apply YPP immediately" },
   { key:"vidiq",      icon:"🔍", label:"vidIQ outlier analysis",          cadence:"First Monday",       note:"Run outlier tool on Knowledgia, Voices of the Past, Dark Docs · find breakout topics before making them" },
   { key:"review",     icon:"📈", label:"Monthly Business Review",         cadence:"First Monday",       note:"Analytics + revenue + tool stack + phase-trigger check · Claude builds next month's calendar" },
-  { key:"planning",   icon:"📅", label:"Next-month content planning",     cadence:"Monthly",            note:"Lock next 12 cases · data-driven topic selection from real Month 1 analytics" },
+  { key:"planning",   icon:"📅", label:"Next-month content planning",     cadence:"Monthly",            note:"Lock next 12 cases · data-driven topic selection from real analytics" },
 ];
 
 const CASES = [
   { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Shocked/awe", reddit:"r/AncientCivilizations · r/history", schedule:"PRODUCTION COMPLETE" },
   { num:"002", title:"The Roanoke Colony", launch:"Mon Jun 15", status:"upcoming", overlays:"CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE", cold:"Dramatic NC coastline or misty forest", footage:"Colonial ships (archive.org) · NC coastline · CROATOAN carving (Wikimedia) · Elizabethan England · forest wilderness", expression:"Concerned/troubled", reddit:"r/UnsolvedMysteries · r/history", schedule:"Script Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14" },
-  { num:"003", title:"Göbekli Tepe", launch:"Wed Jun 17", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia — excellent) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
-  { num:"004", title:"The Nazi Code Mathematician", launch:"Fri Jun 19", status:"upcoming", overlays:"ERASED FROM HISTORY · 2 YEARS SHORTER · ENIGMA · MARIAN REJEWSKI", cold:"Enigma machine close-up — gears rotating, dramatic lighting", footage:"WWII archival (archive.org — vast) · Enigma machine (Wikimedia) · Bletchley Park · wartime Europe. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWII", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
-  { num:"005", title:"The Hidden Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"Empire scale stat · HALF THE WORLD · ERASED · peak power dates", cold:"Vast landscape establishing scale — steppes, desert, or mountains", footage:"Confirm empire during research. Central Asian steppes (Pexels) · empire maps (Wikimedia) · ancient ruins", expression:"Serious/knowing", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
-  { num:"006", title:"The Black Death's Real Origin", launch:"Wed Jun 24", status:"upcoming", overlays:"1338 · 700 YEARS · DNA EVIDENCE · PATIENT ZERO", cold:"Misty ancient graveyard — dark, atmospheric", footage:"Medieval graveyard (Pexels) · Kyrgyzstan landscape · Totentanz art (Wikimedia — public domain) · Silk Road maps", expression:"Concerned/troubled", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
-  { num:"007", title:"The Russian Crown Jewels Heist", launch:"Fri Jun 26", status:"upcoming", overlays:"Jewel value · 1917 · NEVER RECOVERED · ROMANOV", cold:"Crown jewel glamour close-up — gold and diamonds", footage:"Russian imperial imagery (archive.org) · Diamond Fund photos (Wikimedia) · Bolshevik revolution archival (archive.org — excellent)", expression:"Shocked/wide eyes", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
-  { num:"008", title:"The Franz Ferdinand Assassination", launch:"Mon Jun 29", status:"upcoming", overlays:"6 ASSASSINS · WRONG TURN · 28 JUNE 1914 · THE BLACK HAND", cold:"1914 archival street footage or Franz Ferdinand portrait", footage:"WWI archival (archive.org) · Sarajevo 1914 (Wikimedia) · Franz Ferdinand photos · Austria-Hungary imperial. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWI", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
-  { num:"009", title:"The Royal Court Poisoner", launch:"Wed Jul 1", status:"upcoming", overlays:"Court death count · date · NEVER IDENTIFIED · poison name (confirm during research)", cold:"Darkened palace corridor or poison bottle close-up", footage:"Identify court during research. Royal court paintings (Wikimedia — vast public domain) · apothecary bottles · palace imagery", expression:"Knowing/sinister", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
-  { num:"010", title:"The Baghdad Battery", launch:"Fri Jul 3", status:"upcoming", overlays:"2,000 YEARS · ELECTRICITY? · 1.1 VOLTS · MESOPOTAMIA", cold:"Baghdad Battery artifact close-up, dramatic single-source lighting", footage:"Baghdad Battery photos (Wikimedia — excellent) · ancient Mesopotamian ruins · Iraq Museum · electricity contrast (Pexels)", expression:"Shocked/disbelief", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
-  { num:"011", title:"How Egyptians Moved the Stones", launch:"Mon Jul 6", status:"upcoming", overlays:"2,500,000 LBS · 2.3 MILLION STONES · NOT SLAVES · WET SAND", cold:"Great Pyramid dawn aerial — epic scale", footage:"Great Pyramid footage (archive.org — extensive) · Giza aerial (Pexels) · Nile river · stonecutting imagery", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/AskHistorians", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
-  { num:"012", title:"The Antikythera Mechanism", launch:"Wed Jul 8", status:"upcoming", overlays:"37 BRONZE GEARS · 2,000 YEARS OLD · 1,400 YEAR GAP · ECLIPSE PREDICTION", cold:"Mechanism gear close-up — dramatic bronze reveal", footage:"Mechanism photos (Wikimedia — stunning) · Athens National Museum · Greek ruins · Mediterranean sea", expression:"Disbelief/shocked", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
+  { num:"003", title:"Göbekli Tepe", launch:"Wed Jun 17", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
+  { num:"004", title:"The Nazi Code Mathematician", launch:"Fri Jun 19", status:"upcoming", overlays:"ERASED FROM HISTORY · 2 YEARS SHORTER · ENIGMA · MARIAN REJEWSKI", cold:"Enigma machine close-up — gears rotating, dramatic lighting", footage:"WWII archival (archive.org) · Enigma machine (Wikimedia) · Bletchley Park · wartime Europe. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWII", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
+  { num:"005", title:"The Hidden Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"Empire scale stat · HALF THE WORLD · ERASED · peak power dates", cold:"Vast landscape establishing scale — steppes, desert, or mountains", footage:"Central Asian steppes (Pexels) · empire maps (Wikimedia) · ancient ruins", expression:"Serious/knowing", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
+  { num:"006", title:"The Black Death's Real Origin", launch:"Wed Jun 24", status:"upcoming", overlays:"1338 · 700 YEARS · DNA EVIDENCE · PATIENT ZERO", cold:"Misty ancient graveyard — dark, atmospheric", footage:"Medieval graveyard (Pexels) · Kyrgyzstan landscape · Totentanz art (Wikimedia) · Silk Road maps", expression:"Concerned/troubled", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
+  { num:"007", title:"The Russian Crown Jewels Heist", launch:"Fri Jun 26", status:"upcoming", overlays:"Jewel value · 1917 · NEVER RECOVERED · ROMANOV", cold:"Crown jewel glamour close-up — gold and diamonds", footage:"Russian imperial imagery (archive.org) · Diamond Fund photos (Wikimedia) · Bolshevik revolution archival", expression:"Shocked/wide eyes", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
+  { num:"008", title:"The Franz Ferdinand Assassination", launch:"Mon Jun 29", status:"upcoming", overlays:"6 ASSASSINS · WRONG TURN · 28 JUNE 1914 · THE BLACK HAND", cold:"1914 archival street footage or Franz Ferdinand portrait", footage:"WWI archival (archive.org) · Sarajevo 1914 (Wikimedia) · Franz Ferdinand photos. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWI", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
+  { num:"009", title:"The Royal Court Poisoner", launch:"Wed Jul 1", status:"upcoming", overlays:"Court death count · date · NEVER IDENTIFIED · poison name", cold:"Darkened palace corridor or poison bottle close-up", footage:"Royal court paintings (Wikimedia) · apothecary bottles · palace imagery", expression:"Knowing/sinister", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
+  { num:"010", title:"The Baghdad Battery", launch:"Fri Jul 3", status:"upcoming", overlays:"2,000 YEARS · ELECTRICITY? · 1.1 VOLTS · MESOPOTAMIA", cold:"Baghdad Battery artifact close-up, dramatic single-source lighting", footage:"Baghdad Battery photos (Wikimedia) · ancient Mesopotamian ruins · Iraq Museum", expression:"Shocked/disbelief", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
+  { num:"011", title:"How Egyptians Moved the Stones", launch:"Mon Jul 6", status:"upcoming", overlays:"2,500,000 LBS · 2.3 MILLION STONES · NOT SLAVES · WET SAND", cold:"Great Pyramid dawn aerial — epic scale", footage:"Great Pyramid footage (archive.org) · Giza aerial (Pexels) · Nile river · stonecutting imagery", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/AskHistorians", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
+  { num:"012", title:"The Antikythera Mechanism", launch:"Wed Jul 8", status:"upcoming", overlays:"37 BRONZE GEARS · 2,000 YEARS OLD · 1,400 YEAR GAP · ECLIPSE PREDICTION", cold:"Mechanism gear close-up — dramatic bronze reveal", footage:"Mechanism photos (Wikimedia) · Athens National Museum · Greek ruins · Mediterranean sea", expression:"Disbelief/shocked", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
+];
+
+// ─── NEW: VANISHED HISTORY CONTENT TRAJECTORY DATA ──────────────────────────
+const TRAJECTORY = {
+  repositioning: "Drift from 'historical mysteries' toward lost civilizations, lost wealth, and collapsed empires — through the lens of what they had and what happened to it. Same archive footage, same research effort — better CPM, finance-adjacent advertisers, clearer hook.",
+  steeringRule: "After Video 8, look at which vein won: pure lost-civilization (4,6,8), wealth-and-power (5,7), or treasure/mystery (9). Whichever has the best retention × CTR becomes the spine for Videos 13+. Video 10 is the canary — if it performs, push further toward markets; if it flops, pull back to civilizations.",
+  holdTheLine: "Stay on the history side of 'history that attracts money-minded viewers' — never become 'a finance channel wearing a toga.' That distinct identity is what makes the channel valuable as a resale asset.",
+  phases: [
+    {
+      id: "bridge",
+      label: "Phase 1 · Bridge",
+      desc: "Videos 1–3 · Establish category, soft-lean toward 'lost sophistication'",
+      cls: "traj-bridge",
+      videos: [
+        { num:"01", topic:"Indus Valley Civilization", title:'"The Advanced Civilization That Vanished Without a Trace"', note:"Launches Thu Jun 11, 2pm PST. Sets the algorithm's first impression.", flag:"PRODUCED", cls:"produced" },
+        { num:"02", topic:"Göbekli Tepe", title:'"The Civilization That Was 7,000 Years Too Advanced"', note:"Natural bridge — sophisticated society, remarkable achievement, vanished. Plants the 'lost sophistication' seed.", flag:"", cls:"" },
+        { num:"03", topic:"The Minoans", title:'"How the World\'s Richest Trade Empire Collapsed"', note:"Introduces wealth & trade power for the first time. Word 'collapsed' conditions audience for Phase 2.", flag:"", cls:"" },
+      ]
+    },
+    {
+      id: "commit",
+      label: "Phase 2 · Commit",
+      desc: "Videos 4–8 · Wealth and collapse front and center",
+      cls: "traj-commit",
+      decision: "Decision point — after Video 3 you have Video 1's data. Retention, CTR, and traffic source tells you whether to lean or lunge into Phase 2.",
+      videos: [
+        { num:"04", topic:"The Bronze Age Collapse", title:'"How Every Empire Fell in the Same 50 Years"', note:"Thesis statement video. Formally announces the channel's new identity. 1177 BC — the entire interconnected world collapsed almost simultaneously.", flag:"THESIS", cls:"thesis" },
+        { num:"05", topic:"Mansa Musa & the Mali Empire", title:"The richest individual in human history", note:"Pure wealth-and-power story. Highly searchable, strong CPM pull, perfectly on-thesis.", flag:"", cls:"" },
+        { num:"06", topic:"The Khmer Empire / Angkor", title:"Largest pre-industrial city on earth, abandoned to jungle", note:"Staggering wealth & engineering, water control, trade dominance, collapse.", flag:"", cls:"" },
+        { num:"07", topic:"How Rome Debased Its Currency to Death", title:"History that rhymes with modern monetary anxiety", note:"Strongest present-day-relevance hook. Clearest crossover toward Business Forensics. Highest CPM topic on this list.", flag:"HIGHEST CPM", cls:"thesis" },
+        { num:"08", topic:"The Maya Collapse", title:"Why advanced societies collapse — drought & resource overshoot", note:"Sustainability/resource angle gives present-day weight beyond a standard retelling.", flag:"", cls:"" },
+      ]
+    },
+    {
+      id: "optimize",
+      label: "Phase 3 · Optimize",
+      desc: "Videos 9–12 · Test the edges, then double down",
+      cls: "traj-optimize",
+      videos: [
+        { num:"09", topic:"Lost Treasure of the Knights Templar", title:"Tests the pure 'lost wealth mystery' vein", note:"Power, money, sudden destruction, missing fortune. Likely high CTR — watch retention.", flag:"", cls:"" },
+        { num:"10", topic:"The South Sea Bubble / Tulip Mania", title:"A historical financial mania — boldest test", note:"Leans hardest toward Business Forensics. If it performs, you've found the most lucrative edge. If it flops, audience wants civilizations not markets.", flag:"CANARY", cls:"canary" },
+        { num:"11", topic:"Easter Island / Rapa Nui", title:"Collapse and resource depletion", note:"High search demand. Tests whether the reframe holds on a heavily-covered topic.", flag:"", cls:"" },
+        { num:"12", topic:"Indus Valley — revisited through trade & economy", title:"Callback to Video 1, now through the wealth-and-trade lens", note:"Demonstrates channel evolution. Direct before/after reframe comparison in your own analytics.", flag:"", cls:"" },
+      ]
+    }
+  ]
+};
+
+// ─── NEW: UPDATED EMPIRE CHANNEL LINEUP ─────────────────────────────────────
+const CHANNEL_LINEUP = [
+  { rank:"1", name:"Vanished History", role:"Foundation & system-building channel · reframing toward lost wealth & collapsed empires", rpm:"$12–20 RPM (post-pivot)", launch:"Live Jun 11", trigger:"—", proj:"$500–2k by Month 12", cls:"ch1", tags:["live", "rpm-low", "resale: 24–48x"] },
+  { rank:"2", name:"Business & Financial Forensics ⭐", role:"How companies actually make money — hidden revenue models, profit breakdowns. Strongest concept (8.5/10). Your breakout channel.", rpm:"$15–25 RPM", launch:"Aug 2026", trigger:"60 days stable execution", proj:"$2k–5k by Month 12", cls:"lead", tags:["blue", "breakout", "lead"] },
+  { rank:"3", name:"Personal Finance for Online Business Owners", role:"Irregular income, solopreneur taxes, reinvestment. Highest RPM niche on platform. Launched into audience you already built.", rpm:"$25–50 RPM", launch:"Q1 2027", trigger:"Ch2 in YPP", proj:"Adds $5k–10k", cls:"", tags:["highest earner"] },
+  { rank:"4", name:"AI Tools & Systems", role:"Tools & systems for small operations — evergreen, infinite supply. Decoupled from Cipher House. Lives or dies by affiliate conversion, not views.", rpm:"$20–40 RPM", launch:"Q3 2027", trigger:"Combined $2k+/mo", proj:"Adds $2k–4k", cls:"", tags:["affiliate play"] },
+  { rank:"5", name:"Financial Crime & Corporate Fraud", role:"True crime that pays like business content. White-collar/corporate fraud — cross-pollinates with all four channels. Underserved lane.", rpm:"$10–18 RPM", launch:"Q1 2028", trigger:"1 hire in place", proj:"Adds $2k–5k", cls:"", tags:["volume play"] },
+];
+
+const SCALING_GATES = [
+  { from:"Ch1 → Ch2", rule:"System stability gate", desc:"60 days of consistent execution without scrambling. Not monetization — the workflow is documented, repeatable, and runs on rhythm not hustle." },
+  { from:"Ch2 → Ch3", rule:"Monetization gate", desc:"Channel 2 in YPP before Channel 3 launches." },
+  { from:"Ch3 → Ch4", rule:"Revenue gate", desc:"Combined $2k+/month before Channel 4 launches." },
+  { from:"Ch4 → Ch5", rule:"Team gate", desc:"At least one hire (VA / editor) in place before Channel 5." },
 ];
 
 const QUICK_PROMPTS_BY_PANEL = {
@@ -582,13 +660,16 @@ const QUICK_PROMPTS_BY_PANEL = {
   tasks: ["Write Case #001 pinned comment", "Give me a pre-launch checklist", "What should I do right now?"],
   cases: ["Write the Case #002 full script", "Research the Roanoke Colony for me", "Write Case #003 Göbekli Tepe script", "Write SEO title options for Case #004", "Write the pinned comment for Case #005"],
   calendar: ["Build Month 2 content calendar", "Suggest 3 outlier video topics", "Write hooks for Week 2 videos"],
-  niches: ["Which channel should I launch second?", "Analyze Business Autopsies niche", "What's the best CPM niche right now?"],
+  niches: ["Which channel should I launch second?", "What's the best CPM niche right now?"],
   growth: ["Write a Reddit post for Case #001", "Write a Quora answer about the Indus Valley", "Draft 3 Short titles for Case #001"],
-  tools: ["Should I upgrade ElevenLabs?", "Is there a better tool than Pictory?", "What new AI tools should I know about?"],
+  tools: ["Should I upgrade ElevenLabs?", "What new AI tools should I know about?"],
   automation: ["How can I speed up my production?", "How do I batch produce 3 channels?"],
   monetization: ["When will I hit YPP at current pace?", "Draft an Audible affiliate pitch", "How do I land my first sponsorship?"],
   empire: ["When should I launch Channel 2?", "Build Channel 2 launch plan", "What's my Month 12 revenue projection?"],
-  portfolio: ["Deep dive on Wealth Code niche", "Compare Dark Psychology vs AI Decoded", "What should Channel 3 be?"],
+  trajectory: ["Write full script for Video 2 (Göbekli Tepe)", "Write the Minoans script with wealth framing", "Write 4 title options for the Bronze Age Collapse", "What should Case #004 pivot to if Indus underperforms?"],
+  prodloop: ["Write the pinned comment for Case #001", "Draft all 3 Short CTAs for Case #001", "Write the Version B thumbnail brief for Case #001"],
+  lineup: ["Build the Business Forensics channel launch plan", "What's my revenue projection at Month 18?", "When exactly should I start Channel 2?"],
+  portfolio: ["Deep dive on Business Forensics niche", "Compare Financial Crime vs Dark Psychology for Ch5", "What should Channel 3 be?"],
   revenue: ["Build a 12-month revenue projection", "How do I land my first brand deal?", "What digital product should I create first?"],
   sop: ["Write the SOP for script production", "Optimize my batch production workflow"],
   os: ["Run my monthly business review", "What are my top 3 priorities this month?"],
@@ -599,9 +680,7 @@ const QUICK_PROMPTS_BY_PANEL = {
 function TaskCard({ task, done, onToggle }) {
   return (
     <div className={`task-card ${done ? "done" : ""}`} onClick={() => onToggle(task.id)}>
-      <div className="check-box">
-        <span className="check-icon">✓</span>
-      </div>
+      <div className="check-box"><span className="check-icon">✓</span></div>
       <div className="task-body">
         <div className="task-name">{task.name}</div>
         <div className="task-desc">{task.desc}</div>
@@ -638,16 +717,12 @@ function DayBlock({ badge, badgeClass, title, sub, tasks, doneSet, onToggle }) {
 // ─── PANELS ─────────────────────────────────────────────────────────────────
 
 function TodayWidget({ setPanel }) {
-  // Local date in YYYY-MM-DD
   const now = new Date();
   const dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
   const pretty = now.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric" });
-
   const scheduled = SCHEDULE[dateStr] || [];
   const recurring = recurringFor(dateStr).filter(r => !scheduled.some(s => s.includes(r.split(" ")[1] || "")));
   const items = [...scheduled, ...recurring];
-
-  // Find the next upcoming day with actions, if today is empty
   let nextLabel = null, nextItems = [];
   if (items.length === 0) {
     const future = Object.keys(SCHEDULE).filter(d => d > dateStr).sort();
@@ -656,26 +731,24 @@ function TodayWidget({ setPanel }) {
       nextItems = SCHEDULE[future[0]];
     }
   }
-
   return (
     <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)", marginBottom:20}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:10}}>
         <div className="info-title" style={{fontSize:13,marginBottom:0}}>◷ Today — {pretty}</div>
-        <span style={{fontFamily:"'DM Mono', monospace",fontSize:10,color:"var(--text3)"}} >{items.length ? `${items.length} action${items.length>1?"s":""}` : "clear"}</span>
+        <span style={{fontFamily:"'DM Mono', monospace",fontSize:10,color:"var(--text3)"}}>{items.length ? `${items.length} action${items.length>1?"s":""}` : "clear"}</span>
       </div>
       {items.length > 0 ? (
         <div style={{display:"flex",flexDirection:"column",gap:7}}>
           {items.map((it,i) => (
             <div key={i} style={{display:"flex",gap:9,alignItems:"flex-start",fontSize:13,color:"var(--text)",lineHeight:1.5}}>
-              <span style={{color:"var(--gold)",marginTop:1}}>›</span>
-              <span>{it}</span>
+              <span style={{color:"var(--gold)",marginTop:1}}>›</span><span>{it}</span>
             </div>
           ))}
         </div>
       ) : (
         <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.6}}>
           No production tasks scheduled today.
-          {nextLabel && <> Next up — <span style={{color:"var(--text2)"}}>{nextLabel}</span>: {nextItems[0]}{nextItems.length>1?` (+${nextItems.length-1} more)`:""}.</>}
+          {nextLabel && <> Next up — <span style={{color:"var(--text2)"}}>{nextLabel}</span>: {nextItems[0]}{nextItems.length>1?` (+${nextItems.length-1} more)`:""}</>}
         </div>
       )}
       <div style={{marginTop:12,display:"flex",gap:8,flexWrap:"wrap"}}>
@@ -691,13 +764,13 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
     <div>
       <div className="panel-header">
         <div className="panel-title">Cipher House — Business Command Center</div>
-        <div className="panel-sub">YouTube Automation Empire · Channel 1 active · 4-channel portfolio in development</div>
+        <div className="panel-sub">YouTube Automation Empire · Channel 1 active · 5-channel portfolio in development</div>
         <div className="gold-line" />
       </div>
       <div className="launch-banner">
         <div>
           <div className="launch-text">Case #001 launches Thursday Jun 11</div>
-          <div className="launch-sub">The city that vanished overnight: what really happened to the Indus Valley civilization?</div>
+          <div className="launch-sub">The advanced civilization that vanished without a trace: what really happened to the Indus Valley?</div>
         </div>
         <div className="launch-date">Jun 11 · 2:00 PM PST</div>
       </div>
@@ -705,7 +778,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
         <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$140</div><div className="stat-note">Full AI stack</div></div>
-        <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">4–5 channels</div></div>
+        <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
       <div className="section-title">Quick navigation</div>
@@ -715,8 +788,8 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
           {icon:"◷", title:"Content Calendar", desc:"12 videos across 4 weekly themes. Every title planned and ready.", panel:"calendar"},
           {icon:"◈", title:"Cases #001–#012", desc:"Full production details — footage notes, overlays, cold opens for every case.", panel:"cases"},
           {icon:"↑", title:"Growth Tactics", desc:"Reddit seeding, Quora, A/B thumbnails, outlier analysis — every tactic documented.", panel:"growth"},
-          {icon:"◈", title:"Scaling Roadmap", desc:"4-phase plan from Channel 1 to 5-channel media company.", panel:"empire"},
-          {icon:"◎", title:"Channel Portfolio", desc:"All 5 planned channels with RPM, triggers, and revenue projections.", panel:"portfolio"},
+          {icon:"↗", title:"Content Trajectory", desc:"12-video reframe plan — from mysteries to lost wealth & collapsed empires.", panel:"trajectory"},
+          {icon:"◈", title:"Scaling Roadmap", desc:"5-phase plan from Channel 1 to 5-channel media company.", panel:"empire"},
         ].map(c => (
           <div key={c.panel} className="ov-card" onClick={() => setPanel(c.panel)}>
             <div className="ov-icon">{c.icon}</div>
@@ -742,10 +815,8 @@ function TasksPanel({ doneSet, onToggle }) {
     { badge:"Thu Jun 11 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
     { badge:"Mon Jun 15 – Fri Jun 19", cls:"badge-wed", title:"Case #002 — Roanoke Colony production", sub:"Script → Voiceover → Footage → Edit → Upload", tasks: TASKS.c002 },
   ];
-
   const totalTasks = Object.values(TASKS).flat().length;
   const done = Object.values(TASKS).flat().filter(t => doneSet.has(t.id)).length;
-
   return (
     <div>
       <div className="panel-header">
@@ -771,7 +842,7 @@ function CalendarPanel() {
     { week:"Week 1", theme:"Lost civilizations & vanished peoples", featured:true, videos:[
       {day:"Thu Jun 11", title:"The city that vanished overnight: what really happened to the Indus Valley civilization?"},
       {day:"Mon Jun 15", title:"The Roanoke colony: 115 people disappeared without a trace — the truth historians ignore"},
-      {day:"Wed Jun 17", title:"Göbekli Tepe: the temple that rewrote human history (and what we're still hiding)"},
+      {day:"Wed Jun 17", title:"Göbekli Tepe: the temple that rewrote human history — and the sophisticated people who built it"},
     ]},
     { week:"Week 2", theme:"Hidden figures & suppressed history", featured:false, videos:[
       {day:"Fri Jun 19", title:"The mathematician who cracked Nazi codes — and was erased from history"},
@@ -789,7 +860,6 @@ function CalendarPanel() {
       {day:"Wed Jul 8", title:"The Antikythera mechanism: a 2,000-year-old computer that shouldn't exist"},
     ]},
   ];
-
   return (
     <div>
       <div className="panel-header">
@@ -810,8 +880,7 @@ function CalendarPanel() {
             <div className="cal-theme">{w.theme}</div>
             {w.videos.map((v, j) => (
               <div key={j} className="cal-video">
-                <span className="cal-day">{v.day}</span>
-                <span>{v.title}</span>
+                <span className="cal-day">{v.day}</span><span>{v.title}</span>
               </div>
             ))}
           </div>
@@ -827,27 +896,23 @@ function CalendarPanel() {
 
 function ProductionTrackerPanel({ trackerSet, onToggleStep }) {
   const [expanded, setExpanded] = useState("002");
-
   const totalSteps = CASES.length * TRACKER_STEPS.length;
   const doneSteps = CASES.reduce((acc, c) =>
     acc + TRACKER_STEPS.filter(s => trackerSet.has(`${c.num}:${s.key}`)).length, 0);
   const pct = Math.round((doneSteps / totalSteps) * 100);
-
   return (
     <div>
       <div className="panel-header">
         <div className="panel-title">Production Tracker</div>
-        <div className="panel-sub">Every case · all 12 airtight steps · click any step to mark it done. Progress saves automatically.</div>
+        <div className="panel-sub">Every case · all 12 airtight steps · click any step to mark it done.</div>
         <div className="gold-line" />
       </div>
-
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Steps complete</div><div className="stat-val">{doneSteps}/{totalSteps}</div><div className="stat-note">across 12 cases</div></div>
         <div className="stat-card"><div className="stat-label">Overall progress</div><div className="stat-val">{pct}%</div><div className="stat-note">full pipeline</div></div>
         <div className="stat-card"><div className="stat-label">Steps per case</div><div className="stat-val">12</div><div className="stat-note">script → A/B check</div></div>
         <div className="stat-card"><div className="stat-label">Shorts total</div><div className="stat-val">36</div><div className="stat-note">3 per video</div></div>
       </div>
-
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">The 12-step pipeline — applied to every single video</div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,fontSize:11,color:"var(--text3)",lineHeight:1.5,marginTop:4}}>
@@ -856,7 +921,6 @@ function ProductionTrackerPanel({ trackerSet, onToggleStep }) {
           ))}
         </div>
       </div>
-
       {CASES.map((c) => {
         const caseDone = TRACKER_STEPS.filter(s => trackerSet.has(`${c.num}:${s.key}`)).length;
         const caseComplete = caseDone === TRACKER_STEPS.length;
@@ -903,7 +967,6 @@ function ProductionTrackerPanel({ trackerSet, onToggleStep }) {
 }
 
 function GrowthSystemsPanel({ trackerSet, onToggleStep }) {
-  // Recurring systems are tracked as simple "active / acknowledged" toggles per system.
   return (
     <div>
       <div className="panel-header">
@@ -911,14 +974,10 @@ function GrowthSystemsPanel({ trackerSet, onToggleStep }) {
         <div className="panel-sub">The recurring engines that run alongside production. These never stop — they compound.</div>
         <div className="gold-line" />
       </div>
-
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">Why these matter</div>
-        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
-          Per-video work gets the video live. These systems are what turn 12 videos into a growing channel: engagement signals, data-driven topic selection, and never missing a monetization window. Check one off when it's set up as a recurring habit.
-        </div>
+        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.6}}>Per-video work gets the video live. These systems are what turn 12 videos into a growing channel: engagement signals, data-driven topic selection, and never missing a monetization window.</div>
       </div>
-
       {GROWTH_SYSTEMS.map((s) => {
         const id = `sys:${s.key}`;
         const done = trackerSet.has(id);
@@ -942,7 +1001,7 @@ function CasesPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Cases #001–#012 Production Plan</div>
-        <div className="panel-sub">Footage direction · text overlays · cold opens · production schedule for every case. Click a case to expand.</div>
+        <div className="panel-sub">Footage direction · text overlays · cold opens · production schedule for every case.</div>
         <div className="gold-line" />
       </div>
       <div className="info-box" style={{marginBottom:20}}>
@@ -1007,7 +1066,7 @@ function NichesPanel() {
       </div>
       <div className="info-box">
         <div className="info-title">The power move — combine niches 1 & 3</div>
-        <div className="info-body">"Business history" channels — like "How the East India Company became richer than most countries" — combine the free archive-footage workflow of history with the $14–35 CPM of business content. This is Channel 2: Business Autopsies.</div>
+        <div className="info-body">"Business history" channels — like "How the East India Company became richer than most countries" — combine the free archive-footage workflow of history with the $14–35 CPM of business content. This is the direction Vanished History is reframing toward from Video 4 onward.</div>
       </div>
     </div>
   );
@@ -1041,33 +1100,20 @@ function GrowthPanel() {
       <div className="section-title">Shorts funnel — CTA template</div>
       <div className="info-box">
         <div className="info-title">Shorts are loss leaders — the funnel is the point</div>
-        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.7,marginBottom:10}}>
-          Shorts RPM is only $0.03–$0.10 per 1,000 views. Their real value is funneling viewers into your long-form library where you earn $5–$10 RPM. Every Short's description and pinned comment must point back to the full video with a curiosity-gap CTA, not a generic "watch here."
-        </div>
+        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.7,marginBottom:10}}>Shorts RPM is only $0.03–$0.10 per 1,000 views. Their real value is funneling viewers into your long-form library where you earn $5–$10 RPM. Every Short must point back to the full video with a curiosity-gap CTA.</div>
         <div style={{display:"flex",flexDirection:"column",gap:8,fontSize:12,color:"var(--text3)",lineHeight:1.5}}>
           <div><span style={{color:"var(--gold)"}}>Shorts #1 & #2:</span> "The full story is on the channel — this is just 60 seconds of it 👇" + link</div>
           <div><span style={{color:"var(--gold)"}}>Short #3 (ending):</span> "If that ending bothered you, the full breakdown is on the channel" + link — highest long-form conversion</div>
-          <div><span style={{color:"var(--gold)"}}>Pinned comment (every Short):</span> "Full 12-minute breakdown on the channel → [link]"</div>
           <div><span style={{color:"var(--gold)"}}>Every Short:</span> #Shorts + ⚠️ AI-assisted content disclosure</div>
-        </div>
-      </div>
-      <div className="section-title">Monthly — first Monday</div>
-      <div className="sop-box">
-        <div style={{padding:"10px 0",fontSize:12}}>
-          <div style={{fontWeight:500,color:"var(--text)",marginBottom:3}}>vidIQ outlier analysis — Knowledgia, Voices of the Past, Dark Docs</div>
-          <div style={{color:"var(--text3)",lineHeight:1.6}}>Find videos that got 3–10x their channel average. Reverse engineer why. Build your version. This is how you find your viral video before you make it.</div>
         </div>
       </div>
       <div className="section-title">Month 2 milestones (~20 videos)</div>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
         {[
-          ["📧 Email List","Free on Mailchimp or Kit. Lead magnet: 'Get the full case file PDF.' Add to every description and pinned comment. None of your major competitors have this — biggest gap in the niche."],
-          ["💬 Discord Community","Free. Channels: #case-discussions, #your-theories, #suggest-a-case. Post a question every launch day. Knowledgia, Voices of the Past, Dark Docs all skip this. You don't have to."],
+          ["📧 Email List","Free on Mailchimp or Kit. Lead magnet: 'Get the full case file PDF.' Add to every description and pinned comment. None of your major competitors have this."],
+          ["💬 Discord Community","Free. Channels: #case-discussions, #your-theories, #suggest-a-case. Post a question every launch day. Knowledgia, Voices of the Past, Dark Docs all skip this."],
         ].map(([t,d],i) => (
-          <div key={i} className="info-box">
-            <div className="info-title">{t}</div>
-            <div className="info-body">{d}</div>
-          </div>
+          <div key={i} className="info-box"><div className="info-title">{t}</div><div className="info-body">{d}</div></div>
         ))}
       </div>
     </div>
@@ -1078,16 +1124,16 @@ function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script writing, research, outlines, SEO metadata, strategy",cost:"$100/mo",paid:true},
     {name:"ElevenLabs (Brad voice)",use:"AI voiceover — Creator tier, 192kbps, Stability 60%/Similarity 78%/Style 18%",cost:"$11/mo",paid:true},
-    {name:"HeyGen (Creator)",use:"The Investigator — animated talking character host, lip-synced to Brad's voice (imported via ElevenLabs API). Generates the character speaking each script section.",cost:"$29/mo",paid:true},
-    {name:"DaVinci Resolve 21",use:"Professional video editing — layer footage + Investigator overlays + text + music + color grade + export 1080p. Free version has everything needed.",cost:"Free",paid:false},
-    {name:"CapCut",use:"Auto-generate captions from final video — style and burn in before upload. Free alternative to Pictory captions.",cost:"Free",paid:false},
+    {name:"HeyGen (Creator)",use:"The Investigator — animated talking character host, lip-synced to Brad's voice via ElevenLabs API",cost:"$29/mo",paid:true},
+    {name:"DaVinci Resolve 21",use:"Professional video editing — footage + Investigator overlays + text + music + color grade + export",cost:"Free",paid:false},
+    {name:"CapCut",use:"Auto-generate captions from final video — style and burn in before upload",cost:"Free",paid:false},
     {name:"Canva",use:"Thumbnail design, channel banner, logo",cost:"Free tier",paid:false},
     {name:"vidIQ",use:"SEO, keyword research, tags, outlier analysis, analytics insights",cost:"Free tier",paid:false},
     {name:"archive.org",use:"Free public domain historical footage — core source for history niche",cost:"Free",paid:false},
     {name:"Wikimedia Commons",use:"Free historical images, maps, diagrams, artifact photos",cost:"Free",paid:false},
     {name:"Pexels",use:"Free stock footage — ancient ruins, landscapes, atmospheric",cost:"Free",paid:false},
     {name:"YouTube Audio Library",use:"Royalty-free music — cinematic, dark ambient, documentary",cost:"Free",paid:false},
-    {name:"Google AdSense",use:"Link to YouTube for ad monetization — set up before launch",cost:"Free",paid:false},
+    {name:"Google AdSense",use:"Link to YouTube for ad monetization",cost:"Free",paid:false},
   ];
   return (
     <div>
@@ -1105,10 +1151,7 @@ function ToolsPanel() {
       <div className="tools-grid">
         {tools.map((t,i) => (
           <div key={i} className="tool-card">
-            <div>
-              <div className="tool-name">{t.name}</div>
-              <div className="tool-use">{t.use}</div>
-            </div>
+            <div><div className="tool-name">{t.name}</div><div className="tool-use">{t.use}</div></div>
             <span className={`tool-cost ${t.paid ? "cost-paid" : "cost-free"}`}>{t.cost}</span>
           </div>
         ))}
@@ -1146,10 +1189,7 @@ function AutomationPanel() {
       <div className="sop-box">
         {rows.map((r,i) => (
           <div key={i} className="auto-row">
-            <div style={{flex:1}}>
-              <div className="auto-task">{r.task}</div>
-              <div className="auto-tool">{r.tool}</div>
-            </div>
+            <div style={{flex:1}}><div className="auto-task">{r.task}</div><div className="auto-tool">{r.tool}</div></div>
             <div className="auto-bar-wrap">
               <div className="auto-bar-bg"><div className={`auto-bar-fill fill-${r.cls}`} style={{width:`${r.fill}%`}} /></div>
               <div className={`auto-label label-${r.cls}`}>{r.label}</div>
@@ -1169,10 +1209,10 @@ function MonetizationPanel() {
   const items = [
     {phase:"Day 1 — every channel from launch",title:"Affiliate marketing",desc:"Add affiliate links to every video description from your very first upload. Audible, Great Courses, Skillshare for Channel 1. No subscriber minimum — this earns before you're monetized.",earn:"Potential: $50–500/mo early · scales with views",active:true},
     {phase:"500 subscribers",title:"Channel memberships + Super Thanks",desc:"Early YPP tier. Exclusive content, badges, direct tips. Apply as soon as you hit 500 subs + 3,000 watch hours.",earn:"Potential: $100–500/mo per channel",active:true},
-    {phase:"1,000 subscribers + 4,000 watch hours",title:"YouTube Partner Program (AdSense)",desc:"Full ad revenue access. History channels earn $5–10 RPM — 100K views = $500–1,000/month. Apply through YouTube Studio → Monetization.",earn:"At 100K views/mo: $500–1,000 · At 500K views/mo: $2,500–5,000",active:false},
+    {phase:"1,000 subscribers + 4,000 watch hours",title:"YouTube Partner Program (AdSense)",desc:"Full ad revenue access. History channels earn $5–10 RPM — 100K views = $500–1,000/month.",earn:"At 100K views/mo: $500–1,000 · At 500K views/mo: $2,500–5,000",active:false},
     {phase:"2,000–5,000 subscribers",title:"Brand sponsorships",desc:"Pitch brands directly: Curiosity Stream, Nebula, Audible, MasterClass, Skillshare. History channels: $1,000–5,000 per integration. Finance channels: $2,000–15,000.",earn:"$200–5,000 per integration depending on channel size",active:false},
     {phase:"Month 18 — Channel 1 first",title:"Digital products",desc:"Case file PDFs, research packs, extended content. Zero marginal cost, highest margin. A $19 pack sold to 1% of 50K subscribers = $9,500 in a single launch.",earn:"Highest margin stream — scales to $3,000–15,000/mo at portfolio scale",active:false},
-    {phase:"Phase 4 — long term",title:"IP licensing + channel acquisition",desc:"License channel content to streaming platforms. Acquire channels at 10K–50K subscribers ($5K–50K) for faster monetization. The channels become Cipher House IP assets.",earn:"Uncapped — this is where real media company value is built",active:false},
+    {phase:"Phase 4 — long term",title:"IP licensing + channel acquisition",desc:"License channel content to streaming platforms. Acquire channels at 10K–50K subscribers for faster monetization.",earn:"Uncapped — this is where real media company value is built",active:false},
   ];
   return (
     <div>
@@ -1202,68 +1242,271 @@ function MonetizationPanel() {
   );
 }
 
-// Scaling format matrix — left column defines each row for ANY channel;
-// each subsequent column is one channel's filled-in format. Add a channel = add a column object.
-function FormatMatrix() {
-  const ROWS = [
-    ["Structure", "The fixed episode arc — same beats every video, defined per channel"],
-    ["Hook rule", "What must happen in the first 30–60s to stop the scroll"],
-    ["Visual identity", "The look that makes a thumbnail/frame instantly recognizable as yours"],
-    ["Voice", "The narration identity — locked settings, same every video"],
-    ["Length", "Long-form target + short-form funnel format"],
-    ["Close", "How every video ends to drive engagement + subscribes"],
-  ];
-  const CHANNELS = [
-    {
-      name: "Vanished History",
-      status: "Channel 1 · live",
-      live: true,
-      cells: [
-        "Hook → Background → Mystery → Theories → Unresolved Ending",
-        "Core question answered with a specific name / date / place",
-        "The Investigator (HeyGen talking host, every video) + archive / Wikimedia / Pexels footage",
-        "ElevenLabs Brad — deep, measured, authoritative",
-        "13–14 min long-form + 3 vertical Shorts",
-        "Open-ended question → \"I read every single one\" → subscribe",
-      ],
-    },
-    {
-      name: "Channel 2",
-      status: "Not launched",
-      live: false,
-      cells: ["—", "—", "—", "—", "—", "—"],
-    },
-  ];
-
-  const labelW = 150;
-  const colW = 210;
-
+// ─── NEW: CONTENT TRAJECTORY PANEL ──────────────────────────────────────────
+function TrajectoryPanel() {
   return (
-    <div style={{ overflowX: "auto", paddingBottom: 4 }}>
-      <div style={{ minWidth: labelW + colW * CHANNELS.length, fontSize: 11.5 }}>
-        {/* Header row */}
-        <div style={{ display: "flex", borderBottom: "1px solid var(--border2)" }}>
-          <div style={{ width: labelW, flexShrink: 0, padding: "7px 10px 7px 0", fontFamily: "'DM Mono', monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text3)" }}>
-            Format row
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Vanished History — Content Trajectory</div>
+        <div className="panel-sub">12-video reframe plan · from historical mysteries to lost wealth & collapsed empires</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
+        <div className="info-title">The repositioning, in one line</div>
+        <div className="info-body">{TRAJECTORY.repositioning}</div>
+      </div>
+
+      <div className="stat-grid">
+        <div className="stat-card"><div className="stat-label">RPM before pivot</div><div className="stat-val">$8–15</div><div className="stat-note">generic mysteries</div></div>
+        <div className="stat-card"><div className="stat-label">RPM after pivot</div><div className="stat-val">$12–20</div><div className="stat-note">finance-adjacent</div></div>
+        <div className="stat-card"><div className="stat-label">Pivot video</div><div className="stat-val">#4</div><div className="stat-note">Bronze Age Collapse</div></div>
+        <div className="stat-card"><div className="stat-label">Canary test</div><div className="stat-val">#10</div><div className="stat-note">financial mania</div></div>
+      </div>
+
+      {TRAJECTORY.phases.map((phase, pi) => (
+        <div key={phase.id} style={{marginBottom:28}}>
+          {phase.decision && (
+            <div className="info-box" style={{borderColor:"rgba(61,111,168,0.3)",marginBottom:12}}>
+              <div className="info-title">↓ Decision point</div>
+              <div className="info-body">{phase.decision}</div>
+            </div>
+          )}
+          <div style={{marginBottom:10}}>
+            <span className={`traj-phase-label ${phase.cls}`}>{phase.label}</span>
+            <span style={{fontSize:12,color:"var(--text3)",marginLeft:10}}>{phase.desc}</span>
           </div>
-          {CHANNELS.map((ch, i) => (
-            <div key={i} style={{ width: colW, flexShrink: 0, padding: "7px 10px", borderLeft: "1px solid var(--border)" }}>
-              <div style={{ fontWeight: 600, color: ch.live ? "var(--gold2)" : "var(--text3)", fontSize: 12.5 }}>{ch.name}</div>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8.5, letterSpacing: "0.06em", textTransform: "uppercase", color: ch.live ? "var(--green)" : "var(--text3)", marginTop: 2 }}>{ch.status}</div>
+          {phase.videos.map((v) => (
+            <div key={v.num} className={`vid-row ${v.cls}`}>
+              <div className="vid-num">{v.num}</div>
+              <div className="vid-body">
+                <div className="vid-topic">
+                  {v.topic}
+                  {v.flag && <span className="vid-flag">{v.flag}</span>}
+                </div>
+                <div className="vid-title">{v.title}</div>
+                <div className="vid-note">{v.note}</div>
+              </div>
             </div>
           ))}
         </div>
-        {/* Body rows */}
-        {ROWS.map(([rowName, rowDef], r) => (
-          <div key={r} style={{ display: "flex", borderBottom: r === ROWS.length - 1 ? "none" : "1px solid var(--border)" }}>
-            <div style={{ width: labelW, flexShrink: 0, padding: "9px 10px 9px 0" }}>
-              <div style={{ color: "var(--gold)", fontWeight: 500 }}>{rowName}</div>
-              <div style={{ color: "var(--text3)", fontSize: 10.5, lineHeight: 1.45, marginTop: 2 }}>{rowDef}</div>
+      ))}
+
+      <div className="section-title">The steering rules</div>
+      <div className="info-box">
+        <div className="info-title">Pivot on data, not theory</div>
+        <div className="info-body">{TRAJECTORY.steeringRule}</div>
+      </div>
+      <div className="info-box">
+        <div className="info-title">The one line to hold</div>
+        <div className="info-body">{TRAJECTORY.holdTheLine}</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── NEW: PRODUCTION LOOP PANEL ──────────────────────────────────────────────
+function ProductionLoopPanel() {
+  const steps = [
+    { n:"1", icon:"✍️", label:"Research + script", note:"Claude researches + writes · answer core question in first 30–60s · SEO titles · description · chapters · pinned comment" },
+    { n:"2", icon:"🎙️", label:"Voiceover", note:"ElevenLabs Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check back to back" },
+    { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
+    { n:"4", icon:"🎭", label:"HeyGen — The Investigator", note:"Generate The Investigator through all 5 sections BEFORE edit day · save MP4s" },
+    { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
+    { n:"6", icon:"📱", label:"3 Shorts created", note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 vertical · captions · #Shorts · CTA → link to full video" },
+    { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
+    { n:"8", icon:"🚀", label:"Launch day", note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure on each Short" },
+    { n:"9", icon:"🌐", label:"Reddit + Quora seeding", note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
+    { n:"10", icon:"💬", label:"Comment replies (48 hrs)", note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
+    { n:"11", icon:"🖼️", label:"Version B thumbnail", note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text, not both) · start Test & Compare" },
+    { n:"12", icon:"📊", label:"A/B check (14 days)", note:"14 days after launch · check Test & Compare · keep the winner permanently" },
+  ];
+
+  const shorts = [
+    { label:"Short #1 — The Hook", desc:"Most shocking opening moment (0:00–1:00 of long-form). The thing that stops the scroll." },
+    { label:"Short #2 — The Key Reveal", desc:"The central unanswered question or most surprising fact from the body of the video." },
+    { label:"Short #3 — The Unresolved Ending", desc:"The closing question — drives comments and subscribes. 'What do you think really happened?' Highest long-form conversion rate." },
+  ];
+
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Production Loop</div>
+        <div className="panel-sub">The 12-step per-video system — applied identically to every case, every channel</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="section-title">The 12-step loop</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:24}}>
+        {steps.map((s) => (
+          <div key={s.n} className="gate-row">
+            <div className="gate-label">{s.icon} {s.n}.</div>
+            <div className="gate-desc"><strong style={{color:"var(--text)"}}>{s.label}</strong> — {s.note}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="section-title">3 Shorts per video — 36 total in Month 1</div>
+      {shorts.map((s, i) => (
+        <div key={i} className="short-row">
+          <div className="short-label">{s.label}</div>
+          <div className="short-desc">{s.desc}</div>
+        </div>
+      ))}
+      <div className="info-box" style={{marginTop:12}}>
+        <div className="info-title">Short specs + CTA</div>
+        <div className="info-body">45–60 seconds · vertical 9:16 · captions on · text hook at top · #Shorts in description · ⚠️ AI disclosure · upload all 3 within 2 hours of the main video.<br/><br/>Shorts #1 & #2: "The full story is on the channel — this is just 60 seconds of it 👇" + link<br/>Short #3: "If that ending bothered you, the full breakdown is on the channel" + link</div>
+      </div>
+
+      <div className="section-title">Thumbnail A/B system</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
+        <div className="gate-row"><div className="gate-label">Edit day</div><div className="gate-desc">Create <strong style={{color:"var(--text)"}}>Version A</strong> — primary thumbnail, uploaded at launch.</div></div>
+        <div className="gate-row"><div className="gate-label">3–5 days</div><div className="gate-desc">Create <strong style={{color:"var(--text)"}}>Version B</strong> — change ONE thing only: expression OR text, never both.</div></div>
+        <div className="gate-row"><div className="gate-label">14 days</div><div className="gate-desc"><strong style={{color:"var(--text)"}}>A/B check</strong> — compare CTR in Test & Compare, keep the winner permanently.</div></div>
+      </div>
+      <div className="info-box">
+        <div className="info-title">What moves CTR most</div>
+        <div className="info-body">Character expression (shocked vs serious vs concerned) and text (question vs statement vs number). Keep thumbnail text style identical across all videos — same font, placement, color. That visual grammar is itself an algorithm signal.</div>
+      </div>
+
+      <div className="section-title">Per-launch growth checklist</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
+        {[
+          ["+5 min", "Pinned comment posted"],
+          ["+2 hrs", "All 3 Shorts uploaded with AI disclosure"],
+          ["Launch day", "Reddit seeding (topic-specific subreddits)"],
+          ["+48 hrs", "Quora answer + reply to all comments"],
+          ["Every video", "Affiliate links in description · added to playlist · end screen set"],
+        ].map(([t,d],i) => (
+          <div key={i} className="gate-row"><div className="gate-label">{t}</div><div className="gate-desc">{d}</div></div>
+        ))}
+      </div>
+
+      <div className="section-title">Operating rhythm</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px"}}>
+        {[
+          ["Mon/Wed/Fri", "Comment reply session — 8:30pm after gym, ~15 min"],
+          ["Every Friday", "Weekly analytics check — 6pm, 15 min. Views, CTR, retention, traffic source"],
+          ["First Monday", "Monthly Business Review + vidIQ outlier analysis"],
+          ["1st of month", "Monetization milestone check — track toward YPP"],
+        ].map(([t,d],i) => (
+          <div key={i} className="gate-row"><div className="gate-label">{t}</div><div className="gate-desc">{d}</div></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── NEW: CHANNEL LINEUP PANEL ───────────────────────────────────────────────
+function LineupPanel({ setPanel }) {
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">The Empire — Channel Lineup</div>
+        <div className="panel-sub">5 channels ranked by business merit · a money-and-systems through-line connects all five</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="stat-grid">
+        <div className="stat-card"><div className="stat-label">Total channels</div><div className="stat-val">5</div><div className="stat-note">staggered build</div></div>
+        <div className="stat-card"><div className="stat-label">Combined target</div><div className="stat-val">$20k+/mo</div><div className="stat-note">by end 2028</div></div>
+        <div className="stat-card"><div className="stat-label">Lead channel</div><div className="stat-val">Ch2</div><div className="stat-note">Business Forensics</div></div>
+        <div className="stat-card"><div className="stat-label">Build horizon</div><div className="stat-val">2.5 yrs</div><div className="stat-note">from Jun 11 launch</div></div>
+      </div>
+
+      <div className="section-title">Ranked by business merit</div>
+      {CHANNEL_LINEUP.map((ch) => (
+        <div key={ch.rank} className={`lineup-item ${ch.cls}`}>
+          <div className="lineup-rank">{ch.rank}</div>
+          <div className="lineup-body">
+            <div className="lineup-name">{ch.name}</div>
+            <div className="lineup-role">{ch.role}</div>
+            <div className="lineup-tags">
+              {ch.cls === "ch1" && <span className="ltag ltag-live">● Live Jun 11</span>}
+              {ch.cls !== "ch1" && <span className="ltag ltag-blue">{ch.launch}</span>}
+              <span className="ltag ltag-rpm">{ch.rpm}</span>
+              <span className="ltag">{ch.proj}</span>
+              <span className="ltag">Gate: {ch.trigger}</span>
             </div>
-            {CHANNELS.map((ch, i) => (
-              <div key={i} style={{ width: colW, flexShrink: 0, padding: "9px 10px", borderLeft: "1px solid var(--border)", color: ch.live ? "var(--text2)" : "var(--text3)", lineHeight: 1.45, fontStyle: ch.live ? "normal" : "italic" }}>
-                {ch.cells[r]}
-              </div>
+          </div>
+        </div>
+      ))}
+
+      <div className="section-title" style={{marginTop:28}}>Scaling gates — each gets stricter</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
+        {SCALING_GATES.map((g) => (
+          <div key={g.from} className="gate-row">
+            <div className="gate-label">{g.from}</div>
+            <div className="gate-desc"><strong style={{color:"var(--text)"}}>{g.rule}</strong> — {g.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="section-title">The three rules</div>
+      <div className="info-box">
+        <div className="info-title">Rule 1 — Don't launch until the current channel runs without scrambling</div>
+        <div className="info-body">System stability over monetization. The workflow is documented, repeatable, and runs on rhythm not hustle. For Ch1→Ch2 that's 60 days of consistent execution.</div>
+      </div>
+      <div className="info-box">
+        <div className="info-title">Rule 2 — Every dollar of early revenue gets reinvested</div>
+        <div className="info-body">Into tools, hiring, and growth until $5k/month combined. That's the inflection point where Cipher House compounds.</div>
+      </div>
+      <div className="info-box">
+        <div className="info-title">Rule 3 — You are the strategist, not the producer</div>
+        <div className="info-body">Document every process from the start. Build as if you're going to hand each channel off, even while running it solo. That discipline is what separates media companies from YouTube hobbyists.</div>
+      </div>
+
+      <div style={{marginTop:20}}>
+        <button onClick={() => setPanel("empire")} style={{background:"var(--gold-dim)",border:"1px solid var(--gold-dim2)",color:"var(--gold2)",borderRadius:7,padding:"8px 16px",fontSize:12,cursor:"pointer",fontFamily:"inherit"}}>View full Scaling Roadmap →</button>
+      </div>
+    </div>
+  );
+}
+
+function FormatMatrix() {
+  const ROWS = [
+    ["Structure","The fixed episode arc — same beats every video"],
+    ["Hook rule","What must happen in the first 30–60s to stop the scroll"],
+    ["Visual identity","The look that makes a thumbnail/frame instantly recognizable"],
+    ["Voice","The narration identity — locked settings, same every video"],
+    ["Length","Long-form target + short-form funnel format"],
+    ["Close","How every video ends to drive engagement + subscribes"],
+  ];
+  const CHANNELS = [
+    {
+      name:"Vanished History",status:"Channel 1 · live",live:true,
+      cells:[
+        "Hook → Background → Mystery → Theories → Unresolved Ending",
+        "Core question answered with a specific name / date / place in first 60s",
+        "The Investigator (HeyGen talking host) + archive / Wikimedia / Pexels footage. Wealth/collapse framing from Video 4.",
+        "ElevenLabs Brad — deep, measured, authoritative",
+        "13–14 min long-form + 3 vertical Shorts",
+        "Open-ended question → 'I read every single one' → subscribe",
+      ]
+    },
+    {name:"Channel 2",status:"Business Forensics · Aug 2026",live:false,cells:["—","—","—","—","—","—"]},
+  ];
+  const labelW=150,colW=210;
+  return (
+    <div style={{overflowX:"auto",paddingBottom:4}}>
+      <div style={{minWidth:labelW+colW*CHANNELS.length,fontSize:11.5}}>
+        <div style={{display:"flex",borderBottom:"1px solid var(--border2)"}}>
+          <div style={{width:labelW,flexShrink:0,padding:"7px 10px 7px 0",fontFamily:"'DM Mono', monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--text3)"}}>Format row</div>
+          {CHANNELS.map((ch,i) => (
+            <div key={i} style={{width:colW,flexShrink:0,padding:"7px 10px",borderLeft:"1px solid var(--border)"}}>
+              <div style={{fontWeight:600,color:ch.live?"var(--gold2)":"var(--text3)",fontSize:12.5}}>{ch.name}</div>
+              <div style={{fontFamily:"'DM Mono', monospace",fontSize:8.5,letterSpacing:"0.06em",textTransform:"uppercase",color:ch.live?"var(--green)":"var(--text3)",marginTop:2}}>{ch.status}</div>
+            </div>
+          ))}
+        </div>
+        {ROWS.map(([rowName,rowDef],r) => (
+          <div key={r} style={{display:"flex",borderBottom:r===ROWS.length-1?"none":"1px solid var(--border)"}}>
+            <div style={{width:labelW,flexShrink:0,padding:"9px 10px 9px 0"}}>
+              <div style={{color:"var(--gold)",fontWeight:500}}>{rowName}</div>
+              <div style={{color:"var(--text3)",fontSize:10.5,lineHeight:1.45,marginTop:2}}>{rowDef}</div>
+            </div>
+            {CHANNELS.map((ch,i) => (
+              <div key={i} style={{width:colW,flexShrink:0,padding:"9px 10px",borderLeft:"1px solid var(--border)",color:ch.live?"var(--text2)":"var(--text3)",lineHeight:1.45,fontStyle:ch.live?"normal":"italic"}}>{ch.cells[r]}</div>
             ))}
           </div>
         ))}
@@ -1274,10 +1517,10 @@ function FormatMatrix() {
 
 function EmpirePanel() {
   const phases = [
-    {cls:"ph1",title:"Phase 1 — Master the system",sub:"Jun 2026 – Dec 2026 · Channel 1 only · Vanished History",stats:[["Focus","1 channel"],["Videos","72+"],["Milestone","1K subs + YPP"],["Revenue","$300–800/mo"]],desc:"Lock in the production workflow until it takes under 3 hours per video. Hit YPP at 1,000 subs + 4,000 watch hours (expected months 4–8). Build the data foundation — by video 30 you have real analytics that directly inform Channel 2. Do NOT launch Channel 2 before Month 6 or YPP approval."},
-    {cls:"ph2",title:"Phase 2 — First expansion",sub:"Jan 2027 – Jun 2027 · Add Channel 2 · Business Autopsies",stats:[["Channels","2 active"],["Trigger","YPP approved"],["Ch2 RPM","$14–35"],["Revenue","$1,500–3,500/mo"]],desc:"Launch Channel 2 (Business Autopsies) in a higher-CPM niche using the same production system. Apply all Channel 1 learnings. Claude handles scripting and SEO for both channels. Reinvest 50% of all Channel 1 revenue. Weekly hours: 35–45."},
-    {cls:"ph3",title:"Phase 3 — Portfolio build",sub:"Jul 2027 – Dec 2027 · Channels 3 + 4 · Batch production",stats:[["Channels","4 active"],["Weekly videos","12 total"],["Revenue","$5,000–12,000/mo"],["Hours/wk","45–55"]],desc:"Launch Channels 3 (Wealth Code) and 4 (Dark Psychology). Batch production: Monday all voiceovers, Tue/Wed all edits, Thursday all uploads, Friday community + Shorts + analytics. Launch digital products on Channel 1. Build email lists and Discord communities."},
-    {cls:"ph4",title:"Phase 4 — Media company",sub:"2028 onward · 5+ channels · $20K–50K/mo",stats:[["Channels","5–8 active"],["Possible hire","1 channel manager"],["Revenue","$20,000–50,000/mo"],["Role","CEO strategy only"]],desc:"Launch Channel 5 (AI Decoded). Evaluate channel acquisition. Diversify beyond YouTube: podcast, newsletter, Patreon, content licensing. Consider one part-time channel manager at $800–1,500/mo only if upload volume exceeds solo capacity."},
+    {cls:"ph1",title:"Phase 1 — Master the system",sub:"Jun 2026 – Dec 2026 · Channel 1 only · Vanished History",stats:[["Focus","1 channel"],["Videos","72+"],["Milestone","1K subs + YPP"],["Revenue","$300–800/mo"]],desc:"Lock in the production workflow until it takes under 3 hours per video. Hit YPP at 1,000 subs + 4,000 watch hours (expected months 4–8). Drift Vanished History from generic mysteries toward lost wealth & collapsed empires starting Video 4. Do NOT launch Channel 2 before Month 6 or 60 days stable execution."},
+    {cls:"ph2",title:"Phase 2 — First expansion",sub:"Aug 2026 · Add Channel 2 · Business & Financial Forensics",stats:[["Channels","2 active"],["Trigger","60 days stable"],["Ch2 RPM","$15–25"],["Revenue","$1,500–4,000/mo"]],desc:"Launch Channel 2 (Business & Financial Forensics — how companies actually make money, hidden revenue models, profit breakdowns). This is your strongest-positioned channel (8.5/10 confidence). Apply all Channel 1 learnings. Your Channel 1 audience crossovers naturally."},
+    {cls:"ph3",title:"Phase 3 — Portfolio build",sub:"Q1–Q3 2027 · Channels 3 + 4 · Personal Finance & AI Tools",stats:[["Channels","4 active"],["Ch3 RPM","$25–50"],["Revenue","$5,000–12,000/mo"],["Hours/wk","45–55"]],desc:"Launch Channel 3 (Personal Finance for Online Business Owners — highest RPM niche on YouTube). Then Channel 4 (AI Tools & Systems — decoupled from Cipher House, evergreen format, affiliate-revenue driven). Launch digital products on Channel 1. Build email lists and Discord communities."},
+    {cls:"ph4",title:"Phase 4 — Media company",sub:"Q1 2028 onward · Channel 5 · Financial Crime & Corporate Fraud",stats:[["Channels","5 active"],["Ch5 RPM","$10–18"],["Revenue","$20,000–50,000/mo"],["Role","CEO strategy only"]],desc:"Launch Channel 5 (Financial Crime & Corporate Fraud — true crime that pays like business content. Cross-pollinates with all four channels). Evaluate channel acquisition. Diversify: podcast, newsletter, Patreon, content licensing. Consider one part-time VA/channel manager."},
   ];
   return (
     <div>
@@ -1288,7 +1531,7 @@ function EmpirePanel() {
       </div>
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">full daily commitment</div></div>
+        <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$140</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
@@ -1303,10 +1546,8 @@ function EmpirePanel() {
         </div>
       ))}
       <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
-        <div className="info-title">The Niche Format doctrine — define this BEFORE launching any channel</div>
-        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.7,marginBottom:14}}>
-          A niche is a topic. A <span style={{color:"var(--gold2)"}}>niche format</span> is the repeatable system that turns that topic into a content machine — locked in and identical every video. The format is what separates you from every other channel covering the same topic. The money is in the format, not the niche. The left column defines what each row means for ANY channel. Every new channel fills in its own column before video 1 — if you can't fill all six rows, the channel isn't ready to launch.
-        </div>
+        <div className="info-title">The Niche Format doctrine</div>
+        <div style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.7,marginBottom:14}}>A niche is a topic. A <span style={{color:"var(--gold2)"}}>niche format</span> is the repeatable system that turns that topic into a content machine. The format is what separates you from every other channel. Every new channel fills in all six rows before video 1.</div>
         <FormatMatrix />
       </div>
       <div className="info-box">
@@ -1326,28 +1567,26 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $140/mo tool cost · no freelancers required</div>
+        <div className="panel-sub">5-channel empire · $140/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
         <table className="portfolio-table">
           <thead>
-            <tr>
-              <th>Channel</th><th>Niche</th><th>Status</th><th>Launch</th><th>RPM target</th><th>Trigger</th><th>Month 24–30</th>
-            </tr>
+            <tr><th>Channel</th><th>Niche</th><th>Status</th><th>Launch</th><th>RPM target</th><th>Gate trigger</th><th>Month 24–30</th></tr>
           </thead>
           <tbody>
             {[
-              {name:"Vanished History",niche:"Historical mysteries",status:"active",launch:"Jun 2026",rpm:"$5–10",trigger:"—",proj:"$800–2,500/mo"},
-              {name:"Business Autopsies",niche:"Business history",status:"ph2",launch:"Jan 2027",rpm:"$14–35",trigger:"Ch1 YPP approved",proj:"$2,000–6,000/mo"},
-              {name:"Wealth Code",niche:"Personal finance",status:"ph3",launch:"Jul 2027",rpm:"$18–45",trigger:"Ch2 monetized",proj:"$4,000–12,000/mo"},
-              {name:"Dark Psychology",niche:"Psychology / behavior",status:"ph3",launch:"Oct 2027",rpm:"$8–15",trigger:"Ch3 launched",proj:"$1,500–4,000/mo"},
-              {name:"AI Decoded",niche:"AI / tech explainers",status:"ph4",launch:"2028",rpm:"$8–20",trigger:"Ch4 launched + stable",proj:"$2,000–8,000/mo"},
+              {name:"Vanished History",niche:"Lost civilizations & collapsed empires",status:"active",launch:"Jun 2026",rpm:"$12–20",trigger:"—",proj:"$500–2k/mo"},
+              {name:"Business & Financial Forensics",niche:"How companies actually make money",status:"ph2",launch:"Aug 2026",rpm:"$15–25",trigger:"60 days stable execution",proj:"$2k–5k/mo"},
+              {name:"Personal Finance for Builders",niche:"Solopreneur finance & tax",status:"ph3",launch:"Q1 2027",rpm:"$25–50",trigger:"Ch2 in YPP",proj:"$5k–12k/mo"},
+              {name:"AI Tools & Systems",niche:"AI automation for small operations",status:"ph3",launch:"Q3 2027",rpm:"$20–40",trigger:"Combined $2k+/mo",proj:"$2k–4k/mo"},
+              {name:"Financial Crime & Corporate Fraud",niche:"White-collar crime narratives",status:"ph4",launch:"Q1 2028",rpm:"$10–18",trigger:"1 hire in place",proj:"$2k–5k/mo"},
             ].map((ch,i) => (
               <tr key={i}>
                 <td style={{color:"var(--gold)",fontWeight:500}}>{ch.name}</td>
                 <td style={{color:"var(--text2)"}}>{ch.niche}</td>
-                <td><span className={`status-badge status-${ch.status}`}>{ch.status === "active" ? "Active" : ch.status === "ph2" ? "Phase 2" : ch.status === "ph3" ? "Phase 3" : "Phase 4"}</span></td>
+                <td><span className={`status-badge status-${ch.status}`}>{ch.status==="active"?"Active":ch.status==="ph2"?"Phase 2":ch.status==="ph3"?"Phase 3":"Phase 4"}</span></td>
                 <td style={{color:"var(--text2)"}}>{ch.launch}</td>
                 <td style={{color:"var(--text2)"}}>{ch.rpm}</td>
                 <td style={{color:"var(--text3)",fontSize:11}}>{ch.trigger}</td>
@@ -1356,6 +1595,10 @@ function PortfolioPanel() {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="info-box">
+        <div className="info-title">The portfolio through-line</div>
+        <div className="info-body">Business, money, and systems thinking run through Channels 2, 3, 4, and 5. Vanished History drifts toward this from Video 4. Each channel's audience crossovers naturally to the next. That cross-pollination is a real strategic asset — not an afterthought.</div>
       </div>
     </div>
   );
@@ -1371,7 +1614,7 @@ function RevenuePanel() {
       </div>
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Month 12</div><div className="stat-val">$300–800</div><div className="stat-note">Channel 1 only</div></div>
-        <div className="stat-card"><div className="stat-label">Month 18</div><div className="stat-val">$1.5K–3.5K</div><div className="stat-note">Channels 1+2</div></div>
+        <div className="stat-card"><div className="stat-label">Month 18</div><div className="stat-val">$1.5K–4K</div><div className="stat-note">Channels 1+2</div></div>
         <div className="stat-card"><div className="stat-label">Month 24</div><div className="stat-val">$5K–12K</div><div className="stat-note">Channels 1–4</div></div>
         <div className="stat-card"><div className="stat-label">Month 30+</div><div className="stat-val">$20K–50K</div><div className="stat-note">Full portfolio</div></div>
       </div>
@@ -1427,14 +1670,14 @@ function OSPanel() {
       <div className="section-title">Channel status tracker</div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
         <table className="portfolio-table">
-          <thead><tr><th>Channel</th><th>Niche</th><th>Status</th><th>Launch</th><th>RPM</th><th>Next trigger</th></tr></thead>
+          <thead><tr><th>Channel</th><th>Niche</th><th>Status</th><th>Launch</th><th>RPM</th><th>Gate trigger</th></tr></thead>
           <tbody>
             {[
-              ["Vanished History","Historical mysteries","active","Jun 2026","$5–10","—"],
-              ["Business Autopsies","Business history","ph2","Jan 2027","$14–35","Ch1 YPP approved"],
-              ["Wealth Code","Personal finance","ph3","Jul 2027","$18–45","Ch2 monetized"],
-              ["Dark Psychology","Psychology","ph3","Oct 2027","$8–15","Ch3 launched"],
-              ["AI Decoded","AI / tech","ph4","2028","$8–20","Ch4 launched + stable"],
+              ["Vanished History","Lost civilizations & collapsed empires","active","Jun 2026","$12–20","—"],
+              ["Business & Financial Forensics","How companies actually make money","ph2","Aug 2026","$15–25","60 days stable execution"],
+              ["Personal Finance for Builders","Solopreneur finance & tax","ph3","Q1 2027","$25–50","Ch2 in YPP"],
+              ["AI Tools & Systems","AI automation for small operations","ph3","Q3 2027","$20–40","Combined $2k+/mo"],
+              ["Financial Crime & Corporate Fraud","White-collar crime narratives","ph4","Q1 2028","$10–18","1 hire in place"],
             ].map(([n,ni,st,la,rpm,trig],i) => (
               <tr key={i}>
                 <td style={{color:"var(--gold)",fontWeight:500}}>{n}</td>
@@ -1456,7 +1699,7 @@ function OSPanel() {
           ["Content calendar rebuild — next 30 days","Claude builds 12–36 video titles per channel based on outlier data and analytics","Claude"],
           ["Revenue review — all streams","AdSense + affiliate + sponsorship + digital products · compare vs previous month","20 min"],
           ["Tool stack review","Are all tools still best-in-class? New tools flagged? Cost optimizations?","15 min"],
-          ["Phase trigger check","Hit YPP? Time to launch next channel? Run through phase launch criteria","15 min"],
+          ["Phase trigger check","Hit YPP? Time to launch next channel? Run through scaling gate criteria","15 min"],
         ].map(([t,d,time],i) => (
           <div key={i} className="auto-row">
             <div style={{flex:1}}><div className="auto-task">{t}</div><div className="auto-tool">{d}</div></div>
@@ -1481,7 +1724,6 @@ function AIAssistant({ currentPanel }) {
   const [open, setOpen] = useState(false);
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
-
   const quickPrompts = QUICK_PROMPTS_BY_PANEL[currentPanel] || QUICK_PROMPTS_BY_PANEL.overview;
 
   useEffect(() => {
@@ -1500,17 +1742,30 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries. Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: The Investigator — animated talking host built in HeyGen (Creator tier), lip-synced to Brad's voice via ElevenLabs API. Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026. Tool stack: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Canva (free) + vidIQ (free) = $140/mo total.
+CHANNEL 1: Vanished History (@vanishedhistory). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Upload: Thu Jun 11 launch, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: The Investigator — animated talking host built in HeyGen (Creator tier), lip-synced to Brad's voice via ElevenLabs API. Series: "Vanished History — The Cases" (Case #001, #002...). Launch: Thu Jun 11 2026.
 
-SCALING PLAN: Phase 1 (Ch1 only, Jun–Dec 2026) → Phase 2 (launch Business Autopsies, Jan 2027, $14-35 RPM) → Phase 3 (Wealth Code + Dark Psychology, Jul–Oct 2027) → Phase 4 (AI Decoded, 2028, $20K-50K/mo target).
+CHANNEL LINEUP (ranked by business merit):
+1. Vanished History — $12-20 RPM (post-pivot) — live Jun 11
+2. Business & Financial Forensics — $15-25 RPM — Aug 2026 — BREAKOUT CHANNEL
+3. Personal Finance for Online Business Owners — $25-50 RPM — Q1 2027
+4. AI Tools & Systems (decoupled from Cipher House) — $20-40 RPM — Q3 2027
+5. Financial Crime & Corporate Fraud — $10-18 RPM — Q1 2028
 
-CASES #001-#012: All planned with production schedules, footage notes, text overlays, and cold opens.
+SCALING GATES: Ch1→Ch2: 60 days stable execution. Ch2→Ch3: Ch2 in YPP. Ch3→Ch4: $2k+/mo combined. Ch4→Ch5: 1 hire in place.
 
-KEY RULES: Never launch new channel before previous is profitable. Every channel uses same production system. 50% revenue reinvested until Month 18. Monthly review first Monday every month. AI disclosure on every upload.
+CONTENT TRAJECTORY (Vanished History):
+Videos 1-3: Bridge phase. V1 Indus Valley (produced). V2 Göbekli Tepe "The Civilization That Was 7,000 Years Too Advanced". V3 Minoans "How the World's Richest Trade Empire Collapsed".
+Videos 4-8: Commit phase. V4 Bronze Age Collapse "How Every Empire Fell in the Same 50 Years" (thesis video). V5 Mansa Musa. V6 Khmer Empire. V7 Rome Currency Debasement (highest CPM). V8 Maya Collapse.
+Videos 9-12: Optimize/test. V10 South Sea Bubble is the CANARY test for financial angle.
+Steering rule: pivot on data (retention x CTR) after Video 8. Never become "a finance channel wearing a toga."
+
+TOOL STACK: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Canva (free) + vidIQ (free) = $140/mo total.
+
+12-STEP PRODUCTION LOOP: Script → Voiceover → Footage → HeyGen → Edit+ThumbnailA → 3Shorts → Upload → Launch → Reddit/Quora → Comments → ThumbnailB → A/B check.
 
 CURRENT PANEL: ${currentPanel}
 
-Be direct, specific, and actionable. Reference Cipher House specifics. When writing scripts, write the FULL script. When giving SEO titles, give 4 options. When doing research, be thorough. Keep responses well-formatted.`;
+Be direct, specific, and actionable. Reference Cipher House specifics. When writing scripts, write the FULL script. When giving SEO titles, give 4 options. Keep responses well-formatted.`;
 
     try {
       const history = messages.map(m => ({ role: m.role, content: m.content }));
@@ -1541,7 +1796,7 @@ Be direct, specific, and actionable. Reference Cipher House specifics. When writ
   return (
     <>
       {open && messages.length > 0 && (
-        <div className="ai-panel" style={{height: "40vh"}}>
+        <div className="ai-panel" style={{height:"40vh"}}>
           <div className="ai-panel-header">
             <span className="ai-panel-title">Claude · Cipher House AI Partner</span>
             <button className="ai-close" onClick={() => setOpen(false)}>×</button>
@@ -1563,14 +1818,10 @@ Be direct, specific, and actionable. Reference Cipher House specifics. When writ
       )}
       <div className="ai-dock" style={{bottom: open && messages.length > 0 ? "40vh" : 0}}>
         <div className="quick-prompts">
-          {quickPrompts.map((p, i) => (
-            <button key={i} className="qp" onClick={() => send(p)}>{p}</button>
-          ))}
+          {quickPrompts.map((p, i) => <button key={i} className="qp" onClick={() => send(p)}>{p}</button>)}
         </div>
         <div className="ai-bar">
-          <div style={{flexShrink:0,paddingTop:2}}>
-            <div className="ai-label">Ask Claude</div>
-          </div>
+          <div style={{flexShrink:0,paddingTop:2}}><div className="ai-label">Ask Claude</div></div>
           <textarea
             ref={textareaRef}
             className="ai-input"
@@ -1594,25 +1845,28 @@ Be direct, specific, and actionable. Reference Cipher House specifics. When writ
 const NAV = [
   { section: "Overview", items: [{ id:"overview", icon:"◈", label:"Dashboard" }] },
   { section: "Launch Plan", items: [
-    { id:"tasks", icon:"✦", label:"Production Plan" },
-    { id:"tracker", icon:"☑", label:"Production Tracker" },
+    { id:"tasks",    icon:"✦", label:"Production Plan" },
+    { id:"tracker",  icon:"☑", label:"Production Tracker" },
     { id:"calendar", icon:"◷", label:"Content Calendar" },
-    { id:"cases", icon:"◎", label:"Cases #001–#012" },
+    { id:"cases",    icon:"◎", label:"Cases #001–#012" },
   ]},
   { section: "Channel 1", items: [
-    { id:"niches", icon:"◎", label:"Niche Research" },
-    { id:"growth", icon:"↑", label:"Growth Tactics" },
-    { id:"systems", icon:"⟲", label:"Growth Systems" },
-    { id:"tools", icon:"⊞", label:"Tool Stack" },
+    { id:"trajectory", icon:"↗", label:"Content Trajectory" },
+    { id:"niches",     icon:"◎", label:"Niche Research" },
+    { id:"growth",     icon:"↑", label:"Growth Tactics" },
+    { id:"systems",    icon:"⟲", label:"Growth Systems" },
+    { id:"prodloop",   icon:"⚙", label:"Production Loop" },
+    { id:"tools",      icon:"⊞", label:"Tool Stack" },
     { id:"automation", icon:"⟳", label:"Automation Map" },
     { id:"monetization", icon:"◈", label:"Monetization" },
   ]},
   { section: "The Empire", items: [
-    { id:"empire", icon:"◈", label:"Scaling Roadmap" },
+    { id:"lineup",    icon:"⬡", label:"Channel Lineup" },
+    { id:"empire",    icon:"◈", label:"Scaling Roadmap" },
     { id:"portfolio", icon:"◎", label:"Channel Portfolio" },
-    { id:"revenue", icon:"◈", label:"Revenue Model" },
-    { id:"sop", icon:"◷", label:"SOPs & Workflow" },
-    { id:"os", icon:"⊞", label:"Business OS" },
+    { id:"revenue",   icon:"◈", label:"Revenue Model" },
+    { id:"sop",       icon:"◷", label:"SOPs & Workflow" },
+    { id:"os",        icon:"⊞", label:"Business OS" },
   ]},
 ];
 
@@ -1638,7 +1892,6 @@ export default function App() {
   const doneCount = allTaskIds.filter(id => doneSet.has(id)).length;
   const pct = allTaskIds.length > 0 ? Math.round((doneCount / allTaskIds.length) * 100) : 0;
 
-  // Production Tracker + Growth Systems persistence (separate key so it never collides with ch_tasks)
   const [trackerSet, setTrackerSet] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("ch_tracker") || "[]")); } catch { return new Set(); }
   });
@@ -1653,7 +1906,6 @@ export default function App() {
     });
   }, []);
 
-  // On load: pull cloud state (if Supabase keys are set) and reconcile both sets.
   const [syncStatus, setSyncStatus] = useState(SYNC_ON ? "syncing" : "local");
   useEffect(() => {
     if (!SYNC_ON) return;
@@ -1676,37 +1928,39 @@ export default function App() {
   }, []);
 
   const PANELS = {
-    overview: <OverviewPanel setPanel={setPanel} doneCount={doneCount} totalTasks={allTaskIds.length} />,
-    tasks: <TasksPanel doneSet={doneSet} onToggle={toggleTask} />,
-    tracker: <ProductionTrackerPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
-    systems: <GrowthSystemsPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
-    calendar: <CalendarPanel />,
-    cases: <CasesPanel />,
-    niches: <NichesPanel />,
-    growth: <GrowthPanel />,
-    tools: <ToolsPanel />,
-    automation: <AutomationPanel />,
+    overview:     <OverviewPanel setPanel={setPanel} doneCount={doneCount} totalTasks={allTaskIds.length} />,
+    tasks:        <TasksPanel doneSet={doneSet} onToggle={toggleTask} />,
+    tracker:      <ProductionTrackerPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
+    systems:      <GrowthSystemsPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
+    calendar:     <CalendarPanel />,
+    cases:        <CasesPanel />,
+    trajectory:   <TrajectoryPanel />,
+    niches:       <NichesPanel />,
+    growth:       <GrowthPanel />,
+    prodloop:     <ProductionLoopPanel />,
+    tools:        <ToolsPanel />,
+    automation:   <AutomationPanel />,
     monetization: <MonetizationPanel />,
-    empire: <EmpirePanel />,
-    portfolio: <PortfolioPanel />,
-    revenue: <RevenuePanel />,
-    sop: <SOPPanel />,
-    os: <OSPanel />,
+    lineup:       <LineupPanel setPanel={setPanel} />,
+    empire:       <EmpirePanel />,
+    portfolio:    <PortfolioPanel />,
+    revenue:      <RevenuePanel />,
+    sop:          <SOPPanel />,
+    os:           <OSPanel />,
   };
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const go = (id) => { setPanel(id); setDrawerOpen(false); };
   const BOTTOM_NAV = [
-    { id:"overview", icon:"◈", label:"Home" },
-    { id:"tracker",  icon:"☑", label:"Tracker" },
-    { id:"calendar", icon:"◷", label:"Calendar" },
-    { id:"cases",    icon:"◎", label:"Cases" },
+    { id:"overview",  icon:"◈", label:"Home" },
+    { id:"tracker",   icon:"☑", label:"Tracker" },
+    { id:"calendar",  icon:"◷", label:"Calendar" },
+    { id:"cases",     icon:"◎", label:"Cases" },
   ];
 
   return (
     <>
       <style>{css}</style>
-
       <div className="mobile-bar">
         <div className="mb-name">CIPHER HOUSE</div>
         <button className="mb-burger" onClick={() => setDrawerOpen(o => !o)} aria-label="Menu">☰</button>
@@ -1723,13 +1977,8 @@ export default function App() {
               <div key={sec.section}>
                 <div className="nav-section">{sec.section}</div>
                 {sec.items.map(item => (
-                  <div
-                    key={item.id}
-                    className={`nav-item ${panel === item.id ? "active" : ""}`}
-                    onClick={() => go(item.id)}
-                  >
-                    <span className="nav-icon">{item.icon}</span>
-                    {item.label}
+                  <div key={item.id} className={`nav-item ${panel === item.id ? "active" : ""}`} onClick={() => go(item.id)}>
+                    <span className="nav-icon">{item.icon}</span>{item.label}
                   </div>
                 ))}
               </div>
@@ -1747,16 +1996,13 @@ export default function App() {
           </div>
         </div>
       </div>
-
       <nav className="mobile-nav">
         {BOTTOM_NAV.map(item => (
           <button key={item.id} className={`mn-item ${panel === item.id ? "active" : ""}`} onClick={() => go(item.id)}>
-            <span className="mn-icon">{item.icon}</span>
-            {item.label}
+            <span className="mn-icon">{item.icon}</span>{item.label}
           </button>
         ))}
       </nav>
-
       <AIAssistant currentPanel={panel} />
     </>
   );
