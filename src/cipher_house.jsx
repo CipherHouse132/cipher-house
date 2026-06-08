@@ -345,6 +345,7 @@ const css = `
   .status-active { background: var(--green-bg); color: #60b080; }
   .status-ph2 { background: var(--blue-bg); color: #6090c8; }
   .status-ph3 { background: var(--amber-bg); color: #c8904a; }
+  .status-ph3b { background: var(--amber-bg); color: #c8904a; opacity: 0.7; }
   .status-ph4 { background: var(--red-bg); color: #d06050; }
 
   .sop-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; }
@@ -1580,13 +1581,13 @@ function PortfolioPanel() {
               {name:"Vanished History",niche:"Lost civilizations & collapsed empires",status:"active",launch:"Jun 2026",rpm:"$12–20",trigger:"—",proj:"$500–2k/mo"},
               {name:"Business & Financial Forensics",niche:"How companies actually make money",status:"ph2",launch:"Aug 2026",rpm:"$15–25",trigger:"60 days stable execution",proj:"$2k–5k/mo"},
               {name:"Personal Finance for Builders",niche:"Solopreneur finance & tax",status:"ph3",launch:"Q1 2027",rpm:"$25–50",trigger:"Ch2 in YPP",proj:"$5k–12k/mo"},
-              {name:"AI Tools & Systems",niche:"AI automation for small operations",status:"ph3",launch:"Q3 2027",rpm:"$20–40",trigger:"Combined $2k+/mo",proj:"$2k–4k/mo"},
+              {name:"AI Tools & Systems",niche:"AI automation for small operations",status:"ph3b",launch:"Q3 2027",rpm:"$20–40",trigger:"Combined $2k+/mo",proj:"$2k–4k/mo"},
               {name:"Financial Crime & Corporate Fraud",niche:"White-collar crime narratives",status:"ph4",launch:"Q1 2028",rpm:"$10–18",trigger:"1 hire in place",proj:"$2k–5k/mo"},
             ].map((ch,i) => (
               <tr key={i}>
                 <td style={{color:"var(--gold)",fontWeight:500}}>{ch.name}</td>
                 <td style={{color:"var(--text2)"}}>{ch.niche}</td>
-                <td><span className={`status-badge status-${ch.status}`}>{ch.status==="active"?"Active":ch.status==="ph2"?"Phase 2":ch.status==="ph3"?"Phase 3":"Phase 4"}</span></td>
+                <td><span className={`status-badge status-${ch.status}`}>{ch.status==="active"?"Active":ch.status==="ph2"?"Phase 2":ch.status==="ph3"?"Phase 3 · 1st":ch.status==="ph3b"?"Phase 3 · 2nd":"Phase 4"}</span></td>
                 <td style={{color:"var(--text2)"}}>{ch.launch}</td>
                 <td style={{color:"var(--text2)"}}>{ch.rpm}</td>
                 <td style={{color:"var(--text3)",fontSize:11}}>{ch.trigger}</td>
@@ -1676,13 +1677,13 @@ function OSPanel() {
               ["Vanished History","Lost civilizations & collapsed empires","active","Jun 2026","$12–20","—"],
               ["Business & Financial Forensics","How companies actually make money","ph2","Aug 2026","$15–25","60 days stable execution"],
               ["Personal Finance for Builders","Solopreneur finance & tax","ph3","Q1 2027","$25–50","Ch2 in YPP"],
-              ["AI Tools & Systems","AI automation for small operations","ph3","Q3 2027","$20–40","Combined $2k+/mo"],
+              ["AI Tools & Systems","AI automation for small operations","ph3b","Q3 2027","$20–40","Combined $2k+/mo"],
               ["Financial Crime & Corporate Fraud","White-collar crime narratives","ph4","Q1 2028","$10–18","1 hire in place"],
             ].map(([n,ni,st,la,rpm,trig],i) => (
               <tr key={i}>
                 <td style={{color:"var(--gold)",fontWeight:500}}>{n}</td>
                 <td style={{color:"var(--text2)"}}>{ni}</td>
-                <td><span className={`status-badge status-${st}`}>{st==="active"?"Active":st==="ph2"?"Phase 2":st==="ph3"?"Phase 3":"Phase 4"}</span></td>
+                <td><span className={`status-badge status-${st}`}>{st==="active"?"Active":st==="ph2"?"Phase 2":st==="ph3"?"Phase 3 · 1st":st==="ph3b"?"Phase 3 · 2nd":"Phase 4"}</span></td>
                 <td style={{color:"var(--text2)"}}>{la}</td>
                 <td style={{color:"var(--text2)"}}>{rpm}</td>
                 <td style={{color:"var(--text3)",fontSize:11}}>{trig}</td>
