@@ -466,30 +466,30 @@ const SCHEDULE = {
   "2026-06-07": ["🎬 Pre-edit check + DaVinci assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
   "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure (launch moved up to Jun 9)"],
   "2026-06-09": ["🚀 CASE #001 GOES LIVE — upload + publish", "💬 Pinned comment + reply to early comments", "📱 Cut 3 Shorts from the upload"],
-  "2026-06-10": ["☕ Buffer day — catch up or rest", "✍️ Case #002 — Research + script (Roanoke)"],
-  "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover", "💬 Comment replies (launch day)"],
-  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
+  "2026-06-10": ["✍️ Case #002 — Research + script (Göbekli Tepe)", "💬 Comment replies + first-24hr analytics on Case #001"],
+  "2026-06-11": ["🎙️ Case #002 — Voiceover (Göbekli Tepe)", "💬 Comment replies"],
+  "2026-06-12": ["✍️ Case #003 — Research + script (The Minoans)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
-  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
+  "2026-06-14": ["✍️ Case #004 — Research + script (Bronze Age Collapse)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
   "2026-06-15": ["📹 CASE #002 GOES LIVE 2pm — pinned comment + 3 Shorts", "🌐 Reddit + Quora seeding (Case #002)", "🎙️ Case #004 — Voiceover", "🎬 Case #003 — Edit", "📱 Case #003 — 3 Shorts", "💬 Comment replies"],
   "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 HeyGen — character generation Case #004"],
-  "2026-06-17": ["✍️ Case #005 — Research + script (Hidden Empire)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-17": ["✍️ Case #005 — Research + script (Mansa Musa & Mali)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
   "2026-06-18": ["⬆️ Case #004 — Upload + schedule", "🎙️ Case #005 — Voiceover", "🖼️ Case #002 — Version B thumbnail"],
-  "2026-06-19": ["✍️ Case #006 — Research + script (Black Death)", "📹 CASE #004 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #004)", "🎞️ Case #005 — Footage", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-19": ["✍️ Case #006 — Research + script (Khmer Empire / Angkor)", "📹 CASE #004 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #004)", "🎞️ Case #005 — Footage", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 HeyGen — character Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
-  "2026-06-21": ["✍️ Case #007 — Research + script (Crown Jewels)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
+  "2026-06-21": ["✍️ Case #007 — Research + script (Rome's Currency Collapse)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
   "2026-06-22": ["📹 CASE #005 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #005)", "🎙️ Case #007 — Voiceover", "🎬 Case #006 — Edit", "📱 Case #006 — 3 Shorts", "💬 Comment replies"],
   "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
-  "2026-06-24": ["✍️ Case #008 — Research + script (Franz Ferdinand)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
+  "2026-06-24": ["✍️ Case #008 — Research + script (The Maya Collapse)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
   "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
-  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — character Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-26": ["✍️ Case #009 — Research + script (Templar Treasure)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — character Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — character Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
-  "2026-06-28": ["✍️ Case #010 — Research + script (Baghdad Battery)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
+  "2026-06-28": ["✍️ Case #010 — Research + script (South Sea Bubble)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
   "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
   "2026-06-30": ["⬆️ Case #009 — Upload + schedule", "🎞️ Case #010 — Footage"],
-  "2026-07-01": ["✍️ Case #011 — Research + script (Egyptian Stones)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
+  "2026-07-01": ["✍️ Case #011 — Research + script (Easter Island)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
   "2026-07-02": ["⬆️ Case #010 — Upload + schedule", "🎙️ Case #011 — Voiceover"],
-  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — character Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-07-03": ["✍️ Case #012 — Research + script (Indus Valley Revisited)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — character Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-07-04": ["🎙️ Case #012 — Voiceover", "🎬 Case #011 — Edit", "📱 Case #011 — 3 Shorts", "🖼️ Version B thumbnails — Cases #007/#008/#009"],
   "2026-07-05": ["⬆️ Case #011 — Upload + schedule", "🎞️ Case #012 — Footage"],
   "2026-07-06": ["📹 CASE #011 GOES LIVE 2pm", "🎬 Case #012 — Edit", "📱 Case #012 — 3 Shorts", "📊 Monthly Business Review #1", "🔍 vidIQ outlier analysis", "📅 Month 2 content planning", "💬 Comment replies"],
@@ -497,12 +497,30 @@ const SCHEDULE = {
   "2026-07-08": ["📹 CASE #012 GOES LIVE 2pm — final video of Month 1 🎉", "🌐 Reddit + Quora seeding (Case #012)", "🖼️ A/B check — Cases #004/#005/#006", "💬 Comment replies"],
 };
 
-function recurringFor(dateStr) {
+function recurringFor(dateStr, scheduled = []) {
   const d = new Date(dateStr + "T12:00:00");
   const day = d.getDay();
+  const dom = d.getDate();
+  const firstMonday = day === 1 && dom <= 7;
   const out = [];
-  if ([1,3,5].includes(day)) out.push("💬 Comment reply session (8:30pm, ~15 min)");
-  if (day === 5) out.push("📊 Weekly analytics check");
+  const has = (kw) => [...scheduled, ...out].some(s => s.toLowerCase().includes(kw));
+  // Growth Systems rhythms (also shown in Production Loop operating rhythm)
+  if ([1,3,5].includes(day) && !has("comment repl")) out.push("💬 Comment reply session — 8:30pm, ~15 min");
+  if (day === 5 && !has("analytics")) out.push("📊 Weekly analytics check — 6pm · views, CTR, retention, traffic");
+  if (dom === 1 && !has("monetization")) out.push("💰 Monetization milestone check — track toward 500 subs / YPP");
+  if (firstMonday && !has("business review")) out.push("📈 Monthly Business Review — analytics + revenue + phase triggers");
+  if (firstMonday && !has("outlier")) out.push("🔍 vidIQ outlier analysis — find breakout topics before making them");
+  if (firstMonday && !has("content planning")) out.push("📅 Next-month content planning — lock the next 12 cases");
+  // Single-channel weekly SOP (SOPs & Workflow panel)
+  const sop = {
+    1: ["voiceover", "🎙️ SOP — Voiceover + footage day (3–4 hrs)"],
+    2: ["edit", "🎬 SOP — DaVinci edit day (2–3 hrs)"],
+    3: ["upload", "🖼️ SOP — Thumbnail + upload day (2–3 hrs)"],
+    4: ["seeding", "🌐 SOP — Community + distribution day (1–2 hrs)"],
+    5: ["analytics", "📋 SOP — Analytics + next-week prep (2–3 hrs)"],
+    6: ["batch", "⚡ SOP — Batch production sprint (4–6 hrs)"],
+  }[day];
+  if (sop && !has(sop[0])) out.push(sop[1]);
   return out;
 }
 
@@ -547,10 +565,10 @@ const TASKS = {
     { id: "l4", name: "Reply to every comment for the first 24 hours", desc: "Check YouTube Studio analytics: CTR, watch time, impressions at 24hr and 48hr. Reply to every comment. Early engagement signals quality to the algorithm.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
   ],
   c002: [
-    { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
-    { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
-    { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps. S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Roanoke)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → export → YouTube auto-sync captions. Thumbnail: Leonardo character (concerned). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002s", name: "Case #002 — Research + script (Göbekli Tepe)", desc: "Ask Claude: the 11,600-year-old temple complex built 6,000 years before Stonehenge by 'hunter-gatherers', only 5% excavated, deliberately buried — by whom and why? Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
+    { id: "c002v", name: "Case #002 — Voiceover (Göbekli Tepe)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
+    { id: "c002f", name: "Case #002 — Footage (Göbekli Tepe)", desc: "Cold open: T-shaped pillars emerging from the Turkish hillside. S1: excavation site (Wikimedia). S2: Anatolian plateau, hunter-gatherer context. S3: carved pillar close-ups, animal reliefs. S4: deliberate-burial dig layers. S5: wide site aerial at dusk. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Göbekli Tepe)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: 11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED → export → YouTube auto-sync captions. Thumbnail: Leonardo character (shocked/awe). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
@@ -581,17 +599,17 @@ const GROWTH_SYSTEMS = [
 
 const CASES = [
   { num:"001", title:"Indus Valley Civilization", launch:"Jun 9", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"LAUNCHED Jun 9 — Kevin MacLeod music, YouTube auto-captions, vidIQ-optimized title" },
-  { num:"002", title:"The Roanoke Colony", launch:"Mon Jun 15", status:"upcoming", overlays:"CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE", cold:"Dramatic NC coastline or misty forest", footage:"Colonial ships (archive.org) · NC coastline · CROATOAN carving (Wikimedia) · Elizabethan England · forest wilderness", expression:"Concerned/troubled", reddit:"r/UnsolvedMysteries · r/history", schedule:"Script Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14" },
-  { num:"003", title:"Göbekli Tepe", launch:"Wed Jun 17", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
-  { num:"004", title:"The Nazi Code Mathematician", launch:"Fri Jun 19", status:"upcoming", overlays:"ERASED FROM HISTORY · 2 YEARS SHORTER · ENIGMA · MARIAN REJEWSKI", cold:"Enigma machine close-up — gears rotating, dramatic lighting", footage:"WWII archival (archive.org) · Enigma machine (Wikimedia) · Bletchley Park · wartime Europe. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWII", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
-  { num:"005", title:"The Hidden Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"Empire scale stat · HALF THE WORLD · ERASED · peak power dates", cold:"Vast landscape establishing scale — steppes, desert, or mountains", footage:"Central Asian steppes (Pexels) · empire maps (Wikimedia) · ancient ruins", expression:"Serious/knowing", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
-  { num:"006", title:"The Black Death's Real Origin", launch:"Wed Jun 24", status:"upcoming", overlays:"1338 · 700 YEARS · DNA EVIDENCE · PATIENT ZERO", cold:"Misty ancient graveyard — dark, atmospheric", footage:"Medieval graveyard (Pexels) · Kyrgyzstan landscape · Totentanz art (Wikimedia) · Silk Road maps", expression:"Concerned/troubled", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
-  { num:"007", title:"The Russian Crown Jewels Heist", launch:"Fri Jun 26", status:"upcoming", overlays:"Jewel value · 1917 · NEVER RECOVERED · ROMANOV", cold:"Crown jewel glamour close-up — gold and diamonds", footage:"Russian imperial imagery (archive.org) · Diamond Fund photos (Wikimedia) · Bolshevik revolution archival", expression:"Shocked/wide eyes", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
-  { num:"008", title:"The Franz Ferdinand Assassination", launch:"Mon Jun 29", status:"upcoming", overlays:"6 ASSASSINS · WRONG TURN · 28 JUNE 1914 · THE BLACK HAND", cold:"1914 archival street footage or Franz Ferdinand portrait", footage:"WWI archival (archive.org) · Sarajevo 1914 (Wikimedia) · Franz Ferdinand photos. NO graphic violence.", expression:"Serious/intense", reddit:"r/history · r/WWI", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
-  { num:"009", title:"The Royal Court Poisoner", launch:"Wed Jul 1", status:"upcoming", overlays:"Court death count · date · NEVER IDENTIFIED · poison name", cold:"Darkened palace corridor or poison bottle close-up", footage:"Royal court paintings (Wikimedia) · apothecary bottles · palace imagery", expression:"Knowing/sinister", reddit:"r/history · r/UnsolvedMysteries", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
-  { num:"010", title:"The Baghdad Battery", launch:"Fri Jul 3", status:"upcoming", overlays:"2,000 YEARS · ELECTRICITY? · 1.1 VOLTS · MESOPOTAMIA", cold:"Baghdad Battery artifact close-up, dramatic single-source lighting", footage:"Baghdad Battery photos (Wikimedia) · ancient Mesopotamian ruins · Iraq Museum", expression:"Shocked/disbelief", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
-  { num:"011", title:"How Egyptians Moved the Stones", launch:"Mon Jul 6", status:"upcoming", overlays:"2,500,000 LBS · 2.3 MILLION STONES · NOT SLAVES · WET SAND", cold:"Great Pyramid dawn aerial — epic scale", footage:"Great Pyramid footage (archive.org) · Giza aerial (Pexels) · Nile river · stonecutting imagery", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/AskHistorians", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
-  { num:"012", title:"The Antikythera Mechanism", launch:"Wed Jul 8", status:"upcoming", overlays:"37 BRONZE GEARS · 2,000 YEARS OLD · 1,400 YEAR GAP · ECLIPSE PREDICTION", cold:"Mechanism gear close-up — dramatic bronze reveal", footage:"Mechanism photos (Wikimedia) · Athens National Museum · Greek ruins · Mediterranean sea", expression:"Disbelief/shocked", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
+  { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe · Leonardo character debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14" },
+  { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"upcoming", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
+  { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"upcoming", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
+  { num:"005", title:"Mansa Musa & the Mali Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"RICHEST HUMAN EVER · CRASHED EGYPT'S ECONOMY · GOLD BEYOND COUNTING · TIMBUKTU", cold:"Gold close-up or Saharan caravan silhouette at dusk", footage:"Sahara caravans (Pexels) · Djinguereber mosque & Timbuktu manuscripts (Wikimedia) · Catalan Atlas · medieval gold-trade maps", expression:"Awe/knowing", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
+  { num:"006", title:"The Khmer Empire / Angkor", launch:"Wed Jun 24", status:"upcoming", overlays:"LARGEST PRE-INDUSTRIAL CITY · 1,000 SQ KM · WATER EMPIRE · SWALLOWED BY JUNGLE", cold:"Angkor Wat dawn silhouette — epic scale", footage:"Angkor Wat aerials (Pexels) · Ta Prohm jungle ruins · bas-reliefs (Wikimedia) · LiDAR city-grid maps · Cambodian waterways", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
+  { num:"007", title:"How Rome Debased Its Currency to Death", launch:"Fri Jun 26", status:"upcoming", overlays:"94% SILVER → 5% · 1,000%+ INFLATION · 50 EMPERORS IN 50 YEARS · THE DENARIUS", cold:"Roman denarius macro shot — dramatic single-source lighting", footage:"Roman coins (Wikimedia) · Forum & Colosseum (Pexels) · emperor busts · ancient mint imagery · archive.org Rome footage", expression:"Serious/warning · strongest modern-relevance hook", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
+  { num:"008", title:"The Maya Collapse", launch:"Mon Jun 29", status:"upcoming", overlays:"90% POPULATION LOSS · MEGA-DROUGHT · DEFORESTATION · CITIES SWALLOWED WHOLE", cold:"Tikal temple rising from jungle canopy — misty dawn", footage:"Tikal & Palenque ruins (Pexels) · Maya glyphs (Wikimedia) · jungle-canopy aerials · cenotes · drought imagery", expression:"Concerned/grave", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
+  { num:"009", title:"Lost Treasure of the Knights Templar", launch:"Wed Jul 1", status:"upcoming", overlays:"FRIDAY THE 13TH, 1307 · EUROPE'S FIRST BANKERS · FLEET VANISHED · NEVER FOUND", cold:"Candlelit medieval vault or Templar cross — shadowy", footage:"Templar castles & Temple Church (Wikimedia) · medieval manuscripts · La Rochelle harbor · crusader imagery (archive.org)", expression:"Knowing/mysterious · tests the pure lost-wealth vein", reddit:"r/UnsolvedMysteries · r/history", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
+  { num:"010", title:"The South Sea Bubble", launch:"Fri Jul 3", status:"upcoming", overlays:"1720 · 1,000% RISE · TOTAL COLLAPSE · NEWTON LOST A FORTUNE", cold:"Hogarth-style 1720 London chaos engraving — frantic energy", footage:"South Sea Bubble & Hogarth prints (Wikimedia) · 18th-century London (archive.org) · stock certificates · tulip imagery", expression:"Disbelief/warning · CANARY TEST — boldest lean toward Business Forensics", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
+  { num:"011", title:"Easter Island / Rapa Nui", launch:"Mon Jul 6", status:"upcoming", overlays:"887 MOAI · EVERY TREE GONE · 90% COLLAPSE · THE ISLAND THAT CONSUMED ITSELF", cold:"Moai row silhouette at sunset — iconic", footage:"Moai statues (Pexels) · Rano Raraku quarry (Wikimedia) · Pacific aerials · barren-vs-forested comparisons", expression:"Grave/reflective", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
+  { num:"012", title:"Indus Valley — Revisited", launch:"Wed Jul 8", status:"upcoming", overlays:"RICHEST TRADE NETWORK OF THE ANCIENT WORLD · 1,000+ CITIES · STANDARDIZED WEIGHTS · CALLBACK TO CASE #001", cold:"Mohenjo-daro ruins — same shot family as Case #001, full circle", footage:"Mohenjo-daro (reuse Case #001 library) · Indus seals & weights (Wikimedia) · Mesopotamia trade-route maps · Persian Gulf", expression:"Confident/knowing · before/after reframe comparison", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
 ];
 
 // ─── NEW: VANISHED HISTORY CONTENT TRAJECTORY DATA ──────────────────────────
@@ -659,7 +677,7 @@ const SCALING_GATES = [
 const QUICK_PROMPTS_BY_PANEL = {
   overview: ["What should I focus on today?", "How is Cipher House tracking vs plan?", "What's my next major milestone?"],
   tasks: ["Write Case #001 pinned comment", "Give me a pre-launch checklist", "What should I do right now?"],
-  cases: ["Write the Case #002 full script", "Research the Roanoke Colony for me", "Write Case #003 Göbekli Tepe script", "Write SEO title options for Case #004", "Write the pinned comment for Case #005"],
+  cases: ["Write the Case #002 full script", "Research Göbekli Tepe for me", "Write Case #003 Minoans script", "Write SEO title options for Case #004", "Write the pinned comment for Case #005"],
   calendar: ["Build Month 2 content calendar", "Suggest 3 outlier video topics", "Write hooks for Week 2 videos"],
   niches: ["Which channel should I launch second?", "What's the best CPM niche right now?"],
   growth: ["Write a Reddit post for Case #001", "Write a Quora answer about the Indus Valley", "Draft 3 Short titles for Case #001"],
@@ -722,7 +740,7 @@ function TodayWidget({ setPanel }) {
   const dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
   const pretty = now.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric" });
   const scheduled = SCHEDULE[dateStr] || [];
-  const recurring = recurringFor(dateStr).filter(r => !scheduled.some(s => s.includes(r.split(" ")[1] || "")));
+  const recurring = recurringFor(dateStr, scheduled);
   const items = [...scheduled, ...recurring];
   let nextLabel = null, nextItems = [];
   if (items.length === 0) {
@@ -813,7 +831,7 @@ function TasksPanel({ doneSet, onToggle }) {
     { badge:"Sun Jun 7 · 7:00am–5:00pm", cls:"badge-sun", title:"Edit Day — DaVinci + overlays + export", sub:"Assembly → character overlays → thumbnail → 3 Shorts → export", tasks: TASKS.sun },
     { badge:"Mon Jun 8 · 7:00am–2:00pm", cls:"badge-mon", title:"QC + Upload + Schedule", sub:"Watch-through → SEO → music swap (Pixabay claim → Kevin MacLeod) → re-export FINAL2", tasks: TASKS.mon },
     { badge:"Tue Jun 9 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
-    { badge:"Mon Jun 15 – Fri Jun 19", cls:"badge-wed", title:"Case #002 — Roanoke Colony production", sub:"Script → Voiceover → Footage → Edit → Upload", tasks: TASKS.c002 },
+    { badge:"Wed Jun 10 – Sun Jun 14 · launches Mon Jun 15", cls:"badge-wed", title:"Case #002 — Göbekli Tepe production", sub:"Script → Voiceover → Footage → Edit → Upload", tasks: TASKS.c002 },
     { badge:"Jun 15 – Jul 8", cls:"badge-fri", title:"Cases #003–#012 — rolling production", sub:"Every remaining case runs the same 12-step Production Loop · per-case details in the Cases panel · dates in Content Calendar", tasks: [] },
   ];
   const totalTasks = Object.values(TASKS).flat().length;
@@ -840,32 +858,32 @@ function TasksPanel({ doneSet, onToggle }) {
 
 function CalendarPanel() {
   const weeks = [
-    { week:"Week 1", theme:"Lost civilizations & vanished peoples", featured:true, videos:[
+    { week:"Week 1 · Phase 1 — Bridge", theme:"Lost sophistication — establish the category", featured:true, videos:[
       {day:"Jun 9", title:"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"},
-      {day:"Mon Jun 15", title:"The Roanoke colony: 115 people disappeared without a trace — the truth historians ignore"},
-      {day:"Wed Jun 17", title:"Göbekli Tepe: the temple that rewrote human history — and the sophisticated people who built it"},
+      {day:"Mon Jun 15", title:"Göbekli Tepe: The Civilization That Was 7,000 Years Too Advanced"},
+      {day:"Wed Jun 17", title:"The Minoans: How the World's Richest Trade Empire Collapsed"},
     ]},
-    { week:"Week 2", theme:"Hidden figures & suppressed history", featured:false, videos:[
-      {day:"Fri Jun 19", title:"The mathematician who cracked Nazi codes — and was erased from history"},
-      {day:"Mon Jun 22", title:"The empire that ruled half the world — and why you've never heard of it"},
-      {day:"Wed Jun 24", title:"The Black death's real origin: what scientists found in a 700-year-old graveyard"},
+    { week:"Week 2 · Phase 2 — The reframe", theme:"Collapsed empires & lost wealth — the new identity", featured:false, videos:[
+      {day:"Fri Jun 19", title:"The Bronze Age Collapse: How Every Empire Fell in the Same 50 Years"},
+      {day:"Mon Jun 22", title:"Mansa Musa: The Richest Human Who Ever Lived — and the Empire That Vanished"},
+      {day:"Wed Jun 24", title:"The Khmer Empire: The Largest City on Earth, Abandoned to the Jungle"},
     ]},
-    { week:"Week 3", theme:"Historical crimes & conspiracies", featured:false, videos:[
-      {day:"Fri Jun 26", title:"The greatest heist in history: who really stole the Russian crown jewels?"},
-      {day:"Mon Jun 29", title:"The assassination that history got wrong: what actually happened to Archduke Franz Ferdinand"},
-      {day:"Wed Jul 1", title:"The poisoner who killed an entire royal court — and was never caught"},
+    { week:"Week 3 · Phase 2 — Wealth & power", theme:"Money, collapse, and missing fortunes", featured:false, videos:[
+      {day:"Fri Jun 26", title:"How Rome Debased Its Currency to Death"},
+      {day:"Mon Jun 29", title:"The Maya Collapse: Why Advanced Societies Destroy Themselves"},
+      {day:"Wed Jul 1", title:"The Lost Treasure of the Knights Templar"},
     ]},
-    { week:"Week 4", theme:"Ancient engineering & impossible objects", featured:false, videos:[
-      {day:"Fri Jul 3", title:"The Baghdad battery: did ancient Persians invent electricity 2,000 years ago?"},
-      {day:"Mon Jul 6", title:"How did ancient Egyptians move 2.5-million-pound stones? Engineers finally have an answer"},
-      {day:"Wed Jul 8", title:"The Antikythera mechanism: a 2,000-year-old computer that shouldn't exist"},
+    { week:"Week 4 · Phase 3 — Testing the veins", theme:"Financial mania, resource collapse, and the callback", featured:false, videos:[
+      {day:"Fri Jul 3", title:"The South Sea Bubble: The First Time an Entire Nation Went Financially Insane"},
+      {day:"Mon Jul 6", title:"Easter Island: The Civilization That Consumed Itself"},
+      {day:"Wed Jul 8", title:"The Indus Valley, Revisited: The Ancient World's Richest Trade Network"},
     ]},
   ];
   return (
     <div>
       <div className="panel-header">
         <div className="panel-title">30-Day Content Calendar</div>
-        <div className="panel-sub">12 videos · Thu launch then Mon/Wed/Fri · 2pm PST · 4 weekly themes</div>
+        <div className="panel-sub">12 videos · live Jun 9, then Mon/Wed/Fri 2pm PST · pivot arc: mysteries → lost wealth & collapsed empires</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
@@ -979,23 +997,21 @@ function GrowthSystemsPanel({ trackerSet, onToggleStep }) {
         <div className="info-title">Why these matter</div>
         <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.6}}>Per-video work gets the video live. These systems are what turn 12 videos into a growing channel: engagement signals, data-driven topic selection, and never missing a monetization window.</div>
       </div>
-      {GROWTH_SYSTEMS.map((s) => {
-        const id = `sys:${s.key}`;
-        const done = trackerSet.has(id);
-        return (
-          <div key={s.key} className={`task-card ${done ? "done" : ""}`} onClick={() => onToggleStep(id)} style={{marginBottom:8}}>
-            <div className="check-box"><span className="check-icon">✓</span></div>
-            <div className="task-body">
-              <div className="task-name">{s.icon} {s.label} <span style={{color:"var(--gold2)",fontFamily:"'DM Mono', monospace",fontSize:11,marginLeft:6}}>{s.cadence}</span></div>
-              <div className="task-desc">{s.note}</div>
-            </div>
+      {GROWTH_SYSTEMS.map((s) => (
+        <div key={s.key} className="task-card" style={{marginBottom:8, cursor:"default"}}>
+          <div className="task-body">
+            <div className="task-name">{s.icon} {s.label} <span style={{color:"var(--gold2)",fontFamily:"'DM Mono', monospace",fontSize:11,marginLeft:6,background:"var(--gold-dim)",border:"1px solid var(--gold-dim2)",borderRadius:4,padding:"1px 7px"}}>{s.cadence}</span></div>
+            <div className="task-desc">{s.note}</div>
           </div>
-        );
-      })}
+        </div>
+      ))}
+      <div className="info-box" style={{marginTop:14, borderColor:"rgba(201,168,76,0.35)"}}>
+        <div className="info-title">⟳ These are rhythms, not a checklist</div>
+        <div style={{fontSize:12,color:"var(--text3)",lineHeight:1.6}}>Nothing here gets "completed." Each item auto-appears in the <b>Today</b> widget on the Dashboard on its cadence — Mon/Wed/Fri comment sessions, Friday analytics, first-Monday reviews, 1st-of-month monetization checks — alongside that day's production tasks.</div>
+      </div>
     </div>
   );
 }
-
 function CasesPanel() {
   const [expanded, setExpanded] = useState(null);
   return (
@@ -1048,16 +1064,18 @@ function NichesPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Niche Research</div>
-        <div className="panel-sub">Top 3 matches based on interests, budget, and low-competition goal</div>
+        <div className="panel-sub">The 5-channel empire — every niche researched, sequenced by launch trigger</div>
         <div className="gold-line" />
       </div>
       <div className="niche-grid">
         {[
-          {rank:"⭐ Best match — your channel",name:"Historical mysteries",cpm:"$5–10 RPM",top:true,rows:[["Competition","Low ✓"],["Budget fit","$50–200/mo ✓"],["AI producible","Very easy"],["Evergreen","Yes"],["At 100K subs","$800–2,500/mo"],["Footage cost","Free (archive.org)"]]},
-          {rank:"#2 — future expansion",name:"AI tools & tech tutorials",cpm:"$16–28 RPM",top:false,rows:[["Competition","Medium"],["Budget fit","$50–200/mo ✓"],["AI producible","Very easy"],["Evergreen","Partial"],["At 100K subs","$1,200–4,500/mo"],["Footage cost","Free (screen record)"]]},
-          {rank:"#3 — power move combo",name:"Business case studies",cpm:"$14–35 RPM",top:false,rows:[["Competition","Low–medium"],["Budget fit","$50–200/mo ✓"],["AI producible","Easy"],["Evergreen","Yes"],["At 100K subs","$2,000–5,000/mo"],["Sponsor appeal","Very high (B2B)"]]},
+          {rank:"⭐ Channel 1 — LIVE",name:"Vanished History — lost wealth & collapsed empires",cpm:"$12–20 RPM",top:true,rows:[["Status","Live Jun 9 ✓"],["Competition","Low"],["AI producible","Very easy"],["Evergreen","Yes"],["Projection","$500–2k/mo by Month 12"],["Footage cost","Free (archive.org)"]]},
+          {rank:"#2 — Aug 2026 · ⭐ breakout",name:"Business & Financial Forensics",cpm:"$15–25 RPM",top:false,rows:[["Status","Launch Aug 2026"],["Competition","Low–medium"],["Concept score","8.5/10 — strongest"],["Evergreen","Yes"],["Sponsor appeal","Very high (B2B)"],["Trigger","60 days of Ch1 stability"]]},
+          {rank:"#3 — Q1 2027 · highest RPM",name:"Personal Finance for Online Business Owners",cpm:"$25–50 RPM",top:false,rows:[["Status","Q1 2027"],["Competition","Medium"],["RPM rank","Highest on platform"],["Evergreen","Yes"],["Audience","Built from Ch 1–2"],["Trigger","Ch2 monetized"]]},
+          {rank:"#4 — Q3 2027 · decoupled",name:"AI Tools & Systems",cpm:"$20–40 RPM",top:false,rows:[["Status","Q3 2027"],["Competition","Medium"],["Revenue driver","Affiliate conversion, not views"],["Evergreen","Yes — systems, not news"],["Brand","Decoupled from Cipher House"],["Footage cost","Free (screen record)"]]},
+          {rank:"#5 — Q1 2028 · cross-pollinator",name:"Financial Crime & Corporate Fraud",cpm:"$10–18 RPM",top:false,rows:[["Status","Q1 2028"],["Competition","Low — underserved lane"],["Niche","True crime that pays like business"],["Evergreen","Yes"],["Synergy","Cross-pollinates all 4 channels"],["Trigger","1 hr/wk spare capacity"]]},
         ].map((n,i) => (
-          <div key={i} className={`niche-card ${n.top ? "top" : ""}`}>
+          <div key={i} className={"niche-card " + (n.top ? "top" : "")}>
             <div className="niche-rank">{n.rank}</div>
             <div className="niche-name">{n.name}</div>
             <div className="niche-cpm">{n.cpm}</div>
@@ -1066,13 +1084,12 @@ function NichesPanel() {
         ))}
       </div>
       <div className="info-box">
-        <div className="info-title">The power move — combine niches 1 & 3</div>
-        <div className="info-body">"Business history" channels — like "How the East India Company became richer than most countries" — combine the free archive-footage workflow of history with the $14–35 CPM of business content. This is the direction Vanished History is reframing toward from Video 4 onward.</div>
+        <div className="info-title">The power move — combine niches 1 & 2</div>
+        <div className="info-body">"Business history" content — like "How the East India Company became richer than most countries" — combines the free archive-footage workflow of history with business-content CPMs. This is exactly the reframe Vanished History is executing from Video 4 onward, and it feeds directly into Channel 2's audience.</div>
       </div>
     </div>
   );
 }
-
 function GrowthPanel() {
   return (
     <div>
@@ -1372,7 +1389,7 @@ function ProductionLoopPanel() {
         <div className="info-body">Character expression (shocked vs serious vs concerned) and text (question vs statement vs number). Keep thumbnail text style identical across all videos — same font, placement, color. That visual grammar is itself an algorithm signal.</div>
       </div>
 
-      <div className="section-title">Per-launch growth checklist</div>
+      <div className="section-title">Post-launch growth checklist — every video</div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
         {[
           ["+5 min", "Pinned comment posted"],
@@ -1385,7 +1402,7 @@ function ProductionLoopPanel() {
         ))}
       </div>
 
-      <div className="section-title">Operating rhythm</div>
+      <div className="section-title">Operating rhythm — auto-populates in Today on the Dashboard</div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px"}}>
         {[
           ["Mon/Wed/Fri", "Comment reply session — 8:30pm after gym, ~15 min"],
@@ -1634,7 +1651,7 @@ function SOPPanel() {
         <div className="panel-sub">Standard operating procedures — the same system deployed across every channel</div>
         <div className="gold-line" />
       </div>
-      <div className="section-title">Single channel weekly schedule (25–30 hrs/wk)</div>
+      <div className="section-title">Single channel weekly schedule (25–30 hrs/wk) — each day auto-appears in Today</div>
       <div className="sop-box">
         {[
           ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
