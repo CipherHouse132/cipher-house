@@ -464,32 +464,32 @@ const SCHEDULE = {
   "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
   "2026-06-06": ["✅ The Investigator designed (v5 final) + transparent PNG", "✅ HeyGen Creator set up + Brad voice imported via ElevenLabs API", "✅ All 5 sections generated — Investigator talking, lip-sync confirmed", "✅ 5 HeyGen MP4s saved to HeyGen Character folder"],
   "2026-06-07": ["🎬 Pre-edit check + DaVinci assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
-  "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure + schedule Thu Jun 11 2pm PST"],
+  "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure (launch moved up to Jun 9)"],
   "2026-06-09": ["🚀 CASE #001 GOES LIVE — upload + publish", "💬 Pinned comment + reply to early comments", "📱 Cut 3 Shorts from the upload"],
   "2026-06-10": ["☕ Buffer day — catch up or rest", "✍️ Case #002 — Research + script (Roanoke)"],
   "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover", "💬 Comment replies (launch day)"],
-  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 HeyGen — The Investigator generation Case #002", "📊 Weekly analytics check"],
+  "2026-06-12": ["✍️ Case #003 — Research + script (Göbekli Tepe)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
-  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — The Investigator generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
+  "2026-06-14": ["✍️ Case #004 — Research + script (Nazi Codes)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
   "2026-06-15": ["📹 CASE #002 GOES LIVE 2pm — pinned comment + 3 Shorts", "🌐 Reddit + Quora seeding (Case #002)", "🎙️ Case #004 — Voiceover", "🎬 Case #003 — Edit", "📱 Case #003 — 3 Shorts", "💬 Comment replies"],
-  "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 HeyGen — The Investigator generation Case #004"],
+  "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 HeyGen — character generation Case #004"],
   "2026-06-17": ["✍️ Case #005 — Research + script (Hidden Empire)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
   "2026-06-18": ["⬆️ Case #004 — Upload + schedule", "🎙️ Case #005 — Voiceover", "🖼️ Case #002 — Version B thumbnail"],
   "2026-06-19": ["✍️ Case #006 — Research + script (Black Death)", "📹 CASE #004 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #004)", "🎞️ Case #005 — Footage", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 HeyGen — The Investigator Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
+  "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 HeyGen — character Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
   "2026-06-21": ["✍️ Case #007 — Research + script (Crown Jewels)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
   "2026-06-22": ["📹 CASE #005 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #005)", "🎙️ Case #007 — Voiceover", "🎬 Case #006 — Edit", "📱 Case #006 — 3 Shorts", "💬 Comment replies"],
   "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
   "2026-06-24": ["✍️ Case #008 — Research + script (Franz Ferdinand)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
   "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
-  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — The Investigator Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — The Investigator Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
+  "2026-06-26": ["✍️ Case #009 — Research + script (Royal Poisoner)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — character Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — character Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
   "2026-06-28": ["✍️ Case #010 — Research + script (Baghdad Battery)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
   "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
   "2026-06-30": ["⬆️ Case #009 — Upload + schedule", "🎞️ Case #010 — Footage"],
   "2026-07-01": ["✍️ Case #011 — Research + script (Egyptian Stones)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
   "2026-07-02": ["⬆️ Case #010 — Upload + schedule", "🎙️ Case #011 — Voiceover"],
-  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — The Investigator Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
+  "2026-07-03": ["✍️ Case #012 — Research + script (Antikythera)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — character Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
   "2026-07-04": ["🎙️ Case #012 — Voiceover", "🎬 Case #011 — Edit", "📱 Case #011 — 3 Shorts", "🖼️ Version B thumbnails — Cases #007/#008/#009"],
   "2026-07-05": ["⬆️ Case #011 — Upload + schedule", "🎞️ Case #012 — Footage"],
   "2026-07-06": ["📹 CASE #011 GOES LIVE 2pm", "🎬 Case #012 — Edit", "📱 Case #012 — 3 Shorts", "📊 Monthly Business Review #1", "🔍 vidIQ outlier analysis", "📅 Month 2 content planning", "💬 Comment replies"],
@@ -530,15 +530,15 @@ const TASKS = {
     { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
   ],
   sun: [
-    { id: "su1", name: "Pre-edit check + DaVinci assembly", desc: "Audio check: play all 5 HeyGen MP4s back to back. Footage verify: ☐ Cold open ☐ S1 Hook clips ☐ S2 Background clips ☐ S3 Mystery clips ☐ S4 Theories clips ☐ S5 Ending clips. DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first → footage on V1 → Investigator on V2. Cold open: 4-second dramatic ruins shot, music only.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
-    { id: "su2", name: "Character overlays + text overlays + captions + color grade", desc: "Layer order: footage clips = BACKGROUND. The Investigator HeyGen videos = overlay ON TOP on V2. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: CapCut auto-captions on final export. Color grade: warm + slightly desaturated on footage.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg + The Investigator (serious) + bold gold text + CASE #001 + ruins bg. Version B: Unsettled expression. Channel trailer: HeyGen → 60–90s trailer → DaVinci → overlay ruins footage → export.", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
-    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_Indus_Valley_FINAL.mp4. While rendering: create 3 Shorts in 9:16 vertical format. Short #1 Hook · Short #2 Mystery reveal · Short #3 Ending CTA.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
+    { id: "su1", name: "Pre-edit check + DaVinci assembly", desc: "Audio check: play all 5 HeyGen MP4s back to back. Footage verify: ☐ Cold open ☐ S1 Hook clips ☐ S2 Background clips ☐ S3 Mystery clips ☐ S4 Theories clips ☐ S5 Ending clips. DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first → footage on V1 (Investigator overlays later removed — final video faceless). Cold open: 4-second dramatic ruins shot, music only.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
+    { id: "su2", name: "Text overlays + captions + color grade (faceless)", desc: "Faceless final cut for Case #001 — Investigator overlays removed. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: YouTube auto-sync with exact script after upload. Color grade: warm + slightly desaturated on footage.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg + realistic Leonardo character + bold gold text + CASE #001 + ruins bg. Version B: change ONE thing (expression OR text). Channel trailer: deferred to Case #002+ once the HeyGen character is live.", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
+    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_IndusValley_FINAL2.mp4 (FINAL2 = Kevin MacLeod music swap after Pixabay content-ID claim). While rendering: create 3 Shorts in 9:16 vertical format. Short #1 Hook · Short #2 Mystery reveal · Short #3 Ending CTA.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
   ],
   mon: [
-    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_Indus_Valley_FINAL.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ character overlays ☐ captions readable ☐ music at -20dB ☐ pacing cuts every 5–8s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
-    { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The city that vanished overnight: what really happened to the Indus Valley civilization?' Description hook: 'In 1900 BC, a civilization of 5 million people — more advanced than ancient Rome — ceased to exist. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "m3", name: "Upload + AI disclosure + schedule Thu Jun 11 2pm PST", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Character overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Schedule: June 11, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_IndusValley_FINAL2.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ text overlays ☐ music at -20dB (Kevin MacLeod) ☐ pacing cuts every ~7s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
+    { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why' (vidIQ-optimized). Description hook: '5 million people. 1,000 cities. All gone — simultaneously. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "m3", name: "Upload + AI disclosure + publish (launched Jun 9)", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Published: June 9, 2026.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ],
   launch: [
     { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post pinned comment: 'Most historians blame the climate. But the timing doesn't fully add up — the cities were already declining before the worst droughts hit. What's your theory? Drop it below 👇 I read every single one.' Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
@@ -550,7 +550,7 @@ const TASKS = {
     { id: "c002s", name: "Case #002 — Research + script (Roanoke Colony)", desc: "Ask Claude: the CROATOAN inscription, John White's 3-year return voyage, 4 theories, Virginia Dare, 2012 Hatteras Island discovery. Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
     { id: "c002v", name: "Case #002 — Voiceover (Roanoke)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
     { id: "c002f", name: "Case #002 — Footage (Roanoke)", desc: "Cold open: dramatic NC coastline or misty forest. S1: colonial ships (archive.org). S2: Elizabethan England, colonial maps. S3: CROATOAN carving (Wikimedia), forest. S4: Native American imagery. S5: wide coastal landscape. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Roanoke)", desc: "Generate The Investigator in HeyGen first. DaVinci Resolve: 4s cold open → footage background + Investigator HeyGen overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → CapCut captions → export. Thumbnail: The Investigator (concerned). 3 Shorts.", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Roanoke)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: CROATOAN · 115 COLONISTS · 3 YEARS MISSING · VIRGINIA DARE → export → YouTube auto-sync captions. Thumbnail: Leonardo character (concerned). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
@@ -559,8 +559,8 @@ const TRACKER_STEPS = [
   { key:"script",    icon:"✍️", label:"Research + script",          note:"Claude researches + writes 5-section script · RULE: answer the core question in first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
   { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
-  { key:"heygen",    icon:"🎭", label:"HeyGen — The Investigator",   note:"Generate The Investigator talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s to HeyGen Character folder" },
-  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
+  { key:"heygen",    icon:"🎭", label:"HeyGen — character",   note:"Generate the realistic Leonardo character talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s · from Case #002 (Case #001 was faceless)" },
+  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → YouTube auto-sync captions → Canva thumbnail A" },
   { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: 'The full story is on the channel' + link" },
   { key:"upload",    icon:"⬆️", label:"Upload + schedule",           note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
   { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each Short" },
@@ -809,12 +809,12 @@ function TasksPanel({ doneSet, onToggle }) {
     { badge:"Wed Jun 3 · 6:00–9:00pm", cls:"badge-wed", title:"Channel setup + accounts", sub:"Pure admin — no creative work yet", tasks: TASKS.wed },
     { badge:"Thu Jun 4 · 6:00–9:00pm", cls:"badge-thu", title:"Research + footage prep + script", sub:"Delete old footage · map visual needs · write script", tasks: TASKS.thu },
     { badge:"Fri Jun 5 · 7:00–10:00pm", cls:"badge-fri", title:"Voiceover + full footage search", sub:"Section-by-section · cold open first · 25–35 clips", tasks: TASKS.fri },
-    { badge:"Sat Jun 6 · Complete ✅", cls:"badge-sat", title:"Character Build Day — The Investigator", sub:"Design v5 → transparent PNG → HeyGen setup → 5 sections generated", tasks: TASKS.sat },
+    { badge:"Sat Jun 6 · Complete ✅", cls:"badge-sat", title:"Character Build Day — The Investigator (since retired)", sub:"Design v5 → transparent PNG → HeyGen setup → 5 sections generated", tasks: TASKS.sat },
     { badge:"Sun Jun 7 · 7:00am–5:00pm", cls:"badge-sun", title:"Edit Day — DaVinci + overlays + export", sub:"Assembly → character overlays → thumbnail → 3 Shorts → export", tasks: TASKS.sun },
-    { badge:"Mon Jun 8 · 7:00am–2:00pm", cls:"badge-mon", title:"QC + Upload + Schedule", sub:"Watch-through → SEO → upload → schedule Thu Jun 11 2pm PST", tasks: TASKS.mon },
-    { badge:"Tue Jun 9 + Wed Jun 10 · Buffer 🛡️", cls:"badge-wed", title:"Free buffer days", sub:"Fix anything that needs fixing before Thursday launch", tasks: [] },
-    { badge:"Thu Jun 11 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
+    { badge:"Mon Jun 8 · 7:00am–2:00pm", cls:"badge-mon", title:"QC + Upload + Schedule", sub:"Watch-through → SEO → music swap (Pixabay claim → Kevin MacLeod) → re-export FINAL2", tasks: TASKS.mon },
+    { badge:"Tue Jun 9 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
     { badge:"Mon Jun 15 – Fri Jun 19", cls:"badge-wed", title:"Case #002 — Roanoke Colony production", sub:"Script → Voiceover → Footage → Edit → Upload", tasks: TASKS.c002 },
+    { badge:"Jun 15 – Jul 8", cls:"badge-fri", title:"Cases #003–#012 — rolling production", sub:"Every remaining case runs the same 12-step Production Loop · per-case details in the Cases panel · dates in Content Calendar", tasks: [] },
   ];
   const totalTasks = Object.values(TASKS).flat().length;
   const done = Object.values(TASKS).flat().filter(t => doneSet.has(t.id)).length;
@@ -828,7 +828,7 @@ function TasksPanel({ doneSet, onToggle }) {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Total tasks</div><div className="stat-val">{totalTasks}</div><div className="stat-note">across all days</div></div>
         <div className="stat-card"><div className="stat-label">Completed</div><div className="stat-val">{done}</div><div className="stat-note">tasks done</div></div>
-        <div className="stat-card"><div className="stat-label">Case #001 launch</div><div className="stat-val">Jun 11</div><div className="stat-note">2:00 PM PST</div></div>
+        <div className="stat-card"><div className="stat-label">Case #001 launch</div><div className="stat-val">Jun 9</div><div className="stat-note">LIVE · 2pm PST</div></div>
         <div className="stat-card"><div className="stat-label">Final launch</div><div className="stat-val">Jul 8</div><div className="stat-note">Case #012</div></div>
       </div>
       {allGroups.map((g, i) => (
@@ -1008,7 +1008,7 @@ function CasesPanel() {
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">Production SOP — same workflow every video</div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:10,fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
-          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎭 D-4","Character + Voice","Paste 5 sections into HeyGen · The Investigator talking · Brad voice · 5 MP4s"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips"],["🎬 D-2","Edit","Footage background → Investigator overlays → text → captions → export"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
+          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎭 D-4","Character + Voice","Paste 5 sections into HeyGen · Leonardo character talking · Brad voice · 5 MP4s"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips"],["🎬 D-2","Edit","Footage background → character overlays → text → export → YouTube auto-sync captions"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
             <div key={i}><span style={{color:"var(--gold2)"}}>{icon} {title}</span><br/>{desc}</div>
           ))}
         </div>
@@ -1314,8 +1314,8 @@ function ProductionLoopPanel() {
     { n:"1", icon:"✍️", label:"Research + script", note:"Claude researches + writes · answer core question in first 30–60s · SEO titles · description · chapters · pinned comment" },
     { n:"2", icon:"🎙️", label:"Voiceover", note:"ElevenLabs Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check back to back" },
     { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
-    { n:"4", icon:"🎭", label:"HeyGen — The Investigator", note:"Generate The Investigator through all 5 sections BEFORE edit day · save MP4s" },
-    { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + Investigator overlay → text overlays → export FINAL.mp4 → CapCut captions → Canva thumbnail A" },
+    { n:"4", icon:"🎭", label:"HeyGen — character", note:"Generate the Leonardo character through all 5 sections BEFORE edit day · save MP4s (from Case #002)" },
+    { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → YouTube auto-sync captions → Canva thumbnail A" },
     { n:"6", icon:"📱", label:"3 Shorts created", note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 vertical · captions · #Shorts · CTA → link to full video" },
     { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
     { n:"8", icon:"🚀", label:"Launch day", note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure on each Short" },
@@ -1414,7 +1414,7 @@ function LineupPanel({ setPanel }) {
         <div className="stat-card"><div className="stat-label">Total channels</div><div className="stat-val">5</div><div className="stat-note">staggered build</div></div>
         <div className="stat-card"><div className="stat-label">Combined target</div><div className="stat-val">$20k+/mo</div><div className="stat-note">by end 2028</div></div>
         <div className="stat-card"><div className="stat-label">Lead channel</div><div className="stat-val">Ch2</div><div className="stat-note">Business Forensics</div></div>
-        <div className="stat-card"><div className="stat-label">Build horizon</div><div className="stat-val">2.5 yrs</div><div className="stat-note">from Jun 11 launch</div></div>
+        <div className="stat-card"><div className="stat-label">Build horizon</div><div className="stat-val">2.5 yrs</div><div className="stat-note">from Jun 9 launch</div></div>
       </div>
 
       <div className="section-title">Ranked by business merit</div>
@@ -1481,7 +1481,7 @@ function FormatMatrix() {
       cells:[
         "Hook → Background → Mystery → Theories → Unresolved Ending",
         "Core question answered with a specific name / date / place in first 60s",
-        "The Investigator (HeyGen talking host) + archive / Wikimedia / Pexels footage. Wealth/collapse framing from Video 4.",
+        "Realistic Leonardo character (HeyGen, from Case #002 — Case #001 faceless) + archive / Wikimedia / Pexels footage. Wealth/collapse framing from Video 4.",
         "ElevenLabs Brad — deep, measured, authoritative",
         "13–14 min long-form + 3 vertical Shorts",
         "Open-ended question → 'I read every single one' → subscribe",
@@ -1638,8 +1638,8 @@ function SOPPanel() {
       <div className="sop-box">
         {[
           ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
-          ["Tuesday — DaVinci edit","Footage background → Investigator overlays → text overlays → color grade → export → CapCut captions","2–3 hrs"],
-          ["Wednesday — Thumbnail + upload","The Investigator (HeyGen) → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
+          ["Tuesday — DaVinci edit","Footage background → character overlays → text overlays → color grade → export → YouTube auto-sync captions","2–3 hrs"],
+          ["Wednesday — Thumbnail + upload","Leonardo character → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
           ["Thursday — Community + distribution","Reddit seeding → Quora answer → pinned comment → Short upload → reply to all comments","1–2 hrs"],
           ["Friday — Analytics + next week prep","YouTube Studio analytics → Claude writes next 3 scripts → content calendar updated","2–3 hrs"],
           ["Saturday — Batch production sprint","Generate 2–3 voiceovers + edit multiple videos back to back · builds 1-week buffer","4–6 hrs"],
@@ -1748,7 +1748,7 @@ BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo opera
 CHANNEL 1: Vanished History (@vanishedhistoryhq). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 live Jun 9 2026 (faceless), then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: YouTube auto-sync exact script for long-form; CapCut for Shorts only. Series: "Vanished History — The Cases".
 
 CHANNEL LINEUP (ranked by business merit):
-1. Vanished History — $12-20 RPM (post-pivot) — live Jun 11
+1. Vanished History — $12-20 RPM (post-pivot) — live Jun 9
 2. Business & Financial Forensics — $15-25 RPM — Aug 2026 — BREAKOUT CHANNEL
 3. Personal Finance for Online Business Owners — $25-50 RPM — Q1 2027
 4. AI Tools & Systems (decoupled from Cipher House) — $20-40 RPM — Q3 2027
