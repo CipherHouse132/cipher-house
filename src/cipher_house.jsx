@@ -466,8 +466,8 @@ const SCHEDULE = {
   "2026-06-07": ["🎬 Pre-edit check + DaVinci assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
   "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload attempt + AI disclosure (interrupted by account lockout)"],
   "2026-06-09": ["✅ Google account appeal approved", "✅ 3 Shorts cut + captioned (CapCut Pro added)", "✅ FINAL4 exported — burned-in captions on main video"],
-  "2026-06-10": ["🔐 Verify account → Chrome profiles → delete old channel → transfer VH to watchvanished@gmail.com", "⬆️ Upload FINAL4 + thumbnail + SEO → schedule Thu 2pm PST", "✍️ Case #002 — Research + script (Göbekli Tepe)"],
-  "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover (Göbekli Tepe)"],
+  "2026-06-10": ["✅ New channel LIVE — @vanishedhistorych on watchvanished@gmail.com · isolated Chrome profile · branded + playlist created", "✅ FINAL4 uploaded — thumbnail, SEO title, description, tags set → scheduled Thu 2pm PST", "✅ 3 Shorts uploaded → scheduled 2:30 / 4:00 / 6:00pm PST", "🗑️ Delete old YouTube channel on majorandkae@gmail.com (channel only, keep the Gmail)", "✍️ Case #002 — Research + script (Göbekli Tepe)"],
+  "2026-06-11": ["🚀 CASE #001 LIVE 2pm PST — post pinned comment within 5 min (saved in Cases panel)", "📱 Shorts auto-publish 2:30 / 4:00 / 6:00pm — after 2pm add related-video link to each Short", "🌐 Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", "💬 Reply to every comment", "🎙️ Case #002 — Voiceover (Göbekli Tepe)"],
   "2026-06-12": ["✍️ Case #003 — Research + script (The Minoans)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
   "2026-06-14": ["✍️ Case #004 — Research + script (Bronze Age Collapse)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
@@ -556,11 +556,11 @@ const TASKS = {
   mon: [
     { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_IndusValley_FINAL4.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ burned-in captions readable ☐ text overlays ☐ music at -20dB (Kevin MacLeod) ☐ pacing cuts every ~7s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
     { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why' (vidIQ-optimized). Description hook: '5 million people. 1,000 cities. All gone — simultaneously. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "m3", name: "Upload + AI disclosure + schedule (Thu Jun 11 · 2pm PST)", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Scheduled: Thursday June 11, 2026, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "m3", name: "✅ DONE — Uploaded + scheduled Thu Jun 11 · 2pm PST on @vanishedhistorych", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Scheduled: Thursday June 11, 2026, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ],
   launch: [
-    { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post pinned comment: 'Most historians blame the climate. But the timing doesn't fully add up — the cities were already declining before the worst droughts hit. What's your theory? Drop it below 👇 I read every single one.' Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
-    { id: "l2", name: "Upload all 3 Shorts within 2 hours of launch", desc: "Upload Short #1 (hook), Short #2 (mystery reveal), Short #3 (ending CTA). Each: title with #Shorts, AI disclosure, link to main video.", tags:[{t:"Within 2 hrs",c:"urgent"},{t:"Free",c:"free"}] },
+    { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post the locked pinned comment (full text saved in the Cases panel under Case #001): \"Something doesn't add up. The climate theory is the most convincing — four droughts, one lasting 113 years. But archaeologists keep finding cities that were already being abandoned before the worst droughts hit. Which means either the climate wasn't the cause — or something else triggered the collapse first, and the drought finished it off. No invasion evidence. No mass graves. No signs of disease. A civilization of 5 million people with better plumbing than 1800s London just... quietly unraveled. What do you think started it? 👇\" Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
+    { id: "l2", name: "Shorts auto-publish 2:30 / 4:00 / 6:00pm — add related-video links after 2pm", desc: "All 3 Shorts already uploaded + scheduled with AI disclosure: 2:30pm 'They just stopped. No war. No plague. No explanation.' · 4:00pm 'One drought lasted 113 years. Another lasted 164.' · 6:00pm 'We still can't read a single word they ever wrote'. After the main video is live: open each Short → Video elements → Add related video → link Case #001.", tags:[{t:"After 2pm",c:"urgent"},{t:"Free",c:"free"}] },
     { id: "l3", name: "Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", desc: "Find active threads about the Indus Valley. Engage genuinely first — answer a question or add context. Then share your video as a follow-up resource. Never just drop a link.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
     { id: "l4", name: "Reply to every comment for the first 24 hours", desc: "Check YouTube Studio analytics: CTR, watch time, impressions at 24hr and 48hr. Reply to every comment. Early engagement signals quality to the algorithm.", tags:[{t:"Free",c:"free"},{t:"Ongoing",c:"time"}] },
   ],
@@ -579,9 +579,9 @@ const TRACKER_STEPS = [
   { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
   { key:"heygen",    icon:"🎭", label:"HeyGen — character",   note:"Generate the realistic Leonardo character talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s · from Case #002 (Case #001 was faceless)" },
   { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
-  { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: 'The full story is on the channel' + link" },
-  { key:"upload",    icon:"⬆️", label:"Upload + schedule",           note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
-  { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each Short" },
+  { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
+  { key:"upload",    icon:"⬆️", label:"Upload + schedule",           note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE → YES · schedule main 2pm PST + 3 Shorts 2:30 / 4:00 / 6:00pm" },
+  { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Main live 2pm · pinned comment within 5 min · Shorts auto-publish 2:30 / 4:00 / 6:00pm · after 2pm add related-video link to each Short · Reddit seeding" },
   { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",      note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
   { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",    note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
   { key:"thumbB",    icon:"🖼️", label:"Version B thumbnail",         note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text) · start Test & Compare" },
@@ -598,7 +598,7 @@ const GROWTH_SYSTEMS = [
 ];
 
 const CASES = [
-  { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"LAUNCHES Thu Jun 11 2pm PST — FINAL4 burned-in captions, Kevin MacLeod music, vidIQ-optimized title" },
+  { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"SCHEDULED ✓ Thu Jun 11 2pm PST on @vanishedhistorych — FINAL4 uploaded, thumbnail + SEO set, playlist added", shorts:"2:30pm 'They just stopped. No war. No plague. No explanation.' · 4:00pm 'One drought lasted 113 years. Another lasted 164.' · 6:00pm 'We still can't read a single word they ever wrote' — all scheduled · add related-video links after 2pm", pinnedComment:"Something doesn't add up. The climate theory is the most convincing — four droughts, one lasting 113 years. But archaeologists keep finding cities that were already being abandoned before the worst droughts hit. Which means either the climate wasn't the cause — or something else triggered the collapse first, and the drought finished it off. No invasion evidence. No mass graves. No signs of disease. A civilization of 5 million people with better plumbing than 1800s London just... quietly unraveled. What do you think started it? 👇" },
   { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe · Leonardo character debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14" },
   { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"upcoming", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
   { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"upcoming", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
@@ -624,7 +624,7 @@ const TRAJECTORY = {
       desc: "Videos 1–3 · Establish category, soft-lean toward 'lost sophistication'",
       cls: "traj-bridge",
       videos: [
-        { num:"01", topic:"Indus Valley Civilization", title:'"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"', note:"Launches Thu Jun 11, 2pm PST — faceless, burned-in captions, Kevin MacLeod music, Leonardo thumbnail. Sets the algorithm's first impression.", flag:"SCHEDULED", cls:"produced" },
+        { num:"01", topic:"Indus Valley Civilization", title:'"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"', note:"SCHEDULED Thu Jun 11 2pm PST on @vanishedhistorych + 3 Shorts 2:30/4/6pm — faceless, burned-in captions, Kevin MacLeod music, Leonardo thumbnail. Sets the algorithm's first impression.", flag:"SCHEDULED", cls:"produced" },
         { num:"02", topic:"Göbekli Tepe", title:'"The Civilization That Was 7,000 Years Too Advanced"', note:"Natural bridge — sophisticated society, remarkable achievement, vanished. Plants the 'lost sophistication' seed.", flag:"", cls:"" },
         { num:"03", topic:"The Minoans", title:'"How the World\'s Richest Trade Empire Collapsed"', note:"Introduces wealth & trade power for the first time. Word 'collapsed' conditions audience for Phase 2.", flag:"", cls:"" },
       ]
@@ -788,7 +788,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #001 — launches Thursday 🚀</div>
+          <div className="launch-text">Case #001 — scheduled ✓ launches Thursday 🚀</div>
           <div className="launch-sub">The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why</div>
         </div>
         <div className="launch-date">Thu Jun 11 · 2:00 PM PST</div>
@@ -1050,6 +1050,8 @@ function CasesPanel() {
                 <div><div className="case-detail-label">Cold open</div><div className="case-detail-val">{c.cold}</div></div>
                 <div style={{gridColumn:"span 2"}}><div className="case-detail-label">Footage direction</div><div className="case-detail-val" style={{color:"var(--text3)"}}>{c.footage}</div></div>
                 <div><div className="case-detail-label">Thumbnail · Reddit</div><div className="case-detail-val">{c.expression} · CASE #{c.num}</div><div style={{fontSize:11,color:"var(--text3)",marginTop:2}}>{c.reddit}</div></div>
+                {c.shorts && <div style={{gridColumn:"span 2"}}><div className="case-detail-label">3 Shorts — titles + schedule</div><div className="case-detail-val" style={{fontSize:11,color:"var(--text3)"}}>{c.shorts}</div></div>}
+                <div style={{gridColumn:"span 2"}}><div className="case-detail-label">Pinned comment — ready to copy on launch day</div><div className="case-detail-val" style={{fontSize:11,color:c.pinnedComment?"var(--text2)":"var(--text3)",fontStyle:c.pinnedComment?"normal":"italic"}}>{c.pinnedComment || "Written with the script on D-5 — lead with a specific contradiction from the video, end with a question 👇"}</div></div>
               </div>
             </div>
           )}
@@ -1332,9 +1334,9 @@ function ProductionLoopPanel() {
     { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
     { n:"4", icon:"🎭", label:"HeyGen — character", note:"Generate the Leonardo character through all 5 sections BEFORE edit day · save MP4s (from Case #002)" },
     { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
-    { n:"6", icon:"📱", label:"3 Shorts created", note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 vertical · captions · #Shorts · CTA → link to full video" },
-    { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
-    { n:"8", icon:"🚀", label:"Launch day", note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure on each Short" },
+    { n:"6", icon:"📱", label:"3 Shorts created", note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
+    { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule main 2pm PST + 3 Shorts 2:30 / 4:00 / 6:00pm" },
+    { n:"8", icon:"🚀", label:"Launch day", note:"Main live 2pm · pinned comment within 5 min · Shorts auto-publish 2:30 / 4:00 / 6:00pm · after 2pm add related-video link to each Short · Reddit seeding" },
     { n:"9", icon:"🌐", label:"Reddit + Quora seeding", note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
     { n:"10", icon:"💬", label:"Comment replies (48 hrs)", note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
     { n:"11", icon:"🖼️", label:"Version B thumbnail", note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text, not both) · start Test & Compare" },
@@ -1374,7 +1376,7 @@ function ProductionLoopPanel() {
       ))}
       <div className="info-box" style={{marginTop:12}}>
         <div className="info-title">Short specs + CTA</div>
-        <div className="info-body">45–60 seconds · vertical 9:16 · captions on · text hook at top · #Shorts in description · ⚠️ AI disclosure · upload all 3 within 2 hours of the main video.<br/><br/>Shorts #1 & #2: "The full story is on the channel — this is just 60 seconds of it 👇" + link<br/>Short #3: "If that ending bothered you, the full breakdown is on the channel" + link</div>
+        <div className="info-body">Up to 3 min · vertical 9:16 · CapCut burned-in captions · ⚠️ AI disclosure · schedule 2:30 / 4:00 / 6:00pm PST on launch day.<br/><br/>Title: most compelling line from that clip + #Shorts · Description: "The full story: [main video link]" · Remixing: ALLOWED (helps Shorts discovery) · Playlist: "Vanished History — The Cases" (everything goes in one playlist) · No custom thumbnail, no tags — YouTube ignores both for Shorts.<br/><br/>After the main video goes live: open each Short → Video elements → Add related video → link the full video.</div>
       </div>
 
       <div className="section-title">Thumbnail A/B system</div>
@@ -1392,7 +1394,7 @@ function ProductionLoopPanel() {
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
         {[
           ["+5 min", "Pinned comment posted"],
-          ["+2 hrs", "All 3 Shorts uploaded with AI disclosure"],
+          ["Pre-sched", "Shorts publish 2:30 / 4:00 / 6:00pm · after 2pm add related-video link to each"],
           ["Launch day", "Reddit seeding (topic-specific subreddits)"],
           ["+48 hrs", "Quora answer + reply to all comments"],
           ["Every video", "Affiliate links in description · added to playlist · end screen set"],
@@ -1761,7 +1763,7 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistoryhq). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 launches Thu Jun 11 2026 2pm PST (faceless), then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: CapCut Pro ($19.99/mo) burned-in auto-captions for all videos. Series: "Vanished History — The Cases".
+CHANNEL 1: Vanished History (@vanishedhistorych on watchvanished@gmail.com — channel rebuilt fresh Jun 10 after the iCloud account suspension; old handle @vanishedhistoryhq retired with the disabled account). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 SCHEDULED Thu Jun 11 2026 2pm PST (faceless) with 3 Shorts scheduled 2:30/4:00/6:00pm PST, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: CapCut Pro ($19.99/mo) burned-in auto-captions for all videos. Series: "Vanished History — The Cases". GOOGLE HYGIENE (hard rule): channel lives ONLY on watchvanished@gmail.com in an isolated Chrome profile (no other accounts, no extensions); Claude-in-Chrome extension lives ONLY in the Dev profile; iCloud account retired from YouTube; old channel on majorandkae@gmail.com pending deletion. UPLOAD DAY SOP: main video scheduled 2pm PST → 3 Shorts scheduled 2:30/4:00/6:00pm → Short titles = most compelling line from that clip + #Shorts → Short description "The full story: [link]" → Shorts remixing ALLOWED → everything into playlist "Vanished History — The Cases" → after 2pm add related-video link to each Short → pinned comment within 5 min.
 
 CHANNEL LINEUP (ranked by business merit):
 1. Vanished History — $12-20 RPM (post-pivot) — launches Jun 11
@@ -1773,7 +1775,7 @@ CHANNEL LINEUP (ranked by business merit):
 SCALING GATES: Ch1→Ch2: 60 days stable execution. Ch2→Ch3: Ch2 in YPP. Ch3→Ch4: $2k+/mo combined. Ch4→Ch5: 1 hire in place.
 
 CONTENT TRAJECTORY (Vanished History):
-Videos 1-3: Bridge phase. V1 Indus Valley (launches Thu Jun 11 — title "The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"). V2 Göbekli Tepe "The Civilization That Was 7,000 Years Too Advanced". V3 Minoans "How the World's Richest Trade Empire Collapsed".
+Videos 1-3: Bridge phase. V1 Indus Valley (SCHEDULED Thu Jun 11 2pm PST + 3 Shorts 2:30/4:00/6:00pm — title "The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"). V2 Göbekli Tepe "The Civilization That Was 7,000 Years Too Advanced". V3 Minoans "How the World's Richest Trade Empire Collapsed".
 Videos 4-8: Commit phase. V4 Bronze Age Collapse "How Every Empire Fell in the Same 50 Years" (thesis video). V5 Mansa Musa. V6 Khmer Empire. V7 Rome Currency Debasement (highest CPM). V8 Maya Collapse.
 Videos 9-12: Optimize/test. V10 South Sea Bubble is the CANARY test for financial angle.
 Steering rule: pivot on data (retention x CTR) after Video 8. Never become "a finance channel wearing a toga."
