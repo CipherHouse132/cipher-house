@@ -464,10 +464,10 @@ const SCHEDULE = {
   "2026-06-05": ["🎞️ Case #001 — Full footage hunt (7–10pm) using the footage map", "🎙️ Confirm Case #001 voiceover is exported"],
   "2026-06-06": ["✅ The Investigator designed (v5 final) + transparent PNG", "✅ HeyGen Creator set up + Brad voice imported via ElevenLabs API", "✅ All 5 sections generated — Investigator talking, lip-sync confirmed", "✅ 5 HeyGen MP4s saved to HeyGen Character folder"],
   "2026-06-07": ["🎬 Pre-edit check + DaVinci assembly + Ken Burns stills", "📝 Character overlays + text overlays + captions + color grade", "🖼️ Thumbnail (Version A + B) + channel trailer", "💾 Export main video + 3 Shorts"],
-  "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload + AI disclosure (launch moved up to Jun 9)"],
-  "2026-06-09": ["🚀 CASE #001 GOES LIVE — upload + publish", "💬 Pinned comment + reply to early comments", "📱 Cut 3 Shorts from the upload"],
-  "2026-06-10": ["✍️ Case #002 — Research + script (Göbekli Tepe)", "💬 Comment replies + first-24hr analytics on Case #001"],
-  "2026-06-11": ["🎙️ Case #002 — Voiceover (Göbekli Tepe)", "💬 Comment replies"],
+  "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload attempt + AI disclosure (interrupted by account lockout)"],
+  "2026-06-09": ["✅ Google account appeal approved", "✅ 3 Shorts cut + captioned (CapCut Pro added)", "✅ FINAL4 exported — burned-in captions on main video"],
+  "2026-06-10": ["🔐 Verify account → Chrome profiles → delete old channel → transfer VH to watchvanished@gmail.com", "⬆️ Upload FINAL4 + thumbnail + SEO → schedule Thu 2pm PST", "✍️ Case #002 — Research + script (Göbekli Tepe)"],
+  "2026-06-11": ["🚀 CASE #001 GOES LIVE 2pm PST — pinned comment + 3 Shorts within 2hrs", "🎙️ Case #002 — Voiceover (Göbekli Tepe)"],
   "2026-06-12": ["✍️ Case #003 — Research + script (The Minoans)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
   "2026-06-14": ["✍️ Case #004 — Research + script (Bronze Age Collapse)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
@@ -549,14 +549,14 @@ const TASKS = {
   ],
   sun: [
     { id: "su1", name: "Pre-edit check + DaVinci assembly", desc: "Audio check: play all 5 HeyGen MP4s back to back. Footage verify: ☐ Cold open ☐ S1 Hook clips ☐ S2 Background clips ☐ S3 Mystery clips ☐ S4 Theories clips ☐ S5 Ending clips. DaVinci Resolve → New Project → 1920×1080 24fps. Import all assets. Timeline: audio track first → footage on V1 (Investigator overlays later removed — final video faceless). Cold open: 4-second dramatic ruins shot, music only.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Cold open first",c:"urgent"}] },
-    { id: "su2", name: "Text overlays + captions + color grade (faceless)", desc: "Faceless final cut for Case #001 — Investigator overlays removed. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: YouTube auto-sync with exact script after upload. Color grade: warm + slightly desaturated on footage.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
+    { id: "su2", name: "Text overlays + captions + color grade (faceless)", desc: "Faceless final cut for Case #001 — Investigator overlays removed. Text overlays: 5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT · CASE #001. Captions: CapCut Pro burned-in pass (FINAL4). Color grade: warm + slightly desaturated on footage.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
     { id: "su3", name: "Thumbnail (A + B) + channel trailer", desc: "Canva 1280×720px. Version A: dark bg + realistic Leonardo character + bold gold text + CASE #001 + ruins bg. Version B: change ONE thing (expression OR text). Channel trailer: deferred to Case #002+ once the HeyGen character is live.", links:[{label:"canva.com →",url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"12:00–2:30pm",c:"time"}] },
-    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_IndusValley_FINAL2.mp4 (FINAL2 = Kevin MacLeod music swap after Pixabay content-ID claim). While rendering: create 3 Shorts in 9:16 vertical format. Short #1 Hook · Short #2 Mystery reveal · Short #3 Ending CTA.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
+    { id: "su4", name: "Export main video + 3 Shorts", desc: "DaVinci Resolve → Deliver page → YouTube preset 1080p H.264 → save VH_Case001_IndusValley_FINAL4.mp4 (FINAL2 = music swap after Pixabay claim · FINAL3 = re-edit · FINAL4 = CapCut burned-in captions). While rendering: create 3 Shorts in 9:16 vertical format. Short #1 Hook · Short #2 Mystery reveal · Short #3 Ending CTA.", tags:[{t:"Free",c:"free"},{t:"2:30–5:00pm",c:"time"}] },
   ],
   mon: [
-    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_IndusValley_FINAL2.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ text overlays ☐ music at -20dB (Kevin MacLeod) ☐ pacing cuts every ~7s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
+    { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_IndusValley_FINAL4.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ burned-in captions readable ☐ text overlays ☐ music at -20dB (Kevin MacLeod) ☐ pacing cuts every ~7s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
     { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why' (vidIQ-optimized). Description hook: '5 million people. 1,000 cities. All gone — simultaneously. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "m3", name: "Upload + AI disclosure + publish (launched Jun 9)", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Published: June 9, 2026.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "m3", name: "Upload + AI disclosure + schedule (Thu Jun 11 · 2pm PST)", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Scheduled: Thursday June 11, 2026, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ],
   launch: [
     { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post pinned comment: 'Most historians blame the climate. But the timing doesn't fully add up — the cities were already declining before the worst droughts hit. What's your theory? Drop it below 👇 I read every single one.' Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
@@ -568,7 +568,7 @@ const TASKS = {
     { id: "c002s", name: "Case #002 — Research + script (Göbekli Tepe)", desc: "Ask Claude: the 11,600-year-old temple complex built 6,000 years before Stonehenge by 'hunter-gatherers', only 5% excavated, deliberately buried — by whom and why? Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
     { id: "c002v", name: "Case #002 — Voiceover (Göbekli Tepe)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
     { id: "c002f", name: "Case #002 — Footage (Göbekli Tepe)", desc: "Cold open: T-shaped pillars emerging from the Turkish hillside. S1: excavation site (Wikimedia). S2: Anatolian plateau, hunter-gatherer context. S3: carved pillar close-ups, animal reliefs. S4: deliberate-burial dig layers. S5: wide site aerial at dusk. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Göbekli Tepe)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: 11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED → export → YouTube auto-sync captions. Thumbnail: Leonardo character (shocked/awe). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Göbekli Tepe)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: 11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED → export → CapCut Pro burned-in captions. Thumbnail: Leonardo character (shocked/awe). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
@@ -578,7 +578,7 @@ const TRACKER_STEPS = [
   { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
   { key:"heygen",    icon:"🎭", label:"HeyGen — character",   note:"Generate the realistic Leonardo character talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s · from Case #002 (Case #001 was faceless)" },
-  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → YouTube auto-sync captions → Canva thumbnail A" },
+  { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
   { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 · captions · #Shorts · CTA: 'The full story is on the channel' + link" },
   { key:"upload",    icon:"⬆️", label:"Upload + schedule",           note:"QC watch-through · full description + SEO + chapters · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
   { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure each Short" },
@@ -598,7 +598,7 @@ const GROWTH_SYSTEMS = [
 ];
 
 const CASES = [
-  { num:"001", title:"Indus Valley Civilization", launch:"Jun 9", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"LAUNCHED Jun 9 — Kevin MacLeod music, YouTube auto-captions, vidIQ-optimized title" },
+  { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"LAUNCHES Thu Jun 11 2pm PST — FINAL4 burned-in captions, Kevin MacLeod music, vidIQ-optimized title" },
   { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED", cold:"T-shaped pillars wide shot emerging from Turkish hillside", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · archaeological dig", expression:"Shocked/awe · Leonardo character debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"Script Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14" },
   { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"upcoming", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
   { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"upcoming", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
@@ -624,7 +624,7 @@ const TRAJECTORY = {
       desc: "Videos 1–3 · Establish category, soft-lean toward 'lost sophistication'",
       cls: "traj-bridge",
       videos: [
-        { num:"01", topic:"Indus Valley Civilization", title:'"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"', note:"LIVE Jun 9 — faceless format, Kevin MacLeod music, Leonardo character debuts in thumbnail. Sets the algorithm's first impression.", flag:"LIVE", cls:"produced" },
+        { num:"01", topic:"Indus Valley Civilization", title:'"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"', note:"Launches Thu Jun 11, 2pm PST — faceless, burned-in captions, Kevin MacLeod music, Leonardo thumbnail. Sets the algorithm's first impression.", flag:"SCHEDULED", cls:"produced" },
         { num:"02", topic:"Göbekli Tepe", title:'"The Civilization That Was 7,000 Years Too Advanced"', note:"Natural bridge — sophisticated society, remarkable achievement, vanished. Plants the 'lost sophistication' seed.", flag:"", cls:"" },
         { num:"03", topic:"The Minoans", title:'"How the World\'s Richest Trade Empire Collapsed"', note:"Introduces wealth & trade power for the first time. Word 'collapsed' conditions audience for Phase 2.", flag:"", cls:"" },
       ]
@@ -660,7 +660,7 @@ const TRAJECTORY = {
 
 // ─── NEW: UPDATED EMPIRE CHANNEL LINEUP ─────────────────────────────────────
 const CHANNEL_LINEUP = [
-  { rank:"1", name:"Vanished History", role:"Foundation & system-building channel · reframing toward lost wealth & collapsed empires", rpm:"$12–20 RPM (post-pivot)", launch:"Live Jun 9", trigger:"—", proj:"$500–2k by Month 12", cls:"ch1", tags:["live", "rpm-low", "resale: 24–48x"] },
+  { rank:"1", name:"Vanished History", role:"Foundation & system-building channel · reframing toward lost wealth & collapsed empires", rpm:"$12–20 RPM (post-pivot)", launch:"Launches Jun 11", trigger:"—", proj:"$500–2k by Month 12", cls:"ch1", tags:["live", "rpm-low", "resale: 24–48x"] },
   { rank:"2", name:"Business & Financial Forensics ⭐", role:"How companies actually make money — hidden revenue models, profit breakdowns. Strongest concept (8.5/10). Your breakout channel.", rpm:"$15–25 RPM", launch:"Aug 2026", trigger:"60 days stable execution", proj:"$2k–5k by Month 12", cls:"lead", tags:["blue", "breakout", "lead"] },
   { rank:"3", name:"Personal Finance for Online Business Owners", role:"Irregular income, solopreneur taxes, reinvestment. Highest RPM niche on platform. Launched into audience you already built.", rpm:"$25–50 RPM", launch:"Q1 2027", trigger:"Ch2 in YPP", proj:"Adds $5k–10k", cls:"", tags:["highest earner"] },
   { rank:"4", name:"AI Tools & Systems", role:"Tools & systems for small operations — evergreen, infinite supply. Decoupled from Cipher House. Lives or dies by affiliate conversion, not views.", rpm:"$20–40 RPM", launch:"Q3 2027", trigger:"Combined $2k+/mo", proj:"Adds $2k–4k", cls:"", tags:["affiliate play"] },
@@ -788,15 +788,15 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #001 — uploading now 🚀</div>
+          <div className="launch-text">Case #001 — launches Thursday 🚀</div>
           <div className="launch-sub">The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why</div>
         </div>
-        <div className="launch-date">Jun 9 · GOING LIVE</div>
+        <div className="launch-date">Thu Jun 11 · 2:00 PM PST</div>
       </div>
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$152</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$172</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -830,7 +830,7 @@ function TasksPanel({ doneSet, onToggle }) {
     { badge:"Sat Jun 6 · Complete ✅", cls:"badge-sat", title:"Character Build Day — The Investigator (since retired)", sub:"Design v5 → transparent PNG → HeyGen setup → 5 sections generated", tasks: TASKS.sat },
     { badge:"Sun Jun 7 · 7:00am–5:00pm", cls:"badge-sun", title:"Edit Day — DaVinci + overlays + export", sub:"Assembly → character overlays → thumbnail → 3 Shorts → export", tasks: TASKS.sun },
     { badge:"Mon Jun 8 · 7:00am–2:00pm", cls:"badge-mon", title:"QC + Upload + Schedule", sub:"Watch-through → SEO → music swap (Pixabay claim → Kevin MacLeod) → re-export FINAL2", tasks: TASKS.mon },
-    { badge:"Tue Jun 9 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
+    { badge:"Thu Jun 11 · 2:00pm PST · LAUNCH DAY", cls:"badge-mon", title:"Case #001 goes live 🚀", sub:"Pinned comment + 3 Shorts + Reddit · reply to every comment", tasks: TASKS.launch },
     { badge:"Wed Jun 10 – Sun Jun 14 · launches Mon Jun 15", cls:"badge-wed", title:"Case #002 — Göbekli Tepe production", sub:"Script → Voiceover → Footage → Edit → Upload", tasks: TASKS.c002 },
     { badge:"Jun 15 – Jul 8", cls:"badge-fri", title:"Cases #003–#012 — rolling production", sub:"Every remaining case runs the same 12-step Production Loop · per-case details in the Cases panel · dates in Content Calendar", tasks: [] },
   ];
@@ -846,7 +846,7 @@ function TasksPanel({ doneSet, onToggle }) {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Total tasks</div><div className="stat-val">{totalTasks}</div><div className="stat-note">across all days</div></div>
         <div className="stat-card"><div className="stat-label">Completed</div><div className="stat-val">{done}</div><div className="stat-note">tasks done</div></div>
-        <div className="stat-card"><div className="stat-label">Case #001 launch</div><div className="stat-val">Jun 9</div><div className="stat-note">LIVE · 2pm PST</div></div>
+        <div className="stat-card"><div className="stat-label">Case #001 launch</div><div className="stat-val">Thu Jun 11</div><div className="stat-note">2:00 PM PST</div></div>
         <div className="stat-card"><div className="stat-label">Final launch</div><div className="stat-val">Jul 8</div><div className="stat-note">Case #012</div></div>
       </div>
       {allGroups.map((g, i) => (
@@ -859,7 +859,7 @@ function TasksPanel({ doneSet, onToggle }) {
 function CalendarPanel() {
   const weeks = [
     { week:"Week 1 · Phase 1 — Bridge", theme:"Lost sophistication — establish the category", featured:true, videos:[
-      {day:"Jun 9", title:"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"},
+      {day:"Thu Jun 11", title:"The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"},
       {day:"Mon Jun 15", title:"Göbekli Tepe: The Civilization That Was 7,000 Years Too Advanced"},
       {day:"Wed Jun 17", title:"The Minoans: How the World's Richest Trade Empire Collapsed"},
     ]},
@@ -883,7 +883,7 @@ function CalendarPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">30-Day Content Calendar</div>
-        <div className="panel-sub">12 videos · live Jun 9, then Mon/Wed/Fri 2pm PST · pivot arc: mysteries → lost wealth & collapsed empires</div>
+        <div className="panel-sub">12 videos · launch Thu Jun 11, then Mon/Wed/Fri 2pm PST · pivot arc: mysteries → lost wealth & collapsed empires</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
@@ -1024,7 +1024,7 @@ function CasesPanel() {
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">Production SOP — same workflow every video</div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:10,fontSize:12,color:"var(--text3)",lineHeight:1.6}}>
-          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎭 D-4","Character + Voice","Paste 5 sections into HeyGen · Leonardo character talking · Brad voice · 5 MP4s"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips"],["🎬 D-2","Edit","Footage background → character overlays → text → export → YouTube auto-sync captions"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
+          {[["✍️ D-5","Script","Claude researches + writes · SEO · chapters · pinned comment"],["🎭 D-4","Character + Voice","Paste 5 sections into HeyGen · Leonardo character talking · Brad voice · 5 MP4s"],["🎞️ D-3","Footage","Cold open first · section-by-section · 25–35 clips"],["🎬 D-2","Edit","Footage background → character overlays → text → export → CapCut burned-in captions"],["⬆️ D-1","Upload","QC watch · full checklist · ⚠️ AI disclosure · schedule 2pm PST"]].map(([icon,title,desc],i) => (
             <div key={i}><span style={{color:"var(--gold2)"}}>{icon} {title}</span><br/>{desc}</div>
           ))}
         </div>
@@ -1069,7 +1069,7 @@ function NichesPanel() {
       </div>
       <div className="niche-grid">
         {[
-          {rank:"⭐ Channel 1 — LIVE",name:"Vanished History — lost wealth & collapsed empires",cpm:"$12–20 RPM",top:true,rows:[["Status","Live Jun 9 ✓"],["Competition","Low"],["AI producible","Very easy"],["Evergreen","Yes"],["Projection","$500–2k/mo by Month 12"],["Footage cost","Free (archive.org)"]]},
+          {rank:"⭐ Channel 1 — Launch week",name:"Vanished History — lost wealth & collapsed empires",cpm:"$12–20 RPM",top:true,rows:[["Status","Launches Thu Jun 11"],["Competition","Low"],["AI producible","Very easy"],["Evergreen","Yes"],["Projection","$500–2k/mo by Month 12"],["Footage cost","Free (archive.org)"]]},
           {rank:"#2 — Aug 2026 · ⭐ breakout",name:"Business & Financial Forensics",cpm:"$15–25 RPM",top:false,rows:[["Status","Launch Aug 2026"],["Competition","Low–medium"],["Concept score","8.5/10 — strongest"],["Evergreen","Yes"],["Sponsor appeal","Very high (B2B)"],["Trigger","60 days of Ch1 stability"]]},
           {rank:"#3 — Q1 2027 · highest RPM",name:"Personal Finance for Online Business Owners",cpm:"$25–50 RPM",top:false,rows:[["Status","Q1 2027"],["Competition","Medium"],["RPM rank","Highest on platform"],["Evergreen","Yes"],["Audience","Built from Ch 1–2"],["Trigger","Ch2 monetized"]]},
           {rank:"#4 — Q3 2027 · decoupled",name:"AI Tools & Systems",cpm:"$20–40 RPM",top:false,rows:[["Status","Q3 2027"],["Competition","Medium"],["Revenue driver","Affiliate conversion, not views"],["Evergreen","Yes — systems, not news"],["Brand","Decoupled from Cipher House"],["Footage cost","Free (screen record)"]]},
@@ -1145,27 +1145,26 @@ function ToolsPanel() {
     {name:"HeyGen (Creator)",use:"Lip-synced talking-head (realistic Leonardo face), Brad's voice via ElevenLabs API. From Case #002 — Case #001 is faceless",cost:"$29/mo",paid:true},
     {name:"Leonardo.ai (Essential)",use:"Realistic permanent channel character — Phoenix 1.0, commercial rights, 8,500 tokens/mo. Debuts in Case #001 thumbnail",cost:"$12/mo",paid:true},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
-    {name:"CapCut",use:"Shorts captions only. Dropped from long-form workflow",cost:"Free",paid:false},
+    {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, banner, logo",cost:"Free tier",paid:false},
     {name:"vidIQ",use:"SEO, keyword + outlier research. Free tier until ~Video 4-5",cost:"Free tier",paid:false},
     {name:"archive.org",use:"Public-domain historical footage — core source",cost:"Free",paid:false},
     {name:"Wikimedia Commons",use:"Historical images, maps, diagrams",cost:"Free",paid:false},
     {name:"Pexels",use:"Stock footage — ruins, landscapes, atmospheric",cost:"Free",paid:false},
     {name:"Incompetech (Kevin MacLeod)",use:"Royalty-free music with attribution. Replaced Pixabay after content-ID claim on Case #001",cost:"Free + credit",paid:false},
-    {name:"YouTube auto-sync captions",use:"Long-form caption SOP — upload exact script, no length cap",cost:"Free",paid:false},
     {name:"Google AdSense",use:"Linked for ad monetization",cost:"Free",paid:false},
   ];
   return (
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$152/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$172/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$152</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$172</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
-        <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">10 of 14</div><div className="stat-note">no subscription</div></div>
+        <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 13</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
       </div>
       <div className="tools-grid">
@@ -1185,7 +1184,7 @@ function AutomationPanel() {
     {task:"Topic & keyword research",tool:"vidIQ + Claude",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"5 min"},
     {task:"Script writing",tool:"Claude",fill:100,label:"Full AI",cls:"full",before:"3–4 hrs",after:"15 min"},
     {task:"Voiceover narration",tool:"ElevenLabs Brad",fill:100,label:"Full AI",cls:"full",before:"2 hrs",after:"10 min"},
-    {task:"Captions / subtitles",tool:"YouTube auto-sync (exact script) · CapCut for Shorts",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"2 min"},
+    {task:"Captions / subtitles",tool:"CapCut Pro auto-captions — burned in, all videos",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"2 min"},
     {task:"Title, description & tags",tool:"Claude + vidIQ",fill:100,label:"Full AI",cls:"full",before:"45 min",after:"5 min"},
     {task:"Upload scheduling",tool:"YouTube Studio",fill:100,label:"Full AI",cls:"full",before:"20 min",after:"2 min"},
     {task:"Video assembly & editing",tool:"DaVinci Resolve 21 (free)",fill:50,label:"Manual",cls:"part",before:"3–4 hrs",after:"2–3 hrs"},
@@ -1332,7 +1331,7 @@ function ProductionLoopPanel() {
     { n:"2", icon:"🎙️", label:"Voiceover", note:"ElevenLabs Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check back to back" },
     { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
     { n:"4", icon:"🎭", label:"HeyGen — character", note:"Generate the Leonardo character through all 5 sections BEFORE edit day · save MP4s (from Case #002)" },
-    { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → YouTube auto-sync captions → Canva thumbnail A" },
+    { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
     { n:"6", icon:"📱", label:"3 Shorts created", note:"Short #1 hook · Short #2 best fact · Short #3 ending CTA · 9:16 vertical · captions · #Shorts · CTA → link to full video" },
     { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule 2pm PST" },
     { n:"8", icon:"🚀", label:"Launch day", note:"Pinned comment within 5 min · upload all 3 Shorts within 2 hrs · ⚠️ AI disclosure on each Short" },
@@ -1431,7 +1430,7 @@ function LineupPanel({ setPanel }) {
         <div className="stat-card"><div className="stat-label">Total channels</div><div className="stat-val">5</div><div className="stat-note">staggered build</div></div>
         <div className="stat-card"><div className="stat-label">Combined target</div><div className="stat-val">$20k+/mo</div><div className="stat-note">by end 2028</div></div>
         <div className="stat-card"><div className="stat-label">Lead channel</div><div className="stat-val">Ch2</div><div className="stat-note">Business Forensics</div></div>
-        <div className="stat-card"><div className="stat-label">Build horizon</div><div className="stat-val">2.5 yrs</div><div className="stat-note">from Jun 9 launch</div></div>
+        <div className="stat-card"><div className="stat-label">Build horizon</div><div className="stat-val">2.5 yrs</div><div className="stat-note">from Jun 11 launch</div></div>
       </div>
 
       <div className="section-title">Ranked by business merit</div>
@@ -1442,7 +1441,7 @@ function LineupPanel({ setPanel }) {
             <div className="lineup-name">{ch.name}</div>
             <div className="lineup-role">{ch.role}</div>
             <div className="lineup-tags">
-              {ch.cls === "ch1" && <span className="ltag ltag-live">● Live Jun 9</span>}
+              {ch.cls === "ch1" && <span className="ltag ltag-live">● Launches Jun 11</span>}
               {ch.cls !== "ch1" && <span className="ltag ltag-blue">{ch.launch}</span>}
               <span className="ltag ltag-rpm">{ch.rpm}</span>
               <span className="ltag">{ch.proj}</span>
@@ -1552,7 +1551,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$152</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$172</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1587,7 +1586,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $152/mo tool cost · ranked by business merit</div>
+        <div className="panel-sub">5-channel empire · $172/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
@@ -1655,7 +1654,7 @@ function SOPPanel() {
       <div className="sop-box">
         {[
           ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
-          ["Tuesday — DaVinci edit","Footage background → character overlays → text overlays → color grade → export → YouTube auto-sync captions","2–3 hrs"],
+          ["Tuesday — DaVinci edit","Footage background → character overlays → text overlays → color grade → export → CapCut burned-in captions","2–3 hrs"],
           ["Wednesday — Thumbnail + upload","Leonardo character → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
           ["Thursday — Community + distribution","Reddit seeding → Quora answer → pinned comment → Short upload → reply to all comments","1–2 hrs"],
           ["Friday — Analytics + next week prep","YouTube Studio analytics → Claude writes next 3 scripts → content calendar updated","2–3 hrs"],
@@ -1762,10 +1761,10 @@ function AIAssistant({ currentPanel }) {
 
 BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
 
-CHANNEL 1: Vanished History (@vanishedhistoryhq). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 live Jun 9 2026 (faceless), then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: YouTube auto-sync exact script for long-form; CapCut for Shorts only. Series: "Vanished History — The Cases".
+CHANNEL 1: Vanished History (@vanishedhistoryhq). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 launches Thu Jun 11 2026 2pm PST (faceless), then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: CapCut Pro ($19.99/mo) burned-in auto-captions for all videos. Series: "Vanished History — The Cases".
 
 CHANNEL LINEUP (ranked by business merit):
-1. Vanished History — $12-20 RPM (post-pivot) — live Jun 9
+1. Vanished History — $12-20 RPM (post-pivot) — launches Jun 11
 2. Business & Financial Forensics — $15-25 RPM — Aug 2026 — BREAKOUT CHANNEL
 3. Personal Finance for Online Business Owners — $25-50 RPM — Q1 2027
 4. AI Tools & Systems (decoupled from Cipher House) — $20-40 RPM — Q3 2027
@@ -1774,12 +1773,12 @@ CHANNEL LINEUP (ranked by business merit):
 SCALING GATES: Ch1→Ch2: 60 days stable execution. Ch2→Ch3: Ch2 in YPP. Ch3→Ch4: $2k+/mo combined. Ch4→Ch5: 1 hire in place.
 
 CONTENT TRAJECTORY (Vanished History):
-Videos 1-3: Bridge phase. V1 Indus Valley (LIVE Jun 9 — title "The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"). V2 Göbekli Tepe "The Civilization That Was 7,000 Years Too Advanced". V3 Minoans "How the World's Richest Trade Empire Collapsed".
+Videos 1-3: Bridge phase. V1 Indus Valley (launches Thu Jun 11 — title "The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"). V2 Göbekli Tepe "The Civilization That Was 7,000 Years Too Advanced". V3 Minoans "How the World's Richest Trade Empire Collapsed".
 Videos 4-8: Commit phase. V4 Bronze Age Collapse "How Every Empire Fell in the Same 50 Years" (thesis video). V5 Mansa Musa. V6 Khmer Empire. V7 Rome Currency Debasement (highest CPM). V8 Maya Collapse.
 Videos 9-12: Optimize/test. V10 South Sea Bubble is the CANARY test for financial angle.
 Steering rule: pivot on data (retention x CTR) after Video 8. Never become "a finance channel wearing a toga."
 
-TOOL STACK: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Leonardo.ai ($12) + DaVinci/CapCut/Canva/vidIQ (free) = $152/mo total.
+TOOL STACK: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Leonardo.ai ($12) + CapCut Pro ($19.99) + DaVinci/Canva/vidIQ (free) = $172/mo total.
 
 12-STEP PRODUCTION LOOP: Script → Voiceover → Footage → HeyGen → Edit+ThumbnailA → 3Shorts → Upload → Launch → Reddit/Quora → Comments → ThumbnailB → A/B check.
 
