@@ -1159,11 +1159,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$172/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$161/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$172</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$161</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 13</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1552,7 +1552,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$172</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$161</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1587,7 +1587,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $172/mo tool cost · ranked by business merit</div>
+        <div className="panel-sub">5-channel empire · $161/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
