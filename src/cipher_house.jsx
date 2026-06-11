@@ -539,11 +539,11 @@ const TASKS = {
   ],
   fri: [
     { id: "f1", name: "Full section-by-section footage search", desc: "Using Thursday's visual map: find cold open clip FIRST (one dramatic ruins shot, 4 seconds). Then by section. Archive.org: 'Mohenjo-daro', 'Indus Valley', 'Harappa'. Wikimedia: maps, diagrams, seal photos. Pexels: 'ancient ruins', 'dried riverbed', 'desert landscape'. 25–35 clips total.", links:[{label:"archive.org →",url:"https://archive.org"},{label:"Wikimedia →",url:"https://commons.wikimedia.org"},{label:"pexels.com →",url:"https://pexels.com"}], tags:[{t:"Free",c:"free"},{t:"7:00–10:00pm",c:"time"}] },
-    { id: "f2", name: "Generate Cole clips in HeyGen (voiceover + lip-sync)", desc: "heygen.com → Cole (Photo Avatar) → Use in video → Add a script → voice: Cipher House (Brad). ⚠️ Remove all '...' before pasting — HeyGen vocalizes ellipses. 5 sections → download Cole_S1–S5.mp4. Audio on A1 in DaVinci · Cole video on V2.", links:[{label:"heygen.com →",url:"https://heygen.com"}], tags:[{t:"$29/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
+    { id: "f2", name: "Generate Cole clips in HeyGen (voiceover + lip-sync)", desc: "heygen.com → Cole (Photo Avatar) → Use in video → Add a script → voice: Cipher House (Brad). ⚠️ Remove all '...' before pasting — HeyGen vocalizes ellipses. 5 sections → download Cole_S1–S5.mp4. Audio on A1 in DaVinci · Cole video on V2.", links:[{label:"heygen.com →",url:"https://heygen.com"}], tags:[{t:"$50/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
   ],
   sat: [
     { id: "s1", name: "Design The Investigator + export transparent PNG", desc: "Character locked at v5 final: male, serious/mysterious, dark trench coat (#4a3828), gold belt (#c9a84c), two simple oval hands, grounded head/neck, pale skin (#e8d5b0), dark hair (#2a1f14). Exported as transparent-background PNG (880×1600px).", tags:[{t:"Done",c:"free"},{t:"Locked v5",c:"urgent"}] },
-    { id: "s2", name: "Set up HeyGen + import Brad voice + create Cole", desc: "HeyGen Creator ($29/mo). Avatar → Add a look → upload VH_Character_V1_Upscaled.png → Cole created. Voice: Import from 3rd party → ElevenLabs → paste API key → Brad voice named 'Cipher House'. ElevenLabs cancelled Jun 11 — voice already imported and saved in HeyGen permanently.", tags:[{t:"$29/mo",c:"paid"},{t:"Cole debut Case #002",c:"urgent"}] },
+    { id: "s2", name: "Set up HeyGen + import Brad voice + create Cole", desc: "HeyGen Pro ($50/mo). Avatar → Add a look → upload VH_Character_V1_Upscaled.png → Cole created. Voice: Import from 3rd party → ElevenLabs → paste API key → Brad voice named 'Cipher House'. ElevenLabs cancelled Jun 11 — voice already imported and saved in HeyGen permanently.", tags:[{t:"$50/mo",c:"paid"},{t:"Cole debut Case #002",c:"urgent"}] },
     { id: "s3", name: "Generate all 5 sections in HeyGen", desc: "Avatar → Quick create. Avatar: The Investigator · Voice: Hey Its Brad · 720p. Paste each script section. Generate all 5: Hook, Background, Mystery, Theories, Ending. Lip-sync confirmed. Download each MP4.", tags:[{t:"HeyGen",c:"paid"},{t:"5 sections",c:"time"}] },
     { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
   ],
@@ -796,7 +796,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$161</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$170</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -1143,8 +1143,8 @@ function GrowthPanel() {
 function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script, research, SEO, strategy — primary AI partner",cost:"$100/mo",paid:true},
-    {name:"HeyGen (Creator)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Case #001 faceless — Cole debuts Case #002 onward. ElevenLabs cancelled Jun 11.",cost:"$29/mo",paid:true},
-    {name:"Leonardo.ai (Essential)",use:"Realistic permanent channel character — Phoenix 1.0, commercial rights, 8,500 tokens/mo. Debuts in Case #001 thumbnail",cost:"$12/mo",paid:true},
+    {name:"HeyGen (Pro)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Case #001 faceless — Cole debuts Case #002 onward. ElevenLabs cancelled Jun 11.",cost:"$29/mo",paid:true},
+    {name:"Leonardo.ai (Essential)",use:"CANCELLED Jun 11 — Cole already built. Resubscribe when a new channel character is needed.",cost:"Cancelled",paid:false},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, banner, logo",cost:"Free tier",paid:false},
@@ -1159,11 +1159,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$161/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$170/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$161</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$170</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 13</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1552,7 +1552,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$161</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$170</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1587,7 +1587,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $161/mo tool cost · ranked by business merit</div>
+        <div className="panel-sub">5-channel empire · $170/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
