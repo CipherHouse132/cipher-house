@@ -556,7 +556,7 @@ const TASKS = {
   mon: [
     { id: "m1", name: "QC watch-through + channel optimization", desc: "Upload VH_Case001_IndusValley_FINAL4.mp4 as Unlisted. Watch the entire video. Check: ☐ audio sync ☐ burned-in captions readable ☐ text overlays ☐ music at -20dB (Kevin MacLeod) ☐ pacing cuts every ~7s. Then: YouTube Studio → channel keywords → update channel description → create playlist 'Vanished History — The Cases'.", tags:[{t:"Free",c:"free"},{t:"7:00–10:00am",c:"time"},{t:"Never skip QC",c:"urgent"}] },
     { id: "m2", name: "SEO title + description + tags + affiliate links", desc: "Title: 'The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why' (vidIQ-optimized). Description hook: '5 million people. 1,000 cities. All gone — simultaneously. No war. No plague. No explanation.' Add 200–300 words + chapters + affiliate links.", tags:[{t:"Free",c:"free"},{t:"10:00am–12:00pm",c:"time"}] },
-    { id: "m3", name: "✅ DONE — Uploaded + scheduled Thu Jun 11 · 2pm PST on @vanishedhistorych", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + affiliate links + chapters ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Scheduled: Thursday June 11, 2026, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
+    { id: "m3", name: "✅ DONE — Uploaded + scheduled Thu Jun 11 · 2pm PST on @vanishedhistorych", desc: "☐ 1080p no black bars ☐ Audio clear ☐ Captions on ☐ Text overlays present ☐ Thumbnail A uploaded ☐ SEO title ☐ Description 200–300 words + keywords + chapters (affiliate link from Case #004 onward) ☐ 8–12 tags ☐ Category: Education ☐ End screen ☐ Playlist. ⚠️ AI DISCLOSURE: Details → 'Altered or synthetic content' → YES. Scheduled: Thursday June 11, 2026, 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"12:00–2:00pm",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ],
   launch: [
     { id: "l1", name: "2pm — Case #001 goes live · Post pinned comment immediately", desc: "Within 5 minutes post the locked pinned comment (full text saved in the Cases panel under Case #001): \"Something doesn't add up. The climate theory is the most convincing — four droughts, one lasting 113 years. But archaeologists keep finding cities that were already being abandoned before the worst droughts hit. Which means either the climate wasn't the cause — or something else triggered the collapse first, and the drought finished it off. No invasion evidence. No mass graves. No signs of disease. A civilization of 5 million people with better plumbing than 1800s London just... quietly unraveled. What do you think started it? 👇\" Pin it.", tags:[{t:"Within 5 min",c:"urgent"},{t:"Free",c:"free"}] },
@@ -1228,7 +1228,7 @@ function AutomationPanel() {
 
 function MonetizationPanel() {
   const items = [
-    {phase:"Day 1 — every channel from launch",title:"Affiliate marketing",desc:"Add affiliate links to every video description from your very first upload. Audible, Great Courses, Skillshare for Channel 1. No subscriber minimum — this earns before you're monetized.",earn:"Potential: $50–500/mo early · scales with views",active:true},
+    {phase:"Week 3–4 · after first views arrive",title:"Affiliate marketing",desc:"Apply for Amazon Associates once you have initial traffic (~Case #004–005). Amazon requires 3 sales in 180 days or the account closes — applying with zero audience risks losing the account. Add one topic-specific book link per video. Audible bounty ($5–10/trial) and CuriosityStream ($10/subscription) via same account.",earn:"Potential: $50–500/mo · scales with views · apply at Case #004",active:true},
     {phase:"500 subscribers",title:"Channel memberships + Super Thanks",desc:"Early YPP tier. Exclusive content, badges, direct tips. Apply as soon as you hit 500 subs + 3,000 watch hours.",earn:"Potential: $100–500/mo per channel",active:true},
     {phase:"1,000 subscribers + 4,000 watch hours",title:"YouTube Partner Program (AdSense)",desc:"Full ad revenue access. History channels earn $5–10 RPM — 100K views = $500–1,000/month.",earn:"At 100K views/mo: $500–1,000 · At 500K views/mo: $2,500–5,000",active:false},
     {phase:"2,000–5,000 subscribers",title:"Brand sponsorships",desc:"Pitch brands directly: Curiosity Stream, Nebula, Audible, MasterClass, Skillshare. History channels: $1,000–5,000 per integration. Finance channels: $2,000–15,000.",earn:"$200–5,000 per integration depending on channel size",active:false},
@@ -1335,7 +1335,7 @@ function ProductionLoopPanel() {
     { n:"4", icon:"🎭", label:"HeyGen — character", note:"Generate the Leonardo character through all 5 sections BEFORE edit day · save MP4s (from Case #002)" },
     { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
     { n:"6", icon:"📱", label:"3 Shorts created", note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
-    { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters + affiliate links · playlist · ⚠️ AI DISCLOSURE → YES · schedule main 2pm PST + 3 Shorts 2:30 / 4:00 / 6:00pm" },
+    { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters · playlist · affiliate link from Case #004 onward · ⚠️ AI DISCLOSURE → YES · schedule main 2pm PST + 3 Shorts 2:30 / 4:00 / 6:00pm" },
     { n:"8", icon:"🚀", label:"Launch day", note:"Main live 2pm · pinned comment within 5 min · Shorts auto-publish 2:30 / 4:00 / 6:00pm · after 2pm add related-video link to each Short · Reddit seeding" },
     { n:"9", icon:"🌐", label:"Reddit + Quora seeding", note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
     { n:"10", icon:"💬", label:"Comment replies (48 hrs)", note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
@@ -1397,7 +1397,7 @@ function ProductionLoopPanel() {
           ["Pre-sched", "Shorts publish 2:30 / 4:00 / 6:00pm · after 2pm add related-video link to each"],
           ["Launch day", "Reddit seeding (topic-specific subreddits)"],
           ["+48 hrs", "Quora answer + reply to all comments"],
-          ["Every video", "Affiliate links in description · added to playlist · end screen set"],
+          ["Every video (affiliate from Case #004)", "Topic-specific affiliate link · added to playlist · end screen set"],
         ].map(([t,d],i) => (
           <div key={i} className="gate-row"><div className="gate-label">{t}</div><div className="gate-desc">{d}</div></div>
         ))}
@@ -1750,130 +1750,6 @@ function OSPanel() {
   );
 }
 
-// ─── AI ASSISTANT ──────────────────────────────────────────────────────────
-
-function AIAssistant({ currentPanel }) {
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [open, setOpen] = useState(false);
-  const messagesEndRef = useRef(null);
-  const textareaRef = useRef(null);
-  const quickPrompts = QUICK_PROMPTS_BY_PANEL[currentPanel] || QUICK_PROMPTS_BY_PANEL.overview;
-
-  useEffect(() => {
-    if (messagesEndRef.current) messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  const send = useCallback(async (text) => {
-    const msg = text || input.trim();
-    if (!msg || loading) return;
-    setInput("");
-    setOpen(true);
-    setMessages(prev => [...prev, { role: "user", content: msg }]);
-    setLoading(true);
-
-    const systemPrompt = `You are Claude, the AI business partner for Cipher House — a YouTube automation empire being built by a solo creator. You have full context on the business:
-
-BUSINESS: Cipher House — YouTube automation empire. 5-channel plan. Solo operator + Claude partnership.
-
-CHANNEL 1: Vanished History (@vanishedhistorych on watchvanished@gmail.com — channel rebuilt fresh Jun 10 after the iCloud account suspension; old handle @vanishedhistoryhq retired with the disabled account). Niche: historical mysteries reframing toward lost civilizations, lost wealth & collapsed empires (pivot starts Video 4). Case #001 SCHEDULED Thu Jun 11 2026 2pm PST (faceless) with 3 Shorts scheduled 2:30/4:00/6:00pm PST, then Mon/Wed/Fri 2pm PST. Voice: Brad (ElevenLabs Creator, 192kbps, Stability 60%, Similarity 78%, Style 18%). Character: realistic AI host (Leonardo.ai Phoenix 1.0) — faceless for Case #001 (debuts on thumbnail), integrated into HeyGen from Case #002. Cartoon Investigator retired. Music: Kevin MacLeod/Incompetech with attribution. Captions: CapCut Pro ($19.99/mo) burned-in auto-captions for all videos. Series: "Vanished History — The Cases". GOOGLE HYGIENE (hard rule): channel lives ONLY on watchvanished@gmail.com in an isolated Chrome profile (no other accounts, no extensions); Claude-in-Chrome extension lives ONLY in the Work profile — never in the Vanished profile; iCloud account retired from YouTube; old channel on majorandkae@gmail.com DELETED Jun 10 — multi-account signal removed. UPLOAD DAY SOP: main video scheduled 2pm PST → 3 Shorts scheduled 2:30/4:00/6:00pm → Short titles = most compelling line from that clip + #Shorts → Short description "The full story: [link]" → Shorts remixing ALLOWED → everything into playlist "Vanished History — The Cases" → after 2pm add related-video link to each Short → pinned comment within 5 min.
-
-CHANNEL LINEUP (ranked by business merit):
-1. Vanished History — $12-20 RPM (post-pivot) — launches Jun 11
-2. Business & Financial Forensics — $15-25 RPM — Aug 2026 — BREAKOUT CHANNEL
-3. Personal Finance for Online Business Owners — $25-50 RPM — Q1 2027
-4. AI Tools & Systems (decoupled from Cipher House) — $20-40 RPM — Q3 2027
-5. Financial Crime & Corporate Fraud — $10-18 RPM — Q1 2028
-
-SCALING GATES: Ch1→Ch2: 60 days stable execution. Ch2→Ch3: Ch2 in YPP. Ch3→Ch4: $2k+/mo combined. Ch4→Ch5: 1 hire in place.
-
-CONTENT TRAJECTORY (Vanished History):
-Videos 1-3: Bridge phase. V1 Indus Valley (SCHEDULED Thu Jun 11 2pm PST + 3 Shorts 2:30/4:00/6:00pm — title "The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why"). V2 Göbekli Tepe "Göbekli Tepe: The Temple Built 6,000 Years Before Stonehenge — and No One Knows Why" (scripted Jun 10). V3 Minoans "How the World's Richest Trade Empire Collapsed".
-Videos 4-8: Commit phase. V4 Bronze Age Collapse "How Every Empire Fell in the Same 50 Years" (thesis video). V5 Mansa Musa. V6 Khmer Empire. V7 Rome Currency Debasement (highest CPM). V8 Maya Collapse.
-Videos 9-12: Optimize/test. V10 South Sea Bubble is the CANARY test for financial angle.
-Steering rule: pivot on data (retention x CTR) after Video 8. Never become "a finance channel wearing a toga."
-
-TOOL STACK: Claude Max ($100) + ElevenLabs ($11) + HeyGen ($29) + Leonardo.ai ($12) + CapCut Pro ($19.99) + DaVinci/Canva/vidIQ (free) = $172/mo total.
-
-12-STEP PRODUCTION LOOP: Script → Voiceover → Footage → HeyGen → Edit+ThumbnailA → 3Shorts → Upload → Launch → Reddit/Quora → Comments → ThumbnailB → A/B check.
-
-CURRENT PANEL: ${currentPanel}
-
-Be direct, specific, and actionable. Reference Cipher House specifics. When writing scripts, write the FULL script. When giving SEO titles, give 4 options. Keep responses well-formatted.`;
-
-    try {
-      const history = messages.map(m => ({ role: m.role, content: m.content }));
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          system: systemPrompt,
-          messages: [...history, { role: "user", content: msg }]
-        })
-      });
-      const data = await response.json();
-      const reply = data.content?.find(b => b.type === "text")?.text || "Sorry, I couldn't get a response.";
-      setMessages(prev => [...prev, { role: "assistant", content: reply }]);
-    } catch (e) {
-      setMessages(prev => [...prev, { role: "assistant", content: "Connection error. Please try again." }]);
-    } finally {
-      setLoading(false);
-    }
-  }, [input, loading, messages, currentPanel]);
-
-  const handleKey = (e) => {
-    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
-  };
-
-  return (
-    <>
-      {open && messages.length > 0 && (
-        <div className="ai-panel" style={{height:"40vh"}}>
-          <div className="ai-panel-header">
-            <span className="ai-panel-title">Claude · Cipher House AI Partner</span>
-            <button className="ai-close" onClick={() => setOpen(false)}>×</button>
-          </div>
-          <div className="ai-messages">
-            {messages.map((m, i) => (
-              <div key={i} className={`ai-msg ${m.role}`}>
-                {m.role === "assistant" && loading && i === messages.length - 1 ? (
-                  <div className="ai-typing"><span/><span/><span/></div>
-                ) : m.content}
-              </div>
-            ))}
-            {loading && messages[messages.length-1]?.role === "user" && (
-              <div className="ai-msg assistant loading"><div className="ai-typing"><span/><span/><span/></div></div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-        </div>
-      )}
-      <div className="ai-dock" style={{bottom: open && messages.length > 0 ? "40vh" : 0}}>
-        <div className="quick-prompts">
-          {quickPrompts.map((p, i) => <button key={i} className="qp" onClick={() => send(p)}>{p}</button>)}
-        </div>
-        <div className="ai-bar">
-          <div style={{flexShrink:0,paddingTop:2}}><div className="ai-label">Ask Claude</div></div>
-          <textarea
-            ref={textareaRef}
-            className="ai-input"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={handleKey}
-            placeholder="Write a script, research a topic, build a content calendar..."
-            rows={1}
-          />
-          <button className="ai-send" onClick={() => send()} disabled={loading || !input.trim()}>
-            {loading ? "..." : "Send"}
-          </button>
-        </div>
-      </div>
-    </>
-  );
-}
 
 // ─── APP ────────────────────────────────────────────────────────────────────
 
@@ -2038,7 +1914,6 @@ export default function App() {
           </button>
         ))}
       </nav>
-      <AIAssistant currentPanel={panel} />
     </>
   );
 }
