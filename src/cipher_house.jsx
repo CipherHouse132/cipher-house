@@ -467,10 +467,10 @@ const SCHEDULE = {
   "2026-06-08": ["👁️ QC watch-through + channel optimization", "🔍 SEO title + description + tags + affiliate links", "⬆️ Upload attempt + AI disclosure (interrupted by account lockout)"],
   "2026-06-09": ["✅ Google account appeal approved", "✅ 3 Shorts cut + captioned (CapCut Pro added)", "✅ FINAL4 exported — burned-in captions on main video"],
   "2026-06-10": ["✅ New channel LIVE — @vanishedhistorych on watchvanished@gmail.com · isolated Chrome profile · branded + playlist created", "✅ FINAL4 uploaded — thumbnail, SEO title, description, tags set → scheduled Thu 2pm PST", "✅ 3 Shorts uploaded → scheduled 2:30 / 4:00 / 6:00pm PST", "✅ Old YouTube channel on majorandkae@gmail.com DELETED — multi-account signal permanently removed", "✅ Chrome profiles locked — Claude extension lives in Work profile ONLY, never Vanished", "✅ Case #002 — Deep research + full script + upload package done (Göbekli Tepe)"],
-  "2026-06-11": ["🚀 CASE #001 LIVE 2pm PST — post pinned comment within 5 min (saved in Cases panel)", "📱 Shorts auto-publish 2:30 / 4:00 / 6:00pm — after 2pm add related-video link to each Short", "🌐 Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", "💬 Reply to every comment", "🎙️ Case #002 — Voiceover (Göbekli Tepe)"],
-  "2026-06-12": ["✍️ Case #003 — Research + script (The Minoans)", "🎞️ Case #002 — Footage", "🎭 HeyGen — character generation Case #002", "📊 Weekly analytics check"],
+  "2026-06-11": ["🚀 CASE #001 LIVE 2pm PST — post pinned comment within 5 min (saved in Cases panel)", "📱 Shorts auto-publish 2:30 / 4:00 / 6:00pm — after 2pm add related-video link to each Short", "🌐 Reddit seeding — r/AncientCivilizations + r/UnsolvedMysteries", "💬 Reply to every comment", "🎙️ Case #002 — HeyGen Cole clips (Göbekli Tepe) ✅ Done"],
+  "2026-06-12": ["✍️ Case #003 — Research + script (The Minoans)", "🎞️ Case #002 — Footage", "📊 Weekly analytics check"],
   "2026-06-13": ["🎙️ Case #003 — Voiceover", "🎬 Case #002 — Edit + thumbnail", "📱 Case #002 — 3 Shorts"],
-  "2026-06-14": ["✍️ Case #004 — Research + script (Bronze Age Collapse)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🎭 HeyGen — character generation Case #003", "🖼️ Case #001 — Version B thumbnail"],
+  "2026-06-14": ["✍️ Case #004 — Research + script (Bronze Age Collapse)", "⬆️ Case #002 — Upload + schedule", "🎞️ Case #003 — Footage", "🖼️ Case #001 — Version B thumbnail"],
   "2026-06-15": ["📹 CASE #002 GOES LIVE 2pm — pinned comment + 3 Shorts", "🌐 Reddit + Quora seeding (Case #002)", "🎙️ Case #004 — Voiceover", "🎬 Case #003 — Edit", "📱 Case #003 — 3 Shorts", "💬 Comment replies"],
   "2026-06-16": ["⬆️ Case #003 — Upload + schedule", "🎞️ Case #004 — Footage", "🎭 HeyGen — character generation Case #004"],
   "2026-06-17": ["✍️ Case #005 — Research + script (Mansa Musa & Mali)", "📹 CASE #003 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #003)", "🎬 Case #004 — Edit", "📱 Case #004 — 3 Shorts", "💬 Comment replies"],
@@ -531,7 +531,7 @@ const TASKS = {
     { id: "w3", name: "Design logo and channel banner in Canva", desc: "Logo 800×800px: dark bg (#1a1a2e), bold serif font, magnifying glass icon. Banner 2560×1440px: same dark bg, channel name + tagline + schedule. White + amber/gold text only.", links:[{label:"canva.com →", url:"https://canva.com"}], tags:[{t:"Free",c:"free"},{t:"45–60 min",c:"time"}] },
     { id: "w4", name: "Upload logo, banner + set watermark", desc: "YouTube Studio → Customization → Branding tab. Upload logo and banner. Set watermark to your logo, display entire video. Hit Publish.", tags:[{t:"Free",c:"free"},{t:"10 min",c:"time"}] },
     { id: "w5", name: "Set up Google AdSense", desc: "adsense.google.com → Get started → create account with your channel email. Takes 1–2 days to verify — start tonight to avoid delays at monetization.", links:[{label:"adsense.google.com →", url:"https://adsense.google.com"}], tags:[{t:"Free",c:"free"},{t:"20 min",c:"time"},{t:"1–2 day delay!",c:"urgent"}] },
-    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: ElevenLabs (free tier), vidIQ (connect to YouTube), HeyGen ($29/mo Creator — animated character host), Canva. Download DaVinci Resolve 21 (free) and CapCut (free).", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"},{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"blackmagicdesign.com →",url:"https://www.blackmagicdesign.com/products/davinciresolve"}], tags:[{t:"~$29/mo",c:"paid"},{t:"30 min",c:"time"}] },
+    { id: "w6", name: "Create all tool accounts", desc: "Sign up using your channel email: vidIQ (connect to YouTube), HeyGen ($29/mo Creator — Cole lip-sync + voiceover), Canva. Download DaVinci Resolve 21 (free) and CapCut (free).", links:[{label:"vidiq.com →",url:"https://vidiq.com"},{label:"heygen.com →",url:"https://heygen.com"},{label:"blackmagicdesign.com →",url:"https://www.blackmagicdesign.com/products/davinciresolve"}], tags:[{t:"~$29/mo",c:"paid"},{t:"30 min",c:"time"}] },
   ],
   thu: [
     { id: "t1", name: "Delete old footage + map script to visual needs", desc: "Delete all previously downloaded footage. Map each of the 5 script sections to specific visual needs before searching Friday. S1 Hook: dramatic ruins. S2 Background: Mohenjo-daro brick streets, maps. S3 Mystery: stone seals, artifacts. S4 Theories: drought/dried riverbeds. S5 Ending: wide atmospheric landscapes.", tags:[{t:"Free",c:"free"},{t:"8:30–9:00pm",c:"time"}] },
@@ -539,11 +539,11 @@ const TASKS = {
   ],
   fri: [
     { id: "f1", name: "Full section-by-section footage search", desc: "Using Thursday's visual map: find cold open clip FIRST (one dramatic ruins shot, 4 seconds). Then by section. Archive.org: 'Mohenjo-daro', 'Indus Valley', 'Harappa'. Wikimedia: maps, diagrams, seal photos. Pexels: 'ancient ruins', 'dried riverbed', 'desert landscape'. 25–35 clips total.", links:[{label:"archive.org →",url:"https://archive.org"},{label:"Wikimedia →",url:"https://commons.wikimedia.org"},{label:"pexels.com →",url:"https://pexels.com"}], tags:[{t:"Free",c:"free"},{t:"7:00–10:00pm",c:"time"}] },
-    { id: "f2", name: "Generate voiceover in ElevenLabs", desc: "elevenlabs.io → Text to Speech → Brad (Clear Narrator). Settings: Stability 60%, Similarity 78%, Style Exaggeration 18%, 192kbps. Paste each section → generate → download. 5 MP3 files. Listen all back to back — check volume consistency.", links:[{label:"elevenlabs.io →",url:"https://elevenlabs.io"}], tags:[{t:"$11/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
+    { id: "f2", name: "Generate Cole clips in HeyGen (voiceover + lip-sync)", desc: "heygen.com → Cole (Photo Avatar) → Use in video → Add a script → voice: Cipher House (Brad). ⚠️ Remove all '...' before pasting — HeyGen vocalizes ellipses. 5 sections → download Cole_S1–S5.mp4. Audio on A1 in DaVinci · Cole video on V2.", links:[{label:"heygen.com →",url:"https://heygen.com"}], tags:[{t:"$29/mo",c:"paid"},{t:"6:00–9:00pm",c:"time"}] },
   ],
   sat: [
     { id: "s1", name: "Design The Investigator + export transparent PNG", desc: "Character locked at v5 final: male, serious/mysterious, dark trench coat (#4a3828), gold belt (#c9a84c), two simple oval hands, grounded head/neck, pale skin (#e8d5b0), dark hair (#2a1f14). Exported as transparent-background PNG (880×1600px).", tags:[{t:"Done",c:"free"},{t:"Locked v5",c:"urgent"}] },
-    { id: "s2", name: "Set up HeyGen + import Brad voice", desc: "HeyGen Creator ($29/mo). Avatar → Create a virtual character → upload The Investigator PNG → name 'The Investigator'. Voice: Import from 3rd party → ElevenLabs → paste API key → Brad voice linked to avatar.", tags:[{t:"$29/mo",c:"paid"},{t:"ElevenLabs API",c:"urgent"}] },
+    { id: "s2", name: "Set up HeyGen + import Brad voice + create Cole", desc: "HeyGen Creator ($29/mo). Avatar → Add a look → upload VH_Character_V1_Upscaled.png → Cole created. Voice: Import from 3rd party → ElevenLabs → paste API key → Brad voice named 'Cipher House'. ElevenLabs cancelled Jun 11 — voice already imported and saved in HeyGen permanently.", tags:[{t:"$29/mo",c:"paid"},{t:"Cole debut Case #002",c:"urgent"}] },
     { id: "s3", name: "Generate all 5 sections in HeyGen", desc: "Avatar → Quick create. Avatar: The Investigator · Voice: Hey Its Brad · 720p. Paste each script section. Generate all 5: Hook, Background, Mystery, Theories, Ending. Lip-sync confirmed. Download each MP4.", tags:[{t:"HeyGen",c:"paid"},{t:"5 sections",c:"time"}] },
     { id: "s4", name: "Save all 5 HeyGen MP4s", desc: "Save to 'Video 1 — Indus Valley / HeyGen Character': VH_Case001_S1_Hook_HeyGen.mp4 · S2_Background · S3_Mystery · S4_Theories · S5_Ending.", tags:[{t:"Done",c:"free"},{t:"5 MP4s",c:"time"}] },
   ],
@@ -566,16 +566,16 @@ const TASKS = {
   ],
   c002: [
     { id: "c002s", name: "Case #002 — Research + script (Göbekli Tepe)", desc: "Ask Claude: the 11,600-year-old temple complex built 6,000 years before Stonehenge by 'hunter-gatherers', only 5% excavated, deliberately buried — by whom and why? Full 5-section script + SEO titles + description + chapters + pinned comment.", tags:[{t:"Claude",c:"free"},{t:"Wed Jun 10 · 5pm",c:"time"}] },
-    { id: "c002v", name: "Case #002 — Voiceover (Göbekli Tepe)", desc: "ElevenLabs Brad · Stability 60% · Similarity 78% · Style 18% · 192kbps. 5 sections → 5 MP3s. Play all back to back — volume consistency check.", tags:[{t:"ElevenLabs",c:"paid"},{t:"Thu Jun 11 · 5pm",c:"time"}] },
+    { id: "c002v", name: "Case #002 — HeyGen clips ✅ (Göbekli Tepe)", desc: "DONE Jun 11. HeyGen · Cole (Photo Avatar) · Cipher House voice (Brad). 5 sections generated. ⚠️ Edit day: trim 04_Theories tail + weird sound in 05_Ending before 'I reed'. ElevenLabs MP3s also recorded as backup — use either for A1 audio.", tags:[{t:"HeyGen",c:"paid"},{t:"Thu Jun 11 · Done ✅",c:"time"}] },
     { id: "c002f", name: "Case #002 — Footage (Göbekli Tepe)", desc: "Cold open: T-shaped pillars emerging from the Turkish hillside. S1: excavation site (Wikimedia). S2: Anatolian plateau, hunter-gatherer context. S3: carved pillar close-ups, animal reliefs. S4: deliberate-burial dig layers. S5: wide site aerial at dusk. 25–35 clips.", tags:[{t:"Free",c:"free"},{t:"Fri Jun 12 · 5pm",c:"time"}] },
-    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Göbekli Tepe)", desc: "Generate the Leonardo character in HeyGen first (character debut). DaVinci Resolve: 4s cold open → footage background + HeyGen character overlays → text overlays: 11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · DELIBERATELY BURIED → export → CapCut Pro burned-in captions. Thumbnail: Leonardo character (shocked/awe). 3 Shorts (CapCut captions).", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
+    { id: "c002e", name: "Case #002 — Edit + thumbnail + 3 Shorts (Göbekli Tepe)", desc: "Cole is already in HeyGen (character debut). DaVinci Resolve: 4s cold open → footage on V1 + Cole overlay on V2 (LumaKeyer High 0.1, Zoom 0.6, X:0.600 Y:-0.350) → text overlays: 11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · A HIDDEN TRIANGLE → export → CapCut Pro burned-in captions. Thumbnail: Cole (shocked/awe). 3 Shorts.", tags:[{t:"Free",c:"free"},{t:"Sat Jun 13 · 7am",c:"time"}] },
     { id: "c002u", name: "Case #002 — Upload + schedule (Mon Jun 15 2pm PST)", desc: "Full upload checklist. ⚠️ AI DISCLOSURE: Details → Altered or synthetic content → CHECK. Schedule: June 15 at 2:00 PM PST.", tags:[{t:"Free",c:"free"},{t:"Sun Jun 14 · 10am",c:"time"},{t:"⚠️ AI Disclosure",c:"urgent"}] },
   ]
 };
 
 const TRACKER_STEPS = [
   { key:"script",    icon:"✍️", label:"Research + script",          note:"Claude researches + writes 5-section script · RULE: answer the core question in first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
-  { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"ElevenLabs · Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check" },
+    { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"HeyGen · Cole (Photo Avatar) · Cipher House voice (Brad) · Remove all '...' before pasting · 5 sections → 5 MP4 clips · audio on A1, Cole video on V2 in DaVinci" },
   { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
   { key:"heygen",    icon:"🎭", label:"HeyGen — character",   note:"Generate the realistic Leonardo character talking through all 5 script sections (Brad voice) BEFORE edit day · save MP4s · from Case #002 (Case #001 was faceless)" },
   { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
@@ -599,7 +599,7 @@ const GROWTH_SYSTEMS = [
 
 const CASES = [
   { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Leonardo character on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"SCHEDULED ✓ Thu Jun 11 2pm PST on @vanishedhistorych — FINAL4 uploaded, thumbnail + SEO set, playlist added", shorts:"2:30pm 'They just stopped. No war. No plague. No explanation.' · 4:00pm 'One drought lasted 113 years. Another lasted 164.' · 6:00pm 'We still can't read a single word they ever wrote' — all scheduled · add related-video links after 2pm", pinnedComment:"Something doesn't add up. The climate theory is the most convincing — four droughts, one lasting 113 years. But archaeologists keep finding cities that were already being abandoned before the worst droughts hit. Which means either the climate wasn't the cause — or something else triggered the collapse first, and the drought finished it off. No invasion evidence. No mass graves. No signs of disease. A civilization of 5 million people with better plumbing than 1800s London just... quietly unraveled. What do you think started it? 👇" },
-  { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · BURIED FOR 10,000 YEARS · A HIDDEN TRIANGLE", cold:"Aerial push-in on T-shaped pillars emerging from Turkish hillside at dusk · 4s · music only", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · Pillar 43 Vulture Stone · Karahan Tepe · archaeological dig layers", expression:"Shocked/awe · Leonardo character debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"✅ Script + SEO package done Jun 10 · VO Jun 11 · Footage Jun 12 · Edit Jun 13 · Upload Jun 14 · ⚠️ Test ElevenLabs pronunciation of Turkish names first", shorts:"S1 'They called it a cemetery. It was the oldest structure on Earth' · S2 'A perfect triangle, drawn 11,000 years before blueprints existed' · S3 'After 11,000 years... one of them is looking back' — schedule 2:30/4:00/6:00pm on launch day", pinnedComment:"Here's what I can't get past. We're told 'simple' hunter-gatherers built this — no writing, no math, no architects. But the three oldest enclosures form a perfect equilateral triangle, accurate to 25 centimeters. That's not improvisation. That's a blueprint... drawn by someone 11,000 years before blueprints existed. And then, right as farming took over the world — the thing this site may have started — they abandoned it. Forever. So what was it? A temple? The first town? Something else entirely? Drop your theory below 👇 I read every single one." },
+  { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · BURIED FOR 10,000 YEARS · A HIDDEN TRIANGLE", cold:"Aerial push-in on T-shaped pillars emerging from Turkish hillside at dusk · 4s · music only", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · Pillar 43 Vulture Stone · Karahan Tepe · archaeological dig layers", expression:"Shocked/awe · Leonardo character debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"✅ Script + SEO package done Jun 10 · HeyGen Cole clips + VO Jun 11 (done) · Footage Jun 12 · Edit Jun 13 · Upload Jun 14 · ⚠️ Trim 04_Theories.mp3 tail + 05_Ending.mp3 weird sound before edit", shorts:"S1 'They called it a cemetery. It was the oldest structure on Earth' · S2 'A perfect triangle, drawn 11,000 years before blueprints existed' · S3 'After 11,000 years... one of them is looking back' — schedule 2:30/4:00/6:00pm on launch day", pinnedComment:"Here's what I can't get past. We're told 'simple' hunter-gatherers built this — no writing, no math, no architects. But the three oldest enclosures form a perfect equilateral triangle, accurate to 25 centimeters. That's not improvisation. That's a blueprint... drawn by someone 11,000 years before blueprints existed. And then, right as farming took over the world — the thing this site may have started — they abandoned it. Forever. So what was it? A temple? The first town? Something else entirely? Drop your theory below 👇 I read every single one." },
   { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"upcoming", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
   { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"upcoming", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
   { num:"005", title:"Mansa Musa & the Mali Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"RICHEST HUMAN EVER · CRASHED EGYPT'S ECONOMY · GOLD BEYOND COUNTING · TIMBUKTU", cold:"Gold close-up or Saharan caravan silhouette at dusk", footage:"Sahara caravans (Pexels) · Djinguereber mosque & Timbuktu manuscripts (Wikimedia) · Catalan Atlas · medieval gold-trade maps", expression:"Awe/knowing", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
@@ -681,7 +681,7 @@ const QUICK_PROMPTS_BY_PANEL = {
   calendar: ["Build Month 2 content calendar", "Suggest 3 outlier video topics", "Write hooks for Week 2 videos"],
   niches: ["Which channel should I launch second?", "What's the best CPM niche right now?"],
   growth: ["Write a Reddit post for Case #001", "Write a Quora answer about the Indus Valley", "Draft 3 Short titles for Case #001"],
-  tools: ["Should I upgrade ElevenLabs?", "What new AI tools should I know about?"],
+  tools: ["What new AI tools should I know about?", "Is HeyGen still the best option for Cole?"],
   automation: ["How can I speed up my production?", "How do I batch produce 3 channels?"],
   monetization: ["When will I hit YPP at current pace?", "Draft an Audible affiliate pitch", "How do I land my first sponsorship?"],
   empire: ["When should I launch Channel 2?", "Build Channel 2 launch plan", "What's my Month 12 revenue projection?"],
@@ -796,7 +796,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$172</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$161</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -1143,8 +1143,7 @@ function GrowthPanel() {
 function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script, research, SEO, strategy — primary AI partner",cost:"$100/mo",paid:true},
-    {name:"ElevenLabs (Brad voice)",use:"Voiceover — Creator, 192kbps, Stability 60%/Similarity 78%/Style 18%",cost:"$11/mo",paid:true},
-    {name:"HeyGen (Creator)",use:"Lip-synced talking-head (realistic Leonardo face), Brad's voice via ElevenLabs API. From Case #002 — Case #001 is faceless",cost:"$29/mo",paid:true},
+    {name:"HeyGen (Creator)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Case #001 faceless — Cole debuts Case #002 onward. ElevenLabs cancelled Jun 11.",cost:"$29/mo",paid:true},
     {name:"Leonardo.ai (Essential)",use:"Realistic permanent channel character — Phoenix 1.0, commercial rights, 8,500 tokens/mo. Debuts in Case #001 thumbnail",cost:"$12/mo",paid:true},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
@@ -1185,7 +1184,7 @@ function AutomationPanel() {
   const rows = [
     {task:"Topic & keyword research",tool:"vidIQ + Claude",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"5 min"},
     {task:"Script writing",tool:"Claude",fill:100,label:"Full AI",cls:"full",before:"3–4 hrs",after:"15 min"},
-    {task:"Voiceover narration",tool:"ElevenLabs Brad",fill:100,label:"Full AI",cls:"full",before:"2 hrs",after:"10 min"},
+    {task:"Voiceover narration",tool:"HeyGen Brad (Cole lip-sync + audio)",fill:100,label:"Full AI",cls:"full",before:"2 hrs",after:"10 min"},
     {task:"Captions / subtitles",tool:"CapCut Pro auto-captions — burned in, all videos",fill:100,label:"Full AI",cls:"full",before:"60 min",after:"2 min"},
     {task:"Title, description & tags",tool:"Claude + vidIQ",fill:100,label:"Full AI",cls:"full",before:"45 min",after:"5 min"},
     {task:"Upload scheduling",tool:"YouTube Studio",fill:100,label:"Full AI",cls:"full",before:"20 min",after:"2 min"},
@@ -1330,9 +1329,9 @@ function TrajectoryPanel() {
 function ProductionLoopPanel() {
   const steps = [
     { n:"1", icon:"✍️", label:"Research + script", note:"Claude researches + writes · answer core question in first 30–60s · SEO titles · description · chapters · pinned comment" },
-    { n:"2", icon:"🎙️", label:"Voiceover", note:"ElevenLabs Brad · Stability 60 / Similarity 78 / Style 18 · 192kbps · 5 MP3 sections · volume check back to back" },
+    { n:"2", icon:"🎙️", label:"Voiceover + Cole clips", note:"HeyGen · Cole (Photo Avatar) · Cipher House voice (Brad) · Remove all '...' from script before pasting · 5 sections → 5 MP4 clips · audio on A1, Cole video on V2 · Case #002 uses ElevenLabs MP3s already recorded" },
     { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
-    { n:"4", icon:"🎭", label:"HeyGen — character", note:"Generate the Leonardo character through all 5 sections BEFORE edit day · save MP4s (from Case #002)" },
+    { n:"4", icon:"🎭", label:"HeyGen — already done in step 2", note:"Cole clips generated in step 2 alongside voiceover. No separate HeyGen session needed from Case #003 onward." },
     { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
     { n:"6", icon:"📱", label:"3 Shorts created", note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
     { n:"7", icon:"⬆️", label:"Upload + schedule", note:"QC watch-through · description + SEO + chapters · playlist · affiliate link from Case #004 onward · ⚠️ AI DISCLOSURE → YES · schedule main 2pm PST + 3 Shorts 2:30 / 4:00 / 6:00pm" },
@@ -1500,7 +1499,7 @@ function FormatMatrix() {
         "Hook → Background → Mystery → Theories → Unresolved Ending",
         "Core question answered with a specific name / date / place in first 60s",
         "Realistic Leonardo character (HeyGen, from Case #002 — Case #001 faceless) + archive / Wikimedia / Pexels footage. Wealth/collapse framing from Video 4.",
-        "ElevenLabs Brad — deep, measured, authoritative",
+        "HeyGen Brad (Cipher House voice) — deep, measured, authoritative",
         "13–14 min long-form + 3 vertical Shorts",
         "Open-ended question → 'I read every single one' → subscribe",
       ]
@@ -1669,12 +1668,12 @@ function SOPPanel() {
       <div className="section-title">Single channel weekly schedule (25–30 hrs/wk) — each day auto-appears in Today</div>
       <div className="sop-box">
         {[
-          ["Monday — Voiceover + footage","ElevenLabs → paste 1 script section by section → 5 MP3s → Archive.org + Pexels footage","3–4 hrs"],
+          ["Monday — HeyGen clips + footage","HeyGen → Cole lip-sync + voiceover (Brad) · paste script section by section · remove '...' → 5 MP4 clips · Archive.org + Pexels footage","3–4 hrs"],
           ["Tuesday — DaVinci edit","Footage background → character overlays → text overlays → color grade → export → CapCut burned-in captions","2–3 hrs"],
           ["Wednesday — Thumbnail + upload","Leonardo character → Canva layout → YouTube Studio → SEO → chapters → AI disclosure","2–3 hrs"],
           ["Thursday — Community + distribution","Reddit seeding → Quora answer → pinned comment → Short upload → reply to all comments","1–2 hrs"],
           ["Friday — Analytics + next week prep","YouTube Studio analytics → Claude writes next 3 scripts → content calendar updated","2–3 hrs"],
-          ["Saturday — Batch production sprint","Generate 2–3 voiceovers + edit multiple videos back to back · builds 1-week buffer","4–6 hrs"],
+          ["Saturday — Batch production sprint","Generate 2–3 HeyGen Cole clip sets + edit multiple videos back to back · builds 1-week buffer","4–6 hrs"],
         ].map(([t,d,time],i) => (
           <div key={i} className="auto-row">
             <div style={{flex:1}}><div className="auto-task">{t}</div><div className="auto-tool">{d}</div></div>
