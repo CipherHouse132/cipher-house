@@ -576,7 +576,7 @@ const TASKS = {
 const TRACKER_STEPS = [
   { key:"script",    icon:"✍️", label:"Research + script",          note:"Claude researches + writes 5-section script · RULE: answer the core question in first 30–60s with a specific name/date/place · SEO titles · 200-word description · chapters · pinned comment" },
     { key:"voiceover", icon:"🎙️", label:"Voiceover",                  note:"HeyGen · Cole (Photo Avatar) · Cipher House voice (Brad) · Remove all '...' before pasting · 5 sections → 5 MP4 clips · audio on A1, Cole video on V2 in DaVinci" },
-  { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
+  { key:"footage",   icon:"🎞️", label:"Footage hunt",               note:"Cold open first · section-by-section · 25–35 clips · ORDER: (1) Wikimedia Commons (2) archive.org (3) Pexels (4) Pixabay · video always preferred · Ken Burns on photos where no video exists · never YouTube" },
   { key:"heygen",    icon:"🎭", label:"HeyGen — Cole clips",   note:"Cole clips generated WITH the voiceover in one HeyGen session (audio + lip-sync together) · this step is a pre-edit-day checkpoint: verify all 5 Cole MP4s are saved before edit day" },
   { key:"edit",      icon:"🎬", label:"Edit + Version A thumbnail",  note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
   { key:"shorts",    icon:"📱", label:"3 Shorts created",            note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
@@ -1330,7 +1330,7 @@ function ProductionLoopPanel() {
   const steps = [
     { n:"1", icon:"✍️", label:"Research + script", note:"Claude researches + writes · answer core question in first 30–60s · SEO titles · description · chapters · pinned comment" },
     { n:"2", icon:"🎙️", label:"Voiceover + Cole clips", note:"HeyGen · Cole (Photo Avatar) · Cipher House voice (Brad) · Remove all '...' from script before pasting · 5 sections → 5 MP4 clips · audio on A1, Cole video on V2 · Case #002 uses ElevenLabs MP3s already recorded" },
-    { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · archive.org / Wikimedia / Pexels" },
+    { n:"3", icon:"🎞️", label:"Footage hunt", note:"Cold open first · section-by-section · 25–35 clips · ORDER: (1) Wikimedia Commons (2) archive.org (3) Pexels (4) Pixabay · video always preferred · Ken Burns on photos where no video exists · never YouTube" },
     { n:"4", icon:"🎭", label:"HeyGen — already done in step 2", note:"Cole clips generated in step 2 alongside voiceover. No separate HeyGen session needed from Case #003 onward." },
     { n:"5", icon:"🎬", label:"Edit + Thumbnail A", note:"DaVinci Resolve → footage background + character overlay → text overlays → export FINAL.mp4 → CapCut Pro burned-in captions → Canva thumbnail A" },
     { n:"6", icon:"📱", label:"3 Shorts created", note:"Title = most compelling line from that clip + #Shorts · desc 'The full story: [link]' · 9:16 · CapCut burned-in captions · remixing ON · playlist · no custom thumbnail/tags" },
