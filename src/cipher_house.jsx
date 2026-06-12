@@ -1148,7 +1148,7 @@ function ToolsPanel() {
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, banner, logo",cost:"Free tier",paid:false},
-    {name:"vidIQ",use:"SEO, keyword + outlier research. Free tier until ~Video 4-5",cost:"Free tier",paid:false},
+    {name:"vidIQ (Max trial)",use:"SEO, keyword + outlier research, competitor tracking (5 channels), title optimizer, Daily Ideas. Max trial active since Jun 11 — keep vs downgrade decision Jul 11 (framework in calendar event)",cost:"$0 until Jul 11",paid:false},
     {name:"archive.org",use:"Public-domain historical footage — core source",cost:"Free",paid:false},
     {name:"Wikimedia Commons",use:"Historical images, maps, diagrams",cost:"Free",paid:false},
     {name:"Pexels",use:"Stock footage — ruins, landscapes, atmospheric",cost:"Free",paid:false},
