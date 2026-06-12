@@ -1165,7 +1165,7 @@ function ToolsPanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$170</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
-        <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">8 of 13</div><div className="stat-note">no subscription</div></div>
+        <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">{tools.filter(t=>!t.paid).length} of {tools.length}</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
       </div>
       <div className="tools-grid">
