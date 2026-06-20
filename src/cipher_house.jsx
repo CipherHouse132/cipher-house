@@ -599,9 +599,9 @@ const GROWTH_SYSTEMS = [
 
 const CASES = [
   { num:"001", title:"Indus Valley Civilization", launch:"Thu Jun 11", status:"complete", overlays:"5 MILLION PEOPLE · NO DECIPHERED SCRIPT · 1,000+ YEARS · 113-YEAR DROUGHT", cold:"Dramatic ancient ruins wide shot · 4s · music only", footage:"Mohenjo-daro ruins · dried riverbeds · Indus seals · archaeological dig · desert landscapes", expression:"Faceless video · Cole on thumbnail", reddit:"r/AncientCivilizations · r/history", schedule:"SCHEDULED ✓ Thu Jun 11 2pm PST on @vanishedhistorych — FINAL4 uploaded, thumbnail + SEO set, playlist added", shorts:"2:30pm 'They just stopped. No war. No plague. No explanation.' · 4:00pm 'One drought lasted 113 years. Another lasted 164.' · 6:00pm 'We still can't read a single word they ever wrote' — all scheduled · add related-video links after 2pm", pinnedComment:"Something doesn't add up. The climate theory is the most convincing — four droughts, one lasting 113 years. But archaeologists keep finding cities that were already being abandoned before the worst droughts hit. Which means either the climate wasn't the cause — or something else triggered the collapse first, and the drought finished it off. No invasion evidence. No mass graves. No signs of disease. A civilization of 5 million people with better plumbing than 1800s London just... quietly unraveled. What do you think started it? 👇" },
-  { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"upcoming", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · BURIED FOR 10,000 YEARS · A HIDDEN TRIANGLE", cold:"Aerial push-in on T-shaped pillars emerging from Turkish hillside at dusk · 4s · music only", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · Pillar 43 Vulture Stone · Karahan Tepe · archaeological dig layers", expression:"Shocked/awe · Cole's debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"✅ Script + SEO package done Jun 10 · HeyGen Cole clips + VO Jun 11 (done) · Footage Jun 12 · Edit Jun 13 · Upload Jun 14 · ⚠️ Trim 04_Theories.mp3 tail + 05_Ending.mp3 weird sound before edit", shorts:"S1 'They called it a cemetery. It was the oldest structure on Earth' · S2 'A perfect triangle, drawn 11,000 years before blueprints existed' · S3 'After 11,000 years... one of them is looking back' — schedule 2:30/4:00/6:00pm on launch day", pinnedComment:"Here's what I can't get past. We're told 'simple' hunter-gatherers built this — no writing, no math, no architects. But the three oldest enclosures form a perfect equilateral triangle, accurate to 25 centimeters. That's not improvisation. That's a blueprint... drawn by someone 11,000 years before blueprints existed. And then, right as farming took over the world — the thing this site may have started — they abandoned it. Forever. So what was it? A temple? The first town? Something else entirely? Drop your theory below 👇 I read every single one." },
-  { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"upcoming", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 12 · VO Jun 13 · Footage Jun 14 · Edit Jun 15 · Upload Jun 16" },
-  { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"upcoming", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"Script Jun 14 · VO Jun 15 · Footage Jun 16 · Edit Jun 17 · Upload Jun 18" },
+  { num:"002", title:"Göbekli Tepe", launch:"Mon Jun 15", status:"complete", overlays:"11,600 YEARS OLD · 6,000 YEARS BEFORE STONEHENGE · ONLY 5% EXCAVATED · BURIED FOR 10,000 YEARS · A HIDDEN TRIANGLE", cold:"Aerial push-in on T-shaped pillars emerging from Turkish hillside at dusk · 4s · music only", footage:"Göbekli Tepe excavation (Wikimedia) · Turkish plateau · carved pillars close-up · Pillar 43 Vulture Stone · Karahan Tepe · archaeological dig layers", expression:"Shocked/awe · Cole's debut", reddit:"r/AncientCivilizations · r/archaeology", schedule:"✅ LIVE Jun 15 — published on schedule (Cole HeyGen debut). Script + SEO done Jun 10 · HeyGen Cole clips + VO Jun 11 (done) · Footage Jun 12 · Edit Jun 13 · Upload Jun 14 · ⚠️ Trim 04_Theories.mp3 tail + 05_Ending.mp3 weird sound before edit", shorts:"S1 'They called it a cemetery. It was the oldest structure on Earth' · S2 'A perfect triangle, drawn 11,000 years before blueprints existed' · S3 'After 11,000 years... one of them is looking back' — schedule 2:30/4:00/6:00pm on launch day", pinnedComment:"Here's what I can't get past. We're told 'simple' hunter-gatherers built this — no writing, no math, no architects. But the three oldest enclosures form a perfect equilateral triangle, accurate to 25 centimeters. That's not improvisation. That's a blueprint... drawn by someone 11,000 years before blueprints existed. And then, right as farming took over the world — the thing this site may have started — they abandoned it. Forever. So what was it? A temple? The first town? Something else entirely? Drop your theory below 👇 I read every single one." },
+  { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"complete", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"✅ LIVE Jun 17 (published 5pm — slipped from 2pm). Shipped at 25fps (DaVinci frame-rate lock — ship not rebuild). vidIQ auto-Short #4 experiment running — 48hr retention verdict pending." },
+  { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"complete", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"✅ LIVE Jun 19 — THESIS video. Section-by-section build (SOP test). 24fps locked from clip 1 (avoided the #003 trap). BOLD thumbnail test (EVERY/EMPIRE/FELL). First affiliate case (Cline '1177 B.C.')." },
   { num:"005", title:"Mansa Musa & the Mali Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"RICHEST HUMAN EVER · CRASHED EGYPT'S ECONOMY · GOLD BEYOND COUNTING · TIMBUKTU", cold:"Gold close-up or Saharan caravan silhouette at dusk", footage:"Sahara caravans (Pexels) · Djinguereber mosque & Timbuktu manuscripts (Wikimedia) · Catalan Atlas · medieval gold-trade maps", expression:"Awe/knowing", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
   { num:"006", title:"The Khmer Empire / Angkor", launch:"Wed Jun 24", status:"upcoming", overlays:"LARGEST PRE-INDUSTRIAL CITY · 1,000 SQ KM · WATER EMPIRE · SWALLOWED BY JUNGLE", cold:"Angkor Wat dawn silhouette — epic scale", footage:"Angkor Wat aerials (Pexels) · Ta Prohm jungle ruins · bas-reliefs (Wikimedia) · LiDAR city-grid maps · Cambodian waterways", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
   { num:"007", title:"How Rome Debased Its Currency to Death", launch:"Fri Jun 26", status:"upcoming", overlays:"94% SILVER → 5% · 1,000%+ INFLATION · 50 EMPERORS IN 50 YEARS · THE DENARIUS", cold:"Roman denarius macro shot — dramatic single-source lighting", footage:"Roman coins (Wikimedia) · Forum & Colosseum (Pexels) · emperor busts · ancient mint imagery · archive.org Rome footage", expression:"Serious/warning · strongest modern-relevance hook", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
@@ -788,15 +788,15 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #001 — scheduled ✓ launches Thursday 🚀</div>
-          <div className="launch-sub">The Indus Valley Civilization: 5 Million People Vanished and No One Knows Why</div>
+          <div className="launch-text">Case #004 — live now 🚀 · #005 next Monday</div>
+          <div className="launch-sub">The Bronze Age Collapse: How Every Empire Fell in the Same 50 Years — live today. Next up: Mansa Musa, Mon Jun 22.</div>
         </div>
-        <div className="launch-date">Thu Jun 11 · 2:00 PM PST</div>
+        <div className="launch-date">Fri Jun 19 · LIVE</div>
       </div>
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$170</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$219</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
       </div>
@@ -1143,7 +1143,7 @@ function GrowthPanel() {
 function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script, research, SEO, strategy — primary AI partner",cost:"$100/mo",paid:true},
-    {name:"HeyGen (Pro)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Case #001 faceless — Cole debuts Case #002 onward. ElevenLabs cancelled Jun 11.",cost:"$50/mo",paid:true},
+    {name:"HeyGen (Pro)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Upgraded to $99/mo Jun 18 — production volume (multiple 13-min cases/week, ~260 credits/case at Avatar IV rates) outgrew the $50 tier. ElevenLabs cancelled Jun 11.",cost:"$99/mo",paid:true},
     {name:"Leonardo.ai (Essential)",use:"CANCELLED Jun 11 — Cole already built. Resubscribe when a new channel character is needed.",cost:"Cancelled",paid:false},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
@@ -1159,11 +1159,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$170/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">$219/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$170</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$219</div><div className="stat-note">full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">{tools.filter(t=>!t.paid).length} of {tools.length}</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1227,7 +1227,7 @@ function AutomationPanel() {
 
 function MonetizationPanel() {
   const items = [
-    {phase:"Week 3–4 · after first views arrive",title:"Affiliate marketing",desc:"Apply for Amazon Associates once you have initial traffic (~Case #004–005). Amazon requires 3 sales in 180 days or the account closes — applying with zero audience risks losing the account. Add one topic-specific book link per video. Audible bounty ($5–10/trial) and CuriosityStream ($10/subscription) via same account.",earn:"Potential: $50–500/mo · scales with views · apply at Case #004",active:true},
+    {phase:"Week 3–4 · after first views arrive",title:"Affiliate marketing",desc:"Apply for Amazon Associates once you have initial traffic (~Case #004–005). Amazon requires 3 sales in 180 days or the account closes — applying with zero audience risks losing the account. Add one topic-specific book link per video. Audible bounty ($5–10/trial) and CuriosityStream ($10/subscription) via same account.",earn:"LIVE from Case #004 (Jun 19) — Cline '1177 B.C.' book affiliate · $50–500/mo, scales with views",active:true},
     {phase:"500 subscribers",title:"Channel memberships + Super Thanks",desc:"Early YPP tier. Exclusive content, badges, direct tips. Apply as soon as you hit 500 subs + 3,000 watch hours.",earn:"Potential: $100–500/mo per channel",active:true},
     {phase:"1,000 subscribers + 4,000 watch hours",title:"YouTube Partner Program (AdSense)",desc:"Full ad revenue access. History channels earn $5–10 RPM — 100K views = $500–1,000/month.",earn:"At 100K views/mo: $500–1,000 · At 500K views/mo: $2,500–5,000",active:false},
     {phase:"2,000–5,000 subscribers",title:"Brand sponsorships",desc:"Pitch brands directly: Curiosity Stream, Nebula, Audible, MasterClass, Skillshare. History channels: $1,000–5,000 per integration. Finance channels: $2,000–15,000.",earn:"$200–5,000 per integration depending on channel size",active:false},
@@ -1386,7 +1386,7 @@ function ProductionLoopPanel() {
       </div>
       <div className="info-box">
         <div className="info-title">What moves CTR most</div>
-        <div className="info-body">Character expression (shocked vs serious vs concerned) and text (question vs statement vs number). Keep thumbnail text style identical across all videos — same font, placement, color. That visual grammar is itself an algorithm signal.</div>
+        <div className="info-body">Character expression (shocked vs serious vs concerned) and text (question vs statement vs number). Keep thumbnail text style identical across all videos — same font, placement, color. That visual grammar is itself an algorithm signal. LOCKED LEARNING (from #001–#003 data): elegant/low-opacity scenes + thin serif type CRATER in the Suggested feed (~1.3% CTR vs ~3.9% in Browse — and Suggested is where the volume is). The fix, locked from Case #003 onward: BOLD treatment — scene at 60–80% opacity, heavy-weight type (Anton/Archivo Black), 2–3 words max, Cole reacting not posed. Case #004 is the first full bold test.</div>
       </div>
 
       <div className="section-title">Post-launch growth checklist — every video</div>
@@ -1552,7 +1552,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$170</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$219</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1587,7 +1587,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $170/mo tool cost · ranked by business merit</div>
+        <div className="panel-sub">5-channel empire · $219/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
