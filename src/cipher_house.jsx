@@ -592,7 +592,7 @@ const GROWTH_SYSTEMS = [
   { key:"analytics",  icon:"📊", label:"Weekly analytics check",          cadence:"Every Friday",       note:"Views, CTR, watch time, traffic sources · note overperformers + low-CTR videos to fix" },
   { key:"comments_w", icon:"💬", label:"Comment reply session",           cadence:"Mon / Wed / Fri",    note:"Zero unanswered comments in Month 1 · strongest early algorithmic signal there is" },
   { key:"monetize",   icon:"💰", label:"Monetization milestone check",    cadence:"1st of month",       note:"500 subs → Channel Membership · 1,000 subs + 4,000 hrs → apply YPP immediately" },
-  { key:"vidiq",      icon:"🔍", label:"vidIQ outlier analysis",          cadence:"First Monday",       note:"Run outlier tool on Knowledgia, Voices of the Past, Dark Docs · find breakout topics before making them" },
+  { key:"vidiq",      icon:"🔍", label:"vidIQ outlier analysis",          cadence:"First Monday",       note:"Run outlier tool on the re-pointed set: Fall of Civilizations, Voices of the Past, Knowledgia, History with Cy, Dan Davis History · feed winners into the Outlier Queue" },
   { key:"review",     icon:"📈", label:"Monthly Business Review",         cadence:"First Monday",       note:"Analytics + revenue + tool stack + phase-trigger check · Claude builds next month's calendar" },
   { key:"planning",   icon:"📅", label:"Next-month content planning",     cadence:"Monthly",            note:"Lock next 12 cases · data-driven topic selection from real analytics" },
 ];
@@ -798,12 +798,12 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
         <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$219</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Tasks complete</div><div className="stat-val">{doneCount}/{totalTasks}</div><div className="stat-note">launch checklist</div></div>
+        <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">4/12</div><div className="stat-note">series progress</div></div>
       </div>
       <div className="section-title">Quick navigation</div>
       <div className="ov-grid">
         {[
-          {icon:"✦", title:"Production Plan", desc:"9-day launch checklist + Cases #002–#012 full production schedule.", panel:"tasks"},
+          {icon:"🎯", title:"Outlier Queue", desc:"Currently overperforming on-thesis topics — candidates that can bump weak locked slots.", panel:"outliers"},
           {icon:"◷", title:"Content Calendar", desc:"12 videos across 4 weekly themes. Every title planned and ready.", panel:"calendar"},
           {icon:"◈", title:"Cases #001–#012", desc:"Full production details — footage notes, overlays, cold opens for every case.", panel:"cases"},
           {icon:"↑", title:"Growth Tactics", desc:"Reddit seeding, Quora, A/B thumbnails, outlier analysis — every tactic documented.", panel:"growth"},
@@ -1057,6 +1057,61 @@ function CasesPanel() {
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+function OutlierQueuePanel() {
+  const queue = [
+    { signal:"🟢 GREEN · wide open", name:"The Egyptian City That Sank Overnight", rows:[
+      ["Signal","Co-suggested vs #001; only a 23-sub channel covering it"],
+      ["Topic","Thonis-Heracleion — lost underwater city"],
+      ["Thesis fit","Perfect — literal vanished city"],
+      ["Sourcing","Free — Wikimedia, archive.org, Pexels"],
+      ["Edge","Real underwater-archaeology footage + Cole; out-research the farm"],
+      ["Status","Candidate · #013+ pool"]] },
+    { signal:"🟢 GREEN · vidIQ Daily Ideas (Very High)", name:"The Lost Persian Gold Found After 2,400 Years", rows:[
+      ["Signal","vidIQ Daily Ideas — Very High"],
+      ["Thesis fit","Perfect — lost wealth"],
+      ["Sourcing","Free — museum / archive imagery"],
+      ["Status","Keeper · Month-2 pool"]] },
+    { signal:"🟢 GREEN · co-suggested", name:"The 4,500-Year-Old City History Forgot", rows:[
+      ["Signal","Co-suggested vs #001 (Konar Sandal / Jiroft)"],
+      ["Thesis fit","Strong — lost city / lost civilization"],
+      ["Sourcing","Free — archaeology imagery"],
+      ["Status","Candidate · #013+ pool"]] },
+    { signal:"🟡 PATTERN · adapt, do not clone", name:"The Tablet They Buried for 3,000 Years", rows:[
+      ["Signal","Babel Record 100x+ on a deciphered-artifact hook"],
+      ["Thesis fit","Good — use a REAL tablet (Amarna, Ugarit)"],
+      ["Hook","Resolution: 'Finally Translated / Until Now'"],
+      ["Caution","Borrow the mechanic; NO fringe 'gods erased' bait"],
+      ["Status","Pattern to apply, not a topic yet"]] },
+    { signal:"🟡 PATTERN · grid-thumbnail test", name:"10 Civilizations That Vanished Overnight", rows:[
+      ["Signal","Atlas Adam 32x on a 10-cell grid listicle"],
+      ["Thesis fit","Good — all on-thesis vanishings"],
+      ["Format","First grid-thumbnail test; single-Cole stays standard"],
+      ["Status","One controlled test slot"]] },
+  ];
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Outlier Queue</div>
+        <div className="panel-sub">Currently overperforming on-thesis topics — ranked candidates that can bump weak locked slots</div>
+        <div className="gold-line" />
+      </div>
+      <div className="info-box">
+        <div className="info-title">How this queue works — two-track system</div>
+        <div className="info-body">Track 1 = the locked core slate (#005–#012); it stays stable for series identity and pipeline efficiency. Track 2 = this queue. A candidate only BUMPS a locked slot if it clears all four filters: (1) on-thesis (lost wealth / collapsed empire), (2) free-sourceable, (3) a STRUCTURAL pattern not a spent 5-day spike, and (4) we can make it genuinely deeper — out-research and out-host the AI farms, not out-clone them. Never bump anything already in production: #005 ships untouched. Primary venue: the first-Sunday monthly planning session, which reshapes #013–#024 from this queue. Detection engine = vidIQ Outliers on the re-pointed competitor set; ranking engine = Claude against the four-part filter.</div>
+      </div>
+      <div className="niche-grid">
+        {queue.map((q,i) => (
+          <div key={i} className={"niche-card " + (q.signal.includes("GREEN") ? "top" : "")}>
+            <div className="niche-rank">{q.signal}</div>
+            <div className="niche-name">{q.name}</div>
+            {q.rows.map(([l,v],j) => <div key={j} className="niche-row"><span className="niche-row-label">{l}</span><span className="niche-row-val">{v}</span></div>)}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -1754,8 +1809,7 @@ function OSPanel() {
 
 const NAV = [
   { section: "Overview", items: [{ id:"overview", icon:"◈", label:"Dashboard" }] },
-  { section: "Launch Plan", items: [
-    { id:"tasks",    icon:"✦", label:"Production Plan" },
+  { section: "Production", items: [
     { id:"tracker",  icon:"☑", label:"Production Tracker" },
     { id:"calendar", icon:"◷", label:"Content Calendar" },
     { id:"cases",    icon:"◎", label:"Cases #001–#012" },
@@ -1763,6 +1817,7 @@ const NAV = [
   { section: "Channel 1", items: [
     { id:"trajectory", icon:"↗", label:"Content Trajectory" },
     { id:"niches",     icon:"◎", label:"Niche Research" },
+    { id:"outliers",   icon:"🎯", label:"Outlier Queue" },
     { id:"growth",     icon:"↑", label:"Growth Tactics" },
     { id:"systems",    icon:"⟲", label:"Growth Systems" },
     { id:"prodloop",   icon:"⚙", label:"Production Loop" },
@@ -1801,6 +1856,8 @@ export default function App() {
 
   const doneCount = allTaskIds.filter(id => doneSet.has(id)).length;
   const pct = allTaskIds.length > 0 ? Math.round((doneCount / allTaskIds.length) * 100) : 0;
+  const CASES_LIVE = 4, CASES_TOTAL = 12;
+  const seriesPct = Math.round((CASES_LIVE / CASES_TOTAL) * 100);
 
   const [trackerSet, setTrackerSet] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("ch_tracker") || "[]")); } catch { return new Set(); }
@@ -1846,6 +1903,7 @@ export default function App() {
     cases:        <CasesPanel />,
     trajectory:   <TrajectoryPanel />,
     niches:       <NichesPanel />,
+    outliers:     <OutlierQueuePanel />,
     growth:       <GrowthPanel />,
     prodloop:     <ProductionLoopPanel />,
     tools:        <ToolsPanel />,
@@ -1895,9 +1953,9 @@ export default function App() {
             ))}
           </nav>
           <div className="progress-box">
-            <div className="prog-label">Launch Progress</div>
-            <div className="prog-track"><div className="prog-fill" style={{width:`${pct}%`}} /></div>
-            <div className="prog-stats"><span>{doneCount} done</span><span>{pct}%</span></div>
+            <div className="prog-label">Series Progress</div>
+            <div className="prog-track"><div className="prog-fill" style={{width:`${seriesPct}%`}} /></div>
+            <div className="prog-stats"><span>{CASES_LIVE}/{CASES_TOTAL} cases live</span><span>{seriesPct}%</span></div>
           </div>
         </div>
         <div className="main">
