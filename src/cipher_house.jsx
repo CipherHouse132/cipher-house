@@ -479,22 +479,27 @@ const SCHEDULE = {
   "2026-06-20": ["🎙️ Case #006 — Voiceover", "🎬 Case #005 — Edit", "🎭 HeyGen — character Cases #005/#006/#007", "📱 Case #005 — 3 Shorts", "🖼️ Case #003 — Version B thumbnail"],
   "2026-06-21": ["✍️ Case #007 — Research + script (Rome's Currency Collapse)", "⬆️ Case #005 — Upload + schedule", "🎞️ Case #006 — Footage"],
   "2026-06-22": ["📹 CASE #005 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #005)", "🎙️ Case #007 — Voiceover", "🎬 Case #006 — Edit", "📱 Case #006 — 3 Shorts", "💬 Comment replies"],
-  "2026-06-23": ["⬆️ Case #006 — Upload + schedule", "🎞️ Case #007 — Footage"],
-  "2026-06-24": ["✍️ Case #008 — Research + script (The Maya Collapse)", "📹 CASE #006 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #006)", "🎬 Case #007 — Edit", "📱 Case #007 — 3 Shorts", "💬 Comment replies"],
-  "2026-06-25": ["⬆️ Case #007 — Upload + schedule", "🎙️ Case #008 — Voiceover", "🖼️ Case #001 — A/B thumbnail check (results)"],
-  "2026-06-26": ["✍️ Case #009 — Research + script (Templar Treasure)", "📹 CASE #007 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #007)", "🎞️ Case #008 — Footage", "🎭 HeyGen — character Case #008", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-06-27": ["🎙️ Case #009 — Voiceover", "🎬 Case #008 — Edit", "🎭 HeyGen — character Cases #009/#010", "📱 Case #008 — 3 Shorts", "🖼️ Version B thumbnails — Cases #004/#005/#006"],
-  "2026-06-28": ["✍️ Case #010 — Research + script (South Sea Bubble)", "⬆️ Case #008 — Upload + schedule", "🎞️ Case #009 — Footage"],
-  "2026-06-29": ["📹 CASE #008 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #008)", "🎙️ Case #010 — Voiceover", "🎬 Case #009 — Edit", "📱 Case #009 — 3 Shorts", "🖼️ Case #002 — A/B check", "💬 Comment replies"],
-  "2026-06-30": ["⬆️ Case #009 — Upload + schedule", "🎞️ Case #010 — Footage"],
-  "2026-07-01": ["✍️ Case #011 — Research + script (Easter Island)", "📹 CASE #009 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #009)", "🎬 Case #010 — Edit", "📱 Case #010 — 3 Shorts", "💰 Monthly monetization milestone check", "🖼️ Case #003 — A/B check", "💬 Comment replies"],
-  "2026-07-02": ["⬆️ Case #010 — Upload + schedule", "🎙️ Case #011 — Voiceover"],
-  "2026-07-03": ["✍️ Case #012 — Research + script (Indus Valley Revisited)", "📹 CASE #010 GOES LIVE 2pm", "🌐 Reddit + Quora seeding (Case #010)", "🎞️ Case #011 — Footage", "🎭 HeyGen — character Cases #011/#012", "📊 Weekly analytics check", "💬 Comment replies"],
-  "2026-07-04": ["🎙️ Case #012 — Voiceover", "🎬 Case #011 — Edit", "📱 Case #011 — 3 Shorts", "🖼️ Version B thumbnails — Cases #007/#008/#009"],
-  "2026-07-05": ["⬆️ Case #011 — Upload + schedule", "🎞️ Case #012 — Footage"],
-  "2026-07-06": ["📹 CASE #011 GOES LIVE 2pm", "🎬 Case #012 — Edit", "📱 Case #012 — 3 Shorts", "📊 Monthly Business Review #1", "🔍 vidIQ outlier analysis", "📅 Month 2 content planning", "💬 Comment replies"],
-  "2026-07-07": ["⬆️ Case #012 — Upload + schedule", "🌐 Reddit + Quora seeding (Case #011)"],
-  "2026-07-08": ["📹 CASE #012 GOES LIVE 2pm — final video of Month 1 🎉", "🌐 Reddit + Quora seeding (Case #012)", "🖼️ A/B check — Cases #004/#005/#006", "💬 Comment replies"],
+  "2026-06-23": ["\ud83c\udf99\ufe0f Case #006 \u2014 HeyGen Cole clips (Khmer \u00b7 regenerate fresh on Brad once 5,000-credit tier confirmed)", "\ud83d\udcac Comment replies (Mon/Wed/Fri)"],
+  "2026-06-24": ["\ud83c\udfac Case #006 \u2014 Edit + thumbnail (A+B) + 3 Shorts (Khmer)", "\u2699\ufe0f Confirm HeyGen 5,000 tier + lock Cole/Brad voice"],
+  "2026-06-25": ["\ud83c\udf9e\ufe0f Case #006 \u2014 finish footage + edit", "\ud83d\udcac Comment replies"],
+  "2026-06-26": ["\u2b06\ufe0f Case #006 \u2014 Upload + schedule (launch Mon Jun 29)", "\ud83d\udcca Weekly analytics check (Fri)"],
+  "2026-06-27": ["\ud83d\uddd3\ufe0f Catch-up / buffer \u2014 get ahead on Case #007", "\ud83d\uddbc\ufe0f A/B thumbnail data review (#002/#003/#005)"],
+  "2026-06-28": ["\u270d\ufe0f Case #008 \u2014 Research + script (Maya Collapse)", "\ud83c\udf9e\ufe0f Case #007 \u2014 Footage (Rome)"],
+  "2026-06-29": ["\ud83d\udcf9 CASE #006 GOES LIVE 3pm \u2014 Khmer \u00b7 pinned comment + 3 Shorts 3:30/5/7", "\ud83c\udfac Case #007 \u2014 Edit + thumbnail (A+B) + 3 Shorts", "\ud83c\udf99\ufe0f Case #008 \u2014 HeyGen Cole clips", "\ud83d\udcac Comment replies"],
+  "2026-06-30": ["\u2b06\ufe0f Case #007 \u2014 Upload + schedule (launch Jul 1)", "\ud83c\udf9e\ufe0f Case #008 \u2014 Footage"],
+  "2026-07-01": ["\ud83d\udcf9 CASE #007 GOES LIVE 3pm \u2014 Rome \u00b7 pinned comment + 3 Shorts", "\ud83c\udfac Case #008 \u2014 Edit + thumbnail (A+B) + 3 Shorts", "\u270d\ufe0f Case #009 \u2014 Research + script (Knights Templar)", "\ud83d\udcb0 Monthly monetization milestone check", "\ud83d\udcac Comment replies"],
+  "2026-07-02": ["\u2b06\ufe0f Case #008 \u2014 Upload + schedule (launch Jul 3)", "\ud83c\udf99\ufe0f Case #009 \u2014 HeyGen Cole clips"],
+  "2026-07-03": ["\ud83d\udcf9 CASE #008 GOES LIVE 3pm \u2014 Maya \u00b7 pinned comment + 3 Shorts", "\ud83c\udf9e\ufe0f Case #009 \u2014 Footage", "\u270d\ufe0f Case #010 \u2014 Research + script (South Sea Bubble)", "\ud83d\udcca Weekly analytics check (Fri)", "\ud83d\udcac Comment replies"],
+  "2026-07-04": ["\ud83c\udfac Case #009 \u2014 Edit + thumbnail (A+B) + 3 Shorts", "\ud83c\udf99\ufe0f Case #010 \u2014 HeyGen Cole clips", "\ud83e\udde0 Ramp-up strategy conversation (after #008 data)"],
+  "2026-07-05": ["\u2b06\ufe0f Case #009 \u2014 Upload + schedule (launch Jul 6)", "\ud83c\udf9e\ufe0f Case #010 \u2014 Footage", "\u270d\ufe0f Case #011 \u2014 Research + script (Easter Island)"],
+  "2026-07-06": ["\ud83d\udcf9 CASE #009 GOES LIVE 3pm \u2014 Templar \u00b7 pinned comment + 3 Shorts", "\ud83c\udfac Case #010 \u2014 Edit + thumbnail (A+B) + 3 Shorts", "\ud83c\udf99\ufe0f Case #011 \u2014 HeyGen Cole clips", "\ud83d\udcca Monthly Business Review #1 + Month 2 planning", "\ud83d\udcac Comment replies"],
+  "2026-07-07": ["\u2b06\ufe0f Case #010 \u2014 Upload + schedule (launch Jul 8)", "\ud83c\udf9e\ufe0f Case #011 \u2014 Footage"],
+  "2026-07-08": ["\ud83d\udcf9 CASE #010 GOES LIVE 3pm \u2014 South Sea \ud83d\udc24 CANARY \u00b7 pinned comment + 3 Shorts", "\ud83c\udfac Case #011 \u2014 Edit + thumbnail (A+B) + 3 Shorts", "\u270d\ufe0f Case #012 \u2014 Research + script (Indus Revisited)", "\ud83d\udcac Comment replies"],
+  "2026-07-09": ["\u2b06\ufe0f Case #011 \u2014 Upload + schedule (launch Jul 10)", "\ud83c\udf99\ufe0f Case #012 \u2014 HeyGen Cole clips"],
+  "2026-07-10": ["\ud83d\udcf9 CASE #011 GOES LIVE 3pm \u2014 Easter Island \u00b7 pinned comment + 3 Shorts", "\ud83c\udf9e\ufe0f Case #012 \u2014 Footage", "\ud83d\udcca Weekly analytics check (Fri)", "\ud83d\udcac Comment replies"],
+  "2026-07-11": ["\ud83c\udfac Case #012 \u2014 Edit + thumbnail (A+B) (Indus Revisited \u00b7 season finale)"],
+  "2026-07-12": ["\u2b06\ufe0f Case #012 \u2014 Upload + schedule (launch Jul 13)"],
+  "2026-07-13": ["\ud83d\udcf9 CASE #012 GOES LIVE 3pm \u2014 Indus Revisited \u00b7 FINAL of Month 1 \ud83c\udf89 \u00b7 pinned comment + 3 Shorts", "\ud83d\udcac Comment replies"],
 };
 
 function recurringFor(dateStr, scheduled = []) {
@@ -603,13 +608,13 @@ const CASES = [
   { num:"003", title:"The Minoans", launch:"Wed Jun 17", status:"complete", overlays:"EUROPE'S FIRST SUPERPOWER · 1,500 YEARS OF WEALTH · THERA ERUPTION · PALACES WITH PLUMBING", cold:"Knossos palace ruins wide shot — Mediterranean light", footage:"Knossos ruins (Wikimedia) · Crete coastline (Pexels) · Minoan frescoes · Santorini caldera · ancient trade-route maps", expression:"Serious/knowing", reddit:"r/AncientCivilizations · r/history", schedule:"✅ LIVE Jun 17 (published 5pm — slipped from 2pm). Shipped at 25fps (DaVinci frame-rate lock — ship not rebuild). vidIQ auto-Short #4 experiment running — 48hr retention verdict pending." },
   { num:"004", title:"The Bronze Age Collapse", launch:"Fri Jun 19", status:"complete", overlays:"1177 BC · 8 CIVILIZATIONS · 50 YEARS · TOTAL SYSTEM FAILURE", cold:"Storm over the Mediterranean or burning ancient city — ominous", footage:"Hittite & Mycenaean ruins (Wikimedia) · Sea Peoples reliefs · Mediterranean coastlines (Pexels) · ancient trade-network maps", expression:"Grave/intense · THESIS VIDEO — announces the new identity", reddit:"r/history · r/AncientCivilizations", schedule:"✅ LIVE Jun 19 — THESIS video. Section-by-section build (SOP test). 24fps locked from clip 1 (avoided the #003 trap). BOLD thumbnail test (EVERY/EMPIRE/FELL). First affiliate case (Cline '1177 B.C.')." },
   { num:"005", title:"Mansa Musa & the Mali Empire", launch:"Mon Jun 22", status:"upcoming", overlays:"RICHEST HUMAN EVER · CRASHED EGYPT'S ECONOMY · GOLD BEYOND COUNTING · TIMBUKTU", cold:"Gold close-up or Saharan caravan silhouette at dusk", footage:"Sahara caravans (Pexels) · Djinguereber mosque & Timbuktu manuscripts (Wikimedia) · Catalan Atlas · medieval gold-trade maps", expression:"Awe/knowing", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 17 · VO Jun 18 · Footage Jun 19 · Edit Jun 20 · Upload Jun 21" },
-  { num:"006", title:"The Khmer Empire / Angkor", launch:"Wed Jun 24", status:"upcoming", overlays:"LARGEST PRE-INDUSTRIAL CITY · 1,000 SQ KM · WATER EMPIRE · SWALLOWED BY JUNGLE", cold:"Angkor Wat dawn silhouette — epic scale", footage:"Angkor Wat aerials (Pexels) · Ta Prohm jungle ruins · bas-reliefs (Wikimedia) · LiDAR city-grid maps · Cambodian waterways", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
-  { num:"007", title:"How Rome Debased Its Currency to Death", launch:"Fri Jun 26", status:"upcoming", overlays:"94% SILVER → 5% · 1,000%+ INFLATION · 50 EMPERORS IN 50 YEARS · THE DENARIUS", cold:"Roman denarius macro shot — dramatic single-source lighting", footage:"Roman coins (Wikimedia) · Forum & Colosseum (Pexels) · emperor busts · ancient mint imagery · archive.org Rome footage", expression:"Serious/warning · strongest modern-relevance hook", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
-  { num:"008", title:"The Maya Collapse", launch:"Mon Jun 29", status:"upcoming", overlays:"90% POPULATION LOSS · MEGA-DROUGHT · DEFORESTATION · CITIES SWALLOWED WHOLE", cold:"Tikal temple rising from jungle canopy — misty dawn", footage:"Tikal & Palenque ruins (Pexels) · Maya glyphs (Wikimedia) · jungle-canopy aerials · cenotes · drought imagery", expression:"Concerned/grave", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
-  { num:"009", title:"Lost Treasure of the Knights Templar", launch:"Wed Jul 1", status:"upcoming", overlays:"FRIDAY THE 13TH, 1307 · EUROPE'S FIRST BANKERS · FLEET VANISHED · NEVER FOUND", cold:"Candlelit medieval vault or Templar cross — shadowy", footage:"Templar castles & Temple Church (Wikimedia) · medieval manuscripts · La Rochelle harbor · crusader imagery (archive.org)", expression:"Knowing/mysterious · tests the pure lost-wealth vein", reddit:"r/UnsolvedMysteries · r/history", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
-  { num:"010", title:"The South Sea Bubble", launch:"Fri Jul 3", status:"upcoming", overlays:"1720 · 1,000% RISE · TOTAL COLLAPSE · NEWTON LOST A FORTUNE", cold:"Hogarth-style 1720 London chaos engraving — frantic energy", footage:"South Sea Bubble & Hogarth prints (Wikimedia) · 18th-century London (archive.org) · stock certificates · tulip imagery", expression:"Disbelief/warning · CANARY TEST — boldest lean toward Business Forensics", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
-  { num:"011", title:"Easter Island / Rapa Nui", launch:"Mon Jul 6", status:"upcoming", overlays:"887 MOAI · EVERY TREE GONE · 90% COLLAPSE · THE ISLAND THAT CONSUMED ITSELF", cold:"Moai row silhouette at sunset — iconic", footage:"Moai statues (Pexels) · Rano Raraku quarry (Wikimedia) · Pacific aerials · barren-vs-forested comparisons", expression:"Grave/reflective", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
-  { num:"012", title:"Indus Valley — Revisited", launch:"Wed Jul 8", status:"upcoming", overlays:"RICHEST TRADE NETWORK OF THE ANCIENT WORLD · 1,000+ CITIES · STANDARDIZED WEIGHTS · CALLBACK TO CASE #001", cold:"Mohenjo-daro ruins — same shot family as Case #001, full circle", footage:"Mohenjo-daro (reuse Case #001 library) · Indus seals & weights (Wikimedia) · Mesopotamia trade-route maps · Persian Gulf", expression:"Confident/knowing · before/after reframe comparison", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
+  { num:"006", title:"The Khmer Empire / Angkor", launch:"Mon Jun 29", status:"upcoming", overlays:"LARGEST PRE-INDUSTRIAL CITY · 1,000 SQ KM · WATER EMPIRE · SWALLOWED BY JUNGLE", cold:"Angkor Wat dawn silhouette — epic scale", footage:"Angkor Wat aerials (Pexels) · Ta Prohm jungle ruins · bas-reliefs (Wikimedia) · LiDAR city-grid maps · Cambodian waterways", expression:"Awe/wide eyes", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 19 · VO Jun 20 · Footage Jun 21 · Edit Jun 22 · Upload Jun 23" },
+  { num:"007", title:"How Rome Debased Its Currency to Death", launch:"Wed Jul 1", status:"upcoming", overlays:"94% SILVER → 5% · 1,000%+ INFLATION · 50 EMPERORS IN 50 YEARS · THE DENARIUS", cold:"Roman denarius macro shot — dramatic single-source lighting", footage:"Roman coins (Wikimedia) · Forum & Colosseum (Pexels) · emperor busts · ancient mint imagery · archive.org Rome footage", expression:"Serious/warning · strongest modern-relevance hook", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 21 · VO Jun 22 · Footage Jun 23 · Edit Jun 24 · Upload Jun 25" },
+  { num:"008", title:"The Maya Collapse", launch:"Fri Jul 3", status:"upcoming", overlays:"90% POPULATION LOSS · MEGA-DROUGHT · DEFORESTATION · CITIES SWALLOWED WHOLE", cold:"Tikal temple rising from jungle canopy — misty dawn", footage:"Tikal & Palenque ruins (Pexels) · Maya glyphs (Wikimedia) · jungle-canopy aerials · cenotes · drought imagery", expression:"Concerned/grave", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jun 24 · VO Jun 25 · Footage Jun 26 · Edit Jun 27 · Upload Jun 28" },
+  { num:"009", title:"Lost Treasure of the Knights Templar", launch:"Mon Jul 6", status:"upcoming", overlays:"FRIDAY THE 13TH, 1307 · EUROPE'S FIRST BANKERS · FLEET VANISHED · NEVER FOUND", cold:"Candlelit medieval vault or Templar cross — shadowy", footage:"Templar castles & Temple Church (Wikimedia) · medieval manuscripts · La Rochelle harbor · crusader imagery (archive.org)", expression:"Knowing/mysterious · tests the pure lost-wealth vein", reddit:"r/UnsolvedMysteries · r/history", schedule:"Script Jun 26 · VO Jun 27 · Footage Jun 28 · Edit Jun 29 · Upload Jun 30" },
+  { num:"010", title:"The South Sea Bubble", launch:"Wed Jul 8", status:"upcoming", overlays:"1720 · 1,000% RISE · TOTAL COLLAPSE · NEWTON LOST A FORTUNE", cold:"Hogarth-style 1720 London chaos engraving — frantic energy", footage:"South Sea Bubble & Hogarth prints (Wikimedia) · 18th-century London (archive.org) · stock certificates · tulip imagery", expression:"Disbelief/warning · CANARY TEST — boldest lean toward Business Forensics", reddit:"r/history · r/AskHistorians", schedule:"Script Jun 28 · VO Jun 29 · Footage Jun 30 · Edit Jul 1 · Upload Jul 2" },
+  { num:"011", title:"Easter Island / Rapa Nui", launch:"Fri Jul 10", status:"upcoming", overlays:"887 MOAI · EVERY TREE GONE · 90% COLLAPSE · THE ISLAND THAT CONSUMED ITSELF", cold:"Moai row silhouette at sunset — iconic", footage:"Moai statues (Pexels) · Rano Raraku quarry (Wikimedia) · Pacific aerials · barren-vs-forested comparisons", expression:"Grave/reflective", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 1 · VO Jul 2 · Footage Jul 3 · Edit Jul 4 · Upload Jul 5" },
+  { num:"012", title:"Indus Valley — Revisited", launch:"Mon Jul 13", status:"upcoming", overlays:"RICHEST TRADE NETWORK OF THE ANCIENT WORLD · 1,000+ CITIES · STANDARDIZED WEIGHTS · CALLBACK TO CASE #001", cold:"Mohenjo-daro ruins — same shot family as Case #001, full circle", footage:"Mohenjo-daro (reuse Case #001 library) · Indus seals & weights (Wikimedia) · Mesopotamia trade-route maps · Persian Gulf", expression:"Confident/knowing · before/after reframe comparison", reddit:"r/AncientCivilizations · r/history", schedule:"Script Jul 3 · VO Jul 4 · Footage Jul 5 · Edit Jul 6 · Upload Jul 7" },
 ];
 
 // ─── NEW: VANISHED HISTORY CONTENT TRAJECTORY DATA ──────────────────────────
@@ -788,15 +793,15 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #004 — live now 🚀 · #005 next Monday</div>
-          <div className="launch-sub">The Bronze Age Collapse: How Every Empire Fell in the Same 50 Years — live today. Next up: Mansa Musa, Mon Jun 22.</div>
+          <div className="launch-text">Case #005 — live now 🚀 · #006 next Mon Jun 29</div>
+          <div className="launch-sub">The Richest Man Who Ever Lived (Mansa Musa) — live. Next up: The Khmer Empire / Angkor — launches Mon Jun 29 at 3pm.</div>
         </div>
-        <div className="launch-date">Fri Jun 19 · LIVE</div>
+        <div className="launch-date">Mon Jun 29 · 3pm</div>
       </div>
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$219</div><div className="stat-note">Full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">~$360</div><div className="stat-note">Full AI stack</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">4/12</div><div className="stat-note">series progress</div></div>
       </div>
@@ -1198,12 +1203,13 @@ function GrowthPanel() {
 function ToolsPanel() {
   const tools = [
     {name:"Claude (Max)",use:"Script, research, SEO, strategy — primary AI partner",cost:"$100/mo",paid:true},
-    {name:"HeyGen (Pro)",use:"Cole lip-synced clips + voiceover (Brad via imported API). Audio on A1, Cole video on V2 in DaVinci. Upgraded to $99/mo Jun 18 — production volume (multiple 13-min cases/week, ~260 credits/case at Avatar IV rates) outgrew the $50 tier. ElevenLabs cancelled Jun 11.",cost:"$99/mo",paid:true},
-    {name:"Leonardo.ai (Essential)",use:"CANCELLED Jun 11 — Cole already built. Resubscribe when a new channel character is needed.",cost:"Cancelled",paid:false},
+    {name:"HeyGen (Pro · 5,000 credits)",use:"Cole lip-synced clips + voiceover (Brad via imported ElevenLabs voice). Audio on A1, Cole video on V2 in DaVinci. Upgraded to $240/mo · 5,000 credits Jun 25 — the 2,000-credit tier (~270/case × ~13 cases/mo) could not sustain 3 videos/week; 5,000 is the only tier with buffer for re-gens. Credits roll over one cycle. Brad voice RETAINED (ElevenLabs $20 reload Jun 25 — see Misc).",cost:"$240/mo",paid:true},
+    {name:"ElevenLabs (Brad voice)",use:"RETAINED Jun 25 — $20 reloaded so Cole keeps the Brad voice (HeyGen pulls it via the imported voice). The native-HeyGen-voice swap is OFF; Brad stays. Tracked as a Misc top-up, not a fixed line.",cost:"~$20 (Misc)",paid:true},
+    {name:"Leonardo.ai",use:"In stack as of Jun 20 (Cole thumbnail expressions, Phoenix 1.0 img2img). Drop pending: if AI thumbnails can hold Cole's likeness (entangled with the vidIQ-vs-Canva A/B verdict). Tier TBC. Expires Jul 8.",cost:"Tier TBC",paid:true},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, banner, logo",cost:"Free tier",paid:false},
-    {name:"vidIQ (Max trial)",use:"SEO, keyword + outlier research, competitor tracking (5 channels), title optimizer, Daily Ideas. Max trial active since Jun 11 — keep vs downgrade decision Jul 11 (framework in calendar event)",cost:"$0 until Jul 11",paid:false},
+    {name:"vidIQ (Max trial → Boost)",use:"SEO, keyword + outlier research, competitor tracking (7 channels), title optimizer, Daily Ideas. DEFAULT Jul 11: downgrade Max → Boost (our usage is Boost-shaped; Max's extras don't fit). Boost retains everything we use. Framework in calendar event.",cost:"$0 until Jul 11",paid:false},
     {name:"archive.org",use:"Public-domain historical footage — core source",cost:"Free",paid:false},
     {name:"Wikimedia Commons",use:"Historical images, maps, diagrams",cost:"Free",paid:false},
     {name:"Pexels",use:"Stock footage — ruins, landscapes, atmospheric",cost:"Free",paid:false},
@@ -1214,11 +1220,11 @@ function ToolsPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Tool Stack</div>
-        <div className="panel-sub">$219/mo total — replaces $2,000–5,000/mo in freelancer costs</div>
+        <div className="panel-sub">~$360/mo locked (Claude $100 + HeyGen $240 + CapCut $20) + Leonardo TBC + Misc — replaces $2,000–5,000/mo in freelancer costs</div>
         <div className="gold-line" />
       </div>
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">$219</div><div className="stat-note">full AI stack</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly cost</div><div className="stat-val">~$360</div><div className="stat-note">locked + Leonardo TBC</div></div>
         <div className="stat-card"><div className="stat-label">Freelancer cost</div><div className="stat-val">$0</div><div className="stat-note">100% AI produced</div></div>
         <div className="stat-card"><div className="stat-label">Free tools</div><div className="stat-val">{tools.filter(t=>!t.paid).length} of {tools.length}</div><div className="stat-note">no subscription</div></div>
         <div className="stat-card"><div className="stat-label">Profit margin</div><div className="stat-val">90%+</div><div className="stat-note">at portfolio scale</div></div>
@@ -1231,6 +1237,14 @@ function ToolsPanel() {
           </div>
         ))}
       </div>
+      <div className="section-title" style={{marginTop:"28px"}}>Misc — extra funds spent this month</div>
+      <div className="tools-grid">
+        <div className="tool-card">
+          <div><div className="tool-name">ElevenLabs Brad top-up</div><div className="tool-use">$20 reloaded Jun 25 to keep Cole on the Brad voice (native-voice swap cancelled). One-off top-up, not a fixed subscription line.</div></div>
+          <span className="tool-cost cost-paid">$20</span>
+        </div>
+      </div>
+      <div style={{fontSize:"11px",color:"var(--text3)",marginTop:"8px"}}>Misc tracks one-off / extra spend (top-ups, trials converting, asset buys) on top of the locked subscription stack. June Misc total: $20.</div>
     </div>
   );
 }
@@ -1607,7 +1621,7 @@ function EmpirePanel() {
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">End goal</div><div className="stat-val">5 channels</div><div className="stat-note">full portfolio</div></div>
         <div className="stat-card"><div className="stat-label">Timeline</div><div className="stat-val">18–24 mo</div><div className="stat-note">to full portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">$219</div><div className="stat-note">no freelancers needed</div></div>
+        <div className="stat-card"><div className="stat-label">Monthly tool cost</div><div className="stat-val">~$360</div><div className="stat-note">no freelancers needed</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+</div><div className="stat-note">combined monthly</div></div>
       </div>
       {phases.map((p,i) => (
@@ -1642,7 +1656,7 @@ function PortfolioPanel() {
     <div>
       <div className="panel-header">
         <div className="panel-title">Channel Portfolio</div>
-        <div className="panel-sub">5-channel empire · $219/mo tool cost · ranked by business merit</div>
+        <div className="panel-sub">5-channel empire · ~$360/mo tool cost · ranked by business merit</div>
         <div className="gold-line" />
       </div>
       <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",overflow:"auto",marginBottom:24}}>
