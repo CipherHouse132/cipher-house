@@ -1022,9 +1022,17 @@ function CasesPanel() {
   return (
     <div>
       <div className="panel-header">
-        <div className="panel-title">Cases #001–#012 Production Plan</div>
-        <div className="panel-sub">Footage direction · text overlays · cold opens · production schedule for every case.</div>
+        <div className="panel-title">Season 1: The Vanishing — Cases #001–#012</div>
+        <div className="panel-sub">The pivot season · opens on Indus Valley (#001), closes on Indus Valley Revisited (#012) · footage direction · overlays · cold opens · schedule for every case.</div>
         <div className="gold-line" />
+      </div>
+      <div className="info-box" style={{marginBottom:20,borderColor:"rgba(201,168,76,0.3)"}}>
+        <div className="info-title">Season 1 playlist descriptions — copy-ready (YouTube SEO)</div>
+        <div style={{display:"flex",flexDirection:"column",gap:12,fontSize:12,color:"var(--text3)",lineHeight:1.65,marginTop:4}}>
+          <div><span style={{color:"var(--gold2)",fontWeight:500}}>The Vanishing — main series (#001–#012)</span><br/>Season 1 of Vanished History. Twelve investigations into the greatest civilizations, empires, and fortunes that vanished from history — from the Indus Valley to the Khmer water empire, the fall of Rome's currency, the Maya collapse, and the South Sea Bubble. Lost cities, lost wealth, collapsed empires, and the questions textbooks leave out. New cases every Monday, Wednesday, and Friday. The series opens where it ends — with a civilization that disappeared without explanation.</div>
+          <div><span style={{color:"var(--gold2)",fontWeight:500}}>The Vanishing — Shorts</span><br/>Sixty-second cuts from Season 1 of Vanished History. The most stunning moments from twelve lost civilizations and collapsed empires — the Indus Valley, Angkor, Rome, the Maya, and more. Each Short is a doorway; the full investigation is on the channel. Lost cities, lost wealth, and history's unsolved disappearances.</div>
+          <div><span style={{color:"var(--gold2)",fontWeight:500}}>Full channel — all uploads</span><br/>Every investigation from Vanished History — the channel that reopens history's cold cases. Lost civilizations, vanished empires, and the wealth and power that disappeared without a trace. From the Indus Valley to the fall of Rome, we dig into the collapses, mysteries, and forgotten fortunes that history can't fully explain. New cases every Monday, Wednesday, and Friday.</div>
+        </div>
       </div>
       <div className="info-box" style={{marginBottom:20}}>
         <div className="info-title">Production SOP — same workflow every video</div>
