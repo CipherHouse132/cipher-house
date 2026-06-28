@@ -589,8 +589,8 @@ const TRACKER_STEPS = [
   { key:"launch",    icon:"🚀", label:"Launch day",                  note:"Main live 2pm · pinned comment on main video within 5 min · Shorts auto-publish 2:30 / 4:00 / 6:00pm · pin \"Watch the full investigation: [link]\" on each Short (descriptions don't render clickable) · after 2pm add related-video link to Short descriptions · Reddit seeding" },
   { key:"seeding",   icon:"🌐", label:"Reddit + Quora seeding",      note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
   { key:"comments",  icon:"💬", label:"Comment replies (48 hrs)",    note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
-  { key:"thumbB",    icon:"🖼️", label:"Version B thumbnail",         note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text) · start Test & Compare" },
-  { key:"abcheck",   icon:"📊", label:"A/B check (14 days)",         note:"14 days after launch · check Test & Compare results · keep the winning thumbnail permanently" },
+  { key:"thumbB",    icon:"🖼️", label:"Version B — high-stakes only",  note:"Default = vidIQ primary, no manual B (resolved by #005 A/B). HIGH-STAKES cases only (finale #012, breakouts): 3–5 days after launch, build a Canva/Leonardo challenger · start Test & Compare" },
+  { key:"abcheck",   icon:"📊", label:"A/B check (high-stakes)",     note:"Only when a challenger was run · 14 days after launch · check Test & Compare · keep the winner permanently" },
 ];
 
 const GROWTH_SYSTEMS = [
@@ -1213,7 +1213,7 @@ function ToolsPanel() {
     {name:"Claude (Max)",use:"Script, research, SEO, strategy — primary AI partner",cost:"$100/mo",paid:true},
     {name:"HeyGen (Pro · 5,000 credits)",use:"Cole lip-synced clips + voiceover (Brad via imported ElevenLabs voice). Audio on A1, Cole video on V2 in DaVinci. Upgraded to $240/mo · 5,000 credits Jun 25 — the 2,000-credit tier (~270/case × ~13 cases/mo) could not sustain 3 videos/week; 5,000 is the only tier with buffer for re-gens. Credits roll over one cycle. Brad voice RETAINED (ElevenLabs $20 reload Jun 25 — see Misc).",cost:"$240/mo",paid:true},
     {name:"ElevenLabs (Brad voice)",use:"RETAINED Jun 25 — $20 reloaded so Cole keeps the Brad voice (HeyGen pulls it via the imported voice). The native-HeyGen-voice swap is OFF; Brad stays. Tracked as a Misc top-up, not a fixed line.",cost:"~$20 (Misc)",paid:true},
-    {name:"Leonardo.ai",use:"In stack as of Jun 20 (Cole thumbnail expressions, Phoenix 1.0 img2img). Drop pending: if AI thumbnails can hold Cole's likeness (entangled with the vidIQ-vs-Canva A/B verdict). Tier TBC. Expires Jul 8.",cost:"Tier TBC",paid:true},
+    {name:"Leonardo.ai",use:"Cole expression generation (Phoenix 1.0 img2img, ~0.45–0.55 init) for the Canva build. Per the #005 A/B (resolved Jun 27): vidIQ is now the DEFAULT thumbnail tool, so Leonardo+Canva is used ONLY as the high-stakes A/B challenger (finale #012, breakouts) — not every video. Tier TBC; reassess need at Jul 8 renewal given the reduced role.",cost:"Tier TBC",paid:true},
     {name:"DaVinci Resolve 21",use:"Primary editor — footage, overlays, text, music, color, export",cost:"Free",paid:false},
     {name:"CapCut Pro",use:"Burned-in auto-captions for ALL videos (long-form + Shorts) + 9:16 Shorts reframe",cost:"$19.99/mo",paid:true},
     {name:"Canva",use:"Thumbnail design, banner, logo",cost:"Free tier",paid:false},
@@ -1415,7 +1415,7 @@ function ProductionLoopPanel() {
     { n:"8", icon:"🚀", label:"Launch day", note:"Main live 2pm · pinned comment on main video within 5 min · Shorts auto-publish 2:30 / 4:00 / 6:00pm · pin \"Watch the full investigation: [link]\" on each Short (descriptions don't render clickable) · after 2pm add related-video link to Short descriptions · Reddit seeding" },
     { n:"9", icon:"🌐", label:"Reddit + Quora seeding", note:"Engage genuinely first, then share · topic-specific subreddits · high-view Quora question + link" },
     { n:"10", icon:"💬", label:"Comment replies (48 hrs)", note:"Reply to every comment in first 24–48 hrs · heart the rest · pin best viewer theory" },
-    { n:"11", icon:"🖼️", label:"Version B thumbnail", note:"3–5 days after launch · duplicate Version A · change ONE thing (expression OR text, not both) · start Test & Compare" },
+    { n:"11", icon:"🖼️", label:"Version B — high-stakes only", note:"Default = vidIQ primary, no manual B (per #005 A/B). HIGH-STAKES only (finale #012, breakouts): build a Canva/Leonardo challenger 3–5 days post-launch · start Test & Compare" },
     { n:"12", icon:"📊", label:"A/B check (14 days)", note:"14 days after launch · check Test & Compare · keep the winner permanently" },
   ];
 
@@ -1455,15 +1455,19 @@ function ProductionLoopPanel() {
         <div className="info-body">Up to 3 min · vertical 9:16 · CapCut burned-in captions · ⚠️ AI disclosure · schedule 2:30 / 4:00 / 6:00pm PST on launch day.<br/><br/>Title: most compelling line from that clip + #Shorts · Description: "The full story: [main video link]" · Remixing: ALLOWED (helps Shorts discovery) · Playlist: "Vanished History — The Cases" (everything goes in one playlist) · No custom thumbnail, no tags — YouTube ignores both for Shorts.<br/><br/>After the main video goes live: open each Short → Video elements → Add related video → link the full video.</div>
       </div>
 
-      <div className="section-title">Thumbnail A/B system</div>
-      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:20}}>
-        <div className="gate-row"><div className="gate-label">Edit day</div><div className="gate-desc">Create <strong style={{color:"var(--text)"}}>Version A</strong> — primary thumbnail, uploaded at launch.</div></div>
-        <div className="gate-row"><div className="gate-label">3–5 days</div><div className="gate-desc">Create <strong style={{color:"var(--text)"}}>Version B</strong> — change ONE thing only: expression OR text, never both.</div></div>
-        <div className="gate-row"><div className="gate-label">14 days</div><div className="gate-desc"><strong style={{color:"var(--text)"}}>A/B check</strong> — compare CTR in Test & Compare, keep the winner permanently.</div></div>
+      <div className="section-title">Thumbnail system — vidIQ default (resolved Jun 27)</div>
+      <div className="info-box" style={{marginBottom:14,borderColor:"rgba(201,168,76,0.35)"}}>
+        <div className="info-title">Tool decision — settled by the #005 A/B</div>
+        <div className="info-body">Case #005 (Mansa Musa) ran <strong style={{color:"var(--text)"}}>vidIQ (A) vs manual Canva/Leonardo (B)</strong>, both built on the same bold principles. Result: <strong style={{color:"var(--text)"}}>B won 58% vs 41%</strong> — but YouTube called both "performed well." A ~17pt edge does NOT justify the full manual Leonardo+Canva build on every video at solo / 3-per-week scale. Throughput and consistency beat squeezing a few CTR points. <strong style={{color:"var(--gold2)"}}>So: vidIQ is now the DEFAULT thumbnail tool for every standard case.</strong> The Canva/Leonardo build is kept ONLY as the A/B challenger on HIGH-STAKES videos (season finale #012, likely breakouts) where 17pts moves enough absolute views to be worth the hour.</div>
+      </div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:14}}>
+        <div className="gate-row"><div className="gate-label">Standard case</div><div className="gate-desc"><strong style={{color:"var(--text)"}}>vidIQ generator</strong> — default build. QC every pull, then ship as primary at launch. No manual build needed.</div></div>
+        <div className="gate-row"><div className="gate-label">High-stakes</div><div className="gate-desc">Add the <strong style={{color:"var(--text)"}}>Canva/Leonardo build</strong> as the Test &amp; Compare challenger (finale #012, breakout candidates only).</div></div>
+        <div className="gate-row"><div className="gate-label">HARD GATE</div><div className="gate-desc">Any vidIQ thumbnail going live as primary must have <strong style={{color:"var(--text)"}}>Cole unmistakably on-model + no garbled baked-in text</strong>. No clean pull → fall back to the Canva build. NEVER screen / HeyGen frame grabs.</div></div>
       </div>
       <div className="info-box">
-        <div className="info-title">What moves CTR most</div>
-        <div className="info-body">Character expression (shocked vs serious vs concerned) and text (question vs statement vs number). Keep thumbnail text style identical across all videos — same font, placement, color. That visual grammar is itself an algorithm signal. LOCKED LEARNING (from #001–#003 data): elegant/low-opacity scenes + thin serif type CRATER in the Suggested feed (~1.3% CTR vs ~3.9% in Browse — and Suggested is where the volume is). The fix, locked from Case #003 onward: BOLD treatment — scene at 60–80% opacity, heavy-weight type (Anton/Archivo Black), 2–3 words max, Cole reacting not posed. Case #004 is the first full bold test.</div>
+        <div className="info-title">Composition principles — both tools</div>
+        <div className="info-body">BOLD treatment (locked from #003): scene at 60–80% opacity, heavy-weight type (Anton/Archivo Black), 2–3 words max, Cole reacting not posed. Keep text style identical across videos — same font, placement, color; that visual grammar is itself an algorithm signal. Origin of the rule (#001–#003 data): elegant/low-opacity scenes + thin serif type CRATER in the Suggested feed (~1.3% CTR vs ~3.9% in Browse, and Suggested is where the volume is).</div>
       </div>
 
       <div className="section-title">Post-launch growth checklist — every video</div>
