@@ -679,6 +679,96 @@ const SCALING_GATES = [
   { from:"Ch4 → Ch5", rule:"Team gate", desc:"At least one hire (VA / editor) in place before Channel 5." },
 ];
 
+// ─── SEASON 2 BANK (#013–#024) — structure with placeholder slots ───────────
+// Fill `topic`/`title`/`note` during the first-Sunday Season 2 planning session.
+// `tier`: green = clears all 4 filters · keeper = strong, hold · trend = verify framing · empty = open slot
+const SEASON2_FILTERS = [
+  ["On-thesis", "Lost wealth / collapsed empire / vanished civilization — not a gimmick or a generic retelling"],
+  ["Free-sourceable", "Wikimedia / archive.org / Pexels cover it · no paid footage required"],
+  ["Structural, not spiky", "A durable search/interest pattern — NOT a spent 5-day trend spike"],
+  ["We can go deeper", "We can out-research and out-host the AI farms — a real angle, not a re-clone"],
+];
+
+const SEASON2_BANK = [
+  // Seeded candidates carried from the Outlier Queue (not locked — still need the 4-filter pass)
+  { num:"013", tier:"green",  topic:"Cahokia — the lost American metropolis", title:"", note:"vidIQ Daily Ideas Very High. Pairs with the channel's proven 'largest city' hook. Free-sourceable.", filtersPassed:4 },
+  { num:"014", tier:"keeper", topic:"Göbekli Tepe — deeper follow-up", title:"", note:"Channel's strongest topic by Shorts + impressions. Lowest-risk Season 2 swing. New Karahan Tepe imagery.", filtersPassed:4 },
+  { num:"015", tier:"trend",  topic:"Cuba's underwater 'city older than the pyramids'", title:"", note:"Guanahacabibes sonar anomaly. Evergreen lost-city mystery — VERIFY framing, avoid fringe overclaim.", filtersPassed:3 },
+  // Open slots — structure ready, populate during planning
+  { num:"016", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"017", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"018", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"019", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"020", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"021", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"022", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"023", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+  { num:"024", tier:"",  topic:"", title:"", note:"", filtersPassed:0 },
+];
+
+const SEASON2_POOL = [
+  "Forgotten Sahara empire", "Pandemic-erased empire", "Palmyra", "Library of Alexandria",
+  "Pompeii", "Istanbul's hidden city", "Lost Persian gold (2,400 yrs)", "Konar Sandal / Jiroft",
+  "Thonis-Heracleion (sunken Egyptian city)",
+];
+
+const SEASON2_REJECTED = [
+  "Eiffel-by-primates", "Rome pizza/shawarma/barber", "Greece-by-ferry", "Portugal/León border history",
+];
+
+// ─── COLD-OPEN SOP (locked Jun 30) — first-class reference ───────────────────
+const COLD_OPEN_SOP = {
+  rule: "Every script Case #007 onward opens COLD: Cole's FIRST line is the hook. No \"In the year ___\", no \"To understand ___\" throat-clear.",
+  why: "Across 5 long-form videos the retention curve cliffs in the first 30–45s, then holds a healthy slope — viewers are lost AT THE DOOR. Mansa Musa's \"In the year 1324…\" open → 17.6% AVD. Göbekli sat ~48% at 0:30. The open is the leak.",
+  steps: [
+    ["1 · Open on the hook", "Cole's first line = a concrete object, a contradiction, or the single most-shocking unresolved fact. The two-coins open on #007 is the worked model."],
+    ["2 · Open 2–3 loops in ~75s", "Stack curiosity loops fast. Promise + withhold: \"…didn't realize until it was too late.\""],
+    ["3 · Seed the thesis", "Plant the modern-relevance / thesis question the close will pay off. The open and the close are one unit."],
+    ["4 · Borrow the Short's energy", "The best-performing Short hook — \"They just stopped. No war. No plague.\" (23.1% CTR) — is the register the cold open should match."],
+  ],
+  never: [
+    "\"In the year 1324, a king set out from Mali…\" (date-stamp lead-in → #005 opened this way, 17.6% AVD)",
+    "\"To understand X, we first have to go back to…\" (throat-clear / setup before the hook)",
+    "Slow scene-setting establishing shots with no question posed in the first lines",
+  ],
+  checklist: [
+    "First spoken line is the hook (object / contradiction / shock) — read it aloud, does it stop a scroll?",
+    "2–3 open loops by ~0:75",
+    "A promise+withhold line is present",
+    "The thesis/modern-relevance question is seeded and the close pays it off",
+    "No date-stamp or 'to understand' opener anywhere in the first 30s",
+  ],
+  file: "vanished_cold_open_sop.html",
+};
+
+// ─── RETENTION / CHANNEL INTELLIGENCE (Jun 2026) ─────────────────────────────
+const RETENTION_INTEL = {
+  asOf: "Jun 30, 2026 · 28-day window",
+  stats: [
+    { label:"Subscribers", val:"24", note:"algorithm still learning who to serve" },
+    { label:"Views · 28d", val:"10,319", note:"Shorts-dominated" },
+    { label:"Watch hours", val:"70.1", note:"toward 4,000 for YPP" },
+    { label:"Shorts share", val:"93.5%", note:"of all channel views" },
+  ],
+  diagnosis: [
+    ["Shorts are the growth engine", "~93.5% of views come through the Shorts feed. Best hook: \"They just stopped. No war. No plague.\" at 23.1% CTR. This is how the channel is found right now — keep feeding it."],
+    ["The long-form bottleneck is LAUNCH CTR", "YouTube already serves the channel — ~88% of long-form impressions come from Browse + Suggested. But thumbnails don't convert: Browse ~3.6%, Suggested ~1.2%. The impressions exist; the click doesn't."],
+    ["The cliff is the first 30–45s", "Retention drops hard at the door, then holds a healthy slope. That's an OPEN problem, not a whole-video problem → the Cold-Open SOP is the fix."],
+    ["Retention is noisy at this scale", "The Mansa(160 views, 17.6% AVD) vs Bronze(22 views, 42.5% AVD) 'length kills' read is WEAK — different sample sizes + a reach confound (more-served videos pull casual viewers who drag retention down). Read CURVES per video once views are large enough; don't pre-cap length."],
+  ],
+  actions: [
+    "Win CTR AT LAUNCH on new videos (the impression burst) — do NOT retrofit dead back-catalog thumbnails; those impressions are already spent.",
+    "Apply the Cold-Open SOP to every script from #007 — kill the first-30–45s cliff at the source.",
+    "Test Michael Button's 'ominous curiosity' title lane against the current title style.",
+    "Keep Shorts volume up — it's the discovery layer feeding the long-form library.",
+  ],
+  ctrBySurface: [
+    ["Browse", "~3.6%", 36],
+    ["Suggested", "~1.2%", 12],
+    ["Best Short hook", "23.1%", 100],
+  ],
+};
+
 const QUICK_PROMPTS_BY_PANEL = {
   overview: ["What should I focus on today?", "How is Cipher House tracking vs plan?", "What's my next major milestone?"],
   tasks: ["Write Case #001 pinned comment", "Give me a pre-launch checklist", "What should I do right now?"],
@@ -691,6 +781,10 @@ const QUICK_PROMPTS_BY_PANEL = {
   monetization: ["When will I hit YPP at current pace?", "Draft an Audible affiliate pitch", "How do I land my first sponsorship?"],
   empire: ["When should I launch Channel 2?", "Build Channel 2 launch plan", "What's my Month 12 revenue projection?"],
   trajectory: ["Write full script for the next case", "What should the channel pivot to after #008 data?", "Write 4 title options in the ominous-curiosity lane"],
+  outliers: ["Suggest 3 on-thesis Season 2 topics", "Which Outlier Queue candidate should bump a slot?", "Run the 4-filter test on a topic"],
+  season2: ["Fill the open Season 2 slots with on-thesis topics", "Run the 4-filter test on Cahokia", "Which Season 2 candidate is lowest-risk?", "Build the Season 2 calendar from this bank"],
+  coldopen: ["Write a cold open for the next case", "Rewrite this open to pass the SOP", "Give me 3 cold-open options for Maya"],
+  retention: ["What should I fix first to grow?", "Draft 3 ominous-curiosity titles for #007", "How do I lift launch CTR on Browse?"],
   prodloop: ["Write the pinned comment for Case #007", "Draft all 3 Short CTAs for Case #007", "Apply the cold-open SOP to the next script"],
   lineup: ["Build the Business Forensics channel launch plan", "What's my revenue projection at Month 18?", "When exactly should I start Channel 2?"],
   portfolio: ["Deep dive on Business Forensics niche", "Compare Financial Crime vs Dark Psychology for Ch5", "What should Channel 3 be?"],
@@ -1833,6 +1927,190 @@ function OSPanel() {
   );
 }
 
+// ─── SEASON 2 BANK PANEL ─────────────────────────────────────────────────────
+function Season2Panel() {
+  const tierMeta = {
+    green:  { label:"GREEN · clears all 4", cls:"badge-complete" },
+    keeper: { label:"KEEPER · lowest risk", cls:"badge-complete" },
+    trend:  { label:"TREND · verify framing", cls:"badge-upcoming" },
+    "":     { label:"OPEN SLOT", cls:"" },
+  };
+  const filled = SEASON2_BANK.filter(s => s.topic).length;
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Season 2 Bank — Cases #013–#024</div>
+        <div className="panel-sub">The candidate bank for the next 12. Slots stay open until they clear the 4-filter test in the first-Sunday planning session.</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="stat-grid">
+        <div className="stat-card"><div className="stat-label">Slots</div><div className="stat-val">12</div><div className="stat-note">#013–#024</div></div>
+        <div className="stat-card"><div className="stat-label">Seeded</div><div className="stat-val">{filled}/12</div><div className="stat-note">{12-filled} open</div></div>
+        <div className="stat-card"><div className="stat-label">Pool waiting</div><div className="stat-val">{SEASON2_POOL.length}</div><div className="stat-note">unranked ideas</div></div>
+        <div className="stat-card"><div className="stat-label">Plan venue</div><div className="stat-val">1st Sun</div><div className="stat-note">monthly planning</div></div>
+      </div>
+
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
+        <div className="info-title">The 4-filter test — a candidate only earns a locked slot if it clears all four</div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginTop:6}}>
+          {SEASON2_FILTERS.map(([t,d],i) => (
+            <div key={i} style={{fontSize:12,color:"var(--text3)",lineHeight:1.55}}>
+              <span style={{color:"var(--gold2)",fontWeight:500}}>{i+1}. {t}</span><br/>{d}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="section-title">The bank · #013–#024</div>
+      {SEASON2_BANK.map((s) => {
+        const meta = tierMeta[s.tier] || tierMeta[""];
+        const open = !s.topic;
+        return (
+          <div key={s.num} className={`case-card ${s.tier==="green"||s.tier==="keeper" ? "complete" : ""}`} style={open ? {opacity:0.6, borderStyle:"dashed"} : {}}>
+            <div className="case-header" style={{marginBottom: open ? 0 : 10}}>
+              <div style={{display:"flex",alignItems:"center",gap:12}}>
+                <div className="case-num">CASE #{s.num}</div>
+                <div className="case-title" style={{marginBottom:0}}>{s.topic || <span style={{color:"var(--text3)",fontStyle:"italic"}}>open slot — populate in planning</span>}</div>
+              </div>
+              <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                {!open && <span style={{fontFamily:"'DM Mono', monospace",fontSize:10,color:"var(--text3)"}}>{s.filtersPassed}/4 filters</span>}
+                <span className={meta.cls || "badge-upcoming"} style={!meta.cls ? {background:"rgba(255,255,255,0.04)",color:"var(--text3)",padding:"2px 8px",borderRadius:4,fontSize:10,fontFamily:"'DM Mono', monospace"} : {}}>{meta.label}</span>
+              </div>
+            </div>
+            {!open && s.note && (
+              <div style={{borderTop:"1px solid var(--border)",paddingTop:10,fontSize:12,color:"var(--text3)",lineHeight:1.6}}>{s.note}</div>
+            )}
+          </div>
+        );
+      })}
+
+      <div className="section-title" style={{marginTop:24}}>Idea pool — unranked, not yet slotted</div>
+      <div className="info-box">
+        <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
+          {SEASON2_POOL.map((p,i) => (
+            <span key={i} style={{fontFamily:"'DM Mono', monospace",fontSize:11,padding:"4px 10px",borderRadius:6,background:"var(--bg3)",border:"1px solid var(--border)",color:"var(--text2)"}}>{p}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="section-title">Rejected — off-thesis, do not produce</div>
+      <div className="info-box" style={{borderColor:"rgba(184,60,46,0.3)"}}>
+        <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
+          {SEASON2_REJECTED.map((p,i) => (
+            <span key={i} style={{fontFamily:"'DM Mono', monospace",fontSize:11,padding:"4px 10px",borderRadius:6,background:"var(--red-bg)",border:"1px solid rgba(184,60,46,0.25)",color:"#d06050"}}>{p}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── COLD-OPEN SOP PANEL ─────────────────────────────────────────────────────
+function ColdOpenPanel() {
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Cold-Open SOP</div>
+        <div className="panel-sub">Locked Jun 30 · every script Case #007 onward · kill the first-30–45s retention cliff at the source</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.45)"}}>
+        <div className="info-title">The rule</div>
+        <div className="info-body" style={{color:"var(--text2)"}}>{COLD_OPEN_SOP.rule}</div>
+      </div>
+
+      <div className="info-box">
+        <div className="info-title">Why — the data</div>
+        <div className="info-body">{COLD_OPEN_SOP.why}</div>
+      </div>
+
+      <div className="section-title">The method</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"8px 18px",marginBottom:24}}>
+        {COLD_OPEN_SOP.steps.map(([t,d],i) => (
+          <div key={i} className="gate-row"><div className="gate-label" style={{minWidth:140}}>{t}</div><div className="gate-desc">{d}</div></div>
+        ))}
+      </div>
+
+      <div className="section-title">Never — the openers that leak</div>
+      <div className="info-box" style={{borderColor:"rgba(184,60,46,0.3)"}}>
+        <div style={{display:"flex",flexDirection:"column",gap:8}}>
+          {COLD_OPEN_SOP.never.map((n,i) => (
+            <div key={i} style={{fontSize:12.5,color:"var(--text3)",lineHeight:1.55,display:"flex",gap:8}}>
+              <span style={{color:"#d06050"}}>✕</span><span>{n}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="section-title">Pre-HeyGen checklist</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"14px 18px"}}>
+        {COLD_OPEN_SOP.checklist.map((c,i) => (
+          <div key={i} style={{fontSize:12.5,color:"var(--text2)",lineHeight:1.6,display:"flex",gap:9,padding:"5px 0",borderBottom:i<COLD_OPEN_SOP.checklist.length-1?"1px solid var(--border)":"none"}}>
+            <span style={{color:"var(--gold)"}}>☐</span><span>{c}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="info-box" style={{marginTop:20}}>
+        <div className="info-title">Worked model</div>
+        <div className="info-body">Case #007 (Rome) opens on two coins side by side — a pure-silver denarius next to a flaking bronze antoninianus — with no date-stamp lead-in. That's the template. Saved as <code>{COLD_OPEN_SOP.file}</code>.</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── RETENTION INTEL PANEL ───────────────────────────────────────────────────
+function RetentionPanel() {
+  return (
+    <div>
+      <div className="panel-header">
+        <div className="panel-title">Retention Intel</div>
+        <div className="panel-sub">Channel diagnosis · {RETENTION_INTEL.asOf} · read this before producing any new video</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="stat-grid">
+        {RETENTION_INTEL.stats.map((s,i) => (
+          <div key={i} className="stat-card"><div className="stat-label">{s.label}</div><div className="stat-val">{s.val}</div><div className="stat-note">{s.note}</div></div>
+        ))}
+      </div>
+
+      <div className="section-title">CTR by surface — where the click is won or lost</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"14px 18px",marginBottom:24}}>
+        {RETENTION_INTEL.ctrBySurface.map(([label,val,pct],i) => (
+          <div key={i} style={{display:"flex",alignItems:"center",gap:12,padding:"8px 0"}}>
+            <div style={{width:120,fontSize:12.5,color:"var(--text2)"}}>{label}</div>
+            <div style={{flex:1,height:8,background:"rgba(255,255,255,0.05)",borderRadius:4,overflow:"hidden"}}>
+              <div style={{height:"100%",width:`${pct}%`,background:label.includes("Short")?"var(--green)":"var(--gold)",borderRadius:4}} />
+            </div>
+            <div style={{width:60,textAlign:"right",fontFamily:"'DM Mono', monospace",fontSize:12,color:label.includes("Short")?"var(--green)":"var(--gold)"}}>{val}</div>
+          </div>
+        ))}
+        <div style={{fontSize:11,color:"var(--text3)",marginTop:8,lineHeight:1.5}}>The Shorts hook converts ~6× better than long-form Browse and ~19× better than Suggested. The long-form impressions exist — the click is the gap.</div>
+      </div>
+
+      <div className="section-title">The diagnosis</div>
+      {RETENTION_INTEL.diagnosis.map(([t,d],i) => (
+        <div key={i} className="info-box">
+          <div className="info-title">{t}</div>
+          <div className="info-body">{d}</div>
+        </div>
+      ))}
+
+      <div className="section-title">What to do about it</div>
+      <div style={{background:"var(--bg2)",border:"1px solid var(--border)",borderRadius:"var(--radius)",padding:"14px 18px"}}>
+        {RETENTION_INTEL.actions.map((a,i) => (
+          <div key={i} style={{fontSize:12.5,color:"var(--text2)",lineHeight:1.6,display:"flex",gap:9,padding:"6px 0",borderBottom:i<RETENTION_INTEL.actions.length-1?"1px solid var(--border)":"none"}}>
+            <span style={{color:"var(--gold)"}}>→</span><span>{a}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── APP ────────────────────────────────────────────────────────────────────
 
 const NAV = [
@@ -1841,6 +2119,7 @@ const NAV = [
     { id:"tracker",  icon:"☑", label:"Production Tracker" },
     { id:"calendar", icon:"◷", label:"Content Calendar" },
     { id:"cases",    icon:"◎", label:"Cases #001–#012" },
+    { id:"season2",  icon:"⊕", label:"Season 2 Bank" },
   ]},
   { section: "Channel 1", items: [
     { id:"trajectory", icon:"↗", label:"Content Trajectory" },
@@ -1849,6 +2128,8 @@ const NAV = [
     { id:"growth",     icon:"↑", label:"Growth Tactics" },
     { id:"systems",    icon:"⟲", label:"Growth Systems" },
     { id:"prodloop",   icon:"⚙", label:"Production Loop" },
+    { id:"coldopen",   icon:"❄", label:"Cold-Open SOP" },
+    { id:"retention",  icon:"📉", label:"Retention Intel" },
     { id:"tools",      icon:"⊞", label:"Tool Stack" },
     { id:"automation", icon:"⟳", label:"Automation Map" },
     { id:"monetization", icon:"◈", label:"Monetization" },
@@ -1929,6 +2210,9 @@ export default function App() {
     systems:      <GrowthSystemsPanel trackerSet={trackerSet} onToggleStep={toggleStep} />,
     calendar:     <CalendarPanel />,
     cases:        <CasesPanel />,
+    season2:      <Season2Panel />,
+    coldopen:     <ColdOpenPanel />,
+    retention:    <RetentionPanel />,
     trajectory:   <TrajectoryPanel />,
     niches:       <NichesPanel />,
     outliers:     <OutlierQueuePanel />,
