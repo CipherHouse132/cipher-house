@@ -2111,6 +2111,60 @@ function RetentionPanel() {
   );
 }
 
+// ─── SECTION BUILD SOP PANEL ──────────────────────────────────────────────
+// Paste this component alongside your other panel components (near the // ─── PANELS ─── block).
+function SectionBuildSOPPanel() {
+  return (
+    <>
+      <div className="panel-header">
+        <div className="panel-title">Section Build SOP</div>
+        <div className="panel-sub">Footage sourcing &amp; section-build flow · LOCKED v1 — distilled from Case #007, the best-flowing build to date</div>
+        <div className="gold-line" />
+      </div>
+
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)", marginBottom:18}}>
+        <div className="info-title">◎ Command vocabulary — keep the loop tight</div>
+        <div className="info-body">
+          <strong style={{color:"var(--gold2)"}}>“next”</strong> advance to the next beat ·{" "}
+          <strong style={{color:"var(--gold2)"}}>“layed”</strong> clip placed, Marcus gives the END timecode ·{" "}
+          <strong style={{color:"var(--gold2)"}}>screenshot</strong> candidate asset → Claude confirms or rejects.
+        </div>
+      </div>
+
+      <div className="section-title">Per-beat sourcing loop</div>
+      <div className="info-box" style={{marginBottom:18}}>
+        <div className="info-body" style={{lineHeight:1.7}}>
+          <strong style={{color:"var(--gold2)"}}>1. Name the beat</strong> — one Wikimedia Commons search link + a precise description of the ideal asset (+ fallback terms).<br/>
+          <strong style={{color:"var(--gold2)"}}>2. Vet the candidate</strong> — resolution floor 1920×1080; tone/register fit; crop notes; anachronism flags.<br/>
+          <strong style={{color:"var(--gold2)"}}>3. Confirm packet</strong> — rename <code>VH_0XX_S#_B#_descriptor</code>; license + attribution logged now; first &amp; last line VERBATIM from the locked script; cut point to next beat.<br/>
+          <strong style={{color:"var(--gold2)"}}>4. Lay it</strong> — Marcus lays the clip and gives the END timecode (“layed”).<br/>
+          <strong style={{color:"var(--gold2)"}}>5. Ken Burns</strong> — KF1/KF2 zoom + position, ease in/out; move toward meaning; slow (~10–15%); alternate direction; subtle behind Cole; callbacks get a new move.<br/>
+          <strong style={{color:"var(--gold2)"}}>6. “next”</strong> → next beat.
+        </div>
+      </div>
+
+      <div className="section-title">Timecode &amp; line discipline — non-negotiable</div>
+      <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)", marginBottom:18}}>
+        <div className="info-body" style={{lineHeight:1.7}}>
+          • <strong style={{color:"var(--gold2)"}}>Timecodes always come from Marcus’s real clip.</strong> Never guess — a wrong boundary corrupts the whole map.<br/>
+          • <strong style={{color:"var(--gold2)"}}>First/last lines are VERBATIM from the locked script.</strong> Never paraphrase; if unsure, ask for the clip text.<br/>
+          • Beat boundaries are verified against the actual Cole clip, not script runtime estimates.
+        </div>
+      </div>
+
+      <div className="section-title">Section close · Music · Upload · Naming</div>
+      <div className="info-box">
+        <div className="info-body" style={{lineHeight:1.7}}>
+          <strong style={{color:"var(--gold2)"}}>Section close</strong> — lock the asset list in order; name the transition card (“THE ___”); note open attributions.<br/>
+          <strong style={{color:"var(--gold2)"}}>Music</strong> — 3 tracks, one per emotional act, change at transition cards, −20dB under Cole; YT Audio Library or CC-BY (never Pixabay); reuse-check the Music Log before locking.<br/>
+          <strong style={{color:"var(--gold2)"}}>Upload package</strong> — title “[hook] — and the [payoff]”; description hook→thesis→keywords→comment-bait; thumbnail personal-stakes text, white+gold, more of Cole with a strong expression; on-model + garble gates.<br/>
+          <strong style={{color:"var(--gold2)"}}>Naming</strong> — <code>_FINAL.mp4</code> (Resolve), <code>_CAPTIONED.mp4</code> (CapCut upload), <code>_THUMB.jpg</code>, assets <code>VH_0XX_S#_B#_descriptor</code>.
+        </div>
+      </div>
+    </>
+  );
+}
+
 // ─── APP ────────────────────────────────────────────────────────────────────
 
 const NAV = [
@@ -2129,6 +2183,7 @@ const NAV = [
     { id:"systems",    icon:"⟲", label:"Growth Systems" },
     { id:"prodloop",   icon:"⚙", label:"Production Loop" },
     { id:"coldopen",   icon:"❄", label:"Cold-Open SOP" },
+    { id:"sectionbuild", icon:"🎬", label:"Section Build SOP" },
     { id:"retention",  icon:"📉", label:"Retention Intel" },
     { id:"tools",      icon:"⊞", label:"Tool Stack" },
     { id:"automation", icon:"⟳", label:"Automation Map" },
@@ -2212,6 +2267,7 @@ export default function App() {
     cases:        <CasesPanel />,
     season2:      <Season2Panel />,
     coldopen:     <ColdOpenPanel />,
+    sectionbuild: <SectionBuildSOPPanel />,
     retention:    <RetentionPanel />,
     trajectory:   <TrajectoryPanel />,
     niches:       <NichesPanel />,
