@@ -504,6 +504,21 @@ const SCHEDULE = {
   "2026-07-15": ["📹 CASE #012 GOES LIVE 2pm — Indus Revisited · SEASON 1 FINALE 🏁 · pinned + 3 Shorts", "🧭 Season 2 opens — #013 Cahokia (erasure angle) / Bronze Age Collapse on deck"],
 };
 
+// ─── UPDATE LOG (most recent first · shown on Overview) ──────────────────────
+const UPDATES = [
+  {
+    date: "2026-07-17",
+    title: "#013 pushed to Sat (S2 premiere) · #014 through script v3",
+    items: [
+      "#013 Cahokia launch moved Fri → Sat Jul 18 · 2pm PST — reframed as the SEASON 2 PREMIERE. Whole package shifted: main + community post + Short 1 on Sat, vidIQ optimization Sat, Shorts 2–3 Sun/Mon. Calendar + BUILD_STATUS updated.",
+      "#014 Bronze Age Collapse — Step 2 thumbnail DONE (Concept A 'the map goes dark' + CASE 014 badge → VH_014_Thumbnail_v1.png).",
+      "#014 — Step 3a deep-research dossier DONE. Key guardrails: Ugarit 'never-sent letter' myth debunked, Egypt survived, Minoans pre-date 1177, '300-yr drought' is regional not universal.",
+      "#014 — Step 3b script DONE. v3 keeper, self-graded ~9.7 (SHIP). NEXT → Step 4 HeyGen paste-prep + 5 Cole clips.",
+      "Season 1 complete (12/12). #012 Indus Revisited went live Jul 15.",
+    ],
+  },
+];
+
 function recurringFor(dateStr, scheduled = []) {
   const d = new Date(dateStr + "T12:00:00");
   const day = d.getDay();
@@ -887,10 +902,23 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #012 — Indus Revisited · Season 1 FINALE 🏁 · launches Wed Jul 15</div>
-          <div className="launch-sub">#011 Easter Island LIVE (youtu.be/8Qvo6_k2PBg). #012 is being BUILT in DaVinci Resolve now (Dispatch session) → export + Shorts + upload package next. Then Season 2 opens with #013 Cahokia (erasure angle) / Bronze Age Collapse on deck.</div>
+          <div className="launch-text">Case #013 — Cahokia · SEASON 2 PREMIERE 🧭 · launches Sat Jul 18</div>
+          <div className="launch-sub">Pushed Fri→Sat for production — lands as the Season 2 premiere (all 3 Shorts shifted with it: Sat 5pm / Sun / Mon noon). #012 Indus Revisited closed Season 1 (Jul 15). Behind it: #014 Bronze Age Collapse — thumbnail + script v3 locked (~9.7), HeyGen next.</div>
         </div>
-        <div className="launch-date">Wed Jul 15 · 2pm</div>
+        <div className="launch-date">Sat Jul 18 · 2pm</div>
+      </div>
+      <div className="info-box" style={{ borderColor: "rgba(201,168,76,0.4)" }}>
+        <div className="info-title">🗒️ Latest updates — {UPDATES[0].date}</div>
+        <div className="info-body">
+          {UPDATES.map((u, i) => (
+            <div key={i} style={{ marginBottom: i === UPDATES.length - 1 ? 0 : "12px" }}>
+              <div style={{ color: "var(--gold2)", fontWeight: 500, marginBottom: "4px" }}>{u.date} · {u.title}</div>
+              <ul style={{ margin: "0 0 0 16px", padding: 0 }}>
+                {u.items.map((it, j) => (<li key={j} style={{ marginBottom: "3px" }}>{it}</li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
