@@ -507,6 +507,24 @@ const SCHEDULE = {
 // ─── UPDATE LOG (most recent first · shown on Overview) ──────────────────────
 const UPDATES = [
   {
+    date: "2026-07-20",
+    title: "Weekly analytics check (catch-up) — long-form is the growth story",
+    items: [
+      "28d (Jun 22–Jul 19): 49 subs (+28), watch time 71.7h (+37%). Long-form views +102%, impressions +129% — packaging-first flywheel starting to pull.",
+      "CTR still the bottleneck (~2.2–2.3% long-form), but newest titles beat the back-catalog: #012 Indus 4.6%, #013 Cahokia 3.0% (day 1). 90.4% of views come from the Shorts feed; 66% US audience (validates the New World lane).",
+      "#013 Short 1 is the #1 Short (980 views). #013 A/B title test RUNNING — too few impressions to call yet. NEXT: verify Related-Video links on all #013 Shorts → main (the funnel is the lever).",
+    ],
+  },
+  {
+    date: "2026-07-18",
+    title: "#013 Cahokia UPLOADED — Season 2 premiere scheduled",
+    items: [
+      "#013 main video + all 3 Shorts scheduled on YouTube. Main premieres Sat Jul 18 · 2pm PST (youtu.be/8Cg8eHeRTxc); Shorts Sat 5pm / Sun noon / Mon noon.",
+      "Season 2 playlist created — 'Season 2: The Erasure' (+ Season 2 Shorts). Upload package, music, and credits all locked.",
+      "NEXT: #014 Bronze Age Collapse → Step 4 HeyGen (paste-prep + 5 Cole clips).",
+    ],
+  },
+  {
     date: "2026-07-17",
     title: "#013 pushed to Sat (S2 premiere) · #014 through script v3",
     items: [
@@ -902,7 +920,7 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #013 — Cahokia · SEASON 2 PREMIERE 🧭 · launches Sat Jul 18</div>
+          <div className="launch-text">Case #013 — Cahokia · SEASON 2 PREMIERE 🧭 · ✅ scheduled — premieres Sat Jul 18 · 2pm</div>
           <div className="launch-sub">Pushed Fri→Sat for production — lands as the Season 2 premiere (all 3 Shorts shifted with it: Sat 5pm / Sun / Mon noon). #012 Indus Revisited closed Season 1 (Jul 15). Behind it: #014 Bronze Age Collapse — thumbnail + script v3 locked (~9.7), HeyGen next.</div>
         </div>
         <div className="launch-date">Sat Jul 18 · 2pm</div>
@@ -923,9 +941,9 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Subscribers · 28d</div><div className="stat-val">32</div><div className="stat-note">Shorts = 93.6% of views</div></div>
+        <div className="stat-card"><div className="stat-label">Subscribers</div><div className="stat-val">49</div><div className="stat-note">+28 in 28d · Shorts = 90.4% of views</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">6/12</div><div className="stat-note">#007 locked, launches Jul 1</div></div>
+        <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">13</div><div className="stat-note">#013 = Season 2 premiere (Jul 18)</div></div>
       </div>
       <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
         <div className="info-title">◎ Channel diagnosis (Jun 30) — read before any new video</div>
