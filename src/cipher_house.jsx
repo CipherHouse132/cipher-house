@@ -507,6 +507,25 @@ const SCHEDULE = {
 // ─── UPDATE LOG (most recent first · shown on Overview) ──────────────────────
 const UPDATES = [
   {
+    date: "2026-07-22",
+    title: "#015 First Americans — LIVE · Season 2 runs three deep",
+    items: [
+      "#015 published: youtu.be/4ou7CArrgSQ (18:25). Main + all 3 Shorts uploaded/scheduled (Wed 5pm / Thu noon / Fri noon). Title A/B running: \"The First Americans Weren't First (Clovis)\" vs \"The First Americans Just Vanished\".",
+      "⚠️ #013 + #014 were accidentally deleted and REUPLOADED — new URLs. #013 = pending; #014 = youtu.be/5zkbicezld4 (all 4 #014 docs swept). The #013 A/B test data reset with the reupload.",
+      "vidIQ Weekly Intelligence Review (Jul 20): New World lane externally validated — Knowledgia's \"History of Native America\" at 3.8x/270K; lost-civilization videos pulling 19x–100x outliers. NO slate reorder. New banked lesson: long-form titles were keyword-blind (only 161 search views vs \"lost civilizations\" 227K/mo) → seat a searchable term IN the title. Applied to #015.",
+      "⚠️ BUILD FLAG: four #015 assets marked ★\"must be real evidence\" shipped as AI generations, and the Clovis-points frame carries a visible Gemini watermark. Tighten the pipeline so ★ real-evidence beats can't silently fall back to a generation.",
+    ],
+  },
+  {
+    date: "2026-07-21",
+    title: "#014 Bronze Age Collapse — LIVE",
+    items: [
+      "#014 published: youtu.be/Fu980Ld5m6I. Title A/B running (\"The Entire Ancient World Collapsed at Once — and Nobody Knows Why\" vs \"The Apocalypse That Actually Happened\").",
+      "3 Short packages built (the last letter / the Sea Peoples reveal / the modern-mirror), with cut points + pinned comments → main. Community post URL wired in.",
+      "NEXT: #015 First Americans is now barred from reusing #014's 4 music tracks (Anguish, Cylinder Five, Divider, Prelude No. 8).",
+    ],
+  },
+  {
     date: "2026-07-20",
     title: "Weekly analytics check (catch-up) — long-form is the growth story",
     items: [
@@ -920,10 +939,10 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       </div>
       <div className="launch-banner">
         <div>
-          <div className="launch-text">Case #013 — Cahokia · SEASON 2 PREMIERE 🧭 · ✅ scheduled — premieres Sat Jul 18 · 2pm</div>
-          <div className="launch-sub">Pushed Fri→Sat for production — lands as the Season 2 premiere (all 3 Shorts shifted with it: Sat 5pm / Sun / Mon noon). #012 Indus Revisited closed Season 1 (Jul 15). Behind it: #014 Bronze Age Collapse — thumbnail + script v3 locked (~9.7), HeyGen next.</div>
+          <div className="launch-text">Case #015 — The First Americans (Clovis) 🧭 · ✅ LIVE — youtu.be/4ou7CArrgSQ</div>
+          <div className="launch-sub">Season 2 now three deep (#013 Cahokia · #014 Bronze Age · #015 First Americans). Shorts roll Wed 5pm / Thu noon / Fri noon. Title A/B running: "(Clovis)" vs "Just Vanished". ⚠️ #013 + #014 were reuploaded after an accidental delete — #014 = youtu.be/5zkbicezld4, #013 URL still pending.</div>
         </div>
-        <div className="launch-date">Sat Jul 18 · 2pm</div>
+        <div className="launch-date">Wed Jul 22 · LIVE</div>
       </div>
       <div className="info-box" style={{ borderColor: "rgba(201,168,76,0.4)" }}>
         <div className="info-title">🗒️ Latest updates — {UPDATES[0].date}</div>
@@ -941,9 +960,9 @@ function OverviewPanel({ setPanel, doneCount, totalTasks }) {
       <TodayWidget setPanel={setPanel} />
       <div className="stat-grid">
         <div className="stat-card"><div className="stat-label">Active channels</div><div className="stat-val">1 of 5</div><div className="stat-note">Vanished History live</div></div>
-        <div className="stat-card"><div className="stat-label">Subscribers</div><div className="stat-val">49</div><div className="stat-note">+28 in 28d · Shorts = 90.4% of views</div></div>
+        <div className="stat-card"><div className="stat-label">Subscribers</div><div className="stat-val">61</div><div className="stat-note">+45 in 90d, zero lost · Shorts = 93.4% of views</div></div>
         <div className="stat-card"><div className="stat-label">Month 24 target</div><div className="stat-val">$20K+/mo</div><div className="stat-note">5-channel portfolio</div></div>
-        <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">13</div><div className="stat-note">#013 = Season 2 premiere (Jul 18)</div></div>
+        <div className="stat-card"><div className="stat-label">Cases live</div><div className="stat-val">15</div><div className="stat-note">#013 · #014 · #015 live (Season 2)</div></div>
       </div>
       <div className="info-box" style={{borderColor:"rgba(201,168,76,0.4)"}}>
         <div className="info-title">◎ Channel diagnosis (Jun 30) — read before any new video</div>
